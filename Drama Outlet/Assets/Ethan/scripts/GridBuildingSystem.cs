@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using NUnit.Framework.Constraints;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.Tilemaps;
 
 
-//https://www.youtube.com/watch?v=gFpmJtO0NT4    6:42
 
 public class GridBuildingSystem : MonoBehaviour
 {
@@ -17,6 +17,10 @@ public class GridBuildingSystem : MonoBehaviour
 
     public static Dictionary<TileType, TileBase> tileBases = new Dictionary<TileType, TileBase>();
 
+    private Building temp;
+    private Vector3 prevPos;
+    private BoundsInt prevArea;
+
     #region Unity Methods
     private void Awake()
     {
@@ -27,14 +31,37 @@ public class GridBuildingSystem : MonoBehaviour
     {
         string tilePath = @"Tiles\";
         tileBases.Add(TileType.Empty, null);
-        tileBases.Add(TileType.White, Resources.Load<TileBase>(tilePath + "white"));
-        tileBases.Add(TileType.Green, Resources.Load<TileBase>(tilePath + "green"));
-        tileBases.Add(TileType.Red, Resources.Load<TileBase>(tilePath + "red"));
+        tileBases.Add(TileType.White, Resources.Load<TileBase>(tilePath + "White"));
+        tileBases.Add(TileType.Green, Resources.Load<TileBase>(tilePath + "Green"));
+        tileBases.Add(TileType.Red, Resources.Load<TileBase>(tilePath + "Red"));
     }
 
     private void Update()
     {
-        
+        if (!temp)
+        {
+            return;
+        }
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (EventSystem.current.IsPointerOverGameObject(0))
+            {
+                return;
+            }
+            if (!temp.Placed)
+            {
+                Vector2 touchPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                Vector3Int cellPos = gridLayout.LocalToCell(touchPos);
+
+                if(prevPos != cellPos)
+                {
+                    temp.transform.localPosition = gridLayout.CellToLocalInterpolated(cellPos + new Vector3(.5f, .5f, 0f));
+                    prevPos = cellPos;
+                    FollowBuilding();
+                }
+            }
+        }
     }
     #endregion
 
@@ -73,6 +100,47 @@ public class GridBuildingSystem : MonoBehaviour
 
     #region Building Placement
 
+    public void InitializeWithBuilding(GameObject building)
+    {
+        temp = Instantiate(building, Vector3.zero, Quaternion.identity).GetComponent<Building>();
+        FollowBuilding();
+    }
+
+    private void ClearArea()
+    {
+        TileBase[] toClear = new TileBase[prevArea.size.x * prevArea.size.y * prevArea.size.z];
+        FillTiles(toClear, TileType.Empty);
+        TempTilemap.SetTilesBlock(prevArea, toClear);
+    }
+
+    private void FollowBuilding()
+    {
+        ClearArea();
+
+        temp.area.position = gridLayout.WorldToCell(temp.gameObject.transform.position);
+        BoundsInt buildingArea = temp.area;
+
+        TileBase[] baseArray = GetTileBlock(buildingArea, MainTilemap);
+
+        int size = baseArray.Length;
+        TileBase[] tileArray = new TileBase[size];
+
+        for (int i = 0; i < baseArray.Length; i++)
+        {
+            if (baseArray[i] == tileBases[TileType.White])
+            {
+                tileArray[i] = tileBases[TileType.Green];   
+            }
+            else
+            {
+                FillTiles(tileArray, TileType.Red);
+                break;
+            }
+        }
+
+        TempTilemap.SetTilesBlock(buildingArea, tileArray);
+        prevArea= buildingArea;
+    }
     #endregion
 }
 
