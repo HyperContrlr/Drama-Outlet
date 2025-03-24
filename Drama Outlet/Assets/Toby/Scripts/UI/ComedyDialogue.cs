@@ -8,29 +8,22 @@ public class ComedyDialogue : MonoBehaviour
 {
     [SerializeField] private TMPro.TMP_Text dialogueText;
 
-    [SerializeField] private string defaultSentence;
-
     [SerializeField] private Animator comedyAnimator;
 
+    [SerializeField] private GameObject dialogueBox;
+
     private Queue<string> sentences;
+
     void Start()
     {
         sentences = new Queue<string>();
-        Default(defaultSentence);
     }
     public void ReadDescription(string description)
     {
+        dialogueBox.SetActive(true);
         sentences.Clear();
 
         sentences.Enqueue(description);
-
-        DisplayNextSentence();
-    }
-    public void Default(string defaultSentence)
-    {
-        sentences.Clear();
-
-        sentences.Enqueue(defaultSentence);
 
         DisplayNextSentence();
     }
@@ -58,7 +51,5 @@ public class ComedyDialogue : MonoBehaviour
     public void EndDialogue()
     {
         comedyAnimator.SetBool("IsOpen", false);
-        Default(defaultSentence);
     }
-
 }
