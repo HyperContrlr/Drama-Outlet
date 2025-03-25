@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 747f9f9f470f9a547823950c2909dfff
+guid: 786c323713f970048965866c52d0a9a7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3923822255674076026
-    second: green_tile_0
+      213: 364965906141527515
+    second: pristine_floor_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -126,7 +126,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: green_tile_0
+      name: pristine_floor_0
       rect:
         serializedVersion: 2
         x: 0
@@ -134,15 +134,15 @@ TextureImporter:
         width: 64
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 68456c0a278cb89c0800000000000000
-      internalID: -3923822255674076026
+      spriteID: bddb1b6de8e901500800000000000000
+      internalID: 364965906141527515
       vertices: []
       indices: 
       edges: []
@@ -151,7 +151,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: b2a41ff45bd630f4db8544876580ffea
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      green_tile_0: -3923822255674076026
+      pristine_floor_0: 364965906141527515
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
