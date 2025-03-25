@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 110322141}
   - component: {fileID: 110322143}
   - component: {fileID: 110322142}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3516,7 +3516,7 @@ GameObject:
   m_Component:
   - component: {fileID: 217279819}
   - component: {fileID: 217279818}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3816,7 +3816,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   floorLayerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
 --- !u!4 &1483341732
 Transform:
   m_ObjectHideFlags: 0

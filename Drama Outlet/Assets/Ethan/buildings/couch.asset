@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 345bb5161ab389045bfc375658cc75b2, type: 3}
   m_Name: couch
   m_EditorClassIdentifier: 
-  name: 
-  description: 
-  cost: 0
+  name: Couch
+  description: The new Lazy Boi model.
+  cost: 99.99
   isLocked: 1
+  ratingUnlock: 0
