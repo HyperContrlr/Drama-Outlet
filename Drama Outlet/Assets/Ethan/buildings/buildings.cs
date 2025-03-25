@@ -4,14 +4,16 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "buildings", menuName = "Scriptable Objects/buildings")]
 public class buildings : ScriptableObject
 {
-    [SerializeField] private string name;
+    [SerializeField] public string name;
 
-    [SerializeField] private string description;
+    [SerializeField] public string description;
 
-    [SerializeField] private float cost;
+    [SerializeField] public float cost;
 
-    [SerializeField] private bool isLocked = true;
+    [SerializeField] public bool isLocked = true;
 
-    [SerializeField] private float ratingUnlock;
+    [SerializeField] public float ratingUnlock;
+
+    [SerializeField] public GameObject objectPrefab;
 
 }

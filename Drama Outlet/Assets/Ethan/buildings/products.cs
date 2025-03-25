@@ -3,17 +3,19 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "products", menuName = "Scriptable Objects/products")]
 public class products : ScriptableObject
 {
-    [SerializeField] private string name;
+    [SerializeField] public string name;
 
-    [SerializeField] private string description;
+    [SerializeField] public string description;
 
-    [SerializeField] private float price;
+    [SerializeField] public float price;
 
-    [SerializeField] private float restockPrice;
+    [SerializeField] public float restockPrice;
 
-    [SerializeField] private float sellPriceperStock;
+    [SerializeField] public float sellPriceperStock;
 
-    [SerializeField] private float maxStock;
+    [SerializeField] public float maxStock;
 
-    [SerializeField] private bool isLocked = true;
+    [SerializeField] public bool isLocked = true;
+
+    [SerializeField] public GameObject objectPrefab;
 }
