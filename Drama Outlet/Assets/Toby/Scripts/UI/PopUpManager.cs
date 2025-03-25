@@ -67,7 +67,7 @@ public class PopUpManager : MonoBehaviour
         {
             if (Statics.approvalValue == 0)
             {
-                approvalMask.GetComponent<SpriteRenderer>().sprite = 
+                //approvalMask.GetComponent<SpriteRenderer>().sprite = 
             }
             foreach (GameObject star in stars)
             {
