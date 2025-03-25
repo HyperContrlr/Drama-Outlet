@@ -130,6 +130,8 @@ GameObject:
   - component: {fileID: 110322141}
   - component: {fileID: 110322143}
   - component: {fileID: 110322142}
+  - component: {fileID: 110322145}
+  - component: {fileID: 110322144}
   m_Layer: 3
   m_Name: floor
   m_TagString: Untagged
@@ -3506,6 +3508,71 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!60 &110322144
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 110322140}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -3.034816, y: 4.148006}
+      - {x: -12.012117, y: -0.4693079}
+      - {x: -3.0160027, y: -5.0872073}
+      - {x: 6.0843577, y: -0.45817232}
+      - {x: 6.062394, y: -0.48471808}
+  m_UseDelaunayMesh: 0
+--- !u!114 &110322145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 110322140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fe1261502f82df468ad13377e1abd41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouseOver: 0
 --- !u!1 &217279817
 GameObject:
   m_ObjectHideFlags: 0
