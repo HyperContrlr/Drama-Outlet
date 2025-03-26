@@ -12,6 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdcacb69682e8d3418b9f99ac347c931, type: 3}
   m_Name: Mask License
   m_EditorClassIdentifier: 
-  name: 
+  name: Basic Mask License
   description: 
   cost: 0
+  thisImage: {fileID: 0}
+  defaultSprite: {fileID: 0}
+  collectedSprite: {fileID: 0}
+  productsUnlocked: []
+  isBought: 0
+  isLocked: 0
+  licensesUnlocked: []

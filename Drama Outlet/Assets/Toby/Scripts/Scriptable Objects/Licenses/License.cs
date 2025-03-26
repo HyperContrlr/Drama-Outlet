@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine.UI;
 
+[System.Serializable]
 [CreateAssetMenu(fileName = "License", menuName = "Scriptable Objects/License")]
 public class License : ScriptableObject
 {
@@ -15,16 +16,31 @@ public class License : ScriptableObject
 
     [SerializeField] public Image thisImage;
 
+    [SerializeField] public Sprite defaultSprite;
+
     [SerializeField] public Sprite collectedSprite;
 
     [SerializeField] public List<products> productsUnlocked;
 
+    [SerializeField] public bool isBought;
+
+    [SerializeField] public bool isLocked = true;
+
+    [SerializeField] public List<License> licensesUnlocked;
     public void Unlock()
     {
         foreach (products product in productsUnlocked)
         {
+            isBought = true;
             thisImage.sprite = collectedSprite;
             product.isLocked = true;
+        }
+        if (licensesUnlocked.Count != 0)
+        {
+            foreach (License lice in licensesUnlocked)
+            {
+                lice.isLocked = false;
+            }
         }
     }
 }
