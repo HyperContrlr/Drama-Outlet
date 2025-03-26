@@ -4,6 +4,7 @@ using UnityEngine.EventSystems;
 
 public class buildingPlacer : MonoBehaviour
 {
+    public GameObject floor;
     public LayerMask floorLayerMask;
 
     private GameObject buildingPrefab;
@@ -24,7 +25,7 @@ public class buildingPlacer : MonoBehaviour
         { //if in Build mode
 
             //hide pointer when hovering UI
-            if (EventSystem.current.IsPointerOverGameObject())
+            if (floor.GetComponent<level>().mouseOver)
             {
                 if (toBuild.activeSelf) toBuild.SetActive(false);
             }
@@ -34,7 +35,7 @@ public class buildingPlacer : MonoBehaviour
             }
 
             ray = mainCamera.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out hit, 1000f, floorLayerMask))
+            if (Physics.Raycast(ray, out hit, 1000f, floorLayerMask) || floor.GetComponent<level>().mouseOver)
             {
                 if (!toBuild.activeSelf) toBuild.SetActive(true);
                 toBuild.transform.position = hit.point;

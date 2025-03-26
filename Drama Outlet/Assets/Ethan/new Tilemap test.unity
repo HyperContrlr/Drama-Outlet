@@ -3881,6 +3881,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45026ebc308a0324587c78850e31cd36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  floor: {fileID: 110322140}
   floorLayerMask:
     serializedVersion: 2
     m_Bits: 8
