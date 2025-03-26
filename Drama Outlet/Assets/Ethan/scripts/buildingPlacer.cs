@@ -7,6 +7,8 @@ public class buildingPlacer : MonoBehaviour
     public GameObject floor;
     public LayerMask floorLayerMask;
 
+    public Vector3 offset;
+
     private GameObject buildingPrefab;
     private GameObject toBuild;
 
@@ -38,7 +40,19 @@ public class buildingPlacer : MonoBehaviour
             if (Physics.Raycast(ray, out hit, 1000f, floorLayerMask) || floor.GetComponent<level>().mouseOver)
             {
                 if (!toBuild.activeSelf) toBuild.SetActive(true);
-                toBuild.transform.position = hit.point;
+                toBuild.transform.position = mainCamera.ScreenToWorldPoint(Input.mousePosition) + offset;
+
+                if (Input.GetMouseButtonDown(0))
+                {
+                    BuildingManager m = toBuild.GetComponent<BuildingManager>();
+                    if (m.hasValidPlacement)
+                    {
+                        m.SetPlacementMode(PlacementMode.Fixed);
+
+                        buildingPrefab = null;
+                        toBuild = null;
+                    }
+                }
             }
             else if (toBuild.activeSelf) toBuild.SetActive(false);
         }
@@ -48,6 +62,8 @@ public class buildingPlacer : MonoBehaviour
     {
         buildingPrefab = prefab;
         _PrepareBuilding();
+
+        
     }
     
     private void _PrepareBuilding()
@@ -56,5 +72,9 @@ public class buildingPlacer : MonoBehaviour
 
         toBuild = Instantiate(buildingPrefab);
         toBuild.SetActive(false);
+
+        BuildingManager m = toBuild.GetComponent<BuildingManager>();
+        m.isFixed = false;
+        m.SetPlacementMode(PlacementMode.Valid);
     }
 }
