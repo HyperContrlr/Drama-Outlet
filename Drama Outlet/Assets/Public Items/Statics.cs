@@ -9,6 +9,8 @@ public class Statics : MonoBehaviour
 
     public static float day;
 
+    public static float starsGained;
+
     public static float approvalValue;
 
     public static float securityValue;

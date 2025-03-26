@@ -26,6 +26,10 @@ public class License : ScriptableObject
 
     [SerializeField] public bool isLocked = true;
 
+    [SerializeField] public bool starLock;
+
+    [SerializeField] public float StarsForUnlock;
+
     [SerializeField] public List<License> licensesUnlocked;
     public void Unlock()
     {

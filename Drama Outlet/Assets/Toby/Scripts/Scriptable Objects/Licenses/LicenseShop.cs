@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Linq;
 using JetBrains.Annotations;
+using TMPro;
 
 public class LicenseShop : MonoBehaviour
 {
@@ -12,21 +13,27 @@ public class LicenseShop : MonoBehaviour
 
     [SerializeField] private string name;
 
+    [SerializeField] private TextMeshProUGUI nameText;
+
+    [SerializeField] private TextMeshProUGUI moneyText;
+
     [SerializeField] private string description;
 
     [SerializeField] private float cost;
 
     [SerializeField] private Image thisImage;
 
-    [SerializeField] private GameObject thisObject;
+    private GameObject thisObject;
 
     [SerializeField] private GameObject nextImage;
 
     [SerializeField] private GameObject previousImage;
 
-    [SerializeField] private GameObject lockedOverlay;
+    [SerializeField] private List<GameObject> imagesToDelete;
 
-    [SerializeField] private GameObject buyButton;
+    //[SerializeField] private GameObject lockedOverlay;
+
+    [SerializeField] private GameObject buyButton; 
 
     public void SpriteCheck()
     {
@@ -41,14 +48,14 @@ public class LicenseShop : MonoBehaviour
     }
     public void SetValues()
     {
-        if (thisLicense.isLocked == true)
+        if (thisLicense.isLocked == true || thisLicense.starLock == true)
         {
-            lockedOverlay.SetActive(true);
+            //lockedOverlay.SetActive(true);
             buyButton.SetActive(false);
         }
         else
         {
-            lockedOverlay.SetActive(false);
+            //lockedOverlay.SetActive(false);
             buyButton.SetActive(true);
         }
         name = thisLicense.name;
@@ -61,9 +68,18 @@ public class LicenseShop : MonoBehaviour
     {
         SetValues();
     }
+    private void Update()
+    {
+        GenericDisplayText<string>.DisplayText(nameText, name);
+        GenericDisplayText<float>.DisplayText(moneyText, cost);
+    }
 
     public void Next()
     {
+        foreach (GameObject item in imagesToDelete)
+        {
+            item.SetActive(false);
+        }
         nextImage.SetActive(true);
         nextImage.GetComponent<LicenseShop>().SetValues();
         thisObject.SetActive(false);

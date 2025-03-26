@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 
 public class PopUpManager : MonoBehaviour
 {
@@ -27,6 +28,10 @@ public class PopUpManager : MonoBehaviour
     
     [SerializeField] private Sprite gainedStar;
 
+    [SerializeField] private Color defaultColor;
+
+    [SerializeField] private Color gainedColor;
+
     [SerializeField] private List<GameObject> stars;
 
     [SerializeField] private List<Sprite> approvalMaskSprites;
@@ -34,6 +39,8 @@ public class PopUpManager : MonoBehaviour
 
     [SerializeField] private List<Sprite> securityMaskSprites;
     [SerializeField] private Image securityMask;
+
+    [SerializeField] private List<License> starLockedLicense;
 
     public void OpenOrCloseMenu(GameObject menu)
     {
@@ -60,7 +67,28 @@ public class PopUpManager : MonoBehaviour
             popUpAnimator.SetBool("IsOpen", true);
         }
     }
-
+    
+    public void UnlockLicense()
+    {
+        foreach (License license in starLockedLicense)
+        {
+            if (Statics.starsGained >= license.StarsForUnlock)
+            {
+                license.starLock = false;
+            }
+            else
+            {
+                if (license.starLock == false)
+                {
+                    license.starLock = false;
+                }
+                else
+                {
+                    license.starLock = true;
+                }
+            }
+        }
+    }
     public void MaskAndStarCheck()
     {
         //Approval 
@@ -69,54 +97,129 @@ public class PopUpManager : MonoBehaviour
             //Big Sad
             if (Statics.approvalValue <= -20)
             {
+                Statics.starsGained = 0;
                 approvalMask.sprite = approvalMaskSprites[0];
             }
             //Worried
             if (Statics.approvalValue > -20 && Statics.approvalValue < 0)
             {
+                Statics.starsGained = 0;
                 approvalMask.sprite = approvalMaskSprites[1];
             }
             //Neutral
             if (Statics.approvalValue == 0)
             {
+                Statics.starsGained = 0;
                 approvalMask.sprite = approvalMaskSprites[2];
+                stars[0].GetComponent<Image>().sprite = defaultStar;
+                stars[0].GetComponent<Image>().color = defaultColor;
             }
             foreach (GameObject star in stars)
             {
                 star.GetComponent<Image>().sprite = defaultStar;
+                star.GetComponent<Image>().color = defaultColor;
             }
         }
         else if (Statics.approvalValue > 0)
         {
             {
+                int i = 0;
                 //Small Smirk
                 if (Statics.approvalValue >= 20)
                 {
-                    stars[0].GetComponent<Image>().sprite = gainedStar;
+                    Statics.starsGained = 1;
+                    UnlockLicense();
+                    i = 0;
+                    foreach (GameObject star in stars)
+                    {
+                        if (i == 0)
+                        {
+                            star.GetComponent<Image>().sprite = gainedStar;
+                            star.GetComponent<Image>().color = gainedColor;
+                            i++;
+                        }
+                        else
+                        {
+                            star.GetComponent<Image>().sprite = defaultStar;
+                            star.GetComponent<Image>().color = defaultColor;
+                        }
+                    }
                     approvalMask.sprite = approvalMaskSprites[3];
                 }
                 //Grin
                 if (Statics.approvalValue >= 40)
                 {
-                    stars[1].GetComponent<Image>().sprite= gainedStar;
+                    Statics.starsGained = 2;
+                    UnlockLicense();
+                    i = 0;
+                    foreach (GameObject star in stars)
+                    {
+                        if (i <= 1)
+                        {
+                            star.GetComponent<Image>().sprite = gainedStar;
+                            star.GetComponent<Image>().color = gainedColor;
+                            i++;
+                        }
+                        else
+                        {
+                             star.GetComponent<Image>().sprite= defaultStar;
+                             star.GetComponent<Image>().color = defaultColor;
+                        }
+                    }
                     approvalMask.sprite = approvalMaskSprites[4];
                 }
                 //Smile
                 if (Statics.approvalValue >= 60)
                 {
-                    stars[2].GetComponent<Image>().sprite = gainedStar;
+                    Statics.starsGained = 3;
+                    UnlockLicense();
+                    i = 0;
+                    foreach (GameObject star in stars)
+                    {
+                        if (i <= 2)
+                        {
+                            star.GetComponent<Image>().sprite = gainedStar;
+                            star.GetComponent<Image>().color = gainedColor;
+                            i++;
+                        }
+                        else
+                        {
+                            star.GetComponent<Image>().sprite = defaultStar;
+                            star.GetComponent<Image>().color = defaultColor;
+   
+                        }
+                    }
                     approvalMask.sprite = approvalMaskSprites[5];
                 }
                 //Smile w/ Teeth
                 if (Statics.approvalValue >= 80)
                 {
-                    stars[3].GetComponent<Image>().sprite = gainedStar;
+                    Statics.starsGained = 4;
+                    UnlockLicense();
+                    i = 0;
+                    foreach (GameObject star in stars)
+                    {
+                        if (i <= 3)
+                        {
+                            star.GetComponent<Image>().sprite = gainedStar;
+                            star.GetComponent<Image>().color = gainedColor;
+                            i++;
+                        }
+                        else
+                        {
+                            star.GetComponent<Image>().sprite = defaultStar;
+                            star.GetComponent<Image>().color = defaultColor;
+                        }
+                    }
                     approvalMask.sprite = approvalMaskSprites[6];
                 }
                 //Extreme Happy Face
                 if (Statics.approvalValue >= 100)
                 {
+                    Statics.starsGained = 5;
+                    UnlockLicense();
                     stars[4].GetComponent<Image>().sprite = gainedStar;
+                    stars[4].GetComponent<Image>().color = gainedColor;
                     approvalMask.sprite = approvalMaskSprites[7];
                 }
             }
@@ -177,8 +280,8 @@ public class PopUpManager : MonoBehaviour
     }
     public void Update()
     {
-        moneyText.text = string.Format($"${Statics.money}");
-        dayText.text = string.Format($"Day #{Statics.day}");
+        GenericDisplayText<float>.DisplayTextWithExtra(moneyText, Statics.money, 0);
+        GenericDisplayText<float>.DisplayTextWithExtra(dayText, Statics.day, 1);
         MaskAndStarCheck();
     }
     
@@ -191,6 +294,6 @@ public class PopUpManager : MonoBehaviour
     [ContextMenu("Change Approval Negative")]
     public void ChangeApprovalNegative()
     {
-        Statics.approvalValue -= 20;
+        Statics.approvalValue -= 10;
     }
 }

@@ -10,21 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bdcacb69682e8d3418b9f99ac347c931, type: 3}
-  m_Name: Mask License
+  m_Name: Prop License
   m_EditorClassIdentifier: 
-  name: Mask License
-  description: This is a basic mask license. Buying this will get my store started!!
+  name: Prop License
+  description: This license will allow me to sell basic props. You know my full name
+    is Stan D. Comedy.
   cost: 0
   thisImage: {fileID: 0}
   defaultSprite: {fileID: 0}
   collectedSprite: {fileID: 0}
   productsUnlocked: []
   isBought: 0
-  isLocked: 0
-  starLock: 0
-  StarsForUnlock: 0
+  isLocked: 1
+  starLock: 1
+  StarsForUnlock: 2
   licensesUnlocked:
-  - {fileID: 11400000, guid: 99ac849b0146038458b1570314720162, type: 2}
-  - {fileID: 11400000, guid: 857867ef36342524c9572215b06a9689, type: 2}
-  - {fileID: 11400000, guid: 05f4a92f04ef8eb4a971aebe8777327b, type: 2}
-  - {fileID: 11400000, guid: 0316156260dce074c836ae75a68a33a5, type: 2}
+  - {fileID: 11400000, guid: 85950ab130fdd894eb6c68aee6ba6ce4, type: 2}
