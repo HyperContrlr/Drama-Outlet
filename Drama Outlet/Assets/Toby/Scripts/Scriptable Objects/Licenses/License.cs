@@ -10,6 +10,7 @@ public class License : ScriptableObject
 {
     [SerializeField] public string name;
 
+    [TextArea(3, 10)]
     [SerializeField] public string description;
 
     [SerializeField] public float cost;
@@ -27,6 +28,8 @@ public class License : ScriptableObject
     [SerializeField] public bool isLocked = true;
 
     [SerializeField] public bool starLock;
+
+    [SerializeField] public bool hasStarLock;
 
     [SerializeField] public float StarsForUnlock;
 

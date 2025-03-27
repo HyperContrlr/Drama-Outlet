@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Advanced Makeup License
   m_EditorClassIdentifier: 
   name: Advanced Makeup License
-  description: This license will allow me to buy SFX makeup. Use these products to
-    make people look old, dead, or deepfaked... wait
+  description: "<size=25>This license will allow me to buy SFX makeup. \n<size=20>Use
+    these products to make people look old, dead, or deepfaked... wait"
   cost: 0
   thisImage: {fileID: 0}
   defaultSprite: {fileID: 0}
@@ -23,5 +23,6 @@ MonoBehaviour:
   isBought: 0
   isLocked: 1
   starLock: 1
+  hasStarLock: 1
   StarsForUnlock: 3
   licensesUnlocked: []

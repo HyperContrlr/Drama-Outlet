@@ -283,6 +283,7 @@ public class PopUpManager : MonoBehaviour
         GenericDisplayText<float>.DisplayTextWithExtra(moneyText, Statics.money, 0);
         GenericDisplayText<float>.DisplayTextWithExtra(dayText, Statics.day, 1);
         MaskAndStarCheck();
+        UnlockLicense();
     }
     
     [ContextMenu("Change Approval")]

@@ -18,6 +18,11 @@ public class ComedyDialogue : MonoBehaviour
     {
         sentences = new Queue<string>();
     }
+
+    public void XButton()
+    {
+        dialogueBox.SetActive(false);
+    }
     public void ReadDescription(string description)
     {
         dialogueBox.SetActive(true);

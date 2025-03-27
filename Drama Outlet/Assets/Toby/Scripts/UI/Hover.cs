@@ -1,16 +1,32 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Hover : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] private ComedyDialogue dialogue;
+    
+    [SerializeField] private GameObject dialogueBox;
+
+    public void OnHoverLicense(License license)
     {
-        
+        if (license.isLocked == true || license.starLock == true)
+        {
+            dialogueBox.SetActive(true);
+            Statics.ReadRejection3();
+        }
+        dialogueBox.SetActive(true);
+        dialogue.ReadDescription(license.description);
+    }
+    public void OnHoverProduct(products product)
+    {
+        dialogueBox.SetActive(true);
+        dialogue.ReadDescription(product.description);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OnHoverExit()
     {
-        
+        dialogueBox.SetActive(false);
     }
+
 }
+

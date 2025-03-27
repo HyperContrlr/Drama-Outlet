@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Advanced Mask License
   m_EditorClassIdentifier: 
   name: Advanced Mask License
-  description: With this licence I can get better more realstic masks. I can't mask
-    how excited I am to sell these premium masks.
+  description: "<size=30>With this licence I can get better more realstic masks.
+    \n<size=20>I can't mask how excited I am to sell these premium masks."
   cost: 0
   thisImage: {fileID: 0}
   defaultSprite: {fileID: 0}
@@ -23,5 +23,6 @@ MonoBehaviour:
   isBought: 0
   isLocked: 1
   starLock: 1
+  hasStarLock: 1
   StarsForUnlock: 3
   licensesUnlocked: []

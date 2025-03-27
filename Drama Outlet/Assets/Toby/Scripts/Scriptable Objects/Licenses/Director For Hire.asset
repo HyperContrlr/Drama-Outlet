@@ -21,7 +21,8 @@ MonoBehaviour:
   collectedSprite: {fileID: 0}
   productsUnlocked: []
   isBought: 0
-  isLocked: 0
+  isLocked: 1
   starLock: 1
+  hasStarLock: 1
   StarsForUnlock: 5
   licensesUnlocked: []

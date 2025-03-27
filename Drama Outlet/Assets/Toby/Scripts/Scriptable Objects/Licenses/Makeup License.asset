@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Makeup License
   m_EditorClassIdentifier: 
   name: Makeup License
-  description: This license will allow me to sell stage makeup. It's time to slay!!
+  description: "This license will allow me to sell stage makeup. \n<size=30>It's
+    time to slay!!"
   cost: 0
   thisImage: {fileID: 0}
   defaultSprite: {fileID: 0}
@@ -22,6 +23,7 @@ MonoBehaviour:
   isBought: 0
   isLocked: 1
   starLock: 0
+  hasStarLock: 0
   StarsForUnlock: 0
   licensesUnlocked:
   - {fileID: 11400000, guid: 343617f07dc7cbd48a0af9d6b7423e25, type: 2}

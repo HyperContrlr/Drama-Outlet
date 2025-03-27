@@ -17,13 +17,11 @@ public class LicenseShop : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI moneyText;
 
-    [SerializeField] private string description;
-
     [SerializeField] private float cost;
 
     [SerializeField] private Image thisImage;
 
-    private GameObject thisObject;
+    [SerializeField] private GameObject thisObject;
 
     [SerializeField] private GameObject nextImage;
 
@@ -31,9 +29,13 @@ public class LicenseShop : MonoBehaviour
 
     [SerializeField] private List<GameObject> imagesToDelete;
 
-    //[SerializeField] private GameObject lockedOverlay;
+    [SerializeField] private GameObject lockedOverlay;
 
-    [SerializeField] private GameObject buyButton; 
+    [SerializeField] private GameObject buyButton;
+
+    [SerializeField] private GameObject dialogueBox;
+
+    [SerializeField] private bool numeroUno;
 
     public void SpriteCheck()
     {
@@ -46,20 +48,41 @@ public class LicenseShop : MonoBehaviour
             thisImage.sprite = thisLicense.defaultSprite;
         }
     }
-    public void SetValues()
+
+    public void LicenseUnlock()
     {
         if (thisLicense.isLocked == true || thisLicense.starLock == true)
         {
-            //lockedOverlay.SetActive(true);
+            lockedOverlay.SetActive(true);
             buyButton.SetActive(false);
         }
         else
         {
-            //lockedOverlay.SetActive(false);
+            lockedOverlay.SetActive(false);
             buyButton.SetActive(true);
         }
+    }
+    public void SetValues()
+    {
+        if (thisLicense.isLocked == true)
+        {
+            lockedOverlay.SetActive(true);
+            buyButton.SetActive(false);
+        }
+        else 
+        {
+            if (thisLicense.hasStarLock == true && thisLicense.starLock == true)
+            {
+                lockedOverlay.SetActive(true);
+                buyButton.SetActive(false);
+            }
+            else
+            {
+                lockedOverlay.SetActive(false);
+                buyButton.SetActive(true);
+            }
+        }
         name = thisLicense.name;
-        description = thisLicense.description;
         cost = thisLicense.cost;
         thisLicense.thisImage = thisImage;
         SpriteCheck();
@@ -70,6 +93,7 @@ public class LicenseShop : MonoBehaviour
     }
     private void Update()
     {
+        LicenseUnlock();
         GenericDisplayText<string>.DisplayText(nameText, name);
         GenericDisplayText<float>.DisplayText(moneyText, cost);
     }
@@ -87,6 +111,10 @@ public class LicenseShop : MonoBehaviour
 
     public void Previous()
     {
+        foreach (GameObject item in imagesToDelete)
+        {
+            item.SetActive(false);
+        }
         previousImage.SetActive(true);
         previousImage.GetComponent<LicenseShop>().SetValues();
         thisObject.SetActive(false);
@@ -95,20 +123,24 @@ public class LicenseShop : MonoBehaviour
     {
         if (thisLicense.isBought == true)
         {
+            dialogueBox.SetActive(true);
             Statics.ReadRejection2();
         }
         else if (thisLicense.isLocked == true)
         {
+            dialogueBox.SetActive(true);
             Statics.ReadRejection3();
         }
-        if (Statics.money >= cost && thisLicense.isBought == false && thisLicense.isLocked == false)
+        else if (Statics.money >= cost && thisLicense.isBought == false && thisLicense.isLocked == false)
         {
             //play bought sound effect
             thisLicense.Unlock();
             Statics.money -= cost;
+            thisLicense.isBought = true;
         }
-        else
+        else if (Statics.money < cost)
         {
+            dialogueBox.SetActive(true);
             Statics.ReadRejection1();
         }
     }

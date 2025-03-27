@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Advanced Costume License
   m_EditorClassIdentifier: 
   name: Advanced Costume License
-  description: This license allows me to sell only the best costumes. We ain't sell
-    just basic Dorothy dresses anymore Toto.
+  description: "<size=30>This license allows me to sell only the best costumes. \n<size=20>We
+    ain't selling just basic Dorothy dresses anymore Toto."
   cost: 0
   thisImage: {fileID: 0}
   defaultSprite: {fileID: 0}
@@ -23,5 +23,6 @@ MonoBehaviour:
   isBought: 0
   isLocked: 1
   starLock: 1
+  hasStarLock: 1
   StarsForUnlock: 4
   licensesUnlocked: []
