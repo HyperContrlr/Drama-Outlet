@@ -4,6 +4,8 @@ using UnityEngine.EventSystems;
 
 public class buildingPlacer : MonoBehaviour
 {
+    public static buildingPlacer instance;
+
     public GameObject floor;
     public LayerMask floorLayerMask;
 
@@ -18,6 +20,7 @@ public class buildingPlacer : MonoBehaviour
     private RaycastHit hit;
     private void Awake()
     {
+        instance = this;
         mainCamera = Camera.main;
         buildingPrefab = null;
     }
@@ -26,6 +29,17 @@ public class buildingPlacer : MonoBehaviour
         if (buildingPrefab != null)
         { //if in Build mode
 
+            if (Input.GetMouseButtonDown(1))
+            {
+                Destroy(toBuild);
+                toBuild = null;
+                buildingPrefab = null;
+                return;
+            }
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                toBuild.transform.Rotate(Vector3.up, 180);
+            }
             //hide pointer when hovering UI
             if (floor.GetComponent<level>().mouseOver)
             {
@@ -49,6 +63,13 @@ public class buildingPlacer : MonoBehaviour
                     {
                         m.SetPlacementMode(PlacementMode.Fixed);
 
+                        if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
+                        {
+                            toBuild = null;
+                            PrepareBuilding();
+                            return;
+                        }
+
                         buildingPrefab = null;
                         toBuild = null;
                     }
@@ -61,12 +82,12 @@ public class buildingPlacer : MonoBehaviour
     public void SetBuildingPrefab(GameObject prefab)
     {
         buildingPrefab = prefab;
-        _PrepareBuilding();
+        PrepareBuilding();
 
         
     }
     
-    private void _PrepareBuilding()
+    private void PrepareBuilding()
     {
         if(toBuild) Destroy(toBuild);
 

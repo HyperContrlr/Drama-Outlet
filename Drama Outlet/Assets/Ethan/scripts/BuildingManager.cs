@@ -7,7 +7,7 @@ public enum PlacementMode
 {
     Fixed,
     Valid,
-    Invailid
+    Invalid
 }
 public class BuildingManager : MonoBehaviour
 {
@@ -26,13 +26,18 @@ public class BuildingManager : MonoBehaviour
         hasValidPlacement = true;
         isFixed = true;
         nObstacles = 0;
+        //this.gameObject.GetComponent<PolygonCollider2D>().enabled = false;
 
         InitializeMaterials();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        
+        if (isFixed) return;
+        if (IsGround(other.gameObject)) return;
+
+        nObstacles++;
+        SetPlacementMode(PlacementMode.Invalid);
     }
     private void OnTriggerExit2D(Collider2D other)
     {
@@ -69,6 +74,7 @@ public class BuildingManager : MonoBehaviour
         {
             foreach (MeshRenderer r in meshComps)
                 r.sharedMaterials = initialMaterials[r].ToArray();
+            this.gameObject.GetComponent<PolygonCollider2D>().enabled = true;
         }
         else
         {
@@ -103,8 +109,8 @@ public class BuildingManager : MonoBehaviour
         }
     }
 
-    //private bool IsGround(GameObject o)
-    //{
-    //    return ((1 << o.layer) & buildingPlacer.instance.groundLayerMask.value) != 0;
-    //}
+    private bool IsGround(GameObject o)
+    {
+        return ((1 << o.layer) & buildingPlacer.instance.floorLayerMask.value) != 0;
+    }
 }
