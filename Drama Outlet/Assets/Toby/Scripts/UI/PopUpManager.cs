@@ -11,9 +11,9 @@ public class PopUpManager : MonoBehaviour
     [SerializeField] private Animator popUpAnimator;
 
     [SerializeField] private GameObject dialogueBox;
-    
+
     [SerializeField] private GameObject inventory;
-    
+
     [SerializeField] private GameObject licensesMenu;
 
     [SerializeField] private GameObject shopMenu;
@@ -25,7 +25,7 @@ public class PopUpManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI dayText;
 
     [SerializeField] private Sprite defaultStar;
-    
+
     [SerializeField] private Sprite gainedStar;
 
     [SerializeField] private Color defaultColor;
@@ -52,7 +52,7 @@ public class PopUpManager : MonoBehaviour
         else if (isOn == false)
         {
             menu.SetActive(true);
-            isOn= true;
+            isOn = true;
         }
     }
     public void PlayAnimation()
@@ -67,7 +67,7 @@ public class PopUpManager : MonoBehaviour
             popUpAnimator.SetBool("IsOpen", true);
         }
     }
-    
+
     public void UnlockLicense()
     {
         foreach (License license in starLockedLicense)
@@ -125,7 +125,7 @@ public class PopUpManager : MonoBehaviour
             {
                 int i = 0;
                 //Small Smirk
-                if (Statics.approvalValue >= 20)
+                if (Statics.approvalValue >= 20 && Statics.approvalValue < 40)
                 {
                     Statics.starsGained = 1;
                     UnlockLicense();
@@ -147,7 +147,7 @@ public class PopUpManager : MonoBehaviour
                     approvalMask.sprite = approvalMaskSprites[3];
                 }
                 //Grin
-                if (Statics.approvalValue >= 40)
+                if (Statics.approvalValue >= 40 && Statics.approvalValue < 60)
                 {
                     Statics.starsGained = 2;
                     UnlockLicense();
@@ -162,14 +162,14 @@ public class PopUpManager : MonoBehaviour
                         }
                         else
                         {
-                             star.GetComponent<Image>().sprite= defaultStar;
-                             star.GetComponent<Image>().color = defaultColor;
+                            star.GetComponent<Image>().sprite = defaultStar;
+                            star.GetComponent<Image>().color = defaultColor;
                         }
                     }
                     approvalMask.sprite = approvalMaskSprites[4];
                 }
                 //Smile
-                if (Statics.approvalValue >= 60)
+                if (Statics.approvalValue >= 60 && Statics.approvalValue < 80)
                 {
                     Statics.starsGained = 3;
                     UnlockLicense();
@@ -186,13 +186,13 @@ public class PopUpManager : MonoBehaviour
                         {
                             star.GetComponent<Image>().sprite = defaultStar;
                             star.GetComponent<Image>().color = defaultColor;
-   
+
                         }
                     }
                     approvalMask.sprite = approvalMaskSprites[5];
                 }
                 //Smile w/ Teeth
-                if (Statics.approvalValue >= 80)
+                if (Statics.approvalValue >= 80 && Statics.approvalValue < 100)
                 {
                     Statics.starsGained = 4;
                     UnlockLicense();
@@ -290,11 +290,13 @@ public class PopUpManager : MonoBehaviour
     public void ChangeApproval()
     {
         Statics.approvalValue += 20;
+        Debug.Log(Statics.approvalValue);
     }
 
     [ContextMenu("Change Approval Negative")]
     public void ChangeApprovalNegative()
     {
         Statics.approvalValue -= 10;
+        Debug.Log(Statics.approvalValue);
     }
 }

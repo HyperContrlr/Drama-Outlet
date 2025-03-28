@@ -14,8 +14,11 @@ public class Hover : MonoBehaviour
             dialogueBox.SetActive(true);
             Statics.ReadRejection3();
         }
-        dialogueBox.SetActive(true);
-        dialogue.ReadDescription(license.description);
+        else
+        {
+            dialogueBox.SetActive(true);
+            dialogue.ReadDescription(license.description);
+        }
     }
     public void OnHoverProduct(products product)
     {

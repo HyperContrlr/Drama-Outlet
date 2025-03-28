@@ -37,6 +37,13 @@ public class LicenseShop : MonoBehaviour
 
     [SerializeField] private bool numeroUno;
 
+
+    [SerializeField] public bool isBought;
+
+    [SerializeField] public bool isLocked = true;
+
+    [SerializeField] public bool starLock;
+
     public void SpriteCheck()
     {
         if (thisLicense.isBought == true)
@@ -49,6 +56,23 @@ public class LicenseShop : MonoBehaviour
         }
     }
 
+    public void OnDestroy()
+    {
+        LicenseReset();
+    }
+    public void LicenseReset()
+    {
+        thisLicense.isBought = isBought;
+        thisLicense.isLocked = isLocked; 
+        thisLicense.starLock = starLock;
+    }
+
+    public void LicenseValueSet()
+    {
+        isBought = thisLicense.isBought;
+        isLocked = thisLicense.isLocked;
+        starLock = thisLicense.starLock;
+    }
     public void LicenseUnlock()
     {
         if (thisLicense.isLocked == true || thisLicense.starLock == true)
@@ -90,6 +114,8 @@ public class LicenseShop : MonoBehaviour
     void Start()
     {
         SetValues();
+        LicenseValueSet();
+        LicenseUnlock();
     }
     private void Update()
     {
