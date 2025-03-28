@@ -135,6 +135,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   validPlaceMat: {fileID: 2100000, guid: f541ade369807cf46912b4e9d9d715b2, type: 2}
   invalidPlaceMat: {fileID: 2100000, guid: b8c97d3de85ae6c4884d5afcccc4dcf7, type: 2}
+  defaultPlaceMat: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   meshComps: []
   hasValidPlacement: 0
   isFixed: 0

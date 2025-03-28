@@ -13,6 +13,7 @@ public class BuildingManager : MonoBehaviour
 {
     public Material validPlaceMat;
     public Material invalidPlaceMat;
+    public Material defaultPlaceMat;
 
     public MeshRenderer[] meshComps;
     private Dictionary<MeshRenderer, List<Material>> initialMaterials;
@@ -57,14 +58,17 @@ public class BuildingManager : MonoBehaviour
         {
             isFixed = true;
             hasValidPlacement = true;
+            this.gameObject.GetComponentInChildren<SpriteRenderer>().material = defaultPlaceMat;
         }
         else if (mode == PlacementMode.Valid)
         {
             hasValidPlacement = true;
+            this.gameObject.GetComponentInChildren<SpriteRenderer>().material = validPlaceMat;
         }
         else
         {
             hasValidPlacement = false;
+            this.gameObject.GetComponentInChildren<SpriteRenderer>().material = invalidPlaceMat;
         }
         SetMaterial(mode);
     }
