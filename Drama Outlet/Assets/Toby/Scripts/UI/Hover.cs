@@ -5,30 +5,30 @@ public class Hover : MonoBehaviour
 {
     [SerializeField] private ComedyDialogue dialogue;
     
-    [SerializeField] private GameObject dialogueBox;
+    [SerializeField] private Animator dialogueAnimator;
 
     public void OnHoverLicense(License license)
     {
         if (license.isLocked == true || license.starLock == true)
         {
-            dialogueBox.SetActive(true);
+            dialogueAnimator.SetBool("IsOpen", true);
             Statics.ReadRejection3();
         }
         else
         {
-            dialogueBox.SetActive(true);
+            dialogueAnimator.SetBool("IsOpen", true);
             dialogue.ReadDescription(license.description);
         }
     }
     public void OnHoverProduct(products product)
     {
-        dialogueBox.SetActive(true);
+        dialogueAnimator.SetBool("IsOpen", true);
         dialogue.ReadDescription(product.description);
     }
 
     public void OnHoverExit()
     {
-        dialogueBox.SetActive(false);
+        dialogueAnimator.SetBool("IsOpen", false);
     }
 
 }

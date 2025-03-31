@@ -19,7 +19,8 @@ public class Statics : MonoBehaviour
     
     public static string rejectionText2 = "I already have that one... I'm such a clutz";
 
-    public static string rejectionText3 = "Hmm seems we can't buy this one yet. Mayhap we need another license or higher ratings?";
+    public static string rejectionText3 = "<size=30>Hmm seems we can't buy this one yet. " +
+        "Mayhap we need another license or higher ratings?";
 
     public static void ReadRejection1()
     {

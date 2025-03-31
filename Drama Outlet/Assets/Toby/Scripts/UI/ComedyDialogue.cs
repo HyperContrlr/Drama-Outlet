@@ -14,6 +14,8 @@ public class ComedyDialogue : MonoBehaviour
 
     private Queue<string> sentences;
 
+    [SerializeField] public float textSpeed;
+
     void Start()
     {
         sentences = new Queue<string>();
@@ -46,12 +48,16 @@ public class ComedyDialogue : MonoBehaviour
     }
     IEnumerator TypeSentence(string sentence)
     {
-        dialogueText.text = "";
-        foreach (char letter in sentence.ToCharArray())
-        {
-            dialogueText.text += letter;
-            yield return null;
-        }
+        dialogueText.text = sentence;
+        dialogueText.ForceMeshUpdate();
+        yield return null;
+        //yield return new WaitForSeconds(0.5f);
+        //foreach (char letter in sentence.ToCharArray())
+        //{
+        //    dialogueText.text += letter;
+        //    yield return new WaitForSeconds(textSpeed);
+        //    yield return null;
+        //}
     }
     public void EndDialogue()
     {

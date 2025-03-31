@@ -10,8 +10,6 @@ public class PopUpManager : MonoBehaviour
 {
     [SerializeField] private Animator popUpAnimator;
 
-    [SerializeField] private GameObject dialogueBox;
-
     [SerializeField] private GameObject inventory;
 
     [SerializeField] private GameObject licensesMenu;
@@ -59,7 +57,6 @@ public class PopUpManager : MonoBehaviour
     {
         if (popUpAnimator.GetBool("IsOpen") == true)
         {
-            dialogueBox.SetActive(false);
             popUpAnimator.SetBool("IsOpen", false);
         }
         else if (popUpAnimator.GetBool("IsOpen") == false)
@@ -281,7 +278,7 @@ public class PopUpManager : MonoBehaviour
     public void Update()
     {
         GenericDisplayText<float>.DisplayTextWithExtra(moneyText, Statics.money, 0);
-        GenericDisplayText<float>.DisplayTextWithExtra(dayText, Statics.day, 1);
+        GenericDisplayText<float>.DisplayTextWithExtra(dayText, Statics.day, 0);
         MaskAndStarCheck();
         UnlockLicense();
     }
