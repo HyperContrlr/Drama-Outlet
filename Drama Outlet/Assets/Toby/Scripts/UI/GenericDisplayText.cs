@@ -1,3 +1,4 @@
+using NUnit.Framework;
 using TMPro;
 using UnityEngine;
 
@@ -16,7 +17,7 @@ public class GenericDisplayText<T> : MonoBehaviour
         }
         if (whatOption == 1)
         {
-            textToDisplay.text = string.Format($"Day #{value}");
+            textToDisplay.text = string.Format($"{value}");
         }
     }
 }

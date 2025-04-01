@@ -26,6 +26,10 @@ public class PopUpManager : MonoBehaviour
 
     [SerializeField] private Sprite gainedStar;
 
+    [SerializeField] private Image openButton;
+    [SerializeField] private Sprite openSprite;
+    [SerializeField] private Sprite closeSprite;
+
     [SerializeField] private Color defaultColor;
 
     [SerializeField] private Color gainedColor;
@@ -58,10 +62,12 @@ public class PopUpManager : MonoBehaviour
         if (popUpAnimator.GetBool("IsOpen") == true)
         {
             popUpAnimator.SetBool("IsOpen", false);
+            openButton.sprite = openSprite;
         }
         else if (popUpAnimator.GetBool("IsOpen") == false)
         {
             popUpAnimator.SetBool("IsOpen", true);
+            openButton.sprite = closeSprite;
         }
     }
 
@@ -278,7 +284,7 @@ public class PopUpManager : MonoBehaviour
     public void Update()
     {
         GenericDisplayText<float>.DisplayTextWithExtra(moneyText, Statics.money, 0);
-        GenericDisplayText<float>.DisplayTextWithExtra(dayText, Statics.day, 0);
+        GenericDisplayText<float>.DisplayTextWithExtra(dayText, Statics.day, 1);
         MaskAndStarCheck();
         UnlockLicense();
     }

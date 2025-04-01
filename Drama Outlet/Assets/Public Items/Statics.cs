@@ -21,7 +21,6 @@ public class Statics : MonoBehaviour
 
     public static string rejectionText3 = "<size=30>Hmm seems we can't buy this one yet. " +
         "Mayhap we need another license or higher ratings?";
-
     public static void ReadRejection1()
     {
         FindFirstObjectByType<ComedyDialogue>().ReadDescription(rejectionText1);
