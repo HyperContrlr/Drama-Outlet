@@ -3,10 +3,9 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "products", menuName = "Scriptable Objects/products")]
 public class products : ScriptableObject
 {
-    [SerializeField] public enum Type {Mask, Makeup, Costume, Prop, MaskPlus, MakeupPlus, CostumePlus, PropPlus}
 
-    [SerializeField] public Type typeOfProduct;
-    
+    [SerializeField] public NPCAI.NPC.Preference type;
+
     [SerializeField] public string name;
 
     [SerializeField] public string description;
