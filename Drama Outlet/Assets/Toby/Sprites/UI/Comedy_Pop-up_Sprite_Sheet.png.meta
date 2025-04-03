@@ -1,0 +1,507 @@
+fileFormatVersion: 2
+guid: bd271e091e2ec47409254ba6f49cb11d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4521483234142396390
+    second: Comedy_Pop-up_Sprite_Sheet_0
+  - first:
+      213: 2026359183732443468
+    second: Comedy_Pop-up_Sprite_Sheet_1
+  - first:
+      213: 1530383375597957635
+    second: Comedy_Pop-up_Sprite_Sheet_2
+  - first:
+      213: -1216985726270641796
+    second: Comedy_Pop-up_Sprite_Sheet_3
+  - first:
+      213: 1940712098148928055
+    second: Comedy_Pop-up_Sprite_Sheet_4
+  - first:
+      213: 6308918714932156882
+    second: Comedy_Pop-up_Sprite_Sheet_5
+  - first:
+      213: 1706186465502207322
+    second: Comedy_Pop-up_Sprite_Sheet_6
+  - first:
+      213: 6877567384772606686
+    second: Comedy_Pop-up_Sprite_Sheet_7
+  - first:
+      213: -8664624092515327546
+    second: Comedy_Pop-up_Sprite_Sheet_8
+  - first:
+      213: -1108544144537241678
+    second: Comedy_Pop-up_Sprite_Sheet_9
+  - first:
+      213: -5996513980075355024
+    second: Comedy_Pop-up_Sprite_Sheet_10
+  - first:
+      213: -6569532159513963553
+    second: Comedy_Pop-up_Sprite_Sheet_11
+  - first:
+      213: -8069674068764037529
+    second: Comedy_Pop-up_Sprite_Sheet_12
+  - first:
+      213: -2754230556664096570
+    second: Comedy_Pop-up_Sprite_Sheet_13
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 135
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Comedy_Pop-up_Sprite_Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 135
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ef11fcab098fbe30800000000000000
+      internalID: 4521483234142396390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Comedy_Pop-up_Sprite_Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 0
+        width: 135
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4909b501f21f1c10800000000000000
+      internalID: 2026359183732443468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Comedy_Pop-up_Sprite_Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 0
+        width: 135
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 302fda062930d3510800000000000000
+      internalID: 1530383375597957635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Comedy_Pop-up_Sprite_Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 0
+        width: 135
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c79eae80ee56c1fe0800000000000000
+      internalID: -1216985726270641796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Comedy_Pop-up_Sprite_Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 0
+        width: 135
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73a4875fe5bceea10800000000000000
+      internalID: 1940712098148928055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Comedy_Pop-up_Sprite_Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 675
+        y: 0
+        width: 135
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d958582528cd8750800000000000000
+      internalID: 6308918714932156882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Comedy_Pop-up_Sprite_Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 0
+        width: 135
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5d96d4fc879da710800000000000000
+      internalID: 1706186465502207322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Comedy_Pop-up_Sprite_Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 945
+        y: 0
+        width: 135
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: edafe28f817027f50800000000000000
+      internalID: 6877567384772606686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Comedy_Pop-up_Sprite_Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 0
+        width: 135
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c125558b4211c780800000000000000
+      internalID: -8664624092515327546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Comedy_Pop-up_Sprite_Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 1215
+        y: 0
+        width: 135
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b7b40f49f8ad90f0800000000000000
+      internalID: -1108544144537241678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Comedy_Pop-up_Sprite_Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 1350
+        y: 0
+        width: 135
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 074d1f65e4a18cca0800000000000000
+      internalID: -5996513980075355024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Comedy_Pop-up_Sprite_Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 1485
+        y: 0
+        width: 135
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd35aabce4554d4a0800000000000000
+      internalID: -6569532159513963553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Comedy_Pop-up_Sprite_Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 1620
+        y: 0
+        width: 135
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76e632e7032c20090800000000000000
+      internalID: -8069674068764037529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Comedy_Pop-up_Sprite_Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 1755
+        y: 0
+        width: 135
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c89288b6e107c9d0800000000000000
+      internalID: -2754230556664096570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 9ffdc6bca009e1045a3a5080d2676e8a
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Comedy_Pop-up_Sprite_Sheet_0: 4521483234142396390
+      Comedy_Pop-up_Sprite_Sheet_1: 2026359183732443468
+      Comedy_Pop-up_Sprite_Sheet_10: -5996513980075355024
+      Comedy_Pop-up_Sprite_Sheet_11: -6569532159513963553
+      Comedy_Pop-up_Sprite_Sheet_12: -8069674068764037529
+      Comedy_Pop-up_Sprite_Sheet_13: -2754230556664096570
+      Comedy_Pop-up_Sprite_Sheet_2: 1530383375597957635
+      Comedy_Pop-up_Sprite_Sheet_3: -1216985726270641796
+      Comedy_Pop-up_Sprite_Sheet_4: 1940712098148928055
+      Comedy_Pop-up_Sprite_Sheet_5: 6308918714932156882
+      Comedy_Pop-up_Sprite_Sheet_6: 1706186465502207322
+      Comedy_Pop-up_Sprite_Sheet_7: 6877567384772606686
+      Comedy_Pop-up_Sprite_Sheet_8: -8664624092515327546
+      Comedy_Pop-up_Sprite_Sheet_9: -1108544144537241678
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

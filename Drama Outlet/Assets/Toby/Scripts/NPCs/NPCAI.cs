@@ -12,14 +12,18 @@ public partial class NPCAI : MonoBehaviour
     [SerializeField] private List<GameObject> productSpots;
 
     [SerializeField] private GameObject target;
+
+    [SerializeField] private float targetDistance;
     
     [SerializeField] private GameObject checkOut;
+
+    [SerializeField] private GameObject leave;
 
     public enum States {Moving, Looking, Buying, Leaving, Stopped}
 
     public States state = States.Moving;
     
-    public NPC thisNPC;
+    [SerializeField] public NPC thisNPC;
 
     public bool isSpecial;
 
@@ -31,7 +35,7 @@ public partial class NPCAI : MonoBehaviour
 
     private bool reachedEndOfPath = false;
 
-    [SerializeField] private Rigidbody rb;
+    [SerializeField] private Rigidbody2D rb;
 
     [SerializeField] Seeker seeker;
 
@@ -178,6 +182,7 @@ public partial class NPCAI : MonoBehaviour
                 productSpots.Add(product.gameObject);
             }
         }
+        productSpots.Shuffle();
     }
     void Start()
     {
@@ -187,7 +192,10 @@ public partial class NPCAI : MonoBehaviour
 
     public void WindowShopper()
     {
-
+        if (state == States.Moving)
+        {
+            target = productSpots[0];
+        }
     }
     public void AverageShopper()
     {
@@ -200,6 +208,7 @@ public partial class NPCAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        targetDistance = Vector2.Distance(this.transform.position, target.transform.position);
         if (thisNPC.personality == NPC.Personality.Window_Shopper)
         {
             WindowShopper();
@@ -208,6 +217,16 @@ public partial class NPCAI : MonoBehaviour
         {
             AverageShopper();
         }
+        else if (thisNPC.personality == NPC.Personality.Big_Spender)
+        {
+            BigSpender();   
+        }
 
+    }
+    
+    [ContextMenu("Shuffle")]
+    public void Shuffle()
+    {
+        productSpots.Shuffle();
     }
 }
