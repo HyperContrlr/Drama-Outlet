@@ -14,10 +14,14 @@ public partial class NPCAI : MonoBehaviour
     [SerializeField] private GameObject target;
 
     [SerializeField] private float targetDistance;
+
+    [SerializeField] private float stopDistance;
     
     [SerializeField] private GameObject checkOut;
 
     [SerializeField] private GameObject leave;
+
+    [SerializeField] private float slerp;
 
     public enum States {Moving, Looking, Buying, Leaving, Stopped}
 
@@ -182,19 +186,53 @@ public partial class NPCAI : MonoBehaviour
                 productSpots.Add(product.gameObject);
             }
         }
-        productSpots.Shuffle();
+        productSpots = productSpots.Shuffle().ToList();
+    }
+
+    public void SetTarget()
+    {
+        if (productSpots.Count == 0)
+        {
+            target = checkOut;
+        }
+        else
+        {
+            target = productSpots[0];
+            productSpots.Remove(target);
+        }
     }
     void Start()
     {
         RandomizeNPCValues();
         FindProductSpots();
+        SetTarget();
     }
-
     public void WindowShopper()
     {
         if (state == States.Moving)
         {
-            target = productSpots[0];
+            if (customerPath == null)
+            {
+                return;
+            }
+        }
+
+        if (currentWaypoint >= customerPath.vectorPath.Count)
+        {
+            reachedEndOfPath = true;
+            return;
+        }
+        else
+        {
+            reachedEndOfPath = false;
+        }
+
+        Vector2 direction = (customerPath.vectorPath[currentWaypoint] - transform.position).normalized;
+        rb.linearVelocity = Vector2.Lerp(rb.linearVelocity, direction * thisNPC.speed, Time.deltaTime * slerp);
+        float distance = Vector2.Distance(rb.position, customerPath.vectorPath[currentWaypoint]);
+        if (distance < stopDistance)
+        {
+            currentWaypoint++;
         }
     }
     public void AverageShopper()
@@ -221,12 +259,11 @@ public partial class NPCAI : MonoBehaviour
         {
             BigSpender();   
         }
-
     }
     
     [ContextMenu("Shuffle")]
     public void Shuffle()
     {
-        productSpots.Shuffle();
+        productSpots = productSpots.Shuffle().ToList();
     }
 }
