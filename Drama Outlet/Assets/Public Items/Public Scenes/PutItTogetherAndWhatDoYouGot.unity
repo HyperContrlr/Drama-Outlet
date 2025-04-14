@@ -1770,6 +1770,7 @@ GameObject:
   - component: {fileID: 1108551723}
   - component: {fileID: 1108551722}
   - component: {fileID: 1108551721}
+  - component: {fileID: 1108551725}
   m_Layer: 3
   m_Name: floor
   m_TagString: floor
@@ -1812,7 +1813,7 @@ PolygonCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1108551719}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
@@ -3411,6 +3412,44 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!19719996 &1108551725
+TilemapCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1108551719}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0
+  m_UseDelaunayMesh: 0
 --- !u!1 &1193737733
 GameObject:
   m_ObjectHideFlags: 0
@@ -4555,7 +4594,8 @@ MonoBehaviour:
   floorLayerMask:
     serializedVersion: 2
     m_Bits: 8
-  offset: {x: -0.6, y: 0.2, z: 10}
+  offset: {x: 0, y: 0, z: 10}
+  flipped: 0
 --- !u!4 &1905135050
 Transform:
   m_ObjectHideFlags: 0
@@ -5077,10 +5117,10 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 2031929845}
+  - {fileID: 1905135050}
   - {fileID: 1707351132}
   - {fileID: 186246954}
   - {fileID: 557445467}
   - {fileID: 1366264052}
   - {fileID: 1068939325}
   - {fileID: 365627607}
-  - {fileID: 1905135050}

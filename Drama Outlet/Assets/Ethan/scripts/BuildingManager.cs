@@ -27,7 +27,7 @@ public class BuildingManager : MonoBehaviour
         hasValidPlacement = true;
         isFixed = true;
         nObstacles = 0;
-        //this.gameObject.GetComponent<PolygonCollider2D>().enabled = false;
+        this.gameObject.GetComponent<PolygonCollider2D>().enabled = false;
 
         InitializeMaterials();
     }
@@ -65,7 +65,7 @@ public class BuildingManager : MonoBehaviour
             hasValidPlacement = true;
             this.gameObject.GetComponentInChildren<SpriteRenderer>().material = validPlaceMat;
         }
-        else
+        else if (mode == PlacementMode.Invalid)
         {
             hasValidPlacement = false;
             this.gameObject.GetComponentInChildren<SpriteRenderer>().material = invalidPlaceMat;
