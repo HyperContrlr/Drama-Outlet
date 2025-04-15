@@ -50,7 +50,6 @@ public partial class NPCAI : MonoBehaviour
     public void RandomizeNPCValues()
     {
         thisNPC.speed = Statics.randyTheRandom.Next((int)thisNPC.speedMax, (int)thisNPC.speedMin);
-        thisNPC.amountToBuy = Statics.randyTheRandom.Next((int)thisNPC.maxAmountToBuy, (int)thisNPC.minAmountToBuy);
         if (isSpecial == false)
         {
             thisNPC.personality = (NPCAI.NPC.Personality)Random.Range(0, 3);
@@ -189,16 +188,34 @@ public partial class NPCAI : MonoBehaviour
         productSpots = productSpots.Shuffle().ToList();
     }
 
+    public void Buy()
+    {
+        thisNPC.amountToBuy = Statics.randyTheRandom.Next((int)thisNPC.maxAmountToBuy, (int)thisNPC.minAmountToBuy);
+        target.GetComponent<ProductManager>().Buy(thisNPC.amountToBuy);
+        if (target.GetComponent<ProductManager>().thisProduct.currentStock < thisNPC.amountToBuy)
+        {
+            //Play an angry graphic
+            Statics.approvalValue -= 5;
+        }
+        thisNPC.hasBoughtSomething = true;
+    }
     public void SetTarget()
     {
-        if (productSpots.Count == 0)
+        if (productSpots.Count == 0 && thisNPC.hasBoughtSomething == true)
         {
             target = checkOut;
+            state = States.Buying;
+        }
+        else if (productSpots.Count == 0 && thisNPC.hasBoughtSomething == false)
+        {
+            target = leave;
+            state = States.Leaving;
         }
         else
         {
             target = productSpots[0];
             productSpots.Remove(target);
+            state = States.Moving;
         }
     }
     void Start()
@@ -215,24 +232,52 @@ public partial class NPCAI : MonoBehaviour
             {
                 return;
             }
+            if (currentWaypoint >= customerPath.vectorPath.Count)
+            {
+                reachedEndOfPath = true;
+                return;
+            }
+            else
+            {
+                reachedEndOfPath = false;
+            }
+
+            Vector2 direction = (customerPath.vectorPath[currentWaypoint] - transform.position).normalized;
+            rb.linearVelocity = Vector2.Lerp(rb.linearVelocity, direction * thisNPC.speed, Time.deltaTime * slerp);
+            float distance = Vector2.Distance(rb.position, customerPath.vectorPath[currentWaypoint]);
+            if (distance < stopDistance)
+            {
+                currentWaypoint++;
+            }
+            if (distance >= stopDistance)
+            {
+                waitTime = waitTimeBase;
+                state = States.Looking;
+            }
+        }
+        
+        if (state == States.Looking)
+        {
+            rb.linearVelocity = Vector2.zero;
+            //Play an idle animation
+            waitTime -= Time.deltaTime;
+            if (waitTime <= 0)
+            {
+                int chance = Statics.RollADice(4);
+                if (chance >= 18)
+                {
+                    Buy();
+                }
+                else
+                {
+                    SetTarget();
+                }
+            }
         }
 
-        if (currentWaypoint >= customerPath.vectorPath.Count)
+        if (state == States.Buying)
         {
-            reachedEndOfPath = true;
-            return;
-        }
-        else
-        {
-            reachedEndOfPath = false;
-        }
 
-        Vector2 direction = (customerPath.vectorPath[currentWaypoint] - transform.position).normalized;
-        rb.linearVelocity = Vector2.Lerp(rb.linearVelocity, direction * thisNPC.speed, Time.deltaTime * slerp);
-        float distance = Vector2.Distance(rb.position, customerPath.vectorPath[currentWaypoint]);
-        if (distance < stopDistance)
-        {
-            currentWaypoint++;
         }
     }
     public void AverageShopper()
