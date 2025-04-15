@@ -7,8 +7,6 @@ public class Statics : MonoBehaviour
 
     public static float money;
 
-    public static float phantomMoney;
-
     public static float day;
 
     public static float starsGained;
