@@ -19,10 +19,6 @@ public class ProductManager : MonoBehaviour
             thisProduct.stockBought = itemsBought;
             thisProduct.currentStock -= itemsBought;
         }
-        for (float i = 0; i >= thisProduct.stockBought; i++)
-        {
-            Statics.phantomMoney += thisProduct.sellPricePerStock;
-        }
         thisProduct.stockBought = 0;
         if (thisProduct.currentStock == 0)
         {
