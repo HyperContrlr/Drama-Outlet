@@ -39,11 +39,9 @@ public class BuildingManager : MonoBehaviour
 
         nObstacles++;
         SetPlacementMode(PlacementMode.Invalid);
+
     }
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        
-    }
+
 
 #if UNITY_EDITOR
     private void OnValidate()
