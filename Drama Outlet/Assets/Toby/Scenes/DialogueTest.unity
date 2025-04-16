@@ -1203,7 +1203,7 @@ Transform:
   m_GameObject: {fileID: 305568598}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.21, y: -2.113, z: 0}
+  m_LocalPosition: {x: -0.58, y: -2.16, z: 0}
   m_LocalScale: {x: 0.36628413, y: 0.36362654, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4330,7 +4330,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1897497766}
-  - component: {fileID: 1897497765}
+  - component: {fileID: 1897497767}
   m_Layer: 0
   m_Name: A*
   m_TagString: Untagged
@@ -4338,7 +4338,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1897497765
+--- !u!4 &1897497766
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1897497764}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 10.95, y: -0.51, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1897497767
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4352,7 +4367,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   data:
-    dataString: UEsDBBQAAAgIAACAn+soikPkpgIAAHEFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFlVE1z4jAM/SuMz9uM8wnZ2y6ltIe2TOlOL1xMohAPwc7YToF2+O8rOwnJsjd4T3qSnuR8Ey50DZmRaql4/ixzID8n5EnLAxjFMwuSH5Mh6hFObCfFmn9BH/zBc1PaIOZi3pjhEnHfpvU6v8SussEhRbQRvJDqsMh3MJfaaMQLVmlASklj0wVC3xNyshlB4lF/SuMU6TMCQUq9IIzTJEDgy0bMPBpFaRpFkwtCGQgDahDwvSSMkyDu0u+oR5MwDCmNo7BTQME4SaIoSRIn0YisYocacjvmSMn3ehX704UKNKGLoo7NZFVx3Y1AzLl2Hq3rEhRYk3LO0BLXIPVsAyXwXWnsYOPs16LQYFFrmGLne67Q21aW/Jat4Qem9217n6xqbKGk9aDVfP6PvvMdXSh5eOzL+tSWMCXP9m/snDFtRvsYw/dD574z6ciqPdtW8FGCeJFLJRuRI2lUY1MbDcH98Pc62byEbD/gbas3YFMPrlPPT9NZ7E9jvzOfekkc0oBG3fpwpdOQRmkcxeHkcnHGnOYVP2xdcNQC60q6XaR2XFC4tyccxl2b7nxG1Hb4R8M7243PsiMeuNIGqc4BYVvfykbZULJwftpJGzOXSoCDu4FqEKwy5xXKmNvt3nCjsjfMA7MvsCvecf3Duklx8BBP6Q21ksfrInUpj8+gy9fGVFzA0LQlXtCnuRSiPb6xJ33aulEFy0Zpu4bn/54dSROaxPEsS3GJEaOzOyiKFAIEp+F2BkVA3F1ygXOyatU22tmDWxODuMAbtIr2wzRZKla7h5Ardlzyr4McWc5FIdeZAhCvrcK1cVBYBN9svsg5GrQGY7hw+ybfG1LJbA/55iq0cZMuTkaxzaCyITX/lMYiGzJ3n5wNsfD1zlcKPjkcbfFe7EIufwFQSwMEFAAACAgAAICf616qUKtsAAAAeAAAAAkAJABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQGrVipLLSrOzM9TslIw0TPSMzTXUVBKL0osyCgGihiCOKWZKSB2tJKlmYGZqalFsqW5qaFJooGFbmpammWqEVDQ3DjJIjXNSCkWqL6ksiDVLzE3FaInILEkIy0zLyUzL13PvSgzxR1ktFJsLQBQSwECLQAUAAAICAAAgJ/rKIpD5KYCAABxBQAACwAkAAAAAAAAAAAAAAAAAAAAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwECLQAUAAAICAAAgJ/rXqpQq2wAAAB4AAAACQAkAAAAAAAAAAAAAADzAgAAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsFBgAAAAACAAIAuAAAAKoDAAAAAA==
+    dataString: UEsDBBQAAAgIAACAn+uBK3QKagIAACIFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFlVMFymzAQ/RWPzk0GHBLHvbXEcXpI4onbyYWLkBajsZAYScR2Mv73rgQYSscHi31vd98+LXwRoWwNzGmzNoI/aw7k+4z4M/k2G8AnONKdVlvxCT3nXXBXehINnDfqhMZ47NOsrsAZwX6onfTkCIONEoU21YrvINXWWQwXVFpAyGjnsxWGvmbkiH9XS59ywtN84U+feFpGszMeGSgHZqDG18nd8mZxP7/pMnp+S28Uk7SqgXvto6z4+rbj+2OgKpysY0UBZVpKYTthxJ3qMHhKa9vgWEjgguKgQU107fuXIHal87LH6a9FYcF10gw9PQiDjrV1yU/d2lhRu2/1fVDZ+E53SZDV1nz+D76KA1wYXT31bePIt3ClYPs3emLUupHN4/DDoDwOLh2o3NNcwnsJ6kWvjW4UR9CZxqc2FuYPw+NlsrQEth/irdRJsKkH26PJHfkZzmH4YypFlQcjkzawlToYHlYBDF7OLxQcFsV2JTDqVfyx8JvuxhvVAY/CWIdQN6Xy8nLdGE8lq+CZn6ZxqTYKQrgTXYOi0p02WMZNb3CCjdpOkEfq352ueYf1r8QkJYQHfhRNoI0+XC7LlvrwDLZ8bZwUCgbRHnhBn1KtVLtgY0/6tG1jCspGabtG8H9XiyyimN3Pl7e3ScLj+2V8Vcx5kudJvsBfnrCIhN0TCuekctMK7ezBW1NDcYV71n9SZmtD67Ds3NDDWnxWemS5UIXeMgOgXtsKF+FgsAm+mHzFBRq0BeeECvdNvjIiNdsDzy6FsjDp6ugMzYYqGanFh3Y+kpE0fEMy4sOXXd4Y+BBw8M37Ymdy/gtQSwMEFAAACAgAAICf65dlcjBsAAAAeAAAAAkAJABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQGrVipLLSrOzM9TslIw0TPSMzTXUVBKL0osyCgGihiCOKWZKSB2tJK5gWGyhZGlqamJSYqhhaWhbppRiklSkkmSORAmmSQbKMUC1ZdUFqT6JeamQvQEJJZkpGXmpWTmpeu5F2WmuIOMVoqtBQBQSwECLQAUAAAICAAAgJ/rgSt0CmoCAAAiBQAACwAkAAAAAAAAAAAAAAAAAAAAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwECLQAUAAAICAAAgJ/rl2VyMGwAAAB4AAAACQAkAAAAAAAAAAAAAAC3AgAAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsFBgAAAAACAAIAuAAAAG4DAAAAAA==
     upgradeData: 
     file_cachedStartup: {fileID: 0}
     data_cachedStartup: 
@@ -4393,21 +4408,6 @@ MonoBehaviour:
     pivotPointRoot: {fileID: 0}
     spreadOutCount: 1
   showGraphs: 1
---- !u!4 &1897497766
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1897497764}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.95, y: -0.51, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1957265109
 GameObject:
   m_ObjectHideFlags: 0
@@ -4712,6 +4712,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 467929017}
     m_Modifications:
+    - target: {fileID: 290242419827849424, guid: 8f8a4f53035dece458b48f2a5d8c66c1, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 1c30c5cefe0282a4e9c6446b5a3d98fc, type: 2}
+    - target: {fileID: 290242419827849424, guid: 8f8a4f53035dece458b48f2a5d8c66c1, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 5437542383873407800, guid: 1c30c5cefe0282a4e9c6446b5a3d98fc, type: 2}
+    - target: {fileID: 290242419827849424, guid: 8f8a4f53035dece458b48f2a5d8c66c1, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1222853702551879756, guid: 8f8a4f53035dece458b48f2a5d8c66c1, type: 3}
       propertyPath: m_Name
       value: UI Stuff
@@ -4724,6 +4736,18 @@ PrefabInstance:
       propertyPath: canvas
       value: 
       objectReference: {fileID: 467929016}
+    - target: {fileID: 2228796389835649647, guid: 8f8a4f53035dece458b48f2a5d8c66c1, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 1c30c5cefe0282a4e9c6446b5a3d98fc, type: 2}
+    - target: {fileID: 2228796389835649647, guid: 8f8a4f53035dece458b48f2a5d8c66c1, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 5437542383873407800, guid: 1c30c5cefe0282a4e9c6446b5a3d98fc, type: 2}
+    - target: {fileID: 2228796389835649647, guid: 8f8a4f53035dece458b48f2a5d8c66c1, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2276442596844023755, guid: 8f8a4f53035dece458b48f2a5d8c66c1, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

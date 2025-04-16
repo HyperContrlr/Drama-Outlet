@@ -48,7 +48,7 @@ public partial class NPCAI : MonoBehaviour
 
     public void OnDrawGizmos()
     {
-        Gizmos.DrawWireSphere(customerPath.vectorPath[currentWaypoint], 1);
+        Gizmos.DrawWireSphere(customerPath.vectorPath[currentWaypoint + 1], 1);
     }
     void UpdatePath()
     {
@@ -80,7 +80,7 @@ public partial class NPCAI : MonoBehaviour
         }
         if (thisNPC.personality == NPC.Personality.Window_Shopper)
         {
-            waitTimeBase = 10;
+            waitTimeBase = 8;
             if (Statics.approvalValue >= 20)
             {
                 int chance = Statics.RollADice(1);
@@ -129,7 +129,7 @@ public partial class NPCAI : MonoBehaviour
         
         if (thisNPC.personality == NPC.Personality.Average_Shopper)
         {
-            waitTimeBase = 15;
+            waitTimeBase = 10;
             if (Statics.approvalValue >= 50)
             {
                 int chance = Statics.RollADice(1);
@@ -160,7 +160,7 @@ public partial class NPCAI : MonoBehaviour
 
         if (thisNPC.personality == NPC.Personality.Big_Spender)
         {
-            waitTime = 5;
+            waitTimeBase = 5;
             if (Statics.approvalValue > 0)
             {
                 int chance = Statics.RollADice(1);
@@ -213,7 +213,7 @@ public partial class NPCAI : MonoBehaviour
             thisNPC.amountToBuy = thisNPC.maxAmountToBuy;
         }
         target.GetComponent<ProductManager>().Buy(thisNPC.amountToBuy);
-        for (float i = 0; i >= target.GetComponent<ProductManager>().thisProduct.stockBought; i++)
+        for (float i = 0; i <= target.GetComponent<ProductManager>().thisProduct.stockBought; i++)
         {
             thisNPC.money += target.GetComponent<ProductManager>().thisProduct.sellPricePerStock;
         }
@@ -227,6 +227,7 @@ public partial class NPCAI : MonoBehaviour
     }
     public void SetTarget()
     {
+        waitTime = waitTimeBase;
         if (productSpots.Count == 0 && thisNPC.hasBoughtSomething == true)
         {
             target = checkOut;
@@ -260,6 +261,7 @@ public partial class NPCAI : MonoBehaviour
             {
                 return;
             }
+
             if (currentWaypoint >= customerPath.vectorPath.Count)
             {
                 reachedEndOfPath = true;
@@ -269,18 +271,19 @@ public partial class NPCAI : MonoBehaviour
             {
                 reachedEndOfPath = false;
             }
+            Debug.Log($"Direction: {customerPath.vectorPath[currentWaypoint + 1]}");
+            Vector3 direction = (customerPath.vectorPath[currentWaypoint + 1] - transform.position).normalized;
+            rb.linearVelocity = Vector3.Lerp(rb.linearVelocity, direction * thisNPC.speed, slerp);
+            float distance = Vector3.Distance(rb.position, customerPath.vectorPath[currentWaypoint + 1]);
+            if (distance < nextWaypointDistance)
+            {
+                currentWaypoint++;
+            }
 
             if (targetDistance <= stopDistance)
             {
-                waitTime = waitTimeBase;
-                state = States.Looking;
-            }
-            Vector2 direction = (customerPath.vectorPath[currentWaypoint] - transform.position).normalized;
-            rb.linearVelocity = Vector2.Lerp(rb.linearVelocity, direction * thisNPC.speed, 1);
-            float distance = Vector2.Distance(rb.position, customerPath.vectorPath[currentWaypoint]);
-            if (distance > nextWaypointDistance)
-            {
-                currentWaypoint++;
+               waitTime = waitTimeBase;
+               state = States.Looking;
             }
         }
 
@@ -296,6 +299,7 @@ public partial class NPCAI : MonoBehaviour
                 {
                     Buy();
                 }
+                target.GetComponent<ProductManager>().thisProduct.stockBought = 0;
                 SetTarget();
             }
         }
@@ -306,6 +310,7 @@ public partial class NPCAI : MonoBehaviour
             {
                 return;
             }
+
             if (currentWaypoint >= customerPath.vectorPath.Count)
             {
                 reachedEndOfPath = true;
@@ -315,26 +320,25 @@ public partial class NPCAI : MonoBehaviour
             {
                 reachedEndOfPath = false;
             }
-
-            Vector2 direction = (customerPath.vectorPath[currentWaypoint] - transform.position).normalized;
-            rb.linearVelocity = Vector2.Lerp(rb.linearVelocity, direction * thisNPC.speed, 1);
-            float distance = Vector2.Distance(rb.position, customerPath.vectorPath[currentWaypoint]);
-            if (distance > nextWaypointDistance)
+            Debug.Log($"Direction: {customerPath.vectorPath[currentWaypoint + 1]}");
+            Vector3 direction = (customerPath.vectorPath[currentWaypoint + 1] - transform.position).normalized;
+            rb.linearVelocity = Vector3.Lerp(rb.linearVelocity, direction * thisNPC.speed, slerp);
+            float distance = Vector3.Distance(rb.position, customerPath.vectorPath[currentWaypoint + 1]);
+            if (distance < nextWaypointDistance)
             {
                 currentWaypoint++;
             }
-            //if (targetDistance <= stopDistance)
-            //{
-            //    rb.linearVelocity = Vector2.zero;
-            //    waitTime -= Time.deltaTime;
-            //    if (waitTime <= 0)
-            //    {
-            //        Statics.money += thisNPC.money;
-            //        target = leave;
-            //        state = States.Leaving;
-            //        //Maybe play a nice gaining money animation
-            //    }
-            //}
+            if (targetDistance <= stopDistance)
+            {
+                rb.linearVelocity = Vector2.zero;
+                if (waitTime <= 0)
+                {
+                    Statics.money += thisNPC.money;
+                    target = leave;
+                    state = States.Leaving;
+                   //Maybe play a nice gaining money animation
+               }
+            }
         }
 
         if (state == States.Leaving)     
@@ -343,6 +347,7 @@ public partial class NPCAI : MonoBehaviour
             {
                 return;
             }
+
             if (currentWaypoint >= customerPath.vectorPath.Count)
             {
                 reachedEndOfPath = true;
@@ -352,22 +357,22 @@ public partial class NPCAI : MonoBehaviour
             {
                 reachedEndOfPath = false;
             }
-
-            Vector2 direction = (customerPath.vectorPath[currentWaypoint] - transform.position).normalized;
-            rb.linearVelocity = Vector2.Lerp(rb.linearVelocity, direction * thisNPC.speed, 1);
-            float distance = Vector2.Distance(rb.position, customerPath.vectorPath[currentWaypoint]);
-            if (distance > nextWaypointDistance)
+            Debug.Log($"Direction: {customerPath.vectorPath[currentWaypoint + 1]}");
+            Vector3 direction = (customerPath.vectorPath[currentWaypoint + 1] - transform.position).normalized;
+            rb.linearVelocity = Vector3.Lerp(rb.linearVelocity, direction * thisNPC.speed, slerp);
+            float distance = Vector3.Distance(rb.position, customerPath.vectorPath[currentWaypoint + 1]);
+            if (distance < nextWaypointDistance)
             {
                 currentWaypoint++;
             }
-            //if (targetDistance <= stopDistance)
-            //{
-            //    if (thisNPC.unhappy == false)
-            //    {
-            //        Statics.approvalValue += 5;
-            //    }
-            //    Destroy(this);
-            //}
+            if (targetDistance <= stopDistance)
+            {
+                if (thisNPC.unhappy == false)
+                {
+                    Statics.approvalValue += 5;
+                }
+                Destroy(this.gameObject);
+            }
         }
     }
     public void AverageShopper()
@@ -378,6 +383,7 @@ public partial class NPCAI : MonoBehaviour
             {
                 return;
             }
+
             if (currentWaypoint >= customerPath.vectorPath.Count)
             {
                 reachedEndOfPath = true;
@@ -387,19 +393,19 @@ public partial class NPCAI : MonoBehaviour
             {
                 reachedEndOfPath = false;
             }
-
-            Vector2 direction = (customerPath.vectorPath[currentWaypoint] - transform.position).normalized;
-            rb.linearVelocity = Vector2.Lerp(rb.linearVelocity, direction * thisNPC.speed, 1);
-            float distance = Vector2.Distance(rb.position, customerPath.vectorPath[currentWaypoint]);
-            if (distance > nextWaypointDistance)
+            Debug.Log($"Direction: {customerPath.vectorPath[currentWaypoint + 1]}");
+            Vector3 direction = (customerPath.vectorPath[currentWaypoint + 1] - transform.position).normalized;
+            rb.linearVelocity = Vector3.Lerp(rb.linearVelocity, direction * thisNPC.speed, slerp);
+            float distance = Vector3.Distance(rb.position, customerPath.vectorPath[currentWaypoint + 1]);
+            if (distance < nextWaypointDistance)
             {
                 currentWaypoint++;
             }
-            //if (targetDistance <= stopDistance)
-            //{
-            //    waitTime = waitTimeBase;
-            //    state = States.Looking;
-            //}
+            if (targetDistance <= stopDistance)
+            {
+                waitTime = waitTimeBase;
+                state = States.Looking;
+            }
         }
 
         if (state == States.Looking)
@@ -417,6 +423,7 @@ public partial class NPCAI : MonoBehaviour
                 else
                 {
                     Buy();
+                    target.GetComponent<ProductManager>().thisProduct.stockBought = 0;
                     SetTarget();
                 }
             }
@@ -428,6 +435,7 @@ public partial class NPCAI : MonoBehaviour
             {
                 return;
             }
+
             if (currentWaypoint >= customerPath.vectorPath.Count)
             {
                 reachedEndOfPath = true;
@@ -437,125 +445,11 @@ public partial class NPCAI : MonoBehaviour
             {
                 reachedEndOfPath = false;
             }
-
-            Vector2 direction = (customerPath.vectorPath[currentWaypoint] - transform.position).normalized;
-            rb.linearVelocity = Vector2.Lerp(rb.linearVelocity, direction * thisNPC.speed, 1);
-            float distance = Vector2.Distance(rb.position, customerPath.vectorPath[currentWaypoint]);
-            if (distance > nextWaypointDistance)
-            {
-                currentWaypoint++;
-            }
-            //if (targetDistance <= stopDistance)
-            //{
-            //    rb.linearVelocity = Vector2.zero;
-            //    waitTime -= Time.deltaTime;
-            //    if (waitTime <= 0)
-            //    {
-            //        Statics.money += thisNPC.money;
-            //        target = leave;
-            //        state = States.Leaving;
-            //        //Maybe play a nice gaining money animation
-            //    }
-            //}
-        }
-
-        if (state == States.Leaving)
-        {
-            if (customerPath == null)
-            {
-                return;
-            }
-            if (currentWaypoint >= customerPath.vectorPath.Count)
-            {
-                reachedEndOfPath = true;
-                return;
-            }
-            else
-            {
-                reachedEndOfPath = false;
-            }
-
-            Vector2 direction = (customerPath.vectorPath[currentWaypoint] - transform.position).normalized;
-            rb.linearVelocity = Vector2.Lerp(rb.linearVelocity, direction * thisNPC.speed, 1);
-            float distance = Vector2.Distance(rb.position, customerPath.vectorPath[currentWaypoint]);
-            if (distance > nextWaypointDistance)
-            {
-                currentWaypoint++;
-            }
-            //if (targetDistance <= stopDistance)
-            //{
-            //    if (thisNPC.unhappy == false)
-            //    {
-            //        Statics.approvalValue += 5;
-            //    }
-            //    Destroy(this);
-            //}
-        }
-    }
-    public void BigSpender()
-    {
-        if (state == States.Moving)
-        {
-            if (customerPath == null)
-            {
-                return;
-            }
-            if (currentWaypoint >= customerPath.vectorPath.Count)
-            {
-                reachedEndOfPath = true;
-                return;
-            }
-            else
-            {
-                reachedEndOfPath = false;
-            }
-
-            Vector2 direction = (customerPath.vectorPath[currentWaypoint] - transform.position).normalized;
-            rb.linearVelocity = Vector2.Lerp(rb.linearVelocity, direction * thisNPC.speed, 1);
-            float distance = Vector2.Distance(rb.position, customerPath.vectorPath[currentWaypoint]);
-            if (distance > nextWaypointDistance)
-            {
-                currentWaypoint++;
-            }
-            //if (targetDistance <= stopDistance)
-            //{
-            //    waitTime = waitTimeBase;
-            //    state = States.Looking;
-            //}
-        }
-
-        if (state == States.Looking)
-        {
-            rb.linearVelocity = Vector2.zero;
-            //Play an idle animation
-            waitTime -= Time.deltaTime;
-            if (waitTime <= 0)
-            {
-                Buy();
-                SetTarget();
-            }
-        }
-
-        if (state == States.Buying)
-        {
-            if (customerPath == null)
-            {
-                return;
-            }
-            if (currentWaypoint >= customerPath.vectorPath.Count)
-            {
-                reachedEndOfPath = true;
-                return;
-            }
-            else
-            {
-                reachedEndOfPath = false;
-            }
-
-            Vector2 direction = (customerPath.vectorPath[currentWaypoint] - transform.position).normalized;
-            rb.linearVelocity = Vector2.Lerp(rb.linearVelocity, direction * thisNPC.speed, 1);
-            float distance = Vector2.Distance(rb.position, customerPath.vectorPath[currentWaypoint]);
-            if (distance > nextWaypointDistance)
+            Debug.Log($"Direction: {customerPath.vectorPath[currentWaypoint + 1]}");
+            Vector3 direction = (customerPath.vectorPath[currentWaypoint + 1] - transform.position).normalized;
+            rb.linearVelocity = Vector3.Lerp(rb.linearVelocity, direction * thisNPC.speed, slerp);
+            float distance = Vector3.Distance(rb.position, customerPath.vectorPath[currentWaypoint + 1]);
+            if (distance < nextWaypointDistance)
             {
                 currentWaypoint++;
             }
@@ -579,6 +473,7 @@ public partial class NPCAI : MonoBehaviour
             {
                 return;
             }
+
             if (currentWaypoint >= customerPath.vectorPath.Count)
             {
                 reachedEndOfPath = true;
@@ -588,28 +483,146 @@ public partial class NPCAI : MonoBehaviour
             {
                 reachedEndOfPath = false;
             }
-
-            Vector2 direction = (customerPath.vectorPath[currentWaypoint] - transform.position).normalized;
-            rb.linearVelocity = Vector2.Lerp(rb.linearVelocity, direction * thisNPC.speed, 1);
-            float distance = Vector2.Distance(rb.position, customerPath.vectorPath[currentWaypoint]);
+            Debug.Log($"Direction: {customerPath.vectorPath[currentWaypoint + 1]}");
+            Vector3 direction = (customerPath.vectorPath[currentWaypoint + 1] - transform.position).normalized;
+            rb.linearVelocity = Vector3.Lerp(rb.linearVelocity, direction * thisNPC.speed, slerp);
+            float distance = Vector3.Distance(rb.position, customerPath.vectorPath[currentWaypoint + 1]);
             if (distance < nextWaypointDistance)
             {
                 currentWaypoint++;
             }
-            //if (targetDistance <= stopDistance)
-            //{
-            //    if (thisNPC.unhappy == false)
-            //    {
-            //        Statics.approvalValue += 5;
-            //    }
-            //    Destroy(this);
-            //}
+            if (targetDistance <= stopDistance)
+            {
+                if (thisNPC.unhappy == false)
+                {
+                    Statics.approvalValue += 5;
+                }
+                Destroy(this.gameObject);
+            }
+        }
+    }
+    public void BigSpender()
+    {
+        if (state == States.Moving)
+        {
+            if (customerPath == null)
+            {
+                return;
+            }
+
+            if (currentWaypoint >= customerPath.vectorPath.Count)
+            {
+                reachedEndOfPath = true;
+                return;
+            }
+            else
+            {
+                reachedEndOfPath = false;
+            }
+            Debug.Log($"Direction: {customerPath.vectorPath[currentWaypoint + 1]}");
+            Vector3 direction = (customerPath.vectorPath[currentWaypoint + 1] - transform.position).normalized;
+            rb.linearVelocity = Vector3.Lerp(rb.linearVelocity, direction * thisNPC.speed, slerp);
+            float distance = Vector3.Distance(rb.position, customerPath.vectorPath[currentWaypoint + 1]);
+            if (distance < nextWaypointDistance)
+            {
+                currentWaypoint++;
+            }
+            if (targetDistance <= stopDistance)
+            {
+                waitTime = waitTimeBase;
+                state = States.Looking;
+            }
+        }
+
+        if (state == States.Looking)
+        {
+            rb.linearVelocity = Vector2.zero;
+            //Play an idle animation
+            waitTime -= Time.deltaTime;
+            if (waitTime <= 0)
+            {
+                Buy();
+                target.GetComponent<ProductManager>().thisProduct.stockBought = 0;
+                SetTarget();
+            }
+        }
+
+        if (state == States.Buying)
+        {
+            if (customerPath == null)
+            {
+                return;
+            }
+
+            if (currentWaypoint >= customerPath.vectorPath.Count)
+            {
+                reachedEndOfPath = true;
+                return;
+            }
+            else
+            {
+                reachedEndOfPath = false;
+            }
+            Debug.Log($"Direction: {customerPath.vectorPath[currentWaypoint + 1]}");
+            Vector3 direction = (customerPath.vectorPath[currentWaypoint + 1] - transform.position).normalized;
+            rb.linearVelocity = Vector3.Lerp(rb.linearVelocity, direction * thisNPC.speed, slerp);
+            float distance = Vector3.Distance(rb.position, customerPath.vectorPath[currentWaypoint + 1]);
+            if (distance < nextWaypointDistance)
+            {
+                currentWaypoint++;
+            }
+            if (targetDistance <= stopDistance)
+            {
+                rb.linearVelocity = Vector2.zero;
+                waitTime -= Time.deltaTime;
+                if (waitTime <= 0)
+                {
+                    Statics.money += thisNPC.money;
+                    target = leave;
+                    state = States.Leaving;
+                    //Maybe play a nice gaining money animation
+                }
+            }
+        }
+
+        if (state == States.Leaving)
+        {
+            if (customerPath == null)
+            {
+                return;
+            }
+
+            if (currentWaypoint >= customerPath.vectorPath.Count)
+            {
+                reachedEndOfPath = true;
+                return;
+            }
+            else
+            {
+                reachedEndOfPath = false;
+            }
+            Debug.Log($"Direction: {customerPath.vectorPath[currentWaypoint + 1]}");
+            Vector3 direction = (customerPath.vectorPath[currentWaypoint + 1] - transform.position).normalized;
+            rb.linearVelocity = Vector3.Lerp(rb.linearVelocity, direction * thisNPC.speed, slerp);
+            float distance = Vector3.Distance(rb.position, customerPath.vectorPath[currentWaypoint + 1]);
+            if (distance < nextWaypointDistance)
+            {
+                currentWaypoint++;
+            }
+            if (targetDistance <= stopDistance)
+            {
+                if (thisNPC.unhappy == false)
+                {
+                    Statics.approvalValue += 5;
+                }
+                Destroy(this.gameObject);
+            }
         }
     }
     // Update is called once per frame
     void Update()
     {
-        //targetDistance = Vector2.Distance(this.transform.position, target.transform.position);
+        targetDistance = Vector2.Distance(this.transform.position, target.transform.position);
         UpdatePath();
         if (thisNPC.personality == NPC.Personality.Window_Shopper)
         {

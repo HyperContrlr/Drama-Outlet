@@ -8,9 +8,9 @@ public class ProductManager : MonoBehaviour
     {
         if (itemsBought > thisProduct.currentStock)
         {
-            for (float i = thisProduct.currentStock; i == 0; i--)
+            for (float i = thisProduct.currentStock; i > 0; i--)
             {
-                thisProduct.stockBought += i;
+                thisProduct.stockBought += 1;
             }
             thisProduct.currentStock = 0;
         }
@@ -19,7 +19,6 @@ public class ProductManager : MonoBehaviour
             thisProduct.stockBought = itemsBought;
             thisProduct.currentStock -= itemsBought;
         }
-        thisProduct.stockBought = 0;
         if (thisProduct.currentStock == 0)
         {
             //alert player to lack of stock
