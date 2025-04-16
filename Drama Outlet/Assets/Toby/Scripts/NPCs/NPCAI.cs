@@ -80,7 +80,7 @@ public partial class NPCAI : MonoBehaviour
         }
         if (thisNPC.personality == NPC.Personality.Window_Shopper)
         {
-            waitTimeBase = 8;
+            waitTimeBase = 5;
             if (Statics.approvalValue >= 20)
             {
                 int chance = Statics.RollADice(1);
@@ -129,7 +129,7 @@ public partial class NPCAI : MonoBehaviour
         
         if (thisNPC.personality == NPC.Personality.Average_Shopper)
         {
-            waitTimeBase = 10;
+            waitTimeBase = 8;
             if (Statics.approvalValue >= 50)
             {
                 int chance = Statics.RollADice(1);
@@ -160,7 +160,7 @@ public partial class NPCAI : MonoBehaviour
 
         if (thisNPC.personality == NPC.Personality.Big_Spender)
         {
-            waitTimeBase = 5;
+            waitTimeBase = 8;
             if (Statics.approvalValue > 0)
             {
                 int chance = Statics.RollADice(1);
@@ -248,6 +248,8 @@ public partial class NPCAI : MonoBehaviour
     }
     void Start()
     {
+        checkOut = GameObject.FindGameObjectWithTag("Check Out");
+        leave = GameObject.FindGameObjectWithTag("Exit");
         RandomizeNPCValues();
         FindProductSpots();
         SetTarget();

@@ -12,7 +12,9 @@ public class products : ScriptableObject
 
     [SerializeField] public float price;
 
-    [SerializeField] public float restockPrice;
+    [SerializeField] public float objectSellPrice;
+
+    [SerializeField] public float restockPricePerStockMissing;
 
     [SerializeField] public float sellPricePerStock;
 

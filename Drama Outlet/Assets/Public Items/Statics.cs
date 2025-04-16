@@ -36,6 +36,10 @@ public class Statics : MonoBehaviour
         FindFirstObjectByType<ComedyDialogue>().ReadDescription(rejectionText3);
     }
 
+    public static void ReadStatement(string statement)
+    {
+        FindFirstObjectByType<ComedyDialogue>().ReadDescription(statement);
+    }
     public static int FlipACoin()
     {
         int result = Random.Range(0, 2);
