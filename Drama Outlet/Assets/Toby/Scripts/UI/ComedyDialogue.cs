@@ -8,7 +8,7 @@ public class ComedyDialogue : MonoBehaviour
 {
     [SerializeField] private TMPro.TMP_Text dialogueText;
 
-    [SerializeField] private Animator comedyAnimator;
+    [SerializeField] public Animator comedyAnimator;
 
     [SerializeField] private GameObject dialogueBox;
 
@@ -27,6 +27,7 @@ public class ComedyDialogue : MonoBehaviour
     }
     public void ReadDescription(string description)
     {
+        comedyAnimator.SetBool("IsOpen", true);
         dialogueBox.SetActive(true);
         sentences.Clear();
 

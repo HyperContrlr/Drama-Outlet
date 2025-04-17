@@ -1,16 +1,53 @@
+using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem.LowLevel;
 
 public class ProductManager : MonoBehaviour
 {
+    [SerializeField] private RSIButtons buttons;
     [SerializeField] public products thisProduct;
     [SerializeField] public float costToRestock;
-    [SerializeField] public TextMeshProUGUI restockText;
+    [SerializeField] public bool isSelected;
+    [SerializeField] private List<ProductManager> productManagers;
+    public void OnMouseDown()
+    {
+        if (isSelected == true)
+        {
+            isSelected = false;
+            buttons.managerSelected = false;
+        }
+        else
+        {
+            isSelected = true;
+        }
+        foreach (var pro in productManagers)
+        {
+            pro.isSelected = false;
+        }
+    }
+    public void OnEnable()
+    {
+        buttons = FindFirstObjectByType<RSIButtons>();
+        productManagers = FindObjectsByType<ProductManager>(FindObjectsSortMode.None).ToList();
+        productManagers.Remove(this);
+    }
     public void Update()
     {
+        if (isSelected == true)
+        {
+            this.gameObject.GetComponent<SpriteRenderer>().color = Color.yellow;
+            buttons.currentProductManager = this;
+            buttons.managerSelected = true;
+        }
+        else
+        {
+            this.gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+        }
+        productManagers = FindObjectsByType<ProductManager>(FindObjectsSortMode.None).ToList();
+        productManagers.Remove(this);
         costToRestock = thisProduct.restockPricePerStockMissing * (thisProduct.maxStock - thisProduct.currentStock);
-        restockText.text = costToRestock.ToString();
     }
     public void Buy(float itemsBought)
     {
@@ -37,7 +74,8 @@ public class ProductManager : MonoBehaviour
     {
         if (Statics.money < costToRestock)
         {
-            Statics.ReadStatement("Sorry we don't have enough money to restock that.");
+            Statics.ReadStatement("Sorry we can't Restock that.");
+            Invoke("CloseAnimator", 3);
         }
         else
         {
@@ -55,5 +93,9 @@ public class ProductManager : MonoBehaviour
     {
         Statics.money += thisProduct.objectSellPrice;
         Destroy(this.gameObject);
+    }
+    public void CloseAnimator()
+    {
+        FindFirstObjectByType<ComedyDialogue>().EndDialogue();
     }
 }

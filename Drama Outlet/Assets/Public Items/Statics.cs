@@ -5,7 +5,11 @@ public class Statics : MonoBehaviour
 {
     public static System.Random randyTheRandom = new();
 
-    public static float money;
+    public enum Time { Morning, Evening, Night, Theivery }
+    
+    public static Time timeOfDay;
+
+    public static float money = 2000;
 
     public static float day;
 
@@ -21,6 +25,8 @@ public class Statics : MonoBehaviour
 
     public static string rejectionText3 = "<size=30>Hmm seems we can't buy this one yet. " +
         "Mayhap we need another license or higher ratings?";
+
+    public static string rejectionText4 = "Seems like we don't have enough to Restock those";
     public static void ReadRejection1()
     {
         FindFirstObjectByType<ComedyDialogue>().ReadDescription(rejectionText1);
@@ -36,6 +42,12 @@ public class Statics : MonoBehaviour
         FindFirstObjectByType<ComedyDialogue>().ReadDescription(rejectionText3);
     }
 
+    public static void ReadRejection4()
+    {
+        FindFirstObjectByType<ComedyDialogue>().ReadDescription(rejectionText4);
+    }
+
+
     public static void ReadStatement(string statement)
     {
         FindFirstObjectByType<ComedyDialogue>().ReadDescription(statement);
@@ -45,7 +57,6 @@ public class Statics : MonoBehaviour
         int result = Random.Range(0, 2);
         return result;
     }
-
     public static int RollADice(int whichDice)
     {
         int result = 0;
