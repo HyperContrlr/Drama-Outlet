@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2262807939263566087, guid: 0631c7998d94df54a95a3be03931593e, type: 3}
+  m_Sprite: {fileID: 7610595526635573332, guid: ce6b59b06fc0bc840b01751ad45b7661, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -101,7 +101,7 @@ GameObject:
   - component: {fileID: 8560378119238136880}
   - component: {fileID: 4805795449073789866}
   m_Layer: 6
-  m_Name: Sofa Prefab
+  m_Name: Checkout Prefab
   m_TagString: furniture
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -141,7 +141,7 @@ MonoBehaviour:
   meshComps: []
   hasValidPlacement: 0
   isFixed: 0
-  boxThang: {x: 0.2, y: 0.2}
+  boxThang: {x: 0.2, y: 0.4}
 --- !u!60 &1802675151995472748
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -188,10 +188,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.30109802, y: 0.0291121}
-      - {x: -0.0034365589, y: 0.161112}
-      - {x: -0.31125984, y: 0.031346872}
-      - {x: -0.00764216, y: -0.1347882}
+    - - {x: 0.46871516, y: -0.030199677}
+      - {x: 0.16574903, y: 0.0855162}
+      - {x: -0.47285312, y: -0.19251403}
+      - {x: -0.16036098, y: -0.3450641}
   m_UseDelaunayMesh: 0
 --- !u!114 &8560378119238136880
 MonoBehaviour:

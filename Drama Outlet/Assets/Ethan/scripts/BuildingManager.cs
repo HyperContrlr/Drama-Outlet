@@ -21,6 +21,8 @@ public class BuildingManager : MonoBehaviour
     [HideInInspector] public bool hasValidPlacement;
     [HideInInspector] public bool isFixed;
 
+    public Vector2 boxThang;
+
     private int nObstacles;
     private void Awake()
     {
