@@ -40,8 +40,8 @@ public class buildingPlacer : MonoBehaviour
 
             if (Input.GetMouseButtonDown(1))
             {
-                Destroy(toBuild);
                 toBuild = null;
+                Destroy(toBuild);
                 buildingPrefab = null;
                 return;
             }
