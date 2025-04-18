@@ -5,7 +5,7 @@ public class Statics : MonoBehaviour
 {
     public static System.Random randyTheRandom = new();
 
-    public enum Time { Morning, Evening, Night, Theivery }
+    public enum Time { EarlyMorning, Morning, Afternoon, Evening, Night, Midnight}
     
     public static Time timeOfDay;
 

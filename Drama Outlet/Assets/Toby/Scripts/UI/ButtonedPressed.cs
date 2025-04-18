@@ -8,20 +8,52 @@ public class ButtonedPressed : MonoBehaviour, IPointerDownHandler, IPointerUpHan
     public bool sell;
     public float timer;
     public bool heldDown;
-
+    public KeyCode buttonKey;
     public void Update()
     {
         if (heldDown == true)
         {
             timer += Time.deltaTime;
         }
-        if (restock == true && timer >= 5 && buttons.managerSelected == false)
+        if (restock == true && timer >= 3 && buttons.managerSelected == false)
         {
             RestockAll();
+            timer = 0;
         }
-        if (sell == true && timer >= 5 && buttons.managerSelected == false)
+        if (sell == true && timer >= 3 && buttons.managerSelected == false)
         {
             SellAll();
+        }
+        BKey();
+    }
+
+    public void BKey()
+    {
+        if (Input.GetKey(buttonKey) == true)
+        {
+            heldDown = true;
+            if (restock == true && buttons.managerSelected == true)
+            {
+                buttons.currentProductManager.Restock();
+            }
+            else if (sell == true && buttons.managerSelected == true)
+            {
+                buttons.currentProductManager.Sell();
+            }
+            else if (restock == true && timer >= 3 && buttons.managerSelected == false)
+            {
+                RestockAll();
+                timer = 0;
+            }
+            else if (sell == true && timer >= 3 && buttons.managerSelected == false)
+            {
+                SellAll();
+            }
+        }
+        else if (Input.GetKeyUp(buttonKey)) 
+        {
+            heldDown = false;
+            timer = 0;
         }
     }
     public void RestockAll()
