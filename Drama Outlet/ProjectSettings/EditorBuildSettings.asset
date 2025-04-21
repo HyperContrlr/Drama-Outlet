@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Public Items/Public Scenes/Title Screen.unity
+    guid: 764e61201b87a12438c03011ec172280
+  - enabled: 1
     path: Assets/Public Items/Public Scenes/PutItTogetherAndWhatDoYouGot.unity
     guid: 5e9cc81ea417d4d44906846cfad40ef3
   m_configObjects:
