@@ -12,7 +12,8 @@ public partial class NPCAI
         public enum Personality {Window_Shopper, Big_Spender, Average_Shopper, Celebrity, Karen, Thief}
         public Personality personality;
         public Preference preference;
-        //public Animator animator;
+        public SpriteRenderer spriteRenderer;
+        public Animator animator;
         public float amountToBuy;
         public float maxAmountToBuy;
         public float minAmountToBuy;

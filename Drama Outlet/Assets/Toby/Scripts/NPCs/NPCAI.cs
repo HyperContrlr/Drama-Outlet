@@ -482,6 +482,22 @@ public partial class NPCAI : MonoBehaviour
         {
             BigSpender();   
         }
+        if (rb.linearVelocity.x > 0 || rb.linearVelocity.x < 0)
+        {
+            thisNPC.animator.SetBool("IsMoving", true);
+        }
+        else if (rb.linearVelocity == Vector2.zero)
+        {
+            thisNPC.animator.SetBool("IsMoving", false);
+        }
+        if (rb.linearVelocity.x > 0)
+        {
+            thisNPC.spriteRenderer.flipX = false;
+        }
+        else if (rb.linearVelocity.x < 0)
+        {
+            thisNPC.spriteRenderer.flipX = true;
+        }
     }
     
     [ContextMenu("Shuffle")]
