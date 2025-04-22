@@ -13,14 +13,68 @@ public class NPCSpawner : MonoBehaviour
     void Start()
     {
         NPCsToSpawn = NPCsToSpawn.Shuffle().ToList();
+        spawnTimer = spawnStop;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        SetSpawnStop();
+        spawnTimer -= Time.deltaTime;
+        if (spawnTimer <= 0)
+        {
+            int result = Statics.RollADice(4);
+            if (Statics.approvalValue >= 40)
+            {
+                if (result >= 12)
+                {
+                    SpawnCustomer();
+                }
+            }
+            else if (Statics.approvalValue >= 80)
+            {
+                if (result >= 8)
+                {
+                    SpawnCustomer();
+                }
+            }
+            else if (Statics.approvalValue >= 100)
+            {
+                if (result >= 5)
+                {
+                    SpawnCustomer();
+                }
+            }
+            else if (Statics.approvalValue < 40)
+            {
+                if (result >= 15)
+                {
+                    SpawnCustomer();
+                }
+            }
+            spawnTimer = spawnStop;
+        }
     }
 
+    public void SetSpawnStop()
+    {
+        if (Statics.approvalValue >= 20 && Statics.approvalValue < 40)
+        {
+            spawnStop = 20;
+        }
+        else if (Statics.approvalValue >= 40 && Statics.approvalValue < 60)
+        {
+            spawnStop = 15;
+        }
+        else if (Statics.approvalValue >= 60 && Statics.approvalValue < 80)
+        {
+            spawnStop = 10;
+        }
+        else if (Statics.approvalValue >= 100)
+        {
+            spawnStop = 5;
+        }
+    }
     public void SpawnCustomer()
     {
         if (Statics.approvalValue < 80)
@@ -38,4 +92,5 @@ public class NPCSpawner : MonoBehaviour
             Instantiate(selectedNPC, spawner.transform);
         }
     }
+
 }

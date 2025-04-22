@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: 9c722adffaa881e42893d8138e5ff601
+guid: 8fff5af2dd82052488b0faee752ebbba
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1405412019078351896
-    second: drama_outlet_title_card_0
+      213: 6582816316679986384
+    second: Derek_walking_right_sprite_0
+  - first:
+      213: -8829770046223994742
+    second: Derek_walking_right_sprite_1
+  - first:
+      213: -2596531296109276890
+    second: Derek_walking_right_sprite_2
+  - first:
+      213: 3287361771166913259
+    second: Derek_walking_right_sprite_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +46,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -51,7 +60,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 256
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -75,7 +84,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -85,19 +94,6 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
     buildTarget: Standalone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -126,23 +122,89 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: drama_outlet_title_card_0
+      name: Derek_walking_right_sprite_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1200
-        height: 655
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 12
+        y: 4
+        width: 39
+        height: 54
+      alignment: 9
+      pivot: {x: 0.4861866, y: 0.3104502}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8e335cff639fe7ce0800000000000000
-      internalID: -1405412019078351896
+      spriteID: 0dc1b51109cda5b50800000000000000
+      internalID: 6582816316679986384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Derek_walking_right_sprite_1
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 4
+        width: 39
+        height: 54
+      alignment: 9
+      pivot: {x: 0.48158187, y: 0.29382303}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a803f62dcea567580800000000000000
+      internalID: -8829770046223994742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Derek_walking_right_sprite_2
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 4
+        width: 40
+        height: 54
+      alignment: 9
+      pivot: {x: 0.5179573, y: 0.29714847}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 621d83f0b8447fbd0800000000000000
+      internalID: -2596531296109276890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Derek_walking_right_sprite_3
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 4
+        width: 39
+        height: 54
+      alignment: 9
+      pivot: {x: 0.48158187, y: 0.29382303}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be25a9a1d1e0f9d20800000000000000
+      internalID: 3287361771166913259
       vertices: []
       indices: 
       edges: []
@@ -151,7 +213,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 625c0c103e46a89428558beacaa5c650
     internalID: 0
     vertices: []
     indices: 
@@ -161,7 +223,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      drama_outlet_title_card_0: -1405412019078351896
+      Derek_walking_right_sprite_0: 6582816316679986384
+      Derek_walking_right_sprite_1: -8829770046223994742
+      Derek_walking_right_sprite_2: -2596531296109276890
+      Derek_walking_right_sprite_3: 3287361771166913259
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

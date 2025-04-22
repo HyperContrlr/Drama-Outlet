@@ -29,7 +29,7 @@ public class RSIButtons : MonoBehaviour
         if (managerSelected == false)
         {
             Defaults();
-            restockPrice.text = string.Format($"Restock All [${restockPrices}] R");
+            restockPrice.text = string.Format($"[{restockPrices}]");
             sellPrice.text = string.Format($"Sell All [${sellPrices}] S");
         }
     }

@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: 9c722adffaa881e42893d8138e5ff601
+guid: daa318e7f6a89b8429177a2a43839ffc
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1405412019078351896
-    second: drama_outlet_title_card_0
+      213: 4702939657326952307
+    second: derek_idle_right_sprite_0
+  - first:
+      213: -8261786037072523634
+    second: derek_idle_right_sprite_1
+  - first:
+      213: 5710653071765113152
+    second: derek_idle_right_sprite_2
+  - first:
+      213: -1676971581617124097
+    second: derek_idle_right_sprite_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +46,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -51,7 +60,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 256
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -75,7 +84,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -85,19 +94,6 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
     buildTarget: Standalone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -126,23 +122,89 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: drama_outlet_title_card_0
+      name: derek_idle_right_sprite_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1200
-        height: 655
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.4376417, y: 0.35827667}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8e335cff639fe7ce0800000000000000
-      internalID: -1405412019078351896
+      spriteID: 37ff11b73b2344140800000000000000
+      internalID: 4702939657326952307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: derek_idle_right_sprite_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.45181394, y: 0.34410432}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8e82024f5d385d80800000000000000
+      internalID: -8261786037072523634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: derek_idle_right_sprite_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.49716568, y: 0.35260773}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0498d0266b0504f40800000000000000
+      internalID: 5710653071765113152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: derek_idle_right_sprite_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5453515, y: 0.36677998}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffc49434b333ab8e0800000000000000
+      internalID: -1676971581617124097
       vertices: []
       indices: 
       edges: []
@@ -151,7 +213,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 281f0ae630c2ef74fb0649cbaa0937ab
     internalID: 0
     vertices: []
     indices: 
@@ -161,7 +223,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      drama_outlet_title_card_0: -1405412019078351896
+      derek_idle_right_sprite_0: 4702939657326952307
+      derek_idle_right_sprite_1: -8261786037072523634
+      derek_idle_right_sprite_2: 5710653071765113152
+      derek_idle_right_sprite_3: -1676971581617124097
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
