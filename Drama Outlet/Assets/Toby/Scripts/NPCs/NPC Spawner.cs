@@ -9,7 +9,7 @@ public class NPCSpawner : MonoBehaviour
     [SerializeField] private GameObject spawner;
     [SerializeField] private int amountToSpawn;
     [SerializeField] private float spawnTimer;
-    [SerializeField] private float spawnStop;
+    [SerializeField] public float spawnStop;
     void Start()
     {
         NPCsToSpawn = NPCsToSpawn.Shuffle().ToList();
@@ -19,7 +19,6 @@ public class NPCSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        SetSpawnStop();
         spawnTimer -= Time.deltaTime;
         if (spawnTimer <= 0)
         {
@@ -53,26 +52,6 @@ public class NPCSpawner : MonoBehaviour
                 }
             }
             spawnTimer = spawnStop;
-        }
-    }
-
-    public void SetSpawnStop()
-    {
-        if (Statics.approvalValue >= 20 && Statics.approvalValue < 40)
-        {
-            spawnStop = 20;
-        }
-        else if (Statics.approvalValue >= 40 && Statics.approvalValue < 60)
-        {
-            spawnStop = 15;
-        }
-        else if (Statics.approvalValue >= 60 && Statics.approvalValue < 80)
-        {
-            spawnStop = 10;
-        }
-        else if (Statics.approvalValue >= 100)
-        {
-            spawnStop = 5;
         }
     }
     public void SpawnCustomer()

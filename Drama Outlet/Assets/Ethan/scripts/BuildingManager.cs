@@ -24,6 +24,8 @@ public class BuildingManager : MonoBehaviour
     public Vector2 boxThang;
 
     private int nObstacles;
+
+    public buildings thisBuilding;
     private void Awake()
     {
         hasValidPlacement = true;

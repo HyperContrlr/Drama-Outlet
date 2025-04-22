@@ -17,10 +17,10 @@ MonoBehaviour:
   description: 
   price: 0
   objectSellPrice: 40
-  restockPricePerStockMissing: 10
+  restockPricePerStockMissing: 7
   sellPricePerStock: 20
   stockBought: 0
-  maxStock: 25
-  currentStock: 25
+  maxStock: 50
+  currentStock: 46
   isLocked: 1
   objectPrefab: {fileID: 0}

@@ -315,6 +315,7 @@ public partial class NPCAI : MonoBehaviour
         if (targetDistance <= stopDistance)
         {
             rb.linearVelocity = Vector2.zero;
+            waitTime -= Time.deltaTime;
             if (waitTime <= 0)
             {
                 Statics.money += thisNPC.money;

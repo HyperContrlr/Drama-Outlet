@@ -143,6 +143,7 @@ MonoBehaviour:
   hasValidPlacement: 0
   isFixed: 0
   boxThang: {x: 0.2, y: 0.2}
+  thisBuilding: {fileID: 11400000, guid: 2a593f1dc2270264ea81de92c0f0b6cf, type: 2}
 --- !u!60 &1802675151995472748
 PolygonCollider2D:
   m_ObjectHideFlags: 0

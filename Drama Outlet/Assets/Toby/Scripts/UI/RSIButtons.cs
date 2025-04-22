@@ -24,13 +24,13 @@ public class RSIButtons : MonoBehaviour
         if (managerSelected == true)
         {
             restockPrice.text = string.Format($"Restock [${currentProductManager.costToRestock}] R");
-            sellPrice.text = string.Format($"Sell [${currentProductManager.thisProduct.objectSellPrice}] S");
+            sellPrice.text = string.Format($"[${currentProductManager.thisProduct.objectSellPrice}]");
         }
         if (managerSelected == false)
         {
             Defaults();
             restockPrice.text = string.Format($"[{restockPrices}]");
-            sellPrice.text = string.Format($"Sell All [${sellPrices}] S");
+            sellPrice.text = string.Format($"[${sellPrices}]");
         }
     }
 
