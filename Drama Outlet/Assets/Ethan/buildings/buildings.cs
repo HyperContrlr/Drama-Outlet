@@ -12,6 +12,12 @@ public class buildings : ScriptableObject
 
     [SerializeField] public bool isLocked = true;
 
+    [SerializeField] public bool hasProduct;
+
+    [SerializeField] public products soldProduct;
+
+    [SerializeField] public float ratingBonus;
+
     [SerializeField] public float ratingUnlock;
 
     [SerializeField] public GameObject objectPrefab;

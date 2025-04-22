@@ -36,11 +36,10 @@ public class License : ScriptableObject
     [SerializeField] public List<License> licensesUnlocked;
     public void Unlock()
     {
-        foreach (products product in productsUnlocked)
+        thisImage.sprite = collectedSprite;
+        foreach (var product in productsUnlocked)
         {
-            isBought = true;
-            thisImage.sprite = collectedSprite;
-            product.isLocked = true;
+            product.isLocked = false;
         }
         if (licensesUnlocked.Count != 0)
         {
