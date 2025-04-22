@@ -133,6 +133,7 @@ public class buildingPlacer : MonoBehaviour
     }
     public void SetBuildingPrefab(GameObject prefab)
     {
+        //buildingPrefab.GetComponent<InventoryItem>().stock--;
         buildingPrefab = prefab;
         PrepareBuilding();
     }
