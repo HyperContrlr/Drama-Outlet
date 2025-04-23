@@ -23,6 +23,10 @@ public class TimeOfDay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKey(KeyCode.Space) == true && startedDay == true)
+        {
+            pressedDown = true;
+        }
         if (Input.GetKeyDown(KeyCode.Space) == true && Statics.timeOfDay == Statics.Time.EarlyMorning)
         {
             startedDay = true;
@@ -35,10 +39,6 @@ public class TimeOfDay : MonoBehaviour
             closeUpShop = true;
         }
 
-        if (Input.GetKey(KeyCode.Space) == true && startedDay == true)
-        {
-            //pressedDown = true;
-        }
        
         if (startedDay == true)
         {
