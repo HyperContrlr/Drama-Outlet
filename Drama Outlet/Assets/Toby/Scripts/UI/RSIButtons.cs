@@ -13,6 +13,7 @@ public class RSIButtons : MonoBehaviour
     [SerializeField] private List<ProductManager> productManagers;
     [SerializeField] private float restockPrices;
     [SerializeField] private float sellPrices;
+    [SerializeField] private ButtonedPressed button;
     private float timer;
 
     public void OnEnable()
@@ -23,7 +24,7 @@ public class RSIButtons : MonoBehaviour
     {
         if (managerSelected == true)
         {
-            restockPrice.text = string.Format($"[${currentProductManager.costToRestock}] R");
+            restockPrice.text = string.Format($"[{currentProductManager.costToRestock}]");
             sellPrice.text = string.Format($"[${currentProductManager.thisProduct.objectSellPrice}]");
         }
         if (managerSelected == false)
@@ -47,12 +48,12 @@ public class RSIButtons : MonoBehaviour
     }
     public void RestockAll()
     {
-        if (restockPrices > Statics.money)
+        if (restockPrices > Statics.money && button.timer < 3)
         {
             Statics.ReadStatement("Sorry we can't Restock All now.");
             Invoke("CloseAnimator", 3);
         }
-        else
+        else if (restockPrices <= Statics.money && button.timer >= 3)
         {
             foreach (ProductManager pro in productManagers)
             {
@@ -73,12 +74,26 @@ public class RSIButtons : MonoBehaviour
     }
     public void Restock()
     {
-        currentProductManager.Restock();
-        managerSelected = false;
+        if (managerSelected == true)
+        {
+            currentProductManager.Restock();
+            managerSelected = false;
+        }
+        else
+        {
+            return;
+        }
     }
     public void Sell()
     {
-        currentProductManager.Sell();
-        managerSelected = false;
+        if (managerSelected == true)
+        {
+            currentProductManager.Sell();
+            managerSelected = false;
+        }
+        else
+        {
+            return;
+        }
     }
 }

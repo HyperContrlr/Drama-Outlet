@@ -32,8 +32,16 @@ public class Hover : MonoBehaviour
 
     public void OnHoverItem(buildings item)
     {
-        dialogueAnimator.SetBool("IsOpen", true);
-        dialogue.ReadDescription(item.description);
+        if (item.isLocked == true)
+        {
+            dialogueAnimator.SetBool("IsOpen", true);
+            Statics.ReadRejection3();
+        }
+        else
+        {
+            dialogueAnimator.SetBool("IsOpen", true);
+            dialogue.ReadDescription(item.description);
+        }
     }
 
     public void OnHoverGeneric(string description)

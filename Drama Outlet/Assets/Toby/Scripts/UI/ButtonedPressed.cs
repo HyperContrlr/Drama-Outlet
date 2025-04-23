@@ -18,7 +18,6 @@ public class ButtonedPressed : MonoBehaviour, IPointerDownHandler, IPointerUpHan
         if (restock == true && timer >= 3 && buttons.managerSelected == false)
         {
             RestockAll();
-            timer = 0;
         }
         if (sell == true && timer >= 3 && buttons.managerSelected == false)
         {
@@ -42,8 +41,9 @@ public class ButtonedPressed : MonoBehaviour, IPointerDownHandler, IPointerUpHan
             }
             else if (restock == true && timer >= 3 && buttons.managerSelected == false)
             {
-                RestockAll();
                 timer = 0;
+                heldDown = false;
+                RestockAll();
             }
             else if (sell == true && timer >= 3 && buttons.managerSelected == false)
             {

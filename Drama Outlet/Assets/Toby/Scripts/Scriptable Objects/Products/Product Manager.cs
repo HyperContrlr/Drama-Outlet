@@ -44,6 +44,7 @@ public class ProductManager : MonoBehaviour
         else
         {
             this.gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+            buttons.managerSelected = false;
         }
         productManagers = FindObjectsByType<ProductManager>(FindObjectsSortMode.None).ToList();
         productManagers.Remove(this);

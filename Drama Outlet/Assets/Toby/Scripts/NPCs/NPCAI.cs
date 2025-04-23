@@ -353,7 +353,11 @@ public partial class NPCAI : MonoBehaviour
         {
             if (thisNPC.unhappy == false)
             {
-                Statics.approvalValue += 5;
+                Statics.approvalValue += 2;
+            }
+            if (noProduct == false)
+            {
+                Statics.approvalValue -= 5;
             }
             Destroy(this.gameObject);
         }
@@ -373,7 +377,7 @@ public partial class NPCAI : MonoBehaviour
             if (waitTime <= 0)
             {
                 int chance = Statics.RollADice(4);
-                if (chance >= 18)
+                if (chance == 20)
                 {
                     Buy();
                 }
@@ -407,11 +411,11 @@ public partial class NPCAI : MonoBehaviour
             if (waitTime <= 0)
             {
                 int chance = Statics.RollADice(4);
-                if (chance >= 15)
+                if (chance <= 5)
                 {
                     SetTarget();
                 }
-                else
+                if (chance > 5)
                 {
                     Buy();
                     target.GetComponent<ProductManager>().thisProduct.stockBought = 0;
@@ -468,6 +472,7 @@ public partial class NPCAI : MonoBehaviour
         {
             target = leave;
             state = States.Leaving;
+            thisNPC.unhappy = true;
         }
         targetDistance = Vector2.Distance(this.transform.position, target.transform.position);
         UpdatePath();

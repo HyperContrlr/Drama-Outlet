@@ -37,7 +37,7 @@ public class TimeOfDay : MonoBehaviour
         if (startedDay == true)
         {
             timer += Time.deltaTime;
-            rotation += Time.deltaTime;
+            rotation -= Time.deltaTime;
             rotationPoint.transform.localRotation = Quaternion.Euler(0f, 0f, rotation);
         }
        

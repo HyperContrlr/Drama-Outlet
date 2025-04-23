@@ -5807,7 +5807,7 @@ MonoBehaviour:
   eveningWindow: 240
   npcSpawner: {fileID: 699475190584327811}
   rotationPoint: {fileID: 2308186390664305157}
-  rotation: 60
+  rotation: 90
   buildingsPlaced: []
 --- !u!1 &2681879194641348631
 GameObject:
@@ -10981,14 +10981,14 @@ MonoBehaviour:
   - {fileID: 725324838129086728, guid: ffe1721ae28f2aa41bbbe92ec3568670, type: 3}
   approvalMask: {fileID: 9105691025810732167}
   securityMaskSprites:
-  - {fileID: -5328571788434735620, guid: 42e606ebcbb5d3e49ad1e7d383ab3de2, type: 3}
-  - {fileID: 3980875628284427312, guid: c54c436bbdaacb941b1d3260c4d8c841, type: 3}
-  - {fileID: 5534757660660944489, guid: 2fc26f3db3921fc449c9236d6f24c687, type: 3}
-  - {fileID: 1362294402365020291, guid: 8ea4616d0634fe3498b7f270ee219769, type: 3}
-  - {fileID: -639831933912817743, guid: 5e1eb33f989d45a4ebe1415462a4e68e, type: 3}
-  - {fileID: -332005753091412766, guid: 5ff10ac1f9135904fb6f6e44bf06026e, type: 3}
-  - {fileID: 6292504521394313588, guid: 0917eab4bc0f5ec4a8152048f22e99ed, type: 3}
-  - {fileID: -7296868439152840630, guid: f87266729b67f0242914adcddbeaf1d8, type: 3}
+  - {fileID: 3318968779188322973, guid: 02b9a7b15c508bd42affb1c300bb517e, type: 3}
+  - {fileID: -3954504386300892163, guid: d8658d48d6c6da04baa5293d31cad490, type: 3}
+  - {fileID: 1357508017302701518, guid: 117019ed1df00ec4abf2acc9d022decc, type: 3}
+  - {fileID: 2775339956066345999, guid: 53e351ffd85bdf34685be6a976ba0e71, type: 3}
+  - {fileID: -1387415517554514169, guid: d5430e402f074f34898a338c6ccf698d, type: 3}
+  - {fileID: -5671118407277224393, guid: 7505305a8100e2340904d7aa512e2b3a, type: 3}
+  - {fileID: 6547947160079449787, guid: 638dce32956b45340a23a31d313c2f12, type: 3}
+  - {fileID: 725324838129086728, guid: ffe1721ae28f2aa41bbbe92ec3568670, type: 3}
   securityMask: {fileID: 7455803793376110551}
   starLockedLicense:
   - {fileID: 11400000, guid: 05f4a92f04ef8eb4a971aebe8777327b, type: 2}
@@ -12372,8 +12372,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 1
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 1c30c5cefe0282a4e9c6446b5a3d98fc, type: 2}
+  m_sharedMaterial: {fileID: 5437542383873407800, guid: 1c30c5cefe0282a4e9c6446b5a3d98fc, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
