@@ -24,7 +24,5 @@ public class products : ScriptableObject
 
     [SerializeField] public bool isLocked;
 
-    [SerializeField] public float currentStock;
-
     [SerializeField] public GameObject objectPrefab;
 }

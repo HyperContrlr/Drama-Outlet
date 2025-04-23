@@ -12,8 +12,9 @@ public class TimeOfDay : MonoBehaviour
     [SerializeField] private float eveningWindow;
     [SerializeField] private NPCSpawner npcSpawner;
     [SerializeField] private GameObject rotationPoint;
-    [SerializeField] private float rotation = 60;
+    [SerializeField] private float rotation;
     [SerializeField] private List<BuildingManager> buildingsPlaced;
+    [SerializeField] private bool pressedDown;
     void Start()
     {
         Statics.timeOfDay = Statics.Time.EarlyMorning;
@@ -33,11 +34,32 @@ public class TimeOfDay : MonoBehaviour
         {
             closeUpShop = true;
         }
+
+        if (Input.GetKey(KeyCode.Space) == true && startedDay == true)
+        {
+            //pressedDown = true;
+        }
        
         if (startedDay == true)
         {
-            timer += Time.deltaTime;
-            rotation -= Time.deltaTime;
+            if (pressedDown == true)
+            {
+                timer += Time.deltaTime * 2;
+                rotation -= Time.deltaTime * 2;
+                foreach (var npc in npcSpawner.spawnedNPCs)
+                {
+                    npc.thisNPC.speed = npc.thisNPC.speed * 2;
+                }
+            }
+            else
+            {
+                timer += Time.deltaTime;
+                rotation -= Time.deltaTime;
+                foreach (var npc in npcSpawner.spawnedNPCs)
+                {
+                    npc.thisNPC.speed = npc.thisNPC.storedSpeed;
+                }
+            }
             rotationPoint.transform.localRotation = Quaternion.Euler(0f, 0f, rotation);
         }
        

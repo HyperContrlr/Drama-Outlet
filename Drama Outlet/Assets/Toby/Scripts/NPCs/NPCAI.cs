@@ -47,6 +47,8 @@ public partial class NPCAI : MonoBehaviour
     [SerializeField] private float waitTime;
 
     private bool noProduct;
+
+    [SerializeField] private NPCSpawner npcSpawner;
     public void OnDrawGizmos()
     {
         Gizmos.DrawWireSphere(customerPath.vectorPath[currentWaypoint + 1], 1);
@@ -69,6 +71,7 @@ public partial class NPCAI : MonoBehaviour
     public void RandomizeNPCValues()
     {
         thisNPC.speed = Statics.randyTheRandom.Next((int)thisNPC.speedMin, (int)thisNPC.speedMax);
+        thisNPC.storedSpeed = thisNPC.speed;
         if (isSpecial == false)
         {
             thisNPC.personality = (NPCAI.NPC.Personality)Random.Range(0, 3);
@@ -218,7 +221,7 @@ public partial class NPCAI : MonoBehaviour
         {
             thisNPC.money += target.GetComponent<ProductManager>().thisProduct.sellPricePerStock;
         }
-        if (target.GetComponent<ProductManager>().thisProduct.currentStock < thisNPC.amountToBuy)
+        if (target.GetComponent<ProductManager>().stock < thisNPC.amountToBuy)
         {
             //Play an angry graphic
             Statics.approvalValue -= 5;
@@ -249,6 +252,7 @@ public partial class NPCAI : MonoBehaviour
     }
     void Start()
     {
+        npcSpawner = FindFirstObjectByType<NPCSpawner>();
         checkOut = GameObject.FindGameObjectWithTag("Check Out");
         leave = GameObject.FindGameObjectWithTag("Exit");
         RandomizeNPCValues();
@@ -256,7 +260,6 @@ public partial class NPCAI : MonoBehaviour
         SetTarget();
         state = States.Moving;
     }
-
     public void Moving()
     {
         if (customerPath == null)
@@ -359,6 +362,7 @@ public partial class NPCAI : MonoBehaviour
             {
                 Statics.approvalValue -= 5;
             }
+            npcSpawner.spawnedNPCs.Remove(this);
             Destroy(this.gameObject);
         }
     }

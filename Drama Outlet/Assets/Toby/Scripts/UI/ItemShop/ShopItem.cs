@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using TMPro;
+using UnityEngine.UI;
 public class ShopItem : MonoBehaviour
 {
     [SerializeField] private buildings thisItem;
@@ -11,6 +12,7 @@ public class ShopItem : MonoBehaviour
     [SerializeField] private GameObject buyButton;
     [SerializeField] private TextMeshProUGUI nameText;
     [SerializeField] private TextMeshProUGUI moneyText;
+    [SerializeField] private Image thisImage;
     public void ItemUnlock()
     {
         if (thisItem.hasProduct == false && Statics.approvalValue >= thisItem.ratingUnlock)
@@ -28,11 +30,13 @@ public class ShopItem : MonoBehaviour
 
         if (thisItem.isLocked == true)
         {
+            thisImage.color = Color.black;
             lockedOverlay.SetActive(true);
             buyButton.SetActive(false);
         }
         else
         {
+            thisImage.color = Color.white;
             lockedOverlay.SetActive(false);
             buyButton.SetActive(true);
         }

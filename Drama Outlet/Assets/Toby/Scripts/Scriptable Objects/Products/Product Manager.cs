@@ -11,6 +11,9 @@ public class ProductManager : MonoBehaviour
     [SerializeField] public float costToRestock;
     [SerializeField] public bool isSelected;
     [SerializeField] private List<ProductManager> productManagers;
+    [SerializeField] private List<Sprite> stockSprites;
+    [SerializeField] private SpriteRenderer currentSprite;
+    public float stock;
     public void OnMouseDown()
     {
         if (isSelected == true)
@@ -29,12 +32,40 @@ public class ProductManager : MonoBehaviour
     }
     public void OnEnable()
     {
+        stock = thisProduct.maxStock;
         buttons = FindFirstObjectByType<RSIButtons>();
         productManagers = FindObjectsByType<ProductManager>(FindObjectsSortMode.None).ToList();
         productManagers.Remove(this);
     }
+    public void SpriteSet()
+    {
+        float threeFourths = thisProduct.maxStock * 0.75f;
+        float oneHalf = thisProduct.maxStock * 0.5f;
+        float oneFourth = thisProduct.maxStock * 0.25f;
+        if (stock <= thisProduct.maxStock && stock > threeFourths)
+        {
+            currentSprite.sprite = stockSprites[0];
+        }
+        else if (stock <= threeFourths && stock > oneHalf)
+        {
+            currentSprite.sprite = stockSprites[1];
+        }
+        else if (stock <= oneHalf && stock > oneFourth)
+        {
+            currentSprite.sprite = stockSprites[2];
+        }
+        else if (stock <= oneFourth && stock > 0)
+        {
+            currentSprite.sprite = stockSprites[3];
+        }
+        else if (stock <= 0)
+        {
+            currentSprite.sprite = stockSprites[4];
+        }
+    }
     public void Update()
     {
+        SpriteSet();
         if (isSelected == true)
         {
             this.gameObject.GetComponent<SpriteRenderer>().color = Color.yellow;
@@ -44,28 +75,27 @@ public class ProductManager : MonoBehaviour
         else
         {
             this.gameObject.GetComponent<SpriteRenderer>().color = Color.white;
-            buttons.managerSelected = false;
         }
         productManagers = FindObjectsByType<ProductManager>(FindObjectsSortMode.None).ToList();
         productManagers.Remove(this);
-        costToRestock = thisProduct.restockPricePerStockMissing * (thisProduct.maxStock - thisProduct.currentStock);
+        costToRestock = thisProduct.restockPricePerStockMissing * (thisProduct.maxStock - stock);
     }
     public void Buy(float itemsBought)
     {
-        if (itemsBought > thisProduct.currentStock)
+        if (itemsBought > stock)
         {
-            for (float i = thisProduct.currentStock; i > 0; i--)
+            for (float i = stock; i > 0; i--)
             {
                 thisProduct.stockBought += 1;
             }
-            thisProduct.currentStock = 0;
+            stock = 0;
         }
         else
         {
             thisProduct.stockBought = itemsBought;
-            thisProduct.currentStock -= itemsBought;
+            stock -= itemsBought;
         }
-        if (thisProduct.currentStock == 0)
+        if (stock == 0)
         {
             //alert player to lack of stock
         }
@@ -81,7 +111,7 @@ public class ProductManager : MonoBehaviour
         else
         {
             Statics.money -= costToRestock;
-            thisProduct.currentStock = thisProduct.maxStock;
+            stock = thisProduct.maxStock;
         }
     }
 

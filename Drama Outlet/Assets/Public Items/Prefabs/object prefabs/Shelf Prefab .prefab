@@ -101,6 +101,7 @@ GameObject:
   - component: {fileID: 8560378119238136880}
   - component: {fileID: 4805795449073789866}
   - component: {fileID: 1460353222554014998}
+  - component: {fileID: 9089620290037923563}
   m_Layer: 6
   m_Name: 'Shelf Prefab '
   m_TagString: furniture
@@ -136,7 +137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8c647a1872adc547a92c4273aded72b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thisBuilding: {fileID: 0}
+  thisBuilding: {fileID: 11400000, guid: 7428f7fe30801f343bd5e3d4e52aab54, type: 2}
   validPlaceMat: {fileID: 2100000, guid: f541ade369807cf46912b4e9d9d715b2, type: 2}
   invalidPlaceMat: {fileID: 2100000, guid: b8c97d3de85ae6c4884d5afcccc4dcf7, type: 2}
   defaultPlaceMat: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
@@ -247,3 +248,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7fd23ea92bc92c4ea98f489aaa477d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &9089620290037923563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8951788326916691666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5d1ac104921f754097d10e77275da33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttons: {fileID: 0}
+  thisProduct: {fileID: 11400000, guid: 84118fd9120504e43af7e4355eaa380e, type: 2}
+  costToRestock: 0
+  isSelected: 0
+  productManagers: []
+  stockSprites:
+  - {fileID: 1469652794484300988, guid: d3bf1785e71204c41bbff6a1c88413b8, type: 3}
+  - {fileID: -4415707848639753045, guid: 23b9883ad00cff148acdfd1b44175ec7, type: 3}
+  - {fileID: 7601469918288276021, guid: 703463e47a42ff444b83447ff6195cd9, type: 3}
+  - {fileID: -8837016876076145117, guid: 11fb3e2470ccf2042b775f3e1b4d8954, type: 3}
+  - {fileID: 6316134243942825693, guid: 7fea60ccaec00d9428f5f1fdd7aa8d43, type: 3}
+  currentSprite: {fileID: 8896622028953527054}
+  stock: 0

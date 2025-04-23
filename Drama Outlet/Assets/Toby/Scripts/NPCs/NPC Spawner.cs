@@ -10,6 +10,8 @@ public class NPCSpawner : MonoBehaviour
     [SerializeField] private int amountToSpawn;
     [SerializeField] private float spawnTimer;
     [SerializeField] public float spawnStop;
+    [SerializeField] public List<NPCAI> spawnedNPCs;
+    [SerializeField] public GameObject spawnedNPC;
     void Start()
     {
         NPCsToSpawn = NPCsToSpawn.Shuffle().ToList();
@@ -68,7 +70,8 @@ public class NPCSpawner : MonoBehaviour
         {
             NPCsToSpawn = NPCsToSpawn.Shuffle().ToList();
             selectedNPC = NPCsToSpawn[0];
-            Instantiate(selectedNPC, spawner.transform);
+            spawnedNPC = Instantiate(selectedNPC, spawner.transform);
+            spawnedNPCs.Add(spawnedNPC.GetComponent<NPCAI>());
         }
     }
 
