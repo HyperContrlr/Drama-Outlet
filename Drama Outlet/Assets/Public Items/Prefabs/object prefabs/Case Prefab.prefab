@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2262807939263566087, guid: 0631c7998d94df54a95a3be03931593e, type: 3}
+  m_Sprite: {fileID: 1469652794484300988, guid: 2d244bf19600c134eab88e2087ada479, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -86,7 +86,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!1 &8951788326916691666
 GameObject:
   m_ObjectHideFlags: 0
@@ -102,7 +102,7 @@ GameObject:
   - component: {fileID: 4805795449073789866}
   - component: {fileID: 7233400696951602308}
   m_Layer: 6
-  m_Name: Sofa Prefab
+  m_Name: Case Prefab
   m_TagString: furniture
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -136,6 +136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8c647a1872adc547a92c4273aded72b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  thisBuilding: {fileID: 11400000, guid: 2a593f1dc2270264ea81de92c0f0b6cf, type: 2}
   validPlaceMat: {fileID: 2100000, guid: f541ade369807cf46912b4e9d9d715b2, type: 2}
   invalidPlaceMat: {fileID: 2100000, guid: b8c97d3de85ae6c4884d5afcccc4dcf7, type: 2}
   defaultPlaceMat: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
@@ -143,7 +144,6 @@ MonoBehaviour:
   hasValidPlacement: 0
   isFixed: 0
   boxThang: {x: 0.2, y: 0.2}
-  thisBuilding: {fileID: 11400000, guid: 2a593f1dc2270264ea81de92c0f0b6cf, type: 2}
 --- !u!60 &1802675151995472748
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -190,10 +190,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.30109802, y: 0.0291121}
-      - {x: -0.0034365589, y: 0.161112}
-      - {x: -0.31125984, y: 0.031346872}
-      - {x: -0.00764216, y: -0.1347882}
+    - - {x: 0.31540185, y: -0.13807811}
+      - {x: 0.004466514, y: -0.025724813}
+      - {x: -0.31384087, y: -0.14184508}
+      - {x: 0.0016735448, y: -0.28979793}
   m_UseDelaunayMesh: 0
 --- !u!114 &8560378119238136880
 MonoBehaviour:

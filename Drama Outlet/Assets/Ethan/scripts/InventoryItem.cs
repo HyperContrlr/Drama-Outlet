@@ -1,3 +1,4 @@
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -5,8 +6,10 @@ using UnityEngine.UI;
 public class InventoryItem : MonoBehaviour
 {
     public int stock;
+    public TextMeshProUGUI stockText;
     private void Update()
     {
+        GenericDisplayText<int>.DisplayText(stockText, stock);
         if (stock > 0)
         {
             this.gameObject.GetComponentInChildren<Image>().color = Color.white;
@@ -14,7 +17,7 @@ public class InventoryItem : MonoBehaviour
         }
         else if (stock <= 0) 
         {
-            this.gameObject.GetComponentInChildren<Image>().color = Color.gray;
+            this.gameObject.GetComponentInChildren<Image>().color = Color.black;
             this.gameObject.GetComponent<Button>().enabled = false;
         }
     }
