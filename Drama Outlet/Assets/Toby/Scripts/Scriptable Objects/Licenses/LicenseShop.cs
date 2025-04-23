@@ -121,7 +121,7 @@ public class LicenseShop : MonoBehaviour
     {
         LicenseUnlock();
         GenericDisplayText<string>.DisplayText(nameText, name);
-        GenericDisplayText<float>.DisplayText(moneyText, cost);
+        GenericDisplayText<float>.DisplayTextWithExtra(moneyText, cost, 0);
     }
 
     public void Next()

@@ -11,6 +11,7 @@ public enum PlacementMode
 }
 public class BuildingManager : MonoBehaviour
 {
+    public buildings thisBuilding;
     public Material validPlaceMat;
     public Material invalidPlaceMat;
     public Material defaultPlaceMat;
@@ -25,7 +26,6 @@ public class BuildingManager : MonoBehaviour
 
     private int nObstacles;
 
-    public buildings thisBuilding;
     private void Awake()
     {
         hasValidPlacement = true;

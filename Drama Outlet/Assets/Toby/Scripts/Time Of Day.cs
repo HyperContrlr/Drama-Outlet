@@ -1,5 +1,7 @@
+using NUnit.Framework;
 using UnityEngine;
-
+using System.Collections.Generic;
+using System.Linq;
 public class TimeOfDay : MonoBehaviour
 {
     [SerializeField] public float timer;
@@ -11,6 +13,7 @@ public class TimeOfDay : MonoBehaviour
     [SerializeField] private NPCSpawner npcSpawner;
     [SerializeField] private GameObject rotationPoint;
     [SerializeField] private float rotation = 60;
+    [SerializeField] private List<BuildingManager> buildingsPlaced;
     void Start()
     {
         Statics.timeOfDay = Statics.Time.EarlyMorning;
@@ -57,7 +60,17 @@ public class TimeOfDay : MonoBehaviour
         {
             npcSpawner.enabled = false;
             Statics.timeOfDay = Statics.Time.Night;
+            if (startedDay == true)
+            {
+                buildingsPlaced.Clear();
+                buildingsPlaced = FindObjectsByType<BuildingManager>(FindObjectsSortMode.None).ToList();
+                foreach (var build in buildingsPlaced)
+                {
+                    Statics.approvalValue += build.thisBuilding.ratingBonus;
+                }
+            }
             startedDay = false;
         }
     }
 }
+

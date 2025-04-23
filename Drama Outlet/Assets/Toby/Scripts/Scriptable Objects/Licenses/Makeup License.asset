@@ -19,7 +19,8 @@ MonoBehaviour:
   thisImage: {fileID: 0}
   defaultSprite: {fileID: 0}
   collectedSprite: {fileID: 0}
-  productsUnlocked: []
+  productsUnlocked:
+  - {fileID: 11400000, guid: 1e121216e5da89d468a98c13a0d59287, type: 2}
   isBought: 0
   isLocked: 1
   starLock: 0

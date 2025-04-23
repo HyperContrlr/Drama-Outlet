@@ -66,6 +66,6 @@ public class ShopItem : MonoBehaviour
     {
         ItemUnlock();
         GenericDisplayText<string>.DisplayText(nameText, name);
-        GenericDisplayText<float>.DisplayText(moneyText, cost);
+        GenericDisplayText<float>.DisplayTextWithExtra(moneyText, cost, 0);
     }
 }
