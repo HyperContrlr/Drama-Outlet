@@ -8,7 +8,6 @@ public class buildingPlacer : MonoBehaviour
 {
     public static buildingPlacer instance;
 
-    public SwitchColliders colliderSwitch;
     public bool hasProductManager;
     public bool hasStore;
     public GameObject floor;
@@ -67,7 +66,6 @@ public class buildingPlacer : MonoBehaviour
             {
                 toBuild.transform.Rotate(Vector3.up, 180);
                 flipped = !flipped;
-                colliderSwitch.Switch();
             }
             //hide pointer when hovering UI
             if (floor.GetComponent<level>().mouseOver)
@@ -144,7 +142,6 @@ public class buildingPlacer : MonoBehaviour
 
                         buildingPrefab = null;
                         toBuild = null;
-                        colliderSwitch.beenPlaced = true;
                         flipped = false;
                         collider.enabled = false;
                     }
@@ -163,7 +160,6 @@ public class buildingPlacer : MonoBehaviour
         collider.enabled = true;
         //buildingPrefab.GetComponent<InventoryItem>().stock--;
         buildingPrefab = prefab;
-        colliderSwitch = prefab.GetComponent<SwitchColliders>();
         PrepareBuilding();
     }
     

@@ -6951,6 +6951,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45026ebc308a0324587c78850e31cd36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  colliderSwitch: {fileID: 0}
   hasProductManager: 0
   hasStore: 0
   floor: {fileID: 575453110}
@@ -22510,7 +22511,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &5945175246819961000
 GameObject:
   m_ObjectHideFlags: 0
@@ -22605,7 +22606,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -4499009599503660873, guid: 9d1c92efb78468941bec772fceeab88b, type: 3}
+  m_Sprite: {fileID: 6667383779452666667, guid: d8016b11e7aba8b49926551d635c88c3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -23997,7 +23998,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &6478211680936866819
 MonoBehaviour:
   m_ObjectHideFlags: 0
