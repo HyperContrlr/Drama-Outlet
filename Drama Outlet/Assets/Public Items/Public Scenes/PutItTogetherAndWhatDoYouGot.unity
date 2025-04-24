@@ -997,7 +997,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   zoomSpeed: 10
   cam: {fileID: 0}
-  offset: {x: 0, y: 0, z: -10}
+  zOffset: -10
 --- !u!1 &407565618
 GameObject:
   m_ObjectHideFlags: 0
