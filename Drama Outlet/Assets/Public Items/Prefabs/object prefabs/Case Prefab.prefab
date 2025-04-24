@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 6670333209998746825}
   - component: {fileID: -2821023031677429245}
   - component: {fileID: 3860013883700331178}
+  - component: {fileID: 514212650071716743}
   m_Layer: 6
   m_Name: Case Prefab
   m_TagString: furniture
@@ -134,10 +135,6 @@ MonoBehaviour:
   - {fileID: -8837016876076145117, guid: 11fb3e2470ccf2042b775f3e1b4d8954, type: 3}
   - {fileID: 6316134243942825693, guid: 7fea60ccaec00d9428f5f1fdd7aa8d43, type: 3}
   currentSprite: {fileID: -2821023031677429245}
-  identifier_: Mask Case
-  items: []
-  item: {fileID: 0}
-  stores: []
   stock: 0
 --- !u!212 &-2821023031677429245
 SpriteRenderer:
@@ -272,3 +269,26 @@ PolygonCollider2D:
       - {x: 0.14, y: 0.16499999}
       - {x: 0.089999996, y: 0.155}
   m_UseDelaunayMesh: 0
+--- !u!114 &514212650071716743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8951788326916691666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51bf6c8fd60dc29438e3e616ee55dbc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 0}
+  items: []
+  identifier: Mask Case
+  buttons: {fileID: 0}
+  isSelected: 0
+  objectsInScene: []
+  isCheckOut: 0
+  isProduct: 1
+  spriteRenderer: {fileID: -2821023031677429245}
+  restockPrice: 0
+  sellPrice: 0

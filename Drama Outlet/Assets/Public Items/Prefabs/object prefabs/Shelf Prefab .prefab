@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 9089620290037923563}
   - component: {fileID: 647675007323227716}
   - component: {fileID: 5031546697008865183}
+  - component: {fileID: 3261159966993522951}
   m_Layer: 6
   m_Name: 'Shelf Prefab '
   m_TagString: furniture
@@ -134,10 +135,6 @@ MonoBehaviour:
   - {fileID: -7634876264952928752, guid: 2ab10e96a7ce17f42b16245cc548ffad, type: 3}
   - {fileID: 2330683286055855291, guid: da12d752e9e29b14c9a0ff1d1aef5fb7, type: 3}
   currentSprite: {fileID: 647675007323227716}
-  identifier_: Makeup Shelf
-  items: []
-  item: {fileID: 0}
-  stores: []
   stock: 0
 --- !u!212 &647675007323227716
 SpriteRenderer:
@@ -250,3 +247,26 @@ PolygonCollider2D:
       - {x: 0.68756866, y: 0.39341483}
       - {x: 0.38880077, y: 0.2658358}
   m_UseDelaunayMesh: 0
+--- !u!114 &3261159966993522951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8951788326916691666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51bf6c8fd60dc29438e3e616ee55dbc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 0}
+  items: []
+  identifier: Makeup Shelf
+  buttons: {fileID: 0}
+  isSelected: 0
+  objectsInScene: []
+  isCheckOut: 0
+  isProduct: 1
+  spriteRenderer: {fileID: 647675007323227716}
+  restockPrice: 0
+  sellPrice: 0

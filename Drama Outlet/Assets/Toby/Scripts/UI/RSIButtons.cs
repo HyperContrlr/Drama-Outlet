@@ -6,12 +6,11 @@ using UnityEngine;
 
 public class RSIButtons : MonoBehaviour
 {
-    [SerializeField] public ProductManager currentProductManager;
+    [SerializeField] public MouseControls currentSelectedObject;
     [SerializeField] public bool managerSelected;
     [SerializeField] private TextMeshProUGUI restockPrice;
     [SerializeField] private TextMeshProUGUI sellPrice;
-    [SerializeField] private List<ProductManager> productManagers;
-    [SerializeField] private List<Store> buildings;
+    [SerializeField] private List<MouseControls> managers;
     [SerializeField] private float restockPrices;
     [SerializeField] private float sellPrices;
     [SerializeField] private ButtonedPressed button;
@@ -25,8 +24,8 @@ public class RSIButtons : MonoBehaviour
     {
         if (managerSelected == true)
         {
-            restockPrice.text = string.Format($"[{currentProductManager.costToRestock}]");
-            sellPrice.text = string.Format($"[${currentProductManager.thisProduct.objectSellPrice}]");
+            restockPrice.text = string.Format($"[{currentSelectedObject.restockPrice}]");
+            sellPrice.text = string.Format($"[${currentSelectedObject.sellPrice}]");
         }
         if (managerSelected == false)
         {
@@ -40,12 +39,11 @@ public class RSIButtons : MonoBehaviour
     {
         restockPrices = 0;
         sellPrices = 0;
-        productManagers = FindObjectsByType<ProductManager>(FindObjectsSortMode.None).ToList();
-        buildings = FindObjectsByType<Store>(FindObjectsSortMode.None).ToList();
-        foreach (ProductManager pro in productManagers)
+        managers = FindObjectsByType<MouseControls>(FindObjectsSortMode.None).ToList();
+        foreach (var mang in managers)
         {
-            restockPrices += pro.costToRestock;
-            sellPrices += pro.thisProduct.objectSellPrice;
+            restockPrices += mang.restockPrice;
+            sellPrices += mang.sellPrice;
         }
     }
     public void RestockAll()
@@ -57,9 +55,16 @@ public class RSIButtons : MonoBehaviour
         }
         else if (restockPrices <= Statics.money && button.timer >= 3)
         {
-            foreach (ProductManager pro in productManagers)
+            foreach (var mang in managers)
             {
-                pro.Restock();
+                if (mang.isProduct == true)
+                {
+                    mang.Restock();
+                }
+                else
+                {
+                    Debug.Log("We can't restock this you silly.");
+                }
             }
         }
     }
@@ -69,16 +74,16 @@ public class RSIButtons : MonoBehaviour
     }
     public void SellAll()
     {
-        foreach (ProductManager pro in productManagers)
+        foreach (var mang in managers)
         {
-            pro.Sell();
+            mang.Sell();
         }
     }
     public void Restock()
     {
-        if (managerSelected == true)
+        if (managerSelected == true && currentSelectedObject.isProduct == true)
         {
-            currentProductManager.Restock();
+            currentSelectedObject.Restock();
             managerSelected = false;
         }
         else
@@ -90,7 +95,7 @@ public class RSIButtons : MonoBehaviour
     {
         if (managerSelected == true)
         {
-            currentProductManager.Sell();
+            currentSelectedObject.Sell();
             managerSelected = false;
         }
         else

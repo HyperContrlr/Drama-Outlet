@@ -33,11 +33,11 @@ public class ButtonedPressed : MonoBehaviour, IPointerDownHandler, IPointerUpHan
             heldDown = true;
             if (restock == true && buttons.managerSelected == true)
             {
-                buttons.currentProductManager.Restock();
+                buttons.currentSelectedObject.Restock();
             }
             else if (sell == true && buttons.managerSelected == true)
             {
-                buttons.currentProductManager.Sell();
+                buttons.currentSelectedObject.Sell();
             }
             else if (restock == true && timer >= 3 && buttons.managerSelected == false)
             {

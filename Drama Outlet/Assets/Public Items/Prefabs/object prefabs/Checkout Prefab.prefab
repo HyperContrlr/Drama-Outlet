@@ -148,8 +148,8 @@ GameObject:
   - component: {fileID: 8560378119238136880}
   - component: {fileID: 4805795449073789866}
   - component: {fileID: 1460353222554014998}
-  - component: {fileID: 206276287200559012}
   - component: {fileID: 7869019640647697542}
+  - component: {fileID: 8988083153026196867}
   m_Layer: 6
   m_Name: Checkout Prefab
   m_TagString: furniture
@@ -300,26 +300,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7fd23ea92bc92c4ea98f489aaa477d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &206276287200559012
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8951788326916691666}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01feec92328c74744a8619c1fd145e39, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  item: {fileID: 0}
-  identifier: Check Out
-  buttons: {fileID: 0}
-  isSelected: 0
-  productManagers: []
-  stores: []
-  isCheckOut: 1
-  spriteRenderer: {fileID: 7869019640647697542}
 --- !u!212 &7869019640647697542
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -375,3 +355,26 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
+--- !u!114 &8988083153026196867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8951788326916691666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51bf6c8fd60dc29438e3e616ee55dbc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 0}
+  items: []
+  identifier: Check-Out
+  buttons: {fileID: 0}
+  isSelected: 0
+  objectsInScene: []
+  isCheckOut: 1
+  isProduct: 0
+  spriteRenderer: {fileID: 7869019640647697542}
+  restockPrice: 0
+  sellPrice: 0

@@ -10,6 +10,8 @@ public class buildings : ScriptableObject
 
     [SerializeField] public float cost;
 
+    [SerializeField] public float objectSellPrice;
+
     [SerializeField] public bool isLocked = true;
 
     [SerializeField] public bool hasProduct;
