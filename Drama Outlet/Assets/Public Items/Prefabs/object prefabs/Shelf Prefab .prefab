@@ -78,15 +78,17 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.0006120205, y: 0.023178965}
-      - {x: -0.6885158, y: 0.30992544}
-      - {x: -0.690587, y: 0.22927243}
-      - {x: -0.33015743, y: 0.04603351}
+    - - {x: -0.005091831, y: 0.15309364}
+      - {x: -0.6795562, y: 0.4062415}
+      - {x: -0.68162733, y: 0.21807288}
+      - {x: -0.36872587, y: 0.09285848}
+      - {x: -0.316718, y: 0.052753247}
       - {x: 0.004309632, y: -0.10326968}
-      - {x: 0.10193291, y: -0.071036145}
+      - {x: 0.08625355, y: -0.055356786}
+      - {x: 0.21412688, y: 0.011736542}
       - {x: 0.3524334, y: 0.062447727}
-      - {x: 0.35608065, y: 0.16982436}
-      - {x: 0.03319706, y: 0.02996543}
+      - {x: 0.35160083, y: 0.23926152}
+      - {x: 0.03319706, y: 0.15540028}
   m_UseDelaunayMesh: 0
 --- !u!1 &8951788326916691666
 GameObject:
@@ -218,11 +220,11 @@ MonoBehaviour:
   isSelected: 0
   productManagers: []
   stockSprites:
-  - {fileID: -4499009599503660873, guid: 8d181905c7c0d3d45be482a3d07e79a3, type: 3}
-  - {fileID: 627850268452362165, guid: 40b23494204c56e43970a3dc03da254b, type: 3}
-  - {fileID: 6667383779452666667, guid: b0d00fd6e53d96a4d865252c80afe5ee, type: 3}
-  - {fileID: -7634876264952928752, guid: 30e37fa26a91f0746b69d83120e040d2, type: 3}
-  - {fileID: 2330683286055855291, guid: b03abf4bcff92754cb71d9bdee9ba4e5, type: 3}
+  - {fileID: 6667383779452666667, guid: d8016b11e7aba8b49926551d635c88c3, type: 3}
+  - {fileID: -4499009599503660873, guid: 66d3d35d09c8dfc4c9354361646b7ccf, type: 3}
+  - {fileID: 627850268452362165, guid: 71b410d25be67094ab9232a201aa10a7, type: 3}
+  - {fileID: -7634876264952928752, guid: 2ab10e96a7ce17f42b16245cc548ffad, type: 3}
+  - {fileID: 2330683286055855291, guid: da12d752e9e29b14c9a0ff1d1aef5fb7, type: 3}
   currentSprite: {fileID: 647675007323227716}
   identifier_: Makeup Shelf
   items: []
@@ -330,15 +332,15 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.0042372197, y: 0.017467994}
-      - {x: -0.35397148, y: 0.16521373}
+    - - {x: 0.00871703, y: 0.1272235}
+      - {x: -0.35621142, y: 0.2727293}
       - {x: -0.35527596, y: 0.06743186}
       - {x: -0.041700102, y: -0.086088076}
       - {x: 0.007180333, y: -0.107876}
       - {x: 0.62411964, y: 0.20938873}
       - {x: 0.6863544, y: 0.21791036}
-      - {x: 0.68756866, y: 0.32173774}
-      - {x: 0.39104062, y: 0.18743902}
+      - {x: 0.68756866, y: 0.39341483}
+      - {x: 0.38880077, y: 0.2658358}
   m_UseDelaunayMesh: 0
 --- !u!114 &7545751633323027851
 MonoBehaviour:
@@ -352,6 +354,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b20554b7a2946274db2ccafeae450979, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collider1: {fileID: 5031546697008865183}
-  collider2: {fileID: 758189682893532351}
-  hasMultipleColliders: 1
+  hasRotated: 0
+  beenPlaced: 0
