@@ -855,6 +855,7 @@ GameObject:
   m_Component:
   - component: {fileID: 332336207}
   - component: {fileID: 332336206}
+  - component: {fileID: 332336208}
   - component: {fileID: 332336205}
   - component: {fileID: 332336204}
   m_Layer: 0
@@ -982,6 +983,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &332336208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 332336203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f0c7949d9238774cbfd989f96d4c345, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zoomSpeed: 10
+  cam: {fileID: 0}
+  offset: {x: 0, y: 0, z: -10}
 --- !u!1 &407565618
 GameObject:
   m_ObjectHideFlags: 0
@@ -6951,7 +6967,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45026ebc308a0324587c78850e31cd36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colliderSwitch: {fileID: 0}
   hasProductManager: 0
   hasStore: 0
   floor: {fileID: 575453110}
@@ -22511,7 +22526,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &5945175246819961000
 GameObject:
   m_ObjectHideFlags: 0
@@ -23998,7 +24013,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &6478211680936866819
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26406,17 +26421,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 401d1d23794bbf84ca5842fbfac7c87e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: 0
-  startedDay: 0
-  closeUpShop: 0
-  morningWindow: 60
-  afternoonWindow: 180
-  eveningWindow: 240
-  npcSpawner: {fileID: 699475191039376244}
-  rotationPoint: {fileID: 2308186391253377010}
-  rotation: 90
-  buildingsPlaced: []
-  pressedDown: 0
 --- !u!1 &7552059003745762034
 GameObject:
   m_ObjectHideFlags: 0
