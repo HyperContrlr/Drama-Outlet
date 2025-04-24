@@ -172,10 +172,6 @@ MonoBehaviour:
   productManagers: []
   stockSprites: []
   currentSprite: {fileID: 0}
-  identifier_: 
-  items: []
-  item: {fileID: 0}
-  stores: []
   stock: 0
 --- !u!61 &32334255
 BoxCollider2D:
@@ -603,10 +599,6 @@ MonoBehaviour:
   productManagers: []
   stockSprites: []
   currentSprite: {fileID: 0}
-  identifier_: 
-  items: []
-  item: {fileID: 0}
-  stores: []
   stock: 0
 --- !u!61 &284993230
 BoxCollider2D:
@@ -995,7 +987,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f0c7949d9238774cbfd989f96d4c345, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zoomSpeed: 10
+  zoomSpeed: 50
   cam: {fileID: 0}
   zOffset: -10
 --- !u!1 &407565618
@@ -1051,10 +1043,6 @@ MonoBehaviour:
   productManagers: []
   stockSprites: []
   currentSprite: {fileID: 0}
-  identifier_: 
-  items: []
-  item: {fileID: 0}
-  stores: []
   stock: 0
 --- !u!61 &407565621
 BoxCollider2D:
@@ -5189,10 +5177,6 @@ MonoBehaviour:
   productManagers: []
   stockSprites: []
   currentSprite: {fileID: 0}
-  identifier_: 
-  items: []
-  item: {fileID: 0}
-  stores: []
   stock: 0
 --- !u!61 &766810664
 BoxCollider2D:
@@ -5348,10 +5332,6 @@ MonoBehaviour:
   productManagers: []
   stockSprites: []
   currentSprite: {fileID: 0}
-  identifier_: 
-  items: []
-  item: {fileID: 0}
-  stores: []
   stock: 0
 --- !u!61 &841045515
 BoxCollider2D:
@@ -5680,10 +5660,6 @@ MonoBehaviour:
   productManagers: []
   stockSprites: []
   currentSprite: {fileID: 0}
-  identifier_: 
-  items: []
-  item: {fileID: 0}
-  stores: []
   stock: 0
 --- !u!61 &1193737736
 BoxCollider2D:
@@ -5975,10 +5951,6 @@ MonoBehaviour:
   productManagers: []
   stockSprites: []
   currentSprite: {fileID: 0}
-  identifier_: 
-  items: []
-  item: {fileID: 0}
-  stores: []
   stock: 0
 --- !u!61 &1297873334
 BoxCollider2D:
@@ -6494,10 +6466,6 @@ MonoBehaviour:
   productManagers: []
   stockSprites: []
   currentSprite: {fileID: 0}
-  identifier_: 
-  items: []
-  item: {fileID: 0}
-  stores: []
   stock: 0
 --- !u!61 &1607478121
 BoxCollider2D:
@@ -6653,10 +6621,6 @@ MonoBehaviour:
   productManagers: []
   stockSprites: []
   currentSprite: {fileID: 0}
-  identifier_: 
-  items: []
-  item: {fileID: 0}
-  stores: []
   stock: 0
 --- !u!61 &1616787466
 BoxCollider2D:
@@ -7049,10 +7013,6 @@ MonoBehaviour:
   productManagers: []
   stockSprites: []
   currentSprite: {fileID: 0}
-  identifier_: 
-  items: []
-  item: {fileID: 0}
-  stores: []
   stock: 0
 --- !u!61 &1909154117
 BoxCollider2D:
@@ -26421,6 +26381,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 401d1d23794bbf84ca5842fbfac7c87e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timer: 0
+  startedDay: 0
+  closeUpShop: 0
+  morningWindow: 0
+  afternoonWindow: 0
+  eveningWindow: 0
+  npcSpawner: {fileID: 0}
+  rotationPoint: {fileID: 0}
+  rotation: 0
+  buildingsPlaced: []
+  pressedDown: 0
 --- !u!1 &7552059003745762034
 GameObject:
   m_ObjectHideFlags: 0
@@ -28419,12 +28390,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7dfc5c7b88e54c4ea9a93f64c494d95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentProductManager: {fileID: 0}
+  currentSelectedObject: {fileID: 0}
   managerSelected: 0
   restockPrice: {fileID: 3807848387698652134}
   sellPrice: {fileID: 318120209881154740}
-  productManagers: []
-  buildings: []
+  managers: []
   restockPrices: 0
   sellPrices: 0
   button: {fileID: 0}

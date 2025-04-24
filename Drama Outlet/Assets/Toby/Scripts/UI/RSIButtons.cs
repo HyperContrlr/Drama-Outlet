@@ -24,7 +24,14 @@ public class RSIButtons : MonoBehaviour
     {
         if (managerSelected == true)
         {
-            restockPrice.text = string.Format($"[{currentSelectedObject.restockPrice}]");
+            if (currentSelectedObject == null)
+            {
+                return;
+            }
+            if (currentSelectedObject.isProduct == true)
+            {
+                restockPrice.text = string.Format($"[{currentSelectedObject.restockPrice}]");
+            }
             sellPrice.text = string.Format($"[${currentSelectedObject.sellPrice}]");
         }
         if (managerSelected == false)
