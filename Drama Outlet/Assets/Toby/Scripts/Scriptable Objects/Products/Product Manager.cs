@@ -13,6 +13,10 @@ public class ProductManager : MonoBehaviour
     [SerializeField] private List<ProductManager> productManagers;
     [SerializeField] private List<Sprite> stockSprites;
     [SerializeField] private SpriteRenderer currentSprite;
+    [SerializeField] private string identifier_;
+    [SerializeField] private List<InventoryItem> items;
+    [SerializeField] public InventoryItem item;
+    [SerializeField] private List<Store> stores;
     public float stock;
     public void OnMouseDown()
     {
@@ -29,13 +33,26 @@ public class ProductManager : MonoBehaviour
         {
             pro.isSelected = false;
         }
+        foreach (var store in stores)
+        {
+            store.isSelected = false;
+        }   
     }
-    public void OnEnable()
+    public void Start()
     {
+        items = FindObjectsByType<InventoryItem>(FindObjectsSortMode.None).ToList();
+        foreach (var item_ in items)
+        {
+            if (item_.identifier == identifier_)
+            {
+                item = item_;
+            }
+        }
         stock = thisProduct.maxStock;
         buttons = FindFirstObjectByType<RSIButtons>();
         productManagers = FindObjectsByType<ProductManager>(FindObjectsSortMode.None).ToList();
         productManagers.Remove(this);
+        stores = FindObjectsByType<Store>(FindObjectsSortMode.None).ToList();
     }
     public void SpriteSet()
     {
@@ -68,16 +85,21 @@ public class ProductManager : MonoBehaviour
         SpriteSet();
         if (isSelected == true)
         {
-            this.gameObject.GetComponent<SpriteRenderer>().color = Color.yellow;
+            currentSprite.color = Color.yellow;
             buttons.currentProductManager = this;
             buttons.managerSelected = true;
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                Store();
+            }
         }
         else
         {
-            this.gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+            currentSprite.color = Color.white;
         }
         productManagers = FindObjectsByType<ProductManager>(FindObjectsSortMode.None).ToList();
         productManagers.Remove(this);
+        stores = FindObjectsByType<Store>(FindObjectsSortMode.None).ToList();
         costToRestock = thisProduct.restockPricePerStockMissing * (thisProduct.maxStock - stock);
     }
     public void Buy(float itemsBought)
@@ -117,7 +139,8 @@ public class ProductManager : MonoBehaviour
 
     public void Store()
     {
-        //something with inventory
+        item.AddToStock();
+        Destroy(this.gameObject);
     }
 
     public void Sell()

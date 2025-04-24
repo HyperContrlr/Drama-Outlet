@@ -49,7 +49,7 @@ public class ShopItem : MonoBehaviour
 
     public void BuyItem()
     {
-        if (thisItem.isLocked == false && Statics.money > cost)
+        if (thisItem.isLocked == false && Statics.money >= cost)
         {
             Statics.money -= cost;
             unlockedItem.AddToStock();

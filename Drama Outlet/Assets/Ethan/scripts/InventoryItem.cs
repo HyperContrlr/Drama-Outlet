@@ -7,6 +7,7 @@ public class InventoryItem : MonoBehaviour
 {
     public int stock;
     public TextMeshProUGUI stockText;
+    public string identifier;
     private void Update()
     {
         GenericDisplayText<int>.DisplayText(stockText, stock);

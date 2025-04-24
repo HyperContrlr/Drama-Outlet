@@ -11,6 +11,7 @@ public class RSIButtons : MonoBehaviour
     [SerializeField] private TextMeshProUGUI restockPrice;
     [SerializeField] private TextMeshProUGUI sellPrice;
     [SerializeField] private List<ProductManager> productManagers;
+    [SerializeField] private List<Store> buildings;
     [SerializeField] private float restockPrices;
     [SerializeField] private float sellPrices;
     [SerializeField] private ButtonedPressed button;
@@ -40,6 +41,7 @@ public class RSIButtons : MonoBehaviour
         restockPrices = 0;
         sellPrices = 0;
         productManagers = FindObjectsByType<ProductManager>(FindObjectsSortMode.None).ToList();
+        buildings = FindObjectsByType<Store>(FindObjectsSortMode.None).ToList();
         foreach (ProductManager pro in productManagers)
         {
             restockPrices += pro.costToRestock;

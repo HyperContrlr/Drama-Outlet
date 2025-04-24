@@ -39,7 +39,12 @@ public class TimeOfDay : MonoBehaviour
             closeUpShop = true;
         }
 
-       
+        if (Input.GetKeyUp(KeyCode.Space) == true)
+        {
+            pressedDown = false;
+        }
+
+
         if (startedDay == true)
         {
             if (pressedDown == true)

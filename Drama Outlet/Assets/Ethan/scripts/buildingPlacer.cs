@@ -2,18 +2,24 @@ using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.Tilemaps;
 
 public class buildingPlacer : MonoBehaviour
 {
     public static buildingPlacer instance;
 
+    public SwitchColliders colliderSwitch;
+    public bool hasProductManager;
+    public bool hasStore;
     public GameObject floor;
     public LayerMask floorLayerMask;
     public LayerMask furnLayerMask;
 
     public Vector3 offset;
 
+    public TilemapCollider2D collider;
     private GameObject buildingPrefab;
+    public InventoryItem item;
     private GameObject toBuild;
 
     private Camera mainCamera;
@@ -38,16 +44,30 @@ public class buildingPlacer : MonoBehaviour
         { //if in Build mode
             actualBoxThang = toBuild.GetComponent<BuildingManager>().boxThang;
 
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                
+                if (item == null)
+                {
+                    Destroy(toBuild);
+                    toBuild = null;
+                    buildingPrefab = null;
+                    return;
+                }
+                else
+                {
+                    item.AddToStock();
+                    Destroy(toBuild);
+                    toBuild = null;
+                    buildingPrefab = null;
+                    return;
+                }
+            }
             if (Input.GetMouseButtonDown(1))
             {
-                Destroy(toBuild);
-                toBuild = null;
-                buildingPrefab = null;
-                return;
-            }
-            if (Input.GetKeyDown(KeyCode.R))
-            {
                 toBuild.transform.Rotate(Vector3.up, 180);
+                flipped = !flipped;
+                colliderSwitch.Switch();
             }
             //hide pointer when hovering UI
             if (floor.GetComponent<level>().mouseOver)
@@ -124,6 +144,9 @@ public class buildingPlacer : MonoBehaviour
 
                         buildingPrefab = null;
                         toBuild = null;
+                        colliderSwitch.beenPlaced = true;
+                        flipped = false;
+                        collider.enabled = false;
                     }
                 }
             }
@@ -131,10 +154,16 @@ public class buildingPlacer : MonoBehaviour
             
         }
     }
+    public void SetItem(InventoryItem item)
+    {
+        this.item = item;
+    }
     public void SetBuildingPrefab(GameObject prefab)
     {
+        collider.enabled = true;
         //buildingPrefab.GetComponent<InventoryItem>().stock--;
         buildingPrefab = prefab;
+        colliderSwitch = prefab.GetComponent<SwitchColliders>();
         PrepareBuilding();
     }
     
