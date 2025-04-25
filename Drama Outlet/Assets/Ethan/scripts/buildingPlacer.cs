@@ -135,6 +135,7 @@ public class buildingPlacer : MonoBehaviour
                         if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
                         {
                             toBuild = null;
+                            //Add smth here to subtract from stock, also remove the subtract from stock from the button OnClick
                             PrepareBuilding();
                             return;
                         }

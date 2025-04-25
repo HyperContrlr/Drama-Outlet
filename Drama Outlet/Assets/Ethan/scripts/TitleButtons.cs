@@ -3,13 +3,16 @@ using UnityEngine.SceneManagement;
 
 public class TitleButtons : MonoBehaviour
 {
-    public int SceneToLoad;
-    public void StartGame()
-    {
-        SceneManager.LoadScene(SceneToLoad);
-    }
     public void QuitGame()
     {
         Application.Quit();
+    }
+    public void LoadScene()
+    {
+        SceneManager.LoadScene(1);
+    }
+    public void CreditsLoad()
+    {
+        SceneManager.LoadScene(2);
     }
 }
