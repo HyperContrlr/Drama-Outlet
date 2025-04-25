@@ -53,7 +53,7 @@ public class TimeOfDay : MonoBehaviour
                 rotation -= Time.deltaTime * 2;
                 foreach (var npc in npcSpawner.spawnedNPCs)
                 {
-                    npc.thisNPC.speed = npc.thisNPC.speed + 5;
+                    npc.thisNPC.speed = npc.thisNPC.speed + 2;
                 }
             }
             else
