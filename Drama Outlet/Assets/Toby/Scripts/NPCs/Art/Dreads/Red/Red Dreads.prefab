@@ -32,7 +32,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1.387, y: -1.824, z: 0}
-  m_LocalScale: {x: 4.4624863, y: 4.9039507, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2365891530050098208}
@@ -123,6 +123,7 @@ MonoBehaviour:
     minAmountToBuy: 1
     hasBoughtSomething: 0
     money: 0
+    storedSpeed: 0
     speed: 0
     speedMax: 2
     speedMin: 1
@@ -133,6 +134,7 @@ MonoBehaviour:
   seeker: {fileID: 2168179308099494881}
   waitTimeBase: 0
   waitTime: 0
+  npcSpawner: {fileID: 0}
 --- !u!50 &7316396876127119662
 Rigidbody2D:
   serializedVersion: 5

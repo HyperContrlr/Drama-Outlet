@@ -28,8 +28,14 @@ public class ComedyDialogue : MonoBehaviour
     public void ReadDescription(string description)
     {
         comedyAnimator.SetBool("IsOpen", true);
-        dialogueBox.SetActive(true);
-        sentences.Clear();
+        if (sentences != null)
+        {
+            sentences.Clear();
+        }
+        else
+        {
+            sentences = new Queue<string>();
+        }
 
         sentences.Enqueue(description);
 
@@ -37,11 +43,11 @@ public class ComedyDialogue : MonoBehaviour
     }
     public void DisplayNextSentence()
     {
-        if (sentences.Count == 0)
-        {
-            EndDialogue();
-            return;
-        }
+        //if (sentences.Count == 0)
+        //{
+        //    //EndDialogue();
+        //    //return;
+        //}
 
         string sentence = sentences.Dequeue();
         StopAllCoroutines();

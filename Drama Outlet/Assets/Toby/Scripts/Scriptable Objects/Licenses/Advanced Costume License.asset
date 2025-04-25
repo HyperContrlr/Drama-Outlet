@@ -15,7 +15,7 @@ MonoBehaviour:
   name: Advanced Costume License
   description: "<size=30>This license allows me to sell only the best costumes. \n<size=20>We
     ain't selling just basic Dorothy dresses anymore Toto."
-  cost: 0
+  cost: 5500
   thisImage: {fileID: 0}
   defaultSprite: {fileID: 0}
   collectedSprite: {fileID: 0}

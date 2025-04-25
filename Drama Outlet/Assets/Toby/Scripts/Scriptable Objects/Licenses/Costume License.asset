@@ -15,7 +15,7 @@ MonoBehaviour:
   name: Costume License
   description: This license will allow me to sell stage costumes. <size=23>Hope I
     won't need to do a quick change
-  cost: 0
+  cost: 2000
   thisImage: {fileID: 0}
   defaultSprite: {fileID: 0}
   collectedSprite: {fileID: 0}

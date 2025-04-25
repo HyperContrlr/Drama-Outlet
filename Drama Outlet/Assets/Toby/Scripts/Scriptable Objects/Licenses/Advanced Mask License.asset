@@ -15,7 +15,7 @@ MonoBehaviour:
   name: Advanced Mask License
   description: "<size=30>With this licence I can get better more realstic masks.
     \n<size=20>I can't mask how excited I am to sell these premium masks."
-  cost: 0
+  cost: 3000
   thisImage: {fileID: 0}
   defaultSprite: {fileID: 0}
   collectedSprite: {fileID: 0}

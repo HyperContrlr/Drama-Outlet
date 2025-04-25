@@ -78,7 +78,6 @@ public class MouseControls : MonoBehaviour
         else
         {
             spriteRenderer.color = Color.white;
-            buttons.currentSelectedObject = null;
         }
     }
 

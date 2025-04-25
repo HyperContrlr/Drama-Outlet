@@ -15,14 +15,14 @@ MonoBehaviour:
   name: Makeup License
   description: "This license will allow me to sell stage makeup. \n<size=30>It's
     time to slay!!"
-  cost: 0
+  cost: 1500
   thisImage: {fileID: 0}
   defaultSprite: {fileID: 0}
   collectedSprite: {fileID: 0}
   productsUnlocked:
   - {fileID: 11400000, guid: 1e121216e5da89d468a98c13a0d59287, type: 2}
   isBought: 0
-  isLocked: 1
+  isLocked: 0
   starLock: 0
   hasStarLock: 0
   StarsForUnlock: 0

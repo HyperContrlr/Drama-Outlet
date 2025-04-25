@@ -15,7 +15,7 @@ MonoBehaviour:
   name: Director For Hire
   description: The dynamic duo is back!! All is well with the world and now Tragedy
     works as a director.
-  cost: 0
+  cost: 10000
   thisImage: {fileID: 0}
   defaultSprite: {fileID: 0}
   collectedSprite: {fileID: 0}

@@ -9,17 +9,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc37590e285cea344bd0080f13a0dd85, type: 3}
-  m_Name: Prop
+  m_Script: {fileID: 11500000, guid: 345bb5161ab389045bfc375658cc75b2, type: 3}
+  m_Name: Place-Holder Couch
   m_EditorClassIdentifier: 
-  type: 8
-  name: 
-  description: 
-  price: 0
-  objectSellPrice: 40
-  restockPricePerStockMissing: 7
-  sellPricePerStock: 20
-  stockBought: 0
-  maxStock: 50
+  name: Place-Holder Couch
+  description: Wait how did this get here.. were the game designers just lazy!?
+  cost: 399.99
+  objectSellPrice: 29.99
   isLocked: 1
+  hasProduct: 0
+  soldProduct: {fileID: 0}
+  ratingBonus: 1
+  ratingUnlock: 0
   objectPrefab: {fileID: 0}

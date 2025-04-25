@@ -22,7 +22,12 @@ public class products : ScriptableObject
 
     [SerializeField] public float maxStock;
 
-    [SerializeField] public bool isLocked;
+    [SerializeField] public bool isLocked = true;
 
     [SerializeField] public GameObject objectPrefab;
+
+    public void ResetValues()
+    {
+        isLocked = true;
+    }
 }

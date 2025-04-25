@@ -9,9 +9,11 @@ public class Statics : MonoBehaviour
     
     public static Time timeOfDay;
 
-    public static float money = 2000;
+    public static float money = 1500;
 
     public static float day;
+
+    public static bool isNewGame = true;
 
     public static float starsGained;
 

@@ -21,6 +21,5 @@ MonoBehaviour:
   sellPricePerStock: 10
   stockBought: 0
   maxStock: 50
-  currentStock: 50
   isLocked: 1
   objectPrefab: {fileID: 0}

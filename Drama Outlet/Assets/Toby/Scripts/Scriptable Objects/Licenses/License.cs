@@ -49,4 +49,18 @@ public class License : ScriptableObject
             }
         }
     }
+
+    public void ResetValues()
+    {
+        isLocked = true;
+        isBought = false;
+        if (hasStarLock == true)
+        {
+            starLock = true;
+        }
+        else
+        {
+            starLock = false;
+        }
+    }
 }

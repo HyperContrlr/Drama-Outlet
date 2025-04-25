@@ -15,7 +15,7 @@ MonoBehaviour:
   name: Prop License
   description: "This license will allow me to sell basic props. \n<size=20>You know
     my full name is Stan D. Comedy."
-  cost: 0
+  cost: 2500
   thisImage: {fileID: 0}
   defaultSprite: {fileID: 0}
   collectedSprite: {fileID: 0}

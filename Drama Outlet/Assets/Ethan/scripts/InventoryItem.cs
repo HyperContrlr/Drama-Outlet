@@ -8,16 +8,19 @@ public class InventoryItem : MonoBehaviour
     public int stock;
     public TextMeshProUGUI stockText;
     public string identifier;
+    public string mysteriousDescription = "I don't know anything about this item yet.";
     private void Update()
     {
         GenericDisplayText<int>.DisplayText(stockText, stock);
         if (stock > 0)
         {
+            mysteriousDescription = "I don't know anything about this item yet.";
             this.gameObject.GetComponentInChildren<Image>().color = Color.white;
             this.gameObject.GetComponent<Button>().enabled = true;
         }
         else if (stock <= 0) 
         {
+            mysteriousDescription = "Press this object to select it, then place it in the store.";
             this.gameObject.GetComponentInChildren<Image>().color = Color.black;
             this.gameObject.GetComponent<Button>().enabled = false;
         }
