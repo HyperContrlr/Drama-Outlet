@@ -28,7 +28,7 @@ public class ItemShopManager : MonoBehaviour
             item.SetActive(false);
         }
         nextImage.SetActive(true);
-        nextImage.GetComponent<LicenseShop>().SetValues();
+        previousImage.SetActive(false);
         thisObject.SetActive(false);
     }
 
@@ -39,7 +39,7 @@ public class ItemShopManager : MonoBehaviour
             item.SetActive(false);
         }
         previousImage.SetActive(true);
-        previousImage.GetComponent<LicenseShop>().SetValues();
+        nextImage.SetActive(false);
         thisObject.SetActive(false);
     }
 }

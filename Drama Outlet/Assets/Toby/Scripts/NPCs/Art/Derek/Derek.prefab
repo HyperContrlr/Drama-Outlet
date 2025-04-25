@@ -108,7 +108,7 @@ MonoBehaviour:
   productSpots: []
   target: {fileID: 0}
   targetDistance: 0
-  stopDistance: 1
+  stopDistance: 0.8
   checkOut: {fileID: 0}
   leave: {fileID: 0}
   slerp: 1
