@@ -121,4 +121,9 @@ public class MouseControls : MonoBehaviour
     {
         FindFirstObjectByType<ComedyDialogue>().EndDialogue();
     }
+
+    public void OnDisable()
+    {
+        Statics.UpdateGraph(this.gameObject);
+    }
 }

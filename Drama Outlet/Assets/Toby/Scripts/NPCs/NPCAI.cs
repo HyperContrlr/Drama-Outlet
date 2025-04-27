@@ -49,10 +49,12 @@ public partial class NPCAI : MonoBehaviour
     private bool noProduct;
 
     [SerializeField] private NPCSpawner npcSpawner;
-    public void OnDrawGizmos()
-    {
-        Gizmos.DrawWireSphere(customerPath.vectorPath[currentWaypoint + 1], 1);
-    }
+
+    [SerializeField] private AstarPath path;
+    //public void OnDrawGizmos()
+    //{
+    //    Gizmos.DrawWireSphere(customerPath.vectorPath[currentWaypoint + 1], 1);
+    //}
     void UpdatePath()
     {
         if (seeker.IsDone())
@@ -72,6 +74,7 @@ public partial class NPCAI : MonoBehaviour
     {
         thisNPC.speed = Statics.randyTheRandom.Next((int)thisNPC.speedMin, (int)thisNPC.speedMax);
         thisNPC.storedSpeed = thisNPC.speed;
+        thisNPC.quickSpeed = thisNPC.speed * 2;
         if (isSpecial == false)
         {
             thisNPC.personality = (NPCAI.NPC.Personality)Random.Range(0, 3);
@@ -240,6 +243,7 @@ public partial class NPCAI : MonoBehaviour
         }
         else if (productSpots.Count == 0 && thisNPC.hasBoughtSomething == false)
         {
+            productSpots.Clear();
             target = leave;
             state = States.Leaving;
         }
@@ -471,6 +475,7 @@ public partial class NPCAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //path.Scan();
         noProduct = IsThereProduct();
         if (noProduct == false)
         {

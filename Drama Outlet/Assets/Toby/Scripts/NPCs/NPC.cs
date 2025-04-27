@@ -20,6 +20,7 @@ public partial class NPCAI
         public bool hasBoughtSomething;
         public float money;
         [SerializeField] public float storedSpeed;
+        public float quickSpeed;
         public float speed;
         public float speedMax;
         public float speedMin;

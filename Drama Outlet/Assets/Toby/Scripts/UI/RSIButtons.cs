@@ -58,7 +58,7 @@ public class RSIButtons : MonoBehaviour
         if (restockPrices > Statics.money && button.timer < 3)
         {
             Statics.ReadStatement("Sorry we can't Restock All now.");
-            Invoke("CloseAnimator", 3);
+            Invoke("CloseAnimator", 6);
         }
         else if (restockPrices <= Statics.money && button.timer >= 3)
         {

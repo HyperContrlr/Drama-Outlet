@@ -2,6 +2,8 @@ using NUnit.Framework;
 using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEditor.Analytics;
+using UnityEngine.UI;
 public class TimeOfDay : MonoBehaviour
 {
     [SerializeField] public float timer;
@@ -15,25 +17,43 @@ public class TimeOfDay : MonoBehaviour
     [SerializeField] private float rotation;
     [SerializeField] private List<BuildingManager> buildingsPlaced;
     [SerializeField] private bool pressedDown;
+    [SerializeField] private Image spaceBarMorning;
+    [SerializeField] private Image spaceBarNight;
+    [SerializeField] private bool checkOut;
     void Start()
     {
         Statics.timeOfDay = Statics.Time.EarlyMorning;
     }
 
-    // Update is called once per frame
+    public void CloseAnimator()
+    {
+        FindFirstObjectByType<ComedyDialogue>().EndDialogue();
+    }
     void Update()
     {
-        if (Input.GetKey(KeyCode.Space) == true && startedDay == true)
+        checkOut = IsCheckOut();
+        if (Statics.timeOfDay == Statics.Time.EarlyMorning)
+        {
+            spaceBarMorning.gameObject.SetActive(true);
+            spaceBarNight.gameObject.SetActive(false);
+        }
+            if (Input.GetKey(KeyCode.Space) == true && startedDay == true)
         {
             pressedDown = true;
         }
-        if (Input.GetKeyDown(KeyCode.Space) == true && Statics.timeOfDay == Statics.Time.EarlyMorning)
+        if (Input.GetKeyDown(KeyCode.Space) == true && Statics.timeOfDay == Statics.Time.EarlyMorning && checkOut == true)
         {
+            spaceBarMorning.gameObject.SetActive(false);
             startedDay = true;
             npcSpawner.enabled = true;
             npcSpawner.SpawnCustomer();
         }
-      
+        else if (checkOut == false && Statics.timeOfDay == Statics.Time.EarlyMorning && Input.GetKeyDown(KeyCode.Space))
+        {
+            Statics.ReadStatement("You need a checkout to open the store!! Use the one in your inventory");
+            Invoke("CloseAnimator", 3); 
+        }
+
         if (Input.GetKeyDown(KeyCode.Space) == true && Statics.timeOfDay == Statics.Time.Night)
         {
             closeUpShop = true;
@@ -47,13 +67,22 @@ public class TimeOfDay : MonoBehaviour
 
         if (startedDay == true)
         {
+            if (IsCheckOut() == false)
+            {
+                Statics.ReadStatement("We don't have a checkout so I must close the store until we get one :(");
+                npcSpawner.enabled = false;
+            }
+            else if (IsCheckOut() == true)
+            {
+                npcSpawner.enabled = true;
+            }
             if (pressedDown == true)
             {
                 timer += Time.deltaTime * 2;
                 rotation -= Time.deltaTime * 2;
                 foreach (var npc in npcSpawner.spawnedNPCs)
                 {
-                    npc.thisNPC.speed = npc.thisNPC.speed + 2;
+                    npc.thisNPC.speed = npc.thisNPC.quickSpeed;
                 }
             }
             else
@@ -85,6 +114,7 @@ public class TimeOfDay : MonoBehaviour
         
         else if (timer > eveningWindow)
         {
+            spaceBarNight.gameObject.SetActive(true);
             npcSpawner.enabled = false;
             Statics.timeOfDay = Statics.Time.Night;
             if (startedDay == true)
@@ -97,6 +127,18 @@ public class TimeOfDay : MonoBehaviour
                 }
             }
             startedDay = false;
+        }
+    }
+
+    public bool IsCheckOut()
+    {
+        if (GameObject.FindGameObjectsWithTag("Check Out").Length > 0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
 }

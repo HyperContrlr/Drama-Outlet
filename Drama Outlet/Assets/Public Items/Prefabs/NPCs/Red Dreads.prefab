@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 8159089703194075915}
   - component: {fileID: 1156648721109931113}
   m_Layer: 7
-  m_Name: Derek
+  m_Name: Red Dreads
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 232605019341072794}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.387, y: -1.824, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -82,7 +82,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 4702939657326952307, guid: daa318e7f6a89b8429177a2a43839ffc, type: 3}
+  m_Sprite: {fileID: -1945517705739078336, guid: 5b1aa6e849d683d4fa5077c66c30da21, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -108,7 +108,7 @@ MonoBehaviour:
   productSpots: []
   target: {fileID: 0}
   targetDistance: 0
-  stopDistance: 0.8
+  stopDistance: 0.6
   checkOut: {fileID: 0}
   leave: {fileID: 0}
   slerp: 1
@@ -124,6 +124,7 @@ MonoBehaviour:
     hasBoughtSomething: 0
     money: 0
     storedSpeed: 0
+    quickSpeed: 0
     speed: 0
     speedMax: 2
     speedMin: 1
@@ -135,6 +136,7 @@ MonoBehaviour:
   waitTimeBase: 0
   waitTime: 0
   npcSpawner: {fileID: 0}
+  path: {fileID: 0}
 --- !u!50 &7316396876127119662
 Rigidbody2D:
   serializedVersion: 5
@@ -200,7 +202,7 @@ Animator:
   m_GameObject: {fileID: 232605019341072794}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f60bf446c75b15041a68bc3ae72fa6ca, type: 2}
+  m_Controller: {fileID: 9100000, guid: 7e08a9698d67e1c429127cf01719f492, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -249,7 +251,7 @@ BoxCollider2D:
   m_Offset: {x: 0.0017077029, y: -0.018427407}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.4376417, y: 0.35827667}
+    pivot: {x: 0.4514563, y: 0.3300972}
     oldSize: {x: 0.25, y: 0.25}
     newSize: {x: 1, y: 2}
     adaptiveTilingThreshold: 0.5

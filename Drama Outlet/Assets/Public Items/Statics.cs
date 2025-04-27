@@ -88,4 +88,13 @@ public class Statics : MonoBehaviour
         }
         return result;
     }
+    public static void UpdateGraph(GameObject gameObject)
+    {
+        Collider2D collider = gameObject.GetComponent<Collider2D>();
+        if (collider != null)
+        {
+            Bounds bounds = collider.bounds;
+            AstarPath.active.UpdateGraphs(bounds);
+        }
+    }
 }

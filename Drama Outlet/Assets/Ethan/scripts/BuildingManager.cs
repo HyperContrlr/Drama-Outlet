@@ -26,6 +26,10 @@ public class BuildingManager : MonoBehaviour
 
     private int nObstacles;
 
+    public void Update()
+    {
+        Statics.UpdateGraph(this.gameObject);
+    }
     private void Awake()
     {
         hasValidPlacement = true;

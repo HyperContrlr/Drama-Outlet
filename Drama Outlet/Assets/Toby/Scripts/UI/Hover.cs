@@ -1,4 +1,5 @@
 using Unity.VisualScripting;
+using UnityEditor.Timeline;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using static UnityEditor.Progress;
@@ -13,17 +14,22 @@ public class Hover : MonoBehaviour
 
     [SerializeField] private int showThrice;
 
+    [SerializeField] public int timesToShow = 3;
+
     [SerializeField] private bool hasBeenShown;
 
     [SerializeField] private string description;
-    public void OnPointerEnter(BaseEventData eventData)
+    public float timer;
+    public bool isOver;
+    public void OnMouseEnter()
     {
-        OnHoverGeneric(description);
+        isOver = true;
     }
 
-    public void OnPointerExit(BaseEventData eventData)
+    public void OnMouseExit()
     {
-        OnHoverExit();
+        isOver = false;
+        timer = 0;
     }
     public void OnHoverLicense(License license)
     {
@@ -40,34 +46,66 @@ public class Hover : MonoBehaviour
     }
     public void OnHoverProduct(products product)
     {
-        dialogueAnimator.SetBool("IsOpen", true);
-        dialogue.ReadDescription(product.description);
-    }
-
-    public void OnHoverItem(buildings item)
-    {
-        if (item.isLocked == true)
+        if (limitedTimes == true)
         {
-            dialogueAnimator.SetBool("IsOpen", true);
-            Statics.ReadRejection3();
+            if (hasBeenShown == false && showThrice <= timesToShow)
+            {
+                dialogueAnimator.SetBool("IsOpen", true);
+                dialogue.ReadDescription(product.description);
+                showThrice++;
+            }
+            if (showThrice == timesToShow)
+            {
+                hasBeenShown = true;
+            }
         }
         else
         {
             dialogueAnimator.SetBool("IsOpen", true);
-            dialogue.ReadDescription(item.description);
+            dialogue.ReadDescription(product.description);
+        }
+    }
+
+    public void OnHoverItem(buildings item)
+    {
+        if (limitedTimes == true)
+        {
+            if (hasBeenShown == false && showThrice <= timesToShow)
+            {
+                dialogueAnimator.SetBool("IsOpen", true);
+                dialogue.ReadDescription(item.description);
+                showThrice++;
+            }
+            if (showThrice == timesToShow)
+            {
+                hasBeenShown = true;
+            }
+        }
+        else
+        {
+            if (item.isLocked == true)
+            {
+                dialogueAnimator.SetBool("IsOpen", true);
+                Statics.ReadRejection3();
+            }
+            else
+            {
+                dialogueAnimator.SetBool("IsOpen", true);
+                dialogue.ReadDescription(item.description);
+            }
         }
     }
     public void OnHoverGeneric(string description)
     {
         if (limitedTimes == true)
         {
-            if (hasBeenShown == false && showThrice <= 3)
+            if (hasBeenShown == false && showThrice <= timesToShow)
             {
                 dialogueAnimator.SetBool("IsOpen", true);
                 dialogue.ReadDescription(description);
                 showThrice++;
             }
-            if (showThrice == 3)
+            if (showThrice == timesToShow)
             {
                 hasBeenShown = true;
             }
@@ -76,6 +114,18 @@ public class Hover : MonoBehaviour
         {
             dialogueAnimator.SetBool("IsOpen", true);
             dialogue.ReadDescription(description);
+        }
+    }
+
+    public void Update()
+    {
+        if (isOver == true)
+        {
+            timer += Time.deltaTime;
+        }
+        else if (isOver == false)
+        {
+            timer = 0;
         }
     }
 
