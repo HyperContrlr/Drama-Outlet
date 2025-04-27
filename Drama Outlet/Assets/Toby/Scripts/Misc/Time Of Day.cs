@@ -20,6 +20,7 @@ public class TimeOfDay : MonoBehaviour
     [SerializeField] private Image spaceBarMorning;
     [SerializeField] private Image spaceBarNight;
     [SerializeField] private bool checkOut;
+    [SerializeField] private Image midnight;
     void Start()
     {
         Statics.timeOfDay = Statics.Time.EarlyMorning;
@@ -57,6 +58,9 @@ public class TimeOfDay : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) == true && Statics.timeOfDay == Statics.Time.Night)
         {
             closeUpShop = true;
+            spaceBarNight.gameObject.SetActive(false);
+            midnight.gameObject.SetActive(true);
+            Statics.timeOfDay = Statics.Time.Midnight;
         }
 
         if (Input.GetKeyUp(KeyCode.Space) == true)
