@@ -35,6 +35,7 @@ public class TimeOfDay : MonoBehaviour
     }
     void Update()
     {
+        Debug.Log(Statics.timeOfDay);
         checkOut = IsCheckOut();
         if (Statics.timeOfDay == Statics.Time.EarlyMorning)
         {

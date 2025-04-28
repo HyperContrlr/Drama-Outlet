@@ -51,6 +51,10 @@ public partial class NPCAI : MonoBehaviour
     [SerializeField] private NPCSpawner npcSpawner;
 
     [SerializeField] private AstarPath path;
+
+    [SerializeField] private BoxCollider2D box;
+
+    [SerializeField] private float colliderTimer;
     //public void OnDrawGizmos()
     //{
     //    Gizmos.DrawWireSphere(customerPath.vectorPath[currentWaypoint + 1], 1);
@@ -266,6 +270,19 @@ public partial class NPCAI : MonoBehaviour
     }
     public void Moving()
     {
+        if (rb.linearVelocity == Vector2.zero)
+        {
+            box.isTrigger = true;
+        }
+        if (box.isTrigger == true)
+        {
+            colliderTimer += Time.deltaTime;
+        }
+        if (colliderTimer >= 3)
+        {
+            box.isTrigger = false;
+            colliderTimer = 0;
+        }
         if (customerPath == null)
         {
             return;
@@ -356,7 +373,7 @@ public partial class NPCAI : MonoBehaviour
         {
             currentWaypoint++;
         }
-        if (targetDistance <= stopDistance)
+        if (targetDistance <= 0.1)
         {
             if (thisNPC.unhappy == false)
             {

@@ -156,7 +156,10 @@ public class Hover : MonoBehaviour
 
     public void OnHoverExit()
     {
-        dialogueAnimator.SetBool("IsOpen", false);
+        if (this.enabled == true)
+        { 
+            dialogueAnimator.SetBool("IsOpen", false);
+        }
     }
 
 }

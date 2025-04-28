@@ -24,7 +24,19 @@ public class NPCSpawner : MonoBehaviour
         spawnTimer -= Time.deltaTime;
         if (spawnTimer <= 0)
         {
-            int result = Statics.RollADice(4);
+            if (Statics.timeOfDay == Statics.Time.Afternoon)
+            {
+                spawnStop = 3f;
+            }
+            else if (Statics.timeOfDay == Statics.Time.Evening)
+            {
+                spawnStop = 5f;
+            }
+            else
+            {
+                spawnStop = 10f;
+            }
+                int result = Statics.RollADice(4);
             if (Statics.approvalValue >= 40)
             {
                 if (result >= 12)
