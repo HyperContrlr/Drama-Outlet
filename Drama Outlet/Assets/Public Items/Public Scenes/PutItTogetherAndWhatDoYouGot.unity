@@ -2214,8 +2214,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 135
-  m_fontSizeBase: 135
+  m_fontSize: 70.3
+  m_fontSizeBase: 70.3
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -7336,8 +7336,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 135
-  m_fontSizeBase: 135
+  m_fontSize: 70
+  m_fontSizeBase: 70
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -7612,8 +7612,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000011444, y: 192}
-  m_SizeDelta: {x: 1768.6785, y: 423.7291}
+  m_AnchoredPosition: {x: 0, y: 67}
+  m_SizeDelta: {x: 791.324, y: 423.7291}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &628428707
 MonoBehaviour:
@@ -7662,8 +7662,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 130.1
-  m_fontSizeBase: 130.1
+  m_fontSize: 63
+  m_fontSizeBase: 63
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -9005,8 +9005,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 531, y: -133.05127}
-  m_SizeDelta: {x: 574.2694, y: 187.3808}
+  m_AnchoredPosition: {x: 349, y: -0.0000066757}
+  m_SizeDelta: {x: 267.21, y: 75.675}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &766128877
 MonoBehaviour:
@@ -9052,6 +9052,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 5447056272504947269}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
       - m_Target: {fileID: 1504988304}
         m_TargetAssemblyTypeName: TutorialDialogue, Assembly-CSharp
         m_MethodName: NoTutorial
@@ -11326,7 +11338,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 656, y: 71}
+  m_AnchoredPosition: {x: 597, y: 47}
   m_SizeDelta: {x: 347.5123, y: 697.3206}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &982868451
@@ -16411,8 +16423,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1890.4404, y: 938.1136}
+  m_AnchoredPosition: {x: -17, y: 17}
+  m_SizeDelta: {x: 1105.7957, y: 589.9965}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1504988304
 MonoBehaviour:
@@ -16428,7 +16440,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tutorialDialogues:
   - <size=30>Welcome new employee to Drama Outlet. You are here to help me make a
-    five star store!! Press [R] to continue.
+    five star store!! Right click to continue.
   - <size=30>Pressing this button or [Enter] will open up your UI Pop up. Hover over
     objects and I'll tell you what they do!!
   - This is our money. Make sure to use it wisely so we can get good business.
@@ -16444,7 +16456,7 @@ MonoBehaviour:
   - <size=25>Here is where you can select and place down your bought items. But first
     make sure you place down a Check-Out.  Can't sell stuff with no check-out.
   - <size=25>After placing down the check out you can then place down products or
-    other items. Press R to spawn the store to place stuff down.
+    other items. Right click to spawn the store to place stuff down.
   - <size=25>Here is the store. Scroll the middle mouse button to zoom In/Out and
     push down on it to move the shop.
   - <size=25>Now try placing down the check-out and a few items. Right click to rotate
@@ -16468,7 +16480,7 @@ MonoBehaviour:
     sure we run smoothly and get those star ratings or else we will fail as a business.
   - <size=35>No pressure... ha ha!!
   - <size=15>Oh and one last tip make sure to keep money saved for restocks.
-  - <size=25>Ok I think that is everything just press R to end the tutorial and move
+  - <size=25>Ok I think that is everything right click to end the tutorial and move
     to the early morning setup. Lets go put some smiles on customers faces!!
   gameObjectsToDeactivate:
   - {fileID: 2121568040}
@@ -16509,6 +16521,7 @@ MonoBehaviour:
   startedDialogue: 0
   textMeshProUGUI: {fileID: 3463155797934149616}
   currentArrow: {fileID: 0}
+  time: {fileID: 7546991465511830662}
 --- !u!114 &1504988305
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17643,8 +17656,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -268}
-  m_SizeDelta: {x: 402.8082, y: 91.3624}
+  m_AnchoredPosition: {x: -5.5, y: -285.49}
+  m_SizeDelta: {x: 347.51, y: 126.34}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1650351543
 MonoBehaviour:
@@ -17666,7 +17679,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: You feel something missing
+  m_text: You notice that you are missing some stock.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5a6984fa5a439e744ad0f72d3d5b5da3, type: 2}
   m_sharedMaterial: {fileID: -2094584041843150823, guid: 5a6984fa5a439e744ad0f72d3d5b5da3, type: 2}
@@ -17693,8 +17706,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 31.9
-  m_fontSizeBase: 31.9
+  m_fontSize: 27.2
+  m_fontSizeBase: 27.2
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -21834,8 +21847,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -473.58398, y: -133.05127}
-  m_SizeDelta: {x: 574.2694, y: 187.3808}
+  m_AnchoredPosition: {x: -336, y: -1.5233}
+  m_SizeDelta: {x: 267.2086, y: 75.675}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2108389318
 MonoBehaviour:
@@ -21881,6 +21894,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 5447056272504947269}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
       - m_Target: {fileID: 1504988304}
         m_TargetAssemblyTypeName: TutorialDialogue, Assembly-CSharp
         m_MethodName: StartDialogue
@@ -22415,7 +22440,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2121568041
 RectTransform:
   m_ObjectHideFlags: 0
@@ -36665,7 +36690,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   data:
-    dataString: UEsDBBQAAAgIAACAn+vlCdzfggIAADsFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFlVE1z2jAQ/SuMzg0jgw2ht9YhJIckTGknF19ka4012JJHkgMkw3/vSraxS4cD5r3dt28/zBcR0tSQWaU3WvAXxYF8n5BnoyqwWmQOJN8mQ9QTnNheyZ34hD74XXBbuCDmY34xKxTigUvrdX7IfemCo3C6nEcLxzVS5EpXa76HWBlrkM1ZaQAprawTkQh9TcgJv+ZBOF0F1OWd8edsSfHpE59WdHLBxwykBT3E0+nsnkbBctYl0Cld0sV8sZh3eW1aI7OSVTVw18+QPYv6OpEPk9hpF0GnjstUWQrTOST2XPtBxKw2DbaJAVwwbNw7otMFAgWIfWGd5Dj9Lc8NONS1o9n5QWicYKtLfqp2rBUzh9bbBysbV2kRelut5st/9F3g6Vyr6qkvG1BXwhYiO/xi54wZO5r3GH4YnLdbOrLywNIS3guQr2qjVSM5klY3LrUxMHsYfl47iwvIDgPeWr0Bm3q0sH5R3X5cDxff/CkuRZX6QYYtsCuVH/jKBYPG5TyjYX8xppNA1Ln4Y+A3249PqyMehTYWqa5L6eylqtEulKz9zFw3jY2VluDhznQNkpX2vEUZe7vBG25U9oZ5ZO5d6op3XP+K3KR4eIin9IbaquN1WaZQxxcwxVtjSyFhMO2IV5xTrKRsD2w8kz5t1+icZaO0fSP4v6dFljTI7merKApDHtyvgrt8xsM0DdMlftIwo8TfnpDYJyu3rdFuPLg1OYhLvDOn6P5iJhvNan/sXLPjRnxWajRyIXO1yzSAfGsVrsZBYxF8MfmaCxzQDqwV0u+bfCWkVNkBeHIVSnyn65PVLBlUElKLD2UdkpDY/48kxMHXW95q+BBwdMV7sQu5/AVQSwMEFAAACAgAAICf65dlcjBsAAAAeAAAAAkAJABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQGrVipLLSrOzM9TslIw0TPSMzTXUVBKL0osyCgGihiCOKWZKSB2tJK5gWGyhZGlqamJSYqhhaWhbppRiklSkkmSORAmmSQbKMUC1ZdUFqT6JeamQvQEJJZkpGXmpWTmpeu5F2WmuIOMVoqtBQBQSwECLQAUAAAICAAAgJ/r5Qnc34ICAAA7BQAACwAkAAAAAAAAAAAAAAAAAAAAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwECLQAUAAAICAAAgJ/rl2VyMGwAAAB4AAAACQAkAAAAAAAAAAAAAADPAgAAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsFBgAAAAACAAIAuAAAAIYDAAAAAA==
+    dataString: UEsDBBQAAAgIAACAn+uhdc7/ggIAADsFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFlVE1zokAQ/SvWnDfWgODH3naJMTkksWK2cuEyQCNTwgw1M0RNyv++PQMI65YH8b3u168/8JtwoWtIjVQbxbNnmQH5OSFPWlZgFE8tSH5MhqhHOLG9FDv+BX3wB89MYYOYi3ljhkvEPZvW6/wS+9IGh8F0MQvnlmsEz6Wq1tkeIqmNRjZnpQaklDRWRCD0PSEn/Jp5wXTlUZt3xp/+guLTFz6t6OSCjykIA2qIp1N/SUNv4XcJdEoXdD6bz2ddXpvWiLRkVQ2Z7WfI9sO+TujCBHbaRdCp5VJZllx3Dok5124QEat1g21iQMYZNu4c0ekSgQL4vjBWcpz+mucaLGrbUex8zxVOsNUlv2U71orpQ+vtk5WNrTQPnK1W8/k/+s5zdK5k9diX9agtYQqeHt7YOWXajOY9hu8H5+2Wjqw8sKSEjwLEi9wo2YgMSaMam9po8O+Hn9fOogLSw4C3Vm/Aph4trF9Utx/bw8U1f4pKXiVukEEL7ErpBr6ywaBwOU9o2F2M7iQQtS7+aHhn+/FpdcQDV9og1XUprL1ENsqGkrWbme2mMZFUAhzcma5BsNKctyhjbjd4w43K3jAPzL5LXfGO61+RmxQHD/GU3lBbebwuSxfy+Ay6eG1MyQUMpi3xgnOKpBDtgY1n0qftGpWzdJS2b3j272mRBfXSpb8KwyDIvOXKu8v9LEiSIFngJwlSStztcYF9snLbGu3Gg1sTg7jAO7OK9i9mslGsdseeKXbc8K9KjkbORS53qQIQr63C1TgoLIIvZrbOOA5oB8Zw4fZNvmNSyvQAWXwVil2n65NRLB5UYlLzT2ksEpPI/Y/ExMLXW94q+ORwtMV7sQu5/AVQSwMEFAAACAgAAICf65dlcjBsAAAAeAAAAAkAJABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQGrVipLLSrOzM9TslIw0TPSMzTXUVBKL0osyCgGihiCOKWZKSB2tJK5gWGyhZGlqamJSYqhhaWhbppRiklSkkmSORAmmSQbKMUC1ZdUFqT6JeamQvQEJJZkpGXmpWTmpeu5F2WmuIOMVoqtBQBQSwECLQAUAAAICAAAgJ/roXXO/4ICAAA7BQAACwAkAAAAAAAAAAAAAAAAAAAAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwECLQAUAAAICAAAgJ/rl2VyMGwAAAB4AAAACQAkAAAAAAAAAAAAAADPAgAAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsFBgAAAAACAAIAuAAAAIYDAAAAAA==
     upgradeData: 
     file_cachedStartup: {fileID: 0}
     data_cachedStartup: 
@@ -36997,7 +37022,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5468187642921133941
 RectTransform:
   m_ObjectHideFlags: 0
@@ -38286,7 +38311,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &5945175246819961000
 GameObject:
   m_ObjectHideFlags: 0

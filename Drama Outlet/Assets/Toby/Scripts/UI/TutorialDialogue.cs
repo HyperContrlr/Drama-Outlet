@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class TutorialDialogue : MonoBehaviour
 {
+    [TextArea(3, 10)]
     public List<string> tutorialDialogues;
     public List<GameObject> gameObjectsToDeactivate;
     public List<GameObject> arrows;
@@ -16,6 +17,7 @@ public class TutorialDialogue : MonoBehaviour
     public bool startedDialogue;
     public TextMeshProUGUI textMeshProUGUI;
     public GameObject currentArrow;
+    public TimeOfDay time;
     void Start()
     {
         
@@ -26,7 +28,7 @@ public class TutorialDialogue : MonoBehaviour
     {
         if (startedDialogue == true)
         {
-            if (Input.GetKeyDown(KeyCode.R))
+            if (Input.GetMouseButtonDown(1))
             {
                 Next();
             }
@@ -35,6 +37,7 @@ public class TutorialDialogue : MonoBehaviour
 
     public void StartDialogue()
     {
+        time.enabled = false;
         textMeshProUGUI.fontSize = 30;
         startedDialogue = true;
         tutorialImage.enabled = false;
@@ -78,6 +81,7 @@ public class TutorialDialogue : MonoBehaviour
             {
                 hov.enabled = true;
             }
+            time.enabled = true;
             textMeshProUGUI.fontSize = 35;
             Destroy(this.gameObject);
         }

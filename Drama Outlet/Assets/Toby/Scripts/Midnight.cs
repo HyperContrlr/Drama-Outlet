@@ -45,6 +45,13 @@ public class Midnight : MonoBehaviour
             {
                 chance += (int)0.5;
             }
+            if (chance > 20)
+            {
+                approvalLostText.SetActive(false);
+                moneyLossText.SetActive(false);
+                productLostText.SetActive(false);
+                safeText.SetActive(true);
+            }
             //Safe
             if (chance <= 20 && chance > 15)
             {
