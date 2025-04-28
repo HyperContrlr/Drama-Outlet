@@ -77,9 +77,9 @@ public class buildingPlacer : MonoBehaviour
                  if (!toBuild.activeSelf) toBuild.SetActive(true);
             }
             RaycastHit2D furnHit = Physics2D.BoxCast(Camera.main.ScreenToWorldPoint(Input.mousePosition), actualBoxThang, 45f, Vector2.zero, 100f, furnLayerMask);
+            //RaycastHit2D floorHit = Physics2D.BoxCast(Camera.main.ScreenToWorldPoint(Input.mousePosition), actualBoxThang, 45f, Vector2.zero, 100f, floorLayerMask);
             BuildingManager m = toBuild.GetComponent<BuildingManager>();
-
-            if(furnHit.collider != null)
+            if (furnHit.collider != null)
             {
                 m.SetPlacementMode(PlacementMode.Invalid);
             }
@@ -110,12 +110,6 @@ public class buildingPlacer : MonoBehaviour
                     Debug.Log("Dev Tools Enabled");
                     devTools = true;
                 }
-                if (Input.GetKey(KeyCode.M))
-                    if(Input.GetKey(KeyCode.B))
-                        if(Input.GetKeyDown(KeyCode.Keypad2))
-                        {
-                            Debug.Log("Micro-Byte 2 when???");
-                        }
                 if (Input.GetKeyDown(KeyCode.P) && devTools)
                 {
                     m.SetPlacementMode(PlacementMode.Invalid);
@@ -124,18 +118,24 @@ public class buildingPlacer : MonoBehaviour
                 {
                     m.SetPlacementMode(PlacementMode.Valid);
                 }
+                if (Input.GetKey(KeyCode.M))
+                    if(Input.GetKey(KeyCode.B))
+                        if(Input.GetKeyDown(KeyCode.Keypad2))
+                        {
+                            Debug.Log("Micro-Byte 2 when???");
+                        }
                 if (!toBuild.activeSelf) toBuild.SetActive(true);
                 toBuild.transform.position = mainCamera.ScreenToWorldPoint(Input.mousePosition) + offset;
                 if (Input.GetMouseButtonDown(0))
                 {
-                    if (m.hasValidPlacement)
+                    if (m.hasValidPlacement && item.stock >=1)
                     {
                         m.SetPlacementMode(PlacementMode.Fixed);
+                        item.SubtractFromStock();
 
-                        if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
+                        if ((Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)) && item.stock >= 1)
                         {
                             toBuild = null;
-                            //Add smth here to subtract from stock, also remove the subtract from stock from the button OnClick
                             PrepareBuilding();
                             return;
                         }
