@@ -8,7 +8,7 @@ public class Statics : MonoBehaviour
     
     public static Time timeOfDay;
 
-    public static float money = 1500;
+    public static float money = 500;
 
     public static float day;
 

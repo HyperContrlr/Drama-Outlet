@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEditor.Analytics;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 public class TimeOfDay : MonoBehaviour
 {
     [SerializeField] public float timer;
@@ -16,11 +17,13 @@ public class TimeOfDay : MonoBehaviour
     [SerializeField] private GameObject rotationPoint;
     [SerializeField] private float rotation;
     [SerializeField] private List<BuildingManager> buildingsPlaced;
-    [SerializeField] private bool pressedDown;
+    [SerializeField] public bool pressedDown;
     [SerializeField] private Image spaceBarMorning;
     [SerializeField] private Image spaceBarNight;
     [SerializeField] private bool checkOut;
     [SerializeField] private Image midnight;
+    [SerializeField] private GameObject loseScreen;
+    [SerializeField] private bool isntLost;
     void Start()
     {
         Statics.timeOfDay = Statics.Time.EarlyMorning;
@@ -38,12 +41,14 @@ public class TimeOfDay : MonoBehaviour
             spaceBarMorning.gameObject.SetActive(true);
             spaceBarNight.gameObject.SetActive(false);
         }
-            if (Input.GetKey(KeyCode.Space) == true && startedDay == true)
+        
+        if (Input.GetKey(KeyCode.Space) == true && startedDay == true)
         {
             pressedDown = true;
         }
         if (Input.GetKeyDown(KeyCode.Space) == true && Statics.timeOfDay == Statics.Time.EarlyMorning && checkOut == true)
         {
+            isntLost = false;
             spaceBarMorning.gameObject.SetActive(false);
             startedDay = true;
             npcSpawner.enabled = true;
@@ -82,21 +87,11 @@ public class TimeOfDay : MonoBehaviour
             }
             if (pressedDown == true)
             {
-                timer += Time.deltaTime * 2;
-                rotation -= Time.deltaTime * 2;
-                foreach (var npc in npcSpawner.spawnedNPCs)
-                {
-                    npc.thisNPC.speed = npc.thisNPC.quickSpeed;
-                }
+                SpeedUp();
             }
             else
             {
-                timer += Time.deltaTime;
-                rotation -= Time.deltaTime;
-                foreach (var npc in npcSpawner.spawnedNPCs)
-                {
-                    npc.thisNPC.speed = npc.thisNPC.storedSpeed;
-                }
+                SpeedDown();
             }
             rotationPoint.transform.localRotation = Quaternion.Euler(0f, 0f, rotation);
         }
@@ -131,9 +126,47 @@ public class TimeOfDay : MonoBehaviour
                 }
             }
             startedDay = false;
+            if (Statics.approvalValue <= -50 && Statics.money == 0)
+            {
+                List<ProductManager> products = FindObjectsByType<ProductManager>(FindObjectsSortMode.None).ToList();
+                foreach (var product in products)
+                {
+                    if (product.stock > 0)
+                    {
+                        isntLost = true;
+                    }
+                }
+                if (isntLost == false)
+                {
+                    loseScreen.SetActive(true);
+                }
+                else
+                {
+                    Statics.ReadStatement("Our business isn't over yet!! We still have stock so let's be smart with out money.");
+                    Invoke("CloseAnimator", 3);
+                }
+            }
+        }
+    }
+    public void SpeedUp()
+    {
+        timer += Time.deltaTime * 2;
+        rotation -= Time.deltaTime * 2;
+        foreach (var npc in npcSpawner.spawnedNPCs)
+        {
+            npc.thisNPC.speed = npc.thisNPC.quickSpeed;
         }
     }
 
+    public void SpeedDown()
+    {
+        timer += Time.deltaTime;
+        rotation -= Time.deltaTime;
+        foreach (var npc in npcSpawner.spawnedNPCs)
+        {
+            npc.thisNPC.speed = npc.thisNPC.storedSpeed;
+        }
+    }
     public bool IsCheckOut()
     {
         if (GameObject.FindGameObjectsWithTag("Check Out").Length > 0)

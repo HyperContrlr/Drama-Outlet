@@ -30,6 +30,14 @@ public class BuildingManager : MonoBehaviour
     {
         Statics.UpdateGraph(this.gameObject);
     }
+
+    public void OnDisable()
+    {
+        if (thisBuilding.isSecurity == true)
+        {
+            Statics.securityValue -= thisBuilding.securityBonus;
+        }
+    }
     private void Awake()
     {
         hasValidPlacement = true;
@@ -65,6 +73,10 @@ public class BuildingManager : MonoBehaviour
             isFixed = true;
             hasValidPlacement = true;
             this.gameObject.GetComponentInChildren<SpriteRenderer>().material = defaultPlaceMat;
+            if (thisBuilding.isSecurity == true)
+            {
+                Statics.securityValue += thisBuilding.securityBonus;
+            }
         }
         else if (mode == PlacementMode.Valid)
         {

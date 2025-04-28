@@ -65,6 +65,14 @@ public class ShopItem : MonoBehaviour
         ItemUnlock();
     }
 
+    public void AddToSecurity()
+    {
+        if (thisItem.isSecurity == true)
+        {
+            Statics.securityValue += thisItem.securityBonus;
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {

@@ -24,6 +24,9 @@ public class buildings : ScriptableObject
 
     [SerializeField] public GameObject objectPrefab;
 
+    [SerializeField] public bool isSecurity;
+
+    [SerializeField] public float securityBonus;
     public void ResetValues()
     {
         isLocked = true;

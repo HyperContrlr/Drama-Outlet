@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 647675007323227716}
   - component: {fileID: 5031546697008865183}
   - component: {fileID: 3261159966993522951}
+  - component: {fileID: 3665306650127980269}
   m_Layer: 6
   m_Name: 'Shelf Prefab '
   m_TagString: furniture
@@ -265,3 +266,25 @@ MonoBehaviour:
   spriteRenderer: {fileID: 647675007323227716}
   restockPrice: 0
   sellPrice: 0
+--- !u!114 &3665306650127980269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8951788326916691666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3e25ee35f1d6b742b92313efa91fd01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue: {fileID: 0}
+  dialogueAnimator: {fileID: 0}
+  limitedTimes: 0
+  showThrice: 0
+  timesToShow: 3
+  hasBeenShown: 0
+  description: 
+  timer: 0
+  isOver: 0
+  cursorSet: {fileID: 0}

@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: -2821023031677429245}
   - component: {fileID: 3860013883700331178}
   - component: {fileID: 514212650071716743}
+  - component: {fileID: 8365356483261554789}
   m_Layer: 6
   m_Name: Case Prefab
   m_TagString: furniture
@@ -265,3 +266,25 @@ MonoBehaviour:
   spriteRenderer: {fileID: -2821023031677429245}
   restockPrice: 0
   sellPrice: 0
+--- !u!114 &8365356483261554789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8951788326916691666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3e25ee35f1d6b742b92313efa91fd01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue: {fileID: 0}
+  dialogueAnimator: {fileID: 0}
+  limitedTimes: 0
+  showThrice: 0
+  timesToShow: 3
+  hasBeenShown: 0
+  description: 
+  timer: 0
+  isOver: 0
+  cursorSet: {fileID: 0}

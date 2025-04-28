@@ -231,7 +231,7 @@ public class PopUpManager : MonoBehaviour
         if (Statics.securityValue <= 0)
         {
             //Big Sad
-            if (Statics.securityValue < -20)
+            if (Statics.securityValue < -50)
             {
                 securityMask.sprite = securityMaskSprites[0];
             }
