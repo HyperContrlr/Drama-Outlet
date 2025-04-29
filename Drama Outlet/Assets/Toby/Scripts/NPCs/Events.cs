@@ -33,6 +33,8 @@ public class Events : MonoBehaviour
     public TimeOfDay timeOfDay;
     
     public float timeToEvent;
+
+    public float offset;
     
     public float timeBetweenEvents;
 
