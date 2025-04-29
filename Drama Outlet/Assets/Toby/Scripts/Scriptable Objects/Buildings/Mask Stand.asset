@@ -16,9 +16,12 @@ MonoBehaviour:
   description: Place this stand down to allow customers to buy mask product from
     you.
   cost: 50
+  objectSellPrice: 50
   isLocked: 1
   hasProduct: 0
   soldProduct: {fileID: 11400000, guid: 84118fd9120504e43af7e4355eaa380e, type: 2}
   ratingBonus: 0
   ratingUnlock: 0
   objectPrefab: {fileID: 0}
+  isSecurity: 0
+  securityBonus: 0

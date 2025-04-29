@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 345bb5161ab389045bfc375658cc75b2, type: 3}
-  m_Name: Micro-Byte Poster
+  m_Name: Changing Room
   m_EditorClassIdentifier: 
-  name: Micro-Byte Poster
-  description: A poster promoting the hit game Micro-Byte
-  cost: 200
-  objectSellPrice: 200
+  name: Changing Room
+  description: This will boost ratings by allowing people to try on costumes!!
+  cost: 500
+  objectSellPrice: 500
   isLocked: 1
   hasProduct: 0
   soldProduct: {fileID: 0}
-  ratingBonus: 2.5
-  ratingUnlock: 25
+  ratingBonus: 3
+  ratingUnlock: 20
   objectPrefab: {fileID: 0}
   isSecurity: 0
   securityBonus: 0

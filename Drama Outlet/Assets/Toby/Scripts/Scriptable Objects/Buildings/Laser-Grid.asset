@@ -15,7 +15,7 @@ MonoBehaviour:
   name: Laser-Grid
   description: For this build just click buy to add to your security
   cost: 300
-  objectSellPrice: 250
+  objectSellPrice: 300
   isLocked: 1
   hasProduct: 0
   soldProduct: {fileID: 0}

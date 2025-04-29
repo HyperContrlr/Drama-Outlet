@@ -125,6 +125,13 @@ public class TimeOfDay : MonoBehaviour
                 {
                     Statics.approvalValue += build.thisBuilding.ratingBonus;
                 }
+                List<NPCAI> npcs = FindObjectsByType<NPCAI>(FindObjectsSortMode.None).ToList();
+                foreach (var npc in npcs)
+                {
+                    Statics.money += npc.thisNPC.money;
+                    npc.state = NPCAI.States.Leaving;
+                    npc.target = npc.leave;
+                }
             }
             startedDay = false;
             if (Statics.approvalValue <= -50 && Statics.money == 0)

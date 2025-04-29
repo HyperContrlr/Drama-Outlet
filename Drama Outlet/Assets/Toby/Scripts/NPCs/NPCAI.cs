@@ -11,7 +11,7 @@ public partial class NPCAI : MonoBehaviour
 {
     [SerializeField] private List<GameObject> productSpots;
 
-    [SerializeField] private GameObject target;
+    [SerializeField] public GameObject target;
 
     [SerializeField] private float targetDistance;
 
@@ -19,7 +19,7 @@ public partial class NPCAI : MonoBehaviour
     
     [SerializeField] private GameObject checkOut;
 
-    [SerializeField] private GameObject leave;
+    [SerializeField] public GameObject leave;
 
     [SerializeField] private float slerp;
     public enum States {Moving, Looking, Buying, Leaving, Stopped}
@@ -377,14 +377,26 @@ public partial class NPCAI : MonoBehaviour
         {
             if (thisNPC.unhappy == false)
             {
-                Statics.approvalValue += 2;
+                int chance = Statics.RollADice(4);
+                if (chance == 20)
+                {
+                    Statics.approvalValue += 5;
+                }
+                else if (chance <= 19 && chance > 10)
+                {
+                    Statics.approvalValue += 2;
+                }
+                else
+                {
+                    Statics.approvalValue += 0.5f;
+                }
+                if (noProduct == false)
+                {
+                    Statics.approvalValue -= 5;
+                }
+                npcSpawner.spawnedNPCs.Remove(this);
+                Destroy(this.gameObject);
             }
-            if (noProduct == false)
-            {
-                Statics.approvalValue -= 5;
-            }
-            npcSpawner.spawnedNPCs.Remove(this);
-            Destroy(this.gameObject);
         }
     }
     public void WindowShopper()

@@ -55,7 +55,6 @@ public class buildingPlacer : MonoBehaviour
                 }
                 else
                 {
-                    item.AddToStock();
                     Destroy(toBuild);
                     toBuild = null;
                     buildingPrefab = null;

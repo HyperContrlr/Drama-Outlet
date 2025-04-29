@@ -16,9 +16,12 @@ MonoBehaviour:
   description: Place this stand down to allow customers to buy make-up product from
     you.
   cost: 100
+  objectSellPrice: 100
   isLocked: 1
   hasProduct: 1
   soldProduct: {fileID: 11400000, guid: 1e121216e5da89d468a98c13a0d59287, type: 2}
   ratingBonus: 0
   ratingUnlock: 0
   objectPrefab: {fileID: 0}
+  isSecurity: 0
+  securityBonus: 0

@@ -51,7 +51,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8c647a1872adc547a92c4273aded72b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thisBuilding: {fileID: 11400000, guid: 2a593f1dc2270264ea81de92c0f0b6cf, type: 2}
+  thisBuilding: {fileID: 11400000, guid: ab2d86fa3c2ac1c439a256d516379ae1, type: 2}
   validPlaceMat: {fileID: 2100000, guid: f541ade369807cf46912b4e9d9d715b2, type: 2}
   invalidPlaceMat: {fileID: 2100000, guid: b8c97d3de85ae6c4884d5afcccc4dcf7, type: 2}
   defaultPlaceMat: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
@@ -96,7 +96,7 @@ PolygonCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.5032299, y: 0.1364749}
     oldSize: {x: 0.66, y: 0.95}
     newSize: {x: 0.62, y: 0.53}
     adaptiveTilingThreshold: 0.5
@@ -177,7 +177,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: {fileID: 0}
   items: []
-  identifier: Sofa
+  identifier: Changing Room
   buttons: {fileID: 0}
   isSelected: 0
   objectsInScene: []

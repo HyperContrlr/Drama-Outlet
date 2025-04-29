@@ -24,11 +24,11 @@ public class PauseMenu : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(pause) && isOpen == true)
+        if ((Input.GetKeyDown(pause) || Input.GetKeyDown(KeyCode.Escape)) && isOpen == true)
         {
             Continue();
         }
-        else if (Input.GetKeyDown(pause) && isOpen == false)
+        else if ((Input.GetKeyDown(pause) || Input.GetKeyDown(KeyCode.Escape)) && isOpen == false)
         {
             Pause();
         }
