@@ -60,7 +60,7 @@ public class NPCSpawner : MonoBehaviour
             }
             else if (Statics.approvalValue < 40)
             {
-                if (result >= 15)
+                if (result >= 10)
                 {
                     SpawnCustomer();
                 }

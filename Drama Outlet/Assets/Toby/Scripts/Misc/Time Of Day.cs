@@ -8,11 +8,11 @@ using UnityEngine.EventSystems;
 public class TimeOfDay : MonoBehaviour
 {
     [SerializeField] public float timer;
-    [SerializeField] private bool startedDay;
-    [SerializeField] private bool closeUpShop;
-    [SerializeField] private float morningWindow;
-    [SerializeField] private float afternoonWindow;
-    [SerializeField] private float eveningWindow;
+    [SerializeField] public bool startedDay;
+    [SerializeField] public bool closeUpShop;
+    [SerializeField] public float morningWindow;
+    [SerializeField] public float afternoonWindow;
+    [SerializeField] public float eveningWindow;
     [SerializeField] private NPCSpawner npcSpawner;
     [SerializeField] private GameObject rotationPoint;
     [SerializeField] private float rotation;
@@ -24,6 +24,8 @@ public class TimeOfDay : MonoBehaviour
     [SerializeField] private Image midnight;
     [SerializeField] private GameObject loseScreen;
     [SerializeField] private bool isntLost;
+
+    public Events eventSystem;
     void Start()
     {
         Statics.timeOfDay = Statics.Time.EarlyMorning;
@@ -47,14 +49,17 @@ public class TimeOfDay : MonoBehaviour
         {
             pressedDown = true;
         }
+
         if (Input.GetKeyDown(KeyCode.Space) == true && Statics.timeOfDay == Statics.Time.EarlyMorning && checkOut == true)
         {
+            eventSystem.SetEvents();
             isntLost = false;
             spaceBarMorning.gameObject.SetActive(false);
             startedDay = true;
             npcSpawner.enabled = true;
             npcSpawner.SpawnCustomer();
         }
+
         else if (checkOut == false && Statics.timeOfDay == Statics.Time.EarlyMorning && Input.GetKeyDown(KeyCode.Space))
         {
             Statics.ReadStatement("You need a checkout to open the store!! Use the one in your inventory");

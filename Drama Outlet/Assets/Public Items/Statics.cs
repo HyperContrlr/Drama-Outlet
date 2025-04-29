@@ -28,6 +28,8 @@ public class Statics : MonoBehaviour
         "Mayhap we need another license or higher ratings?";
 
     public static string rejectionText4 = "Seems like we don't have enough to Restock those";
+
+    public static string rejectionText5 = "Shoot we don't have enough money to pay that off yet";
     public static void ReadRejection1()
     {
         FindFirstObjectByType<ComedyDialogue>().ReadDescription(rejectionText1);
@@ -48,6 +50,10 @@ public class Statics : MonoBehaviour
         FindFirstObjectByType<ComedyDialogue>().ReadDescription(rejectionText4);
     }
 
+    public static void ReadRejection5()
+    {
+        FindFirstObjectByType<ComedyDialogue>().ReadDescription(rejectionText5);
+    }
 
     public static void ReadStatement(string statement)
     {
