@@ -13,6 +13,7 @@ public class buildingPlacer : MonoBehaviour
     public GameObject floor;
     public LayerMask floorLayerMask;
     public LayerMask furnLayerMask;
+    public LayerMask oobLayerMask;
 
     public Vector3 offset;
 
@@ -86,11 +87,18 @@ public class buildingPlacer : MonoBehaviour
             {
                 m.SetPlacementMode(PlacementMode.Valid);
             }
+            RaycastHit2D oobHit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, 100f, oobLayerMask);
+            if (oobHit.collider != null)
+            {
+                m.SetPlacementMode(PlacementMode.Invalid);
+            }
+            else
+            {
+                m.SetPlacementMode(PlacementMode.Valid);
+            }
             RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, 100f, floorLayerMask);
             if (hit.collider != null)
             {
-
-
                 ////finds each object with the tag "furniture" and the script itemCollision, and gets specifically the itemCollision script
                 //var furn = GameObject.FindGameObjectsWithTag("furniture");
                 //foreach (var item in furn.Where(item2 => item2.GetComponent<itemCollision>()).Select(item2 => item2.GetComponent<itemCollision>()))
