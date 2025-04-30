@@ -365,38 +365,12 @@ public partial class NPCAI : MonoBehaviour
         {
             reachedEndOfPath = false;
         }
-        Debug.Log($"Direction: {customerPath.vectorPath[currentWaypoint + 1]}");
         Vector3 direction = (customerPath.vectorPath[currentWaypoint + 1] - transform.position).normalized;
         rb.linearVelocity = Vector3.Lerp(rb.linearVelocity, direction * thisNPC.speed, slerp);
         float distance = Vector3.Distance(rb.position, customerPath.vectorPath[currentWaypoint + 1]);
         if (distance < nextWaypointDistance)
         {
             currentWaypoint++;
-        }
-        if (targetDistance <= 0.1)
-        {
-            if (thisNPC.unhappy == false)
-            {
-                int chance = Statics.RollADice(4);
-                if (chance == 20)
-                {
-                    Statics.approvalValue += 5;
-                }
-                else if (chance <= 19 && chance > 10)
-                {
-                    Statics.approvalValue += 2;
-                }
-                else
-                {
-                    Statics.approvalValue += 0.5f;
-                }
-                if (noProduct == false)
-                {
-                    Statics.approvalValue -= 5;
-                }
-                npcSpawner.spawnedNPCs.Remove(this);
-                Destroy(this.gameObject);
-            }
         }
     }
     public void WindowShopper()
@@ -550,6 +524,36 @@ public partial class NPCAI : MonoBehaviour
         productSpots = productSpots.Shuffle().ToList();
     }
 
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Exit") && state == States.Leaving)
+        {
+            {
+                if (thisNPC.unhappy == false)
+                {
+                    int chance = Statics.RollADice(4);
+                    if (chance == 20)
+                    {
+                        Statics.approvalValue += 5;
+                    }
+                    else if (chance <= 19 && chance > 10)
+                    {
+                        Statics.approvalValue += 2;
+                    }
+                    else
+                    {
+                        Statics.approvalValue += 0.5f;
+                    }
+                    if (noProduct == false)
+                    {
+                        Statics.approvalValue -= 5;
+                    }
+                }
+                npcSpawner.spawnedNPCs.Remove(this);
+                Destroy(this.gameObject);
+            }
+        }
+    }
     public bool IsThereProduct()
     {
         List<ProductManager> products = FindObjectsByType<ProductManager>(FindObjectsSortMode.None).ToList();

@@ -21,19 +21,19 @@ public class Events : MonoBehaviour
         public GameObject spawnedPrefab;
         public float cost;
     }
-    
+
     public List<EventPeice> allEvents;
 
     public EventPeice currentEvent;
-    
+
     public GameObject open;
-    
+
     public TimeOfDay timeOfDay;
-    
+
     public float timeToEvent;
 
     public float offset;
-    
+
     public float timeBetweenEvents;
 
     public int eventsInTheDay;
@@ -129,6 +129,10 @@ public class Events : MonoBehaviour
 
     public void EventHappens()
     {
+        if (currentEvent.Equals(default(EventPeice)))
+        {
+            return;
+        }
         if (eventGoingOn == true)
         {
             return;
@@ -147,7 +151,7 @@ public class Events : MonoBehaviour
             }
             else if (currentEvent.isQuickTime == true)
             {
-
+                UnityEventOn();
             }
             else if (currentEvent.isSpawnedThing == true)
             {
@@ -195,5 +199,39 @@ public class Events : MonoBehaviour
         List<ProductManager> products = FindObjectsByType<ProductManager>(FindObjectsSortMode.None).ToList();
         products = products.Shuffle().ToList();
         products[0].stock = 0;
+    }
+
+    public void MakeUnhappy(int choice)
+    {
+        if (choice == 0)
+        {
+            List<NPCAI> npcs = FindObjectsByType<NPCAI>(FindObjectsSortMode.None).ToList();
+            npcs = npcs.Shuffle().ToList();
+            npcs[0].thisNPC.unhappy = true;
+        }
+        else if (choice == 1)
+        {
+            List<NPCAI> npcs = FindObjectsByType<NPCAI>(FindObjectsSortMode.None).ToList();
+            foreach (var npc in npcs)
+            {
+                int option = Statics.FlipACoin();
+                if (option == 0)
+                {
+                    return;
+                }
+                else
+                {
+                    npc.thisNPC.unhappy = true;
+                }
+            }
+        }
+        else if (choice == 2)
+        {
+            List<NPCAI> npcs = FindObjectsByType<NPCAI>(FindObjectsSortMode.None).ToList();
+            foreach (var npc in npcs)
+            {
+                npc.thisNPC.unhappy = true;
+            }
+        }
     }
 }

@@ -11,7 +11,6 @@ public class TutorialDialogue : MonoBehaviour
     public List<GameObject> gameObjectsToDeactivate;
     public List<GameObject> arrows;
     public List<Hover> hovers;
-    public GameObject map;
     public License maskLicense;
     public Image tutorialImage;
     public bool startedDialogue;
@@ -61,7 +60,6 @@ public class TutorialDialogue : MonoBehaviour
             Destroy(go);
         }
         Destroy(this.gameObject);
-        map.SetActive(true);
     }
 
     public void Next()
@@ -90,11 +88,7 @@ public class TutorialDialogue : MonoBehaviour
             Statics.ReadStatement(tutorialDialogues[0]);
             tutorialDialogues.Remove(tutorialDialogues[0]);
         }
-        if (arrows.Count == 0)
-        {
-            map.SetActive(true);
-        }
-        else
+        if (arrows.Count > 0)
         {
             arrows[0].SetActive(true);
             currentArrow = arrows[0];

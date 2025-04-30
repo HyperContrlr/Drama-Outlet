@@ -18614,8 +18614,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -17, y: 17}
-  m_SizeDelta: {x: 1105.7957, y: 589.9965}
+  m_AnchoredPosition: {x: -2.2453, y: 67.798965}
+  m_SizeDelta: {x: 1197.4646, y: 685.5381}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1504988304
 MonoBehaviour:
@@ -18700,7 +18700,6 @@ MonoBehaviour:
   - {fileID: 2108129036}
   - {fileID: 716970908}
   - {fileID: 880645508}
-  map: {fileID: 1950304515}
   maskLicense: {fileID: 11400000, guid: 2e639ded0d9720744a7134d6449d3010, type: 2}
   tutorialImage: {fileID: 1504988305}
   startedDialogue: 0
@@ -23027,6 +23026,7 @@ MonoBehaviour:
     -Tragedy
 
 '
+  day: {fileID: 7546991465511830662}
 --- !u!1 &1893805455
 GameObject:
   m_ObjectHideFlags: 0
@@ -24011,7 +24011,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!156049354 &1950304516
 Grid:
   m_ObjectHideFlags: 0
@@ -31292,7 +31292,7 @@ Transform:
   m_GameObject: {fileID: 5209758313733269671}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.7038911, w: 0.71030796}
-  m_LocalPosition: {x: 1.8948, y: -1.3449, z: -4.05}
+  m_LocalPosition: {x: 2.027, y: -1.345, z: -4.05}
   m_LocalScale: {x: 0.36676466, y: 0.48788434, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -38767,7 +38767,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 4167341833554843338}
   - {fileID: 2424070899746700520}
   - {fileID: 8128340639959134384}
   - {fileID: 7607429344037686761}
@@ -38779,6 +38778,7 @@ RectTransform:
   - {fileID: 1873866853}
   - {fileID: 1915782299}
   - {fileID: 982868450}
+  - {fileID: 4167341833554843338}
   m_Father: {fileID: 2193887504327376787}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -44397,7 +44397,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 2689099390579611995, guid: 731e716acf5a5634b9128cab501c44d3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

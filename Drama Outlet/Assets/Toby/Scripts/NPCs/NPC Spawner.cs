@@ -26,15 +26,15 @@ public class NPCSpawner : MonoBehaviour
         {
             if (Statics.timeOfDay == Statics.Time.Afternoon)
             {
-                spawnStop = 3f;
+                spawnStop = 5f;
             }
             else if (Statics.timeOfDay == Statics.Time.Evening)
             {
-                spawnStop = 5f;
+                spawnStop = 10f;
             }
             else
             {
-                spawnStop = 10f;
+                spawnStop = 15f;
             }
                 int result = Statics.RollADice(4);
             if (Statics.approvalValue >= 40)
@@ -60,7 +60,7 @@ public class NPCSpawner : MonoBehaviour
             }
             else if (Statics.approvalValue < 40)
             {
-                if (result >= 10)
+                if (result >= 14)
                 {
                     SpawnCustomer();
                 }

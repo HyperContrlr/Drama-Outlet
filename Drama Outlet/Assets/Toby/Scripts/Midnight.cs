@@ -24,7 +24,7 @@ public class Midnight : MonoBehaviour
     public List<string> possibleWarningNotes;
     [TextArea(3, 10)]
     public List<string> possibleStolenNotes;
-
+    public TimeOfDay day;
     public void OnEnable()
     {
         if (Statics.approvalValue <= 60 && hasStartedStealing == false)
@@ -139,6 +139,9 @@ public class Midnight : MonoBehaviour
     public void Next()
     {
         Statics.day += 1;
+        Statics.timeOfDay = Statics.Time.EarlyMorning;
+        day.closeUpShop = false;
+        day.timer = 0;
         this.gameObject.SetActive(false);
         stolenNote.SetActive(true);
     }

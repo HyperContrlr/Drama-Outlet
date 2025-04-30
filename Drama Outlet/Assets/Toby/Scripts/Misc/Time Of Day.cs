@@ -52,7 +52,7 @@ public class TimeOfDay : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) == true && Statics.timeOfDay == Statics.Time.EarlyMorning && checkOut == true)
         {
-            eventSystem.SetEvents();
+            //eventSystem.SetEvents();
             isntLost = false;
             spaceBarMorning.gameObject.SetActive(false);
             startedDay = true;
@@ -168,6 +168,7 @@ public class TimeOfDay : MonoBehaviour
         foreach (var npc in npcSpawner.spawnedNPCs)
         {
             npc.thisNPC.speed = npc.thisNPC.quickSpeed;
+            npc.gameObject.GetComponent<Animator>().speed = 2f;
         }
     }
 
@@ -178,6 +179,7 @@ public class TimeOfDay : MonoBehaviour
         foreach (var npc in npcSpawner.spawnedNPCs)
         {
             npc.thisNPC.speed = npc.thisNPC.storedSpeed;
+            npc.gameObject.GetComponent<Animator>().speed = 1f;
         }
     }
     public bool IsCheckOut()
