@@ -200,7 +200,6 @@ public class Events : MonoBehaviour
         products = products.Shuffle().ToList();
         products[0].stock = 0;
     }
-
     public void MakeUnhappy(int choice)
     {
         if (choice == 0)
@@ -231,6 +230,28 @@ public class Events : MonoBehaviour
             foreach (var npc in npcs)
             {
                 npc.thisNPC.unhappy = true;
+            }
+        }
+    }
+    public void StopNPCs(int choice)
+    {
+        if (choice == 0)
+        {
+            List<NPCAI> npcs = FindObjectsByType<NPCAI>(FindObjectsSortMode.None).ToList();
+            foreach (var npc in npcs)
+            {
+                npc.isPaused = true;
+                npc.previousState = npc.state;
+                npc.state = NPCAI.States.Stopped;
+            }
+        }
+        if (choice == 1)
+        {
+            List<NPCAI> npcs = FindObjectsByType<NPCAI>(FindObjectsSortMode.None).ToList();
+            foreach (var npc in npcs)
+            {
+                npc.isPaused = false;
+                npc.state = npc.previousState;
             }
         }
     }

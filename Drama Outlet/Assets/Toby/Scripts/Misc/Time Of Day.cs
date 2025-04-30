@@ -169,6 +169,7 @@ public class TimeOfDay : MonoBehaviour
         {
             npc.thisNPC.speed = npc.thisNPC.quickSpeed;
             npc.gameObject.GetComponent<Animator>().speed = 2f;
+            npc.waitTimeBase = npc.waitTimeBase / 2;
         }
     }
 
@@ -180,6 +181,7 @@ public class TimeOfDay : MonoBehaviour
         {
             npc.thisNPC.speed = npc.thisNPC.storedSpeed;
             npc.gameObject.GetComponent<Animator>().speed = 1f;
+            npc.waitTimeBase = npc.waitTimeBase * 2;
         }
     }
     public bool IsCheckOut()

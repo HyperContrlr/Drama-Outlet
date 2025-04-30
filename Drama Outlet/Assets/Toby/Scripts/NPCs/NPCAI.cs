@@ -30,6 +30,10 @@ public partial class NPCAI : MonoBehaviour
 
     public bool isSpecial;
 
+    public bool isTheif;
+
+    public bool isCelebrity;
+
     private Pathfinding.Path customerPath;
 
     private float nextWaypointDistance = 1f;
@@ -55,6 +59,10 @@ public partial class NPCAI : MonoBehaviour
     [SerializeField] private BoxCollider2D box;
 
     [SerializeField] private float colliderTimer;
+
+    public bool isPaused;
+
+    public States previousState;
     //public void OnDrawGizmos()
     //{
     //    Gizmos.DrawWireSphere(customerPath.vectorPath[currentWaypoint + 1], 1);
@@ -83,110 +91,122 @@ public partial class NPCAI : MonoBehaviour
         {
             thisNPC.personality = (NPCAI.NPC.Personality)Random.Range(0, 3);
         }
-        int x = (int)Random.Range(1, 3);
-        for (int y = 0; y < x; y++)
+        if (isSpecial == true)
         {
-            int i = (int)Random.Range(0, 4);
-            thisNPC.preference |= (NPC.Preference)Mathf.Pow(i, 2);
-        }
-        if (thisNPC.personality == NPC.Personality.Window_Shopper)
-        {
-            waitTimeBase = 5;
-            if (Statics.approvalValue >= 20)
+            if (isTheif == true)
             {
-                int chance = Statics.RollADice(1);
-                if (chance == 6)
+                thisNPC.personality = NPC.Personality.Thief;
+                waitTimeBase = 10;
+            }
+            else if (isCelebrity == true)
+            {
+                thisNPC.personality = NPC.Personality.Celebrity;
+            }
+            int x = (int)Random.Range(1, 3);
+            for (int y = 0; y < x; y++)
+            {
+                int i = (int)Random.Range(0, 4);
+                thisNPC.preference |= (NPC.Preference)Mathf.Pow(i, 2);
+            }
+            if (thisNPC.personality == NPC.Personality.Window_Shopper)
+            {
+                waitTimeBase = 5;
+                if (Statics.approvalValue >= 20)
                 {
-                    thisNPC.personality = NPC.Personality.Average_Shopper;
+                    int chance = Statics.RollADice(1);
+                    if (chance == 6)
+                    {
+                        thisNPC.personality = NPC.Personality.Average_Shopper;
+                    }
+                }
+
+                if (Statics.approvalValue >= 40)
+                {
+                    int chance = Statics.RollADice(1);
+                    if (chance >= 5)
+                    {
+                        thisNPC.personality = NPC.Personality.Average_Shopper;
+                    }
+                }
+
+                if (Statics.approvalValue >= 60)
+                {
+                    int chance = Statics.RollADice(1);
+                    if (chance >= 4)
+                    {
+                        thisNPC.personality = NPC.Personality.Average_Shopper;
+                    }
+                }
+
+                if (Statics.approvalValue >= 80)
+                {
+                    int chance = Statics.RollADice(1);
+                    if (chance >= 3)
+                    {
+                        thisNPC.personality = NPC.Personality.Average_Shopper;
+                    }
+                }
+
+                if (Statics.approvalValue >= 100)
+                {
+                    int chance = Statics.RollADice(1);
+                    if (chance >= 2)
+                    {
+                        thisNPC.personality = NPC.Personality.Average_Shopper;
+                    }
                 }
             }
 
-            if (Statics.approvalValue >= 40)
+            if (thisNPC.personality == NPC.Personality.Average_Shopper)
             {
-                int chance = Statics.RollADice(1);
-                if (chance >= 5)
+                waitTimeBase = 8;
+                if (Statics.approvalValue >= 50)
                 {
-                    thisNPC.personality = NPC.Personality.Average_Shopper;
+                    int chance = Statics.RollADice(1);
+                    if (chance >= 5)
+                    {
+                        thisNPC.personality = NPC.Personality.Big_Spender;
+                    }
+                }
+
+                if (Statics.approvalValue > 0)
+                {
+                    int chance = Statics.RollADice(1);
+                    if (chance >= 4)
+                    {
+                        thisNPC.personality = NPC.Personality.Window_Shopper;
+                    }
+                }
+
+                if (Statics.approvalValue <= -20)
+                {
+                    int chance = Statics.RollADice(1);
+                    if (chance >= 5)
+                    {
+                        thisNPC.personality = NPC.Personality.Window_Shopper;
+                    }
                 }
             }
 
-            if (Statics.approvalValue >= 60)
+            if (thisNPC.personality == NPC.Personality.Big_Spender)
             {
-                int chance = Statics.RollADice(1);
-                if (chance >= 4)
+                waitTimeBase = 8;
+                if (Statics.approvalValue > 0)
                 {
-                    thisNPC.personality = NPC.Personality.Average_Shopper;
+                    int chance = Statics.RollADice(1);
+                    if (chance >= 4)
+                    {
+                        thisNPC.personality = NPC.Personality.Average_Shopper;
+                    }
                 }
-            }
 
-            if (Statics.approvalValue >= 80)
-            {
-                int chance = Statics.RollADice(1);
-                if (chance >= 3)
+                if (Statics.approvalValue <= -20)
                 {
-                    thisNPC.personality = NPC.Personality.Average_Shopper;
-                }
-            }
-
-            if (Statics.approvalValue >= 100)
-            {
-                int chance = Statics.RollADice(1);
-                if (chance >= 2)
-                {
-                    thisNPC.personality = NPC.Personality.Average_Shopper;
-                }
-            }
-        }
-        
-        if (thisNPC.personality == NPC.Personality.Average_Shopper)
-        {
-            waitTimeBase = 8;
-            if (Statics.approvalValue >= 50)
-            {
-                int chance = Statics.RollADice(1);
-                if (chance >= 5)
-                {
-                    thisNPC.personality = NPC.Personality.Big_Spender;
-                }
-            }
-
-            if (Statics.approvalValue > 0)
-            {
-                int chance = Statics.RollADice(1);
-                if (chance >= 4)
-                {
-                    thisNPC.personality = NPC.Personality.Window_Shopper;
-                }
-            }
-
-            if (Statics.approvalValue <= -20)
-            {
-                int chance = Statics.RollADice(1);
-                if (chance >= 5)
-                {
-                    thisNPC.personality = NPC.Personality.Window_Shopper;
-                }
-            }    
-        }
-
-        if (thisNPC.personality == NPC.Personality.Big_Spender)
-        {
-            waitTimeBase = 8;
-            if (Statics.approvalValue > 0)
-            {
-                int chance = Statics.RollADice(1);
-                if (chance >= 4)
-                {
-                    thisNPC.personality = NPC.Personality.Average_Shopper;
-                }
-            }
-
-            if (Statics.approvalValue <= -20)
-            {
-                int chance = Statics.RollADice(1);
-                if (chance >= 5)
-                {
-                    thisNPC.personality = NPC.Personality.Average_Shopper;
+                    int chance = Statics.RollADice(1);
+                    if (chance >= 5)
+                    {
+                        thisNPC.personality = NPC.Personality.Average_Shopper;
+                    }
                 }
             }
         }
@@ -213,6 +233,10 @@ public partial class NPCAI : MonoBehaviour
             {
                 productSpots.Add(product.gameObject);
             }
+            if (isTheif == true)
+            {
+                thisNPC.personality = NPC.Personality.Thief;
+            }
         }
         productSpots = productSpots.Shuffle().ToList();
     }
@@ -234,7 +258,12 @@ public partial class NPCAI : MonoBehaviour
             Statics.approvalValue -= 5;
             thisNPC.unhappy = true;
         }
-        thisNPC.hasBoughtSomething = true;
+        if (thisNPC.personality == NPC.Personality.Thief)
+        {
+            thisNPC.hasBoughtSomething = false;
+        }
+        else
+            thisNPC.hasBoughtSomething = true;
     }
     public void SetTarget()
     {
@@ -373,6 +402,15 @@ public partial class NPCAI : MonoBehaviour
             currentWaypoint++;
         }
     }
+
+    public void Stopping()
+    {
+        rb.linearVelocity = Vector2.zero;
+        if (isPaused == false)
+        {
+            state = previousState;
+        }
+    }
     public void WindowShopper()
     {
         if (state == States.Moving)
@@ -476,6 +514,31 @@ public partial class NPCAI : MonoBehaviour
         }
     }
     // Update is called once per frame
+    public void Theif()
+    {
+        if (state == States.Moving)
+        {
+            Moving();
+        }
+
+        if (state == States.Looking)
+        {
+            rb.linearVelocity = Vector2.zero;
+            //Play an idle animation
+            waitTime -= Time.deltaTime;
+            if (waitTime <= 0)
+            {
+                Buy();
+                target.GetComponent<ProductManager>().thisProduct.stockBought = 0;
+                SetTarget();
+            }
+        }
+
+        if (state == States.Leaving)
+        {
+            Leaving();
+        }
+    }
     void Update()
     {
         //path.Scan();
@@ -499,6 +562,10 @@ public partial class NPCAI : MonoBehaviour
         else if (thisNPC.personality == NPC.Personality.Big_Spender)
         {
             BigSpender();   
+        }
+        if (state == States.Stopped)
+        {
+            Stopping();
         }
         if (rb.linearVelocity.x > 0 || rb.linearVelocity.x < 0)
         {
@@ -529,6 +596,12 @@ public partial class NPCAI : MonoBehaviour
         if (collision.gameObject.CompareTag("Exit") && state == States.Leaving)
         {
             {
+                if (thisNPC.personality == NPC.Personality.Thief)
+                {
+                    Statics.money -= thisNPC.money;
+                    Statics.ReadStatement("WE DON GOT ROBBED!!!");
+                    Invoke("CloseAnimator", 3);
+                }
                 if (thisNPC.unhappy == false)
                 {
                     int chance = Statics.RollADice(4);
@@ -569,5 +642,9 @@ public partial class NPCAI : MonoBehaviour
         {
             return false;
         }
+    }
+    public void CloseAnimator()
+    {
+        FindFirstObjectByType<ComedyDialogue>().EndDialogue();
     }
 }
