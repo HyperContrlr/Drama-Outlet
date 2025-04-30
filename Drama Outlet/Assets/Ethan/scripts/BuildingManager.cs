@@ -23,6 +23,7 @@ public class BuildingManager : MonoBehaviour
     [HideInInspector] public bool isFixed;
 
     public Vector2 boxThang;
+    public GameObject parteecles;
 
     private int nObstacles;
 
@@ -97,6 +98,7 @@ public class BuildingManager : MonoBehaviour
             foreach (MeshRenderer r in meshComps)
                 r.sharedMaterials = initialMaterials[r].ToArray();
             this.gameObject.GetComponent<PolygonCollider2D>().enabled = true;
+            parteecles.SetActive(true);
         }
         else
         {

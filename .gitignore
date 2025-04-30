@@ -1,0 +1,15 @@
+*.zip
+*.exe
+*.dll
+*.txt
+*.info
+*.config
+*.assets
+*.resS
+*.json
+*.resource
+*.ini
+*.aspx
+*.map
+*.browser
+*.xml
