@@ -26,8 +26,6 @@ public class Events : MonoBehaviour
 
     public EventPeice currentEvent;
     
-    public List<KeyCode> eventKeys;
-    
     public GameObject open;
     
     public TimeOfDay timeOfDay;
@@ -56,7 +54,12 @@ public class Events : MonoBehaviour
             if (timeToEvent >= timeBetweenEvents)
             {
                 timeToEvent = 0;
-
+                offset += timeBetweenEvents;
+                if (eventDictionary.ContainsKey((int)offset))
+                {
+                    currentEvent = eventDictionary[(int)offset];
+                    EventHappens();
+                }
             }
         }
     }
@@ -67,6 +70,7 @@ public class Events : MonoBehaviour
     public void UnityEventOver()
     {
         currentEvent.eventOver.Invoke();
+        eventGoingOn = false;
     }
     public void SetText(int choice, TextMeshProUGUI text)
     {
@@ -148,10 +152,10 @@ public class Events : MonoBehaviour
             else if (currentEvent.isSpawnedThing == true)
             {
                 Instantiate(currentEvent.spawnedPrefab, open.transform);
+                currentEvent.eventOver.Invoke();
             }
         }
     }
-
     public void MoneyButton(float cost)
     {
         if (Statics.money >= cost)

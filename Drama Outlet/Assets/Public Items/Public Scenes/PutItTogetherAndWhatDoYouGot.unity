@@ -18654,22 +18654,16 @@ MonoBehaviour:
     and press E to put the item back into storage.
   - '<size=30>If you don''t like an objects placement then click on the object and
     press E to put it in storage. '
-  - Now your store is all set up and ready for the day!!
   - <size=25>Through out the day customers will come in and buy from your store.
     Don't forget to restock your product using the button in the bottom right corner.
   - <size=25>If the day is going too slow for your taste you can hold down the speed
     up button or space to make the day go faster.
-  - <size=30>Be careful though because throughout the day little problems will pop
-    up for you to manage.
   - <size=30>Make sure to use your prep time in the morning and night properly and
     keep track of your approval and money.
   - <size=25>If we start getting theivery problems you will also have to worry about
     your securtiy. Security items can be bought later in the store.
   - 'Also you can press TAB to pause the game. In there you can deactivate me if
     you want.. meanie '
-  - <size=25>I know this is a lot to handle but you are gonna do great!! Just make
-    sure we run smoothly and get those star ratings or else we will fail as a business.
-  - <size=35>No pressure... ha ha!!
   - <size=15>Oh and one last tip make sure to keep money saved for restocks.
   - <size=25>Ok I think that is everything right click to end the tutorial and move
     to the early morning setup. Lets go put some smiles on customers faces!!
@@ -47717,6 +47711,7 @@ MonoBehaviour:
   midnight: {fileID: 1873866854}
   loseScreen: {fileID: 1915782298}
   isntLost: 0
+  eventSystem: {fileID: 0}
 --- !u!114 &7546991465511830663
 MonoBehaviour:
   m_ObjectHideFlags: 0
