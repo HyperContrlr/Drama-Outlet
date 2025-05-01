@@ -15,7 +15,7 @@ public class TimeOfDay : MonoBehaviour
     [SerializeField] public float eveningWindow;
     [SerializeField] private NPCSpawner npcSpawner;
     [SerializeField] private GameObject rotationPoint;
-    [SerializeField] private float rotation;
+    [SerializeField] public float rotation;
     [SerializeField] private List<BuildingManager> buildingsPlaced;
     [SerializeField] public bool pressedDown;
     [SerializeField] private Image spaceBarMorning;

@@ -142,6 +142,7 @@ public class Midnight : MonoBehaviour
         Statics.timeOfDay = Statics.Time.EarlyMorning;
         day.closeUpShop = false;
         day.timer = 0;
+        day.rotation = 90;
         this.gameObject.SetActive(false);
         stolenNote.SetActive(true);
     }

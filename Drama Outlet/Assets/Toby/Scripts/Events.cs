@@ -86,7 +86,7 @@ public class Events : MonoBehaviour
 
     public void SetButton()
     {
-       button1.onClick.AddListener(() => UnityEventChoice(0));
+        button1.onClick.AddListener(() => UnityEventChoice(0));
         button2.onClick.AddListener(() => UnityEventChoice(1));
     }
     public void SetText(string statement)
@@ -109,20 +109,21 @@ public class Events : MonoBehaviour
     }
     public void SetEvents()
     {
+        offset = 0;
         if (Statics.day <= 5)
         {
             timeBetweenEvents = 30f;
-            eventsInTheDay = Statics.randyTheRandom.Next(1, 4);
+            eventsInTheDay = Statics.randyTheRandom.Next(2, 5);
         }
         else if (Statics.day > 5 && Statics.day < 11)
         {
             timeBetweenEvents = 20f;
-            eventsInTheDay = Statics.randyTheRandom.Next(2, 6);
+            eventsInTheDay = Statics.randyTheRandom.Next(2, 7);
         }
         else if (Statics.day >= 20)
         {
             timeBetweenEvents = 10f;
-            eventsInTheDay = Statics.randyTheRandom.Next(3, 8);
+            eventsInTheDay = Statics.randyTheRandom.Next(3, 9);
         }
         eventDictionary = new();
         for (int i = 0; i < timeOfDay.eveningWindow / timeBetweenEvents; ++i)

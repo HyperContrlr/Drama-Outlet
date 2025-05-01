@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 232605019341072794}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.006, y: -0.037, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -130,6 +130,8 @@ MonoBehaviour:
     speedMin: 1
     unhappy: 0
   isSpecial: 0
+  isTheif: 0
+  isCelebrity: 0
   currentWaypoint: 0
   rb: {fileID: 7316396876127119662}
   seeker: {fileID: 2168179308099494881}
@@ -139,6 +141,8 @@ MonoBehaviour:
   path: {fileID: 0}
   box: {fileID: 1156648721109931113}
   colliderTimer: 0
+  isPaused: 0
+  previousState: 0
 --- !u!50 &7316396876127119662
 Rigidbody2D:
   serializedVersion: 5
@@ -348,4 +352,4 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1

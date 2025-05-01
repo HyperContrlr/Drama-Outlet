@@ -15,7 +15,7 @@ public class ButtonedPressed : MonoBehaviour, IPointerDownHandler, IPointerUpHan
         {
             timer += Time.deltaTime;
         }
-        if (restock == true && timer >= 3 && buttons.managerSelected == false)
+        if (restock == true && timer >= 2 && buttons.managerSelected == false)
         {
             RestockAll();
         }
