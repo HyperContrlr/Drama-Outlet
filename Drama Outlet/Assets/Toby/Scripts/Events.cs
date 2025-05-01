@@ -61,7 +61,12 @@ public class Events : MonoBehaviour
     {
         if (timeOfDay.startedDay == true)
         {
-            timeToEvent += Time.deltaTime;
+            if (timeOfDay.pressedDown == true)
+            {
+                timeToEvent += Time.deltaTime * 2;
+            }
+            else
+                timeToEvent += Time.deltaTime;
             if (timeToEvent >= timeBetweenEvents)
             {
                 timeToEvent = 0;
