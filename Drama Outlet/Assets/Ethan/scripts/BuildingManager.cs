@@ -99,6 +99,7 @@ public class BuildingManager : MonoBehaviour
                 r.sharedMaterials = initialMaterials[r].ToArray();
             this.gameObject.GetComponent<PolygonCollider2D>().enabled = true;
             parteecles.SetActive(true);
+            this.gameObject.GetComponent<AudioSource>().Play();
         }
         else
         {
