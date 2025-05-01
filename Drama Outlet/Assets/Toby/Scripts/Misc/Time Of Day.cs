@@ -24,6 +24,7 @@ public class TimeOfDay : MonoBehaviour
     [SerializeField] private Image midnight;
     [SerializeField] private GameObject loseScreen;
     [SerializeField] private bool isntLost;
+    [SerializeField] private bool changedOnce;
 
     public Events eventSystem;
     void Start()
@@ -52,7 +53,7 @@ public class TimeOfDay : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) == true && Statics.timeOfDay == Statics.Time.EarlyMorning && checkOut == true)
         {
-            //eventSystem.SetEvents();
+            eventSystem.SetEvents();
             isntLost = false;
             spaceBarMorning.gameObject.SetActive(false);
             startedDay = true;
@@ -169,7 +170,7 @@ public class TimeOfDay : MonoBehaviour
         {
             npc.thisNPC.speed = npc.thisNPC.quickSpeed;
             npc.gameObject.GetComponent<Animator>().speed = 2f;
-            npc.waitTimeBase = npc.waitTimeBase / 2;
+            npc.waitTimeBase = 2f;
         }
     }
 
@@ -181,7 +182,7 @@ public class TimeOfDay : MonoBehaviour
         {
             npc.thisNPC.speed = npc.thisNPC.storedSpeed;
             npc.gameObject.GetComponent<Animator>().speed = 1f;
-            npc.waitTimeBase = npc.waitTimeBase * 2;
+            npc.ResetWaitTime();
         }
     }
     public bool IsCheckOut()

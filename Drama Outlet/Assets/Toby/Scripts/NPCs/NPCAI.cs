@@ -82,6 +82,21 @@ public partial class NPCAI : MonoBehaviour
             currentWaypoint = 0;
         }
     }
+    public void ResetWaitTime()
+    {
+        if (thisNPC.personality == NPCAI.NPC.Personality.Average_Shopper)
+        {
+            waitTimeBase = 5;
+        }
+        else if (thisNPC.personality == NPCAI.NPC.Personality.Window_Shopper)
+        {
+            waitTimeBase = 8;
+        }
+        else if (thisNPC.personality == NPCAI.NPC.Personality.Big_Spender)
+        {
+            waitTimeBase = 8;
+        }
+    }
     public void RandomizeNPCValues()
     {
         thisNPC.speed = Statics.randyTheRandom.Next((int)thisNPC.speedMin, (int)thisNPC.speedMax);
@@ -102,7 +117,8 @@ public partial class NPCAI : MonoBehaviour
             {
                 thisNPC.personality = NPC.Personality.Celebrity;
             }
-            int x = (int)Random.Range(1, 3);
+        }
+        int x = (int)Random.Range(1, 3);
             for (int y = 0; y < x; y++)
             {
                 int i = (int)Random.Range(0, 4);
@@ -210,7 +226,6 @@ public partial class NPCAI : MonoBehaviour
                 }
             }
         }
-    }
     public void FindProductSpots()
     {
         List<ProductManager> products = FindObjectsByType<ProductManager>(FindObjectsSortMode.None).ToList();
@@ -326,7 +341,6 @@ public partial class NPCAI : MonoBehaviour
         {
             reachedEndOfPath = false;
         }
-        Debug.Log($"Direction: {customerPath.vectorPath[currentWaypoint + 1]}");
         Vector3 direction = (customerPath.vectorPath[currentWaypoint + 1] - transform.position).normalized;
         rb.linearVelocity = Vector3.Lerp(rb.linearVelocity, direction * thisNPC.speed, slerp);
         float distance = Vector3.Distance(rb.position, customerPath.vectorPath[currentWaypoint + 1]);

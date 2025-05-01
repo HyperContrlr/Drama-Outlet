@@ -4,15 +4,17 @@ using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class Events : MonoBehaviour
 {
+    [System.Serializable]
     public struct EventPeice
     {
-        [TextArea(3, 10)]
-        public List<string> eventTexts;
+        public TextMeshProUGUI eventDescription;
         public UnityEvent eventAction;
         public UnityEvent eventOver;
+        public UnityEvent eventOver2;
         public bool isQuickTime;
         public bool isChoice;
         public bool isPaywall;
@@ -38,9 +40,18 @@ public class Events : MonoBehaviour
 
     public int eventsInTheDay;
 
+    [SerializeField]
     public Dictionary<int, EventPeice> eventDictionary;
 
     public bool eventGoingOn;
+
+    public Button button1;
+    
+    public Button button2;
+
+    public Button moneyButton;
+
+    public TextMeshProUGUI moneyText;
     void Start()
     {
     }
@@ -72,23 +83,28 @@ public class Events : MonoBehaviour
         currentEvent.eventOver.Invoke();
         eventGoingOn = false;
     }
-    public void SetText(int choice, TextMeshProUGUI text)
+
+    public void SetButton()
+    {
+       button1.onClick.AddListener(() => UnityEventChoice(0));
+        button2.onClick.AddListener(() => UnityEventChoice(1));
+    }
+    public void SetText(string statement)
+    {
+        currentEvent.eventDescription.text = statement;
+    }
+
+    public void UnityEventChoice(int choice)
     {
         if (choice == 0)
         {
-            GenericDisplayText<string>.DisplayText(text, currentEvent.eventTexts[0]);
+            currentEvent.eventOver.Invoke();
+            eventGoingOn = false;
         }
         if (choice == 1)
         {
-            GenericDisplayText<string>.DisplayText(text, currentEvent.eventTexts[1]);
-        }
-        if (choice == 2)
-        {
-            GenericDisplayText<string>.DisplayText(text, currentEvent.eventTexts[2]);
-        }
-        if (choice == 3)
-        {
-            GenericDisplayText<string>.DisplayText(text, currentEvent.cost);
+            currentEvent.eventOver2.Invoke();
+            eventGoingOn = false;
         }
     }
     public void SetEvents()
@@ -143,11 +159,12 @@ public class Events : MonoBehaviour
             if (currentEvent.isChoice == true)
             {
                 UnityEventOn();
-
             }
             else if (currentEvent.isPaywall == true)
             {
                 UnityEventOn();
+                moneyText.text = string.Format($"Pay: ${currentEvent.cost}");
+                moneyButton.onClick.AddListener(() => MoneyButton(currentEvent.cost));
             }
             else if (currentEvent.isQuickTime == true)
             {
@@ -172,27 +189,28 @@ public class Events : MonoBehaviour
             Statics.ReadRejection5();
         }
     }
-    public void AffectMoney(float amount, int choice)
+    public void AffectMoneyNegative(float amount)
     {
-        if (choice == 0)
+        if (Statics.money < amount)
         {
-            Statics.money += amount;
+            Statics.money = 0;
         }
-        if (choice == 1)
+        else
         {
             Statics.money -= amount;
         }
     }
-    public void AffectApproval(float amount, int choice)
+    public void AffectMoneyPositive(float amount)
     {
-        if (choice == 0)
-        {
-            Statics.approvalValue += amount;
-        }
-        if (choice == 1)
-        {
-            Statics.approvalValue -= amount;
-        }
+        Statics.money += amount;
+    }
+    public void AffectApprovalNegative(float amount)
+    {
+        Statics.approvalValue -= amount;
+    }
+    public void AffectApprovalPositive(float amount)
+    {
+        Statics.approvalValue += amount;
     }
     public void LoseStock()
     {
