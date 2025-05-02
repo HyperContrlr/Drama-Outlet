@@ -6,6 +6,7 @@ using UnityEngine.AI;
 using System.Collections;
 using Pathfinding;
 using System.Linq;
+using UnityEngine.Events;
 
 public partial class NPCAI : MonoBehaviour
 {
@@ -63,6 +64,8 @@ public partial class NPCAI : MonoBehaviour
     public bool isPaused;
 
     public States previousState;
+
+    public bool justLooked;
     //public void OnDrawGizmos()
     //{
     //    Gizmos.DrawWireSphere(customerPath.vectorPath[currentWaypoint + 1], 1);
@@ -314,9 +317,13 @@ public partial class NPCAI : MonoBehaviour
     }
     public void Moving()
     {
-        if (rb.linearVelocity == Vector2.zero)
+        if (rb.linearVelocity == Vector2.zero && justLooked == false)
         {
             box.isTrigger = true;
+        }
+        if (rb.linearVelocity != Vector2.zero)
+        {
+            justLooked = false;
         }
         if (box.isTrigger == true)
         {
@@ -434,6 +441,7 @@ public partial class NPCAI : MonoBehaviour
 
         if (state == States.Looking)
         {
+            justLooked = true;
             rb.linearVelocity = Vector2.zero;
             //Play an idle animation
             waitTime -= Time.deltaTime;
@@ -468,6 +476,7 @@ public partial class NPCAI : MonoBehaviour
 
         if (state == States.Looking)
         {
+            justLooked = true;
             rb.linearVelocity = Vector2.zero;
             //Play an idle animation
             waitTime -= Time.deltaTime;
@@ -506,6 +515,7 @@ public partial class NPCAI : MonoBehaviour
 
         if (state == States.Looking)
         {
+            justLooked = true;
             rb.linearVelocity = Vector2.zero;
             //Play an idle animation
             waitTime -= Time.deltaTime;

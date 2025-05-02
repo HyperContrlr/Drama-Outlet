@@ -38,7 +38,7 @@ public class Events : MonoBehaviour
 
     public float offset;
 
-    public float timeBetweenEvents;
+    public int timeBetweenEvents;
 
     public int eventsInTheDay;
 
@@ -56,6 +56,10 @@ public class Events : MonoBehaviour
     public TextMeshProUGUI moneyText;
 
     public bool lightAffected;
+
+    public UnityEvent turnOffButtons;
+
+    public UnityEvent turnOnButtons;
     public void Bool1()
     {
         lightAffected = true;
@@ -94,8 +98,9 @@ public class Events : MonoBehaviour
     }
     public void UnityEventOver()
     {
-        currentEvent.eventOver.Invoke();
         eventGoingOn = false;
+        currentEvent.eventOver.Invoke();
+        turnOffButtons.Invoke();
     }
 
     public void SetButton()
@@ -112,13 +117,15 @@ public class Events : MonoBehaviour
     {
         if (choice == 0)
         {
-            currentEvent.eventOver.Invoke();
             eventGoingOn = false;
+            currentEvent.eventOver.Invoke();
+            turnOffButtons.Invoke();
         }
         if (choice == 1)
         {
-            currentEvent.eventOver2.Invoke();
             eventGoingOn = false;
+            currentEvent.eventOver2.Invoke();
+            turnOffButtons.Invoke();
         }
     }
     public void SetEvents()
@@ -126,28 +133,28 @@ public class Events : MonoBehaviour
         offset = 0;
         if (SaveDataController.Instance.CurrentData.day <= 5)
         {
-            timeBetweenEvents = 30f;
+            timeBetweenEvents = 30;
             eventsInTheDay = Statics.randyTheRandom.Next(2, 5);
         }
         else if (SaveDataController.Instance.CurrentData.day > 5 && SaveDataController.Instance.CurrentData.day < 11)
         {
-            timeBetweenEvents = 20f;
+            timeBetweenEvents = 20;
             eventsInTheDay = Statics.randyTheRandom.Next(2, 7);
         }
         else if (SaveDataController.Instance.CurrentData.day >= 20)
         {
-            timeBetweenEvents = 10f;
+            timeBetweenEvents = 10;
             eventsInTheDay = Statics.randyTheRandom.Next(3, 9);
         }
         eventDictionary = new();
-        for (int i = 0; i < timeOfDay.eveningWindow / timeBetweenEvents; ++i)
+        for (int i = timeBetweenEvents; i < timeOfDay.eveningWindow; i += timeBetweenEvents)
         {
-            eventDictionary.Add((int)(i * timeBetweenEvents), default);
+            eventDictionary.Add(i, default);
         }
         List<int> keys = new();
-        for (int i = 0; i < eventsInTheDay; ++i)
+        for (int i = 1; i <= eventDictionary.Count; ++i)
         {
-            keys.Add(i);
+            keys.Add(i * timeBetweenEvents);
         }
         keys = keys.Shuffle().Take(eventsInTheDay).ToList();
         for (int i = 0; i < eventsInTheDay; ++i)
@@ -174,12 +181,14 @@ public class Events : MonoBehaviour
             if (currentEvent.isChoice == true)
             {
                 UnityEventOn();
+                turnOnButtons.Invoke();
             }
             else if (currentEvent.isPaywall == true)
             {
                 UnityEventOn();
                 moneyText.text = string.Format($"Pay: ${currentEvent.cost}");
                 moneyButton.onClick.AddListener(() => MoneyButton(currentEvent.cost));
+                turnOnButtons.Invoke();
             }
             else if (currentEvent.isQuickTime == true)
             {

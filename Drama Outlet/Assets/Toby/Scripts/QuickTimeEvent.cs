@@ -20,6 +20,7 @@ public class QuickTimeEvent : MonoBehaviour
     public Slider slider;
     public void SetupQuickTime()
     {
+        countdownTime = maxCountdownTime;
         keyList = keyList.Shuffle().ToList();
         for (int i = 0; i > 3; ++i)
         {
@@ -43,6 +44,7 @@ public class QuickTimeEvent : MonoBehaviour
             if (countdownTime <= 0)
             {
                 isCountingDown = false;
+                eventSystem.eventGoingOn = false;
                 countdownTime = maxCountdownTime;
                 eventSystem.currentEvent.badResult.Invoke();
                 eventSystem.currentEvent.eventOver.Invoke();
