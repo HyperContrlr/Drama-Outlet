@@ -132,14 +132,14 @@ public class LicenseShop : MonoBehaviour
             dialogueBox.SetActive(true);
             Statics.ReadRejection3();
         }
-        else if (Statics.money >= cost && thisLicense.isBought == false && thisLicense.isLocked == false)
+        else if (SaveDataController.Instance.CurrentData.money >= cost && thisLicense.isBought == false && thisLicense.isLocked == false)
         {
             //play bought sound effect
             thisLicense.Unlock();
-            Statics.money -= cost;
+            SaveDataController.Instance.CurrentData.money -= cost;
             thisLicense.isBought = true;
         }
-        else if (Statics.money < cost)
+        else if (SaveDataController.Instance.CurrentData.money < cost)
         {
             dialogueBox.SetActive(true);
             Statics.ReadRejection1();

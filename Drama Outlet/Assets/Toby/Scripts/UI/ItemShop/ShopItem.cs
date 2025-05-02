@@ -15,7 +15,7 @@ public class ShopItem : MonoBehaviour
     [SerializeField] private Image thisImage;
     public void ItemUnlock()
     {
-        if (thisItem.hasProduct == false && Statics.approvalValue >= thisItem.ratingUnlock)
+        if (thisItem.hasProduct == false && SaveDataController.Instance.CurrentData.approvalValue >= thisItem.ratingUnlock)
         {
             thisItem.isLocked = false;
         }
@@ -49,12 +49,12 @@ public class ShopItem : MonoBehaviour
 
     public void BuyItem()
     {
-        if (thisItem.isLocked == false && Statics.money >= cost)
+        if (thisItem.isLocked == false && SaveDataController.Instance.CurrentData.money >= cost)
         {
-            Statics.money -= cost;
+            SaveDataController.Instance.CurrentData.money -= cost;
             unlockedItem.AddToStock();
         }
-        else if (Statics.money < cost)
+        else if (SaveDataController.Instance.CurrentData.money < cost)
         {
             Statics.ReadRejection1();
         }
@@ -69,7 +69,7 @@ public class ShopItem : MonoBehaviour
     {
         if (thisItem.isSecurity == true)
         {
-            Statics.securityValue += thisItem.securityBonus;
+            SaveDataController.Instance.CurrentData.securityValue += thisItem.securityBonus;
         }
     }
 

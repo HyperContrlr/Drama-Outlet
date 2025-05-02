@@ -448,6 +448,42 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 11511024}
   m_CullTransparentMesh: 1
+--- !u!1 &26404844
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 26404845}
+  m_Layer: 5
+  m_Name: Fill Area
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &26404845
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 26404844}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1078744018}
+  m_Father: {fileID: 1834058343}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0.25}
+  m_AnchorMax: {x: 1, y: 0.75}
+  m_AnchoredPosition: {x: -4.9999847, y: 0}
+  m_SizeDelta: {x: -20, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &32334252
 GameObject:
   m_ObjectHideFlags: 0
@@ -2778,6 +2814,7 @@ GameObject:
   - component: {fileID: 332336205}
   - component: {fileID: 332336204}
   - component: {fileID: 332336209}
+  - component: {fileID: 332336210}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2808,7 +2845,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -3016,6 +3053,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &332336210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 332336203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: 6d4ad22ef49b454428f6345960dbc68b, type: 2}
 --- !u!1 &342222719
 GameObject:
   m_ObjectHideFlags: 0
@@ -3650,6 +3704,177 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &428576687
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 428576688}
+  m_Layer: 5
+  m_Name: Handle Slide Area
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &428576688
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 428576687}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1834058343}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: -20, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &429131710
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 429131711}
+  - component: {fileID: 429131713}
+  - component: {fileID: 429131712}
+  m_Layer: 5
+  m_Name: Text (TMP)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &429131711
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 429131710}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1862236566}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -0.000011444, y: 91.6}
+  m_SizeDelta: {x: 451.881, y: 81.893}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &429131712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 429131710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: QUICK CLICK THESE BUTTONS TO GAIN RATINGS!!!
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 58a6e552a383a204086f053e2fc47695, type: 2}
+  m_sharedMaterial: {fileID: 8841553524211053371, guid: 58a6e552a383a204086f053e2fc47695, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 36
+  m_fontSizeBase: 36
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &429131713
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 429131710}
+  m_CullTransparentMesh: 1
 --- !u!1 &429939577
 GameObject:
   m_ObjectHideFlags: 0
@@ -9736,6 +9961,81 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 680815218}
   m_CullTransparentMesh: 1
+--- !u!1 &685938210
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 685938211}
+  - component: {fileID: 685938213}
+  - component: {fileID: 685938212}
+  m_Layer: 5
+  m_Name: Background
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &685938211
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 685938210}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1834058343}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0.25}
+  m_AnchorMax: {x: 1, y: 0.75}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &685938212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 685938210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &685938213
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 685938210}
+  m_CullTransparentMesh: 1
 --- !u!1 &699089684
 GameObject:
   m_ObjectHideFlags: 0
@@ -14969,6 +15269,81 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1061771765}
   m_CullTransparentMesh: 1
+--- !u!1 &1078744017
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1078744018}
+  - component: {fileID: 1078744020}
+  - component: {fileID: 1078744019}
+  m_Layer: 5
+  m_Name: Fill
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1078744018
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1078744017}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 26404845}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 10, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1078744019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1078744017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.5943396, g: 0.5943396, b: 0.5943396, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1078744020
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1078744017}
+  m_CullTransparentMesh: 1
 --- !u!1 &1097412480
 GameObject:
   m_ObjectHideFlags: 0
@@ -15110,6 +15485,90 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1112331949
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1112331951}
+  - component: {fileID: 1112331950}
+  m_Layer: 0
+  m_Name: Light 2D
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1112331950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1112331949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ComponentVersion: 2
+  m_LightType: 4
+  m_BlendStyleIndex: 0
+  m_FalloffIntensity: 0.5
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 0.8
+  m_LightVolumeIntensity: 1
+  m_LightVolumeEnabled: 0
+  m_ApplyToSortingLayers: 4df1a69600000000
+  m_LightCookieSprite: {fileID: 0}
+  m_DeprecatedPointLightCookieSprite: {fileID: 0}
+  m_LightOrder: 0
+  m_AlphaBlendOnOverlap: 0
+  m_OverlapOperation: 0
+  m_NormalMapDistance: 3
+  m_NormalMapQuality: 2
+  m_UseNormalMap: 0
+  m_ShadowsEnabled: 1
+  m_ShadowIntensity: 0.75
+  m_ShadowSoftness: 0.3
+  m_ShadowSoftnessFalloffIntensity: 0.5
+  m_ShadowVolumeIntensityEnabled: 0
+  m_ShadowVolumeIntensity: 0.75
+  m_LocalBounds:
+    m_Center: {x: 0, y: -0.00000011920929, z: 0}
+    m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
+  m_PointLightInnerAngle: 360
+  m_PointLightOuterAngle: 360
+  m_PointLightInnerRadius: 0
+  m_PointLightOuterRadius: 1
+  m_ShapeLightParametricSides: 5
+  m_ShapeLightParametricAngleOffset: 0
+  m_ShapeLightParametricRadius: 1
+  m_ShapeLightFalloffSize: 0.5
+  m_ShapeLightFalloffOffset: {x: 0, y: 0}
+  m_ShapePath:
+  - {x: -0.5, y: -0.5, z: 0}
+  - {x: 0.5, y: -0.5, z: 0}
+  - {x: 0.5, y: 0.5, z: 0}
+  - {x: -0.5, y: 0.5, z: 0}
+--- !u!4 &1112331951
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1112331949}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.24578328, y: 2.051806, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1114402406
 GameObject:
   m_ObjectHideFlags: 0
@@ -15571,6 +16030,142 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1155467120}
   m_CullTransparentMesh: 1
+--- !u!1 &1157810838
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1157810839}
+  - component: {fileID: 1157810841}
+  - component: {fileID: 1157810840}
+  m_Layer: 5
+  m_Name: Text (TMP) (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1157810839
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1157810838}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1862236566}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 38.177, y: 0.000011444}
+  m_SizeDelta: {x: 76.3539, y: 113.7857}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1157810840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1157810838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: A
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 58a6e552a383a204086f053e2fc47695, type: 2}
+  m_sharedMaterial: {fileID: 8841553524211053371, guid: 58a6e552a383a204086f053e2fc47695, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 136.8
+  m_fontSizeBase: 136.8
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1157810841
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1157810838}
+  m_CullTransparentMesh: 1
 --- !u!1 &1172591519
 GameObject:
   m_ObjectHideFlags: 0
@@ -15997,6 +16592,142 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1198120356}
+  m_CullTransparentMesh: 1
+--- !u!1 &1202384145
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1202384146}
+  - component: {fileID: 1202384148}
+  - component: {fileID: 1202384147}
+  m_Layer: 5
+  m_Name: Text (TMP) (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1202384146
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1202384145}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1862236566}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -74.9, y: 0.000011444}
+  m_SizeDelta: {x: 76.3539, y: 113.7857}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1202384147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1202384145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: A
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 58a6e552a383a204086f053e2fc47695, type: 2}
+  m_sharedMaterial: {fileID: 8841553524211053371, guid: 58a6e552a383a204086f053e2fc47695, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 136.8
+  m_fontSizeBase: 136.8
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1202384148
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1202384145}
   m_CullTransparentMesh: 1
 --- !u!1 &1205226173
 GameObject:
@@ -17936,6 +18667,142 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!1 &1340646513
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1340646514}
+  - component: {fileID: 1340646516}
+  - component: {fileID: 1340646515}
+  m_Layer: 5
+  m_Name: Text (TMP) (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1340646514
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1340646513}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1862236566}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 139.1, y: 0.000011444}
+  m_SizeDelta: {x: 76.3539, y: 113.7857}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1340646515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1340646513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: A
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 58a6e552a383a204086f053e2fc47695, type: 2}
+  m_sharedMaterial: {fileID: 8841553524211053371, guid: 58a6e552a383a204086f053e2fc47695, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 136.8
+  m_fontSizeBase: 136.8
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1340646516
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1340646513}
+  m_CullTransparentMesh: 1
 --- !u!1 &1351180228
 GameObject:
   m_ObjectHideFlags: 0
@@ -19577,7 +20444,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1504988303
 RectTransform:
   m_ObjectHideFlags: 0
@@ -22285,6 +23152,142 @@ MonoBehaviour:
   timer: 0
   isOver: 0
   cursorSet: {fileID: 0}
+--- !u!1 &1690210911
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1690210912}
+  - component: {fileID: 1690210914}
+  - component: {fileID: 1690210913}
+  m_Layer: 5
+  m_Name: Text (TMP)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1690210912
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1690210911}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1862236566}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -175.6, y: 0.000011444}
+  m_SizeDelta: {x: 76.3539, y: 113.7857}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1690210913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1690210911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: A
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 58a6e552a383a204086f053e2fc47695, type: 2}
+  m_sharedMaterial: {fileID: 8841553524211053371, guid: 58a6e552a383a204086f053e2fc47695, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 136.8
+  m_fontSizeBase: 136.8
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1690210914
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1690210911}
+  m_CullTransparentMesh: 1
 --- !u!1 &1691110768
 GameObject:
   m_ObjectHideFlags: 0
@@ -23146,6 +24149,82 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1754402860
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1754402862}
+  - component: {fileID: 1754402861}
+  m_Layer: 0
+  m_Name: Save Data Controller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1754402861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1754402860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f923e89ef262fe04faef2c0d799108f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fileName: 
+  defaultData: {fileID: 11400000, guid: 820eb6eeb6cd3aa4ca132d8a760c8cb2, type: 2}
+  allProducts:
+  - {fileID: 11400000, guid: d7bca251925d96347b83127d68b86305, type: 2}
+  - {fileID: 11400000, guid: 1e121216e5da89d468a98c13a0d59287, type: 2}
+  - {fileID: 11400000, guid: 360e762e90b4c2c44a926cafcf65a83f, type: 2}
+  - {fileID: 11400000, guid: 84118fd9120504e43af7e4355eaa380e, type: 2}
+  - {fileID: 11400000, guid: df6967487aad6a34abf2b7ec567f127c, type: 2}
+  - {fileID: 11400000, guid: c05642d718cf2404d9bf1bc74376b12c, type: 2}
+  - {fileID: 11400000, guid: 1a134c6b9a42d5b44905a4a60c1d8ff0, type: 2}
+  - {fileID: 11400000, guid: c37d440641cfd2a408cf245810cb360e, type: 2}
+  allBuildings:
+  - {fileID: 11400000, guid: ab2d86fa3c2ac1c439a256d516379ae1, type: 2}
+  - {fileID: 11400000, guid: eff602d0e816c2d4180fa5e840800ece, type: 2}
+  - {fileID: 11400000, guid: f6ffd9c9a6616da49b65df6893ab3598, type: 2}
+  - {fileID: 11400000, guid: f37e17bf219c6794c93c4586a77d92d7, type: 2}
+  - {fileID: 11400000, guid: fa344ad4b5e1e7f4ebb5bcc316fc077e, type: 2}
+  - {fileID: 11400000, guid: 7428f7fe30801f343bd5e3d4e52aab54, type: 2}
+  - {fileID: 11400000, guid: b99a35ffa618fb547aade37fb2f3c549, type: 2}
+  - {fileID: 11400000, guid: 81c118cf167ed1742bfef1e7107f5e8d, type: 2}
+  - {fileID: 11400000, guid: e9e836679b1a38f4394e0443e94737d6, type: 2}
+  allLicenses:
+  - {fileID: 11400000, guid: 05f4a92f04ef8eb4a971aebe8777327b, type: 2}
+  - {fileID: 11400000, guid: 2e639ded0d9720744a7134d6449d3010, type: 2}
+  - {fileID: 11400000, guid: 99ac849b0146038458b1570314720162, type: 2}
+  - {fileID: 11400000, guid: 967dda33c46bf43469a96fa895770694, type: 2}
+  - {fileID: 11400000, guid: 857867ef36342524c9572215b06a9689, type: 2}
+  - {fileID: 11400000, guid: 85950ab130fdd894eb6c68aee6ba6ce4, type: 2}
+  - {fileID: 11400000, guid: 0316156260dce074c836ae75a68a33a5, type: 2}
+  - {fileID: 11400000, guid: 343617f07dc7cbd48a0af9d6b7423e25, type: 2}
+  - {fileID: 11400000, guid: 021bd206b3cfc8d419e6c816143e3cfc, type: 2}
+  tutorial: {fileID: 1504988302}
+--- !u!4 &1754402862
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1754402860}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 695.0326, y: 715.24805, z: -10.645789}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1762788642
 GameObject:
   m_ObjectHideFlags: 0
@@ -23682,6 +24761,96 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1834058342
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1834058343}
+  - component: {fileID: 1834058344}
+  m_Layer: 5
+  m_Name: Slider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1834058343
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1834058342}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 685938211}
+  - {fileID: 26404845}
+  - {fileID: 428576688}
+  m_Father: {fileID: 1862236566}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -13.5, y: -82.9}
+  m_SizeDelta: {x: 455.2959, y: 29.1423}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1834058344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1834058342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 0, b: 0, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.76187336, g: 1, b: 0.4764151, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 685938212}
+  m_FillRect: {fileID: 1078744018}
+  m_HandleRect: {fileID: 0}
+  m_Direction: 0
+  m_MinValue: 0
+  m_MaxValue: 10
+  m_WholeNumbers: 0
+  m_Value: 10
+  m_OnValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1847081282
 GameObject:
   m_ObjectHideFlags: 0
@@ -24345,6 +25514,131 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1851820320}
   m_CullTransparentMesh: 1
+--- !u!1 &1862236565
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1862236566}
+  - component: {fileID: 1862236570}
+  - component: {fileID: 1862236569}
+  - component: {fileID: 1862236568}
+  - component: {fileID: 1862236567}
+  m_Layer: 5
+  m_Name: Quick Time Page
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1862236566
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1862236565}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1690210912}
+  - {fileID: 1202384146}
+  - {fileID: 1157810839}
+  - {fileID: 1340646514}
+  - {fileID: 1834058343}
+  - {fileID: 429131711}
+  m_Father: {fileID: 4502168918318540621}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 57.198296, y: 272.6172}
+  m_SizeDelta: {x: 576.9148, y: 324.0861}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1862236567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1862236565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 5
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1862236568}
+          m_TargetAssemblyTypeName: Drag, Assembly-CSharp
+          m_MethodName: DragHandler
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &1862236568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1862236565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1e44416e4c39c7468b1d3556116b8f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvas: {fileID: 3523138096238740456}
+--- !u!114 &1862236569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1862236565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 143041943733652349, guid: 92e4bbf82075db94b889422798abb8f0, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1862236570
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1862236565}
+  m_CullTransparentMesh: 1
 --- !u!1 &1873866852
 GameObject:
   m_ObjectHideFlags: 0
@@ -24939,22 +26233,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21ebe5462f149884ba5732cfe32e2073, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventSystem: {fileID: 0}
-  textList: []
+  eventSystem: {fileID: 1905135055}
+  textList:
+  - {fileID: 1690210913}
+  - {fileID: 1202384147}
+  - {fileID: 1157810840}
+  - {fileID: 1340646515}
   keyList: 6100000062000000630000006400000065000000660000006700000068000000690000006a0000006b0000006c0000006d0000006e0000006f000000700000007100000072000000730000007400000075000000760000007700000078000000790000007a000000
   isCountingDown: 0
   countdownTime: 0
-  maxCountdownTime: 0
-  badResult:
-    m_PersistentCalls:
-      m_Calls: []
-  goodResult:
-    m_PersistentCalls:
-      m_Calls: []
+  maxCountdownTime: 10
   firstButton: 0
   secondButton: 0
   thirdButton: 0
   fourthButton: 0
+  slider: {fileID: 1834058344}
 --- !u!114 &1905135055
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25115,6 +26408,12 @@ MonoBehaviour:
     hasHappened: 0
     spawnedPrefab: {fileID: 0}
     cost: 0
+    goodResult:
+      m_PersistentCalls:
+        m_Calls: []
+    badResult:
+      m_PersistentCalls:
+        m_Calls: []
   - eventDescription: {fileID: 1364556953}
     eventAction:
       m_PersistentCalls:
@@ -25263,6 +26562,12 @@ MonoBehaviour:
     hasHappened: 0
     spawnedPrefab: {fileID: 0}
     cost: 0
+    goodResult:
+      m_PersistentCalls:
+        m_Calls: []
+    badResult:
+      m_PersistentCalls:
+        m_Calls: []
   - eventDescription: {fileID: 1364556953}
     eventAction:
       m_PersistentCalls:
@@ -25397,6 +26702,12 @@ MonoBehaviour:
     hasHappened: 0
     spawnedPrefab: {fileID: 0}
     cost: 0
+    goodResult:
+      m_PersistentCalls:
+        m_Calls: []
+    badResult:
+      m_PersistentCalls:
+        m_Calls: []
   - eventDescription: {fileID: 1364556953}
     eventAction:
       m_PersistentCalls:
@@ -25518,6 +26829,12 @@ MonoBehaviour:
     hasHappened: 0
     spawnedPrefab: {fileID: 0}
     cost: 0
+    goodResult:
+      m_PersistentCalls:
+        m_Calls: []
+    badResult:
+      m_PersistentCalls:
+        m_Calls: []
   - eventDescription: {fileID: 1364556953}
     eventAction:
       m_PersistentCalls:
@@ -25652,6 +26969,12 @@ MonoBehaviour:
     hasHappened: 0
     spawnedPrefab: {fileID: 0}
     cost: 0
+    goodResult:
+      m_PersistentCalls:
+        m_Calls: []
+    badResult:
+      m_PersistentCalls:
+        m_Calls: []
   - eventDescription: {fileID: 1364556953}
     eventAction:
       m_PersistentCalls:
@@ -25773,6 +27096,12 @@ MonoBehaviour:
     hasHappened: 0
     spawnedPrefab: {fileID: 0}
     cost: 0
+    goodResult:
+      m_PersistentCalls:
+        m_Calls: []
+    badResult:
+      m_PersistentCalls:
+        m_Calls: []
   - eventDescription: {fileID: 1364556953}
     eventAction:
       m_PersistentCalls:
@@ -25932,6 +27261,12 @@ MonoBehaviour:
     hasHappened: 0
     spawnedPrefab: {fileID: 0}
     cost: 0
+    goodResult:
+      m_PersistentCalls:
+        m_Calls: []
+    badResult:
+      m_PersistentCalls:
+        m_Calls: []
   - eventDescription: {fileID: 1364556953}
     eventAction:
       m_PersistentCalls:
@@ -26052,6 +27387,12 @@ MonoBehaviour:
     hasHappened: 0
     spawnedPrefab: {fileID: 0}
     cost: 0
+    goodResult:
+      m_PersistentCalls:
+        m_Calls: []
+    badResult:
+      m_PersistentCalls:
+        m_Calls: []
   - eventDescription: {fileID: 1364556953}
     eventAction:
       m_PersistentCalls:
@@ -26184,6 +27525,12 @@ MonoBehaviour:
     hasHappened: 0
     spawnedPrefab: {fileID: 0}
     cost: 0
+    goodResult:
+      m_PersistentCalls:
+        m_Calls: []
+    badResult:
+      m_PersistentCalls:
+        m_Calls: []
   - eventDescription: {fileID: 1364556953}
     eventAction:
       m_PersistentCalls:
@@ -26302,6 +27649,12 @@ MonoBehaviour:
     hasHappened: 0
     spawnedPrefab: {fileID: 0}
     cost: 0
+    goodResult:
+      m_PersistentCalls:
+        m_Calls: []
+    badResult:
+      m_PersistentCalls:
+        m_Calls: []
   - eventDescription: {fileID: 1364556953}
     eventAction:
       m_PersistentCalls:
@@ -26420,6 +27773,12 @@ MonoBehaviour:
     hasHappened: 0
     spawnedPrefab: {fileID: 0}
     cost: 0
+    goodResult:
+      m_PersistentCalls:
+        m_Calls: []
+    badResult:
+      m_PersistentCalls:
+        m_Calls: []
   - eventDescription: {fileID: 1364556953}
     eventAction:
       m_PersistentCalls:
@@ -26553,6 +27912,12 @@ MonoBehaviour:
     hasHappened: 0
     spawnedPrefab: {fileID: 0}
     cost: 0
+    goodResult:
+      m_PersistentCalls:
+        m_Calls: []
+    badResult:
+      m_PersistentCalls:
+        m_Calls: []
   - eventDescription: {fileID: 1364556953}
     eventAction:
       m_PersistentCalls:
@@ -26700,6 +28065,12 @@ MonoBehaviour:
     hasHappened: 0
     spawnedPrefab: {fileID: 0}
     cost: 0
+    goodResult:
+      m_PersistentCalls:
+        m_Calls: []
+    badResult:
+      m_PersistentCalls:
+        m_Calls: []
   - eventDescription: {fileID: 1364556953}
     eventAction:
       m_PersistentCalls:
@@ -26899,6 +28270,12 @@ MonoBehaviour:
     hasHappened: 0
     spawnedPrefab: {fileID: 0}
     cost: 0
+    goodResult:
+      m_PersistentCalls:
+        m_Calls: []
+    badResult:
+      m_PersistentCalls:
+        m_Calls: []
   - eventDescription: {fileID: 1364556953}
     eventAction:
       m_PersistentCalls:
@@ -27046,153 +28423,12 @@ MonoBehaviour:
     hasHappened: 0
     spawnedPrefab: {fileID: 0}
     cost: 0
-  - eventDescription: {fileID: 1364556953}
-    eventAction:
+    goodResult:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1905135055}
-          m_TargetAssemblyTypeName: Events, Assembly-CSharp
-          m_MethodName: SetText
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: An inspector comes in and says he needs to inspect
-              your products.  Do you let him?
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 1905135055}
-          m_TargetAssemblyTypeName: Events, Assembly-CSharp
-          m_MethodName: SetButton
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: A customer complains about their favorite mask not
-              being sold here.  Do you buy it for them?
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 1777810663}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: A customer complains about their favorite mask not
-              being sold here.  Do you buy it for them?
-            m_BoolArgument: 1
-          m_CallState: 2
-    eventOver:
+        m_Calls: []
+    badResult:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 814680802}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 5
-            m_StringArgument: You lost some money but it seemed to make the customer
-              happy!!
-            m_BoolArgument: 1
-          m_CallState: 2
-        - m_Target: {fileID: 1905135055}
-          m_TargetAssemblyTypeName: Events, Assembly-CSharp
-          m_MethodName: SetText
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: The guy checks your stock and goes back to you and
-              says its all up to code and hands you a check. Werid but money is money?
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 1905135055}
-          m_TargetAssemblyTypeName: Events, Assembly-CSharp
-          m_MethodName: AffectMoneyPositive
-          m_Mode: 4
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 600
-            m_StringArgument: You lost some money but it seemed to make the customer
-              happy!!
-            m_BoolArgument: 1
-          m_CallState: 2
-    eventOver2:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 814680802}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 5
-            m_StringArgument: The customer looks angry about this but continues on
-              with their day... you feel bad ratings.
-            m_BoolArgument: 1
-          m_CallState: 2
-        - m_Target: {fileID: 1905135055}
-          m_TargetAssemblyTypeName: Events, Assembly-CSharp
-          m_MethodName: SetText
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: You don't trust this guy and tell him to leave. Turns
-              out he was an actual inspector and you get fined.
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 1905135055}
-          m_TargetAssemblyTypeName: Events, Assembly-CSharp
-          m_MethodName: AffectMoneyNegative
-          m_Mode: 4
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 400
-            m_StringArgument: You don't trust this guy and tell him to leave. Turns
-              out he was an actual inspector and you get fined.
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 1905135055}
-          m_TargetAssemblyTypeName: Events, Assembly-CSharp
-          m_MethodName: AffectApprovalNegative
-          m_Mode: 4
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 5
-            m_StringArgument: You don't trust this guy and tell him to leave. Turns
-              out he was an actual inspector and you get fined.
-            m_BoolArgument: 0
-          m_CallState: 2
-    isQuickTime: 0
-    isChoice: 1
-    isPaywall: 0
-    isSpawnedThing: 0
-    hasHappened: 0
-    spawnedPrefab: {fileID: 0}
-    cost: 0
+        m_Calls: []
   - eventDescription: {fileID: 1364556953}
     eventAction:
       m_PersistentCalls:
@@ -27236,9 +28472,292 @@ MonoBehaviour:
               being sold here.  Do you buy it for them?
             m_BoolArgument: 1
           m_CallState: 2
+        - m_Target: {fileID: 1112331950}
+          m_TargetAssemblyTypeName: UnityEngine.Rendering.Universal.Light2D, Unity.RenderPipelines.Universal.2D.Runtime
+          m_MethodName: set_intensity
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0.1
+            m_StringArgument: A customer complains about their favorite mask not
+              being sold here.  Do you buy it for them?
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 1905135055}
+          m_TargetAssemblyTypeName: Events, Assembly-CSharp
+          m_MethodName: Bool1
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0.1
+            m_StringArgument: A customer complains about their favorite mask not
+              being sold here.  Do you buy it for them?
+            m_BoolArgument: 1
+          m_CallState: 2
     eventOver:
       m_PersistentCalls:
         m_Calls:
+        - m_Target: {fileID: 616710996}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1112331950}
+          m_TargetAssemblyTypeName: UnityEngine.Rendering.Universal.Light2D, Unity.RenderPipelines.Universal.2D.Runtime
+          m_MethodName: set_intensity
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0.8
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1905135055}
+          m_TargetAssemblyTypeName: Events, Assembly-CSharp
+          m_MethodName: Bool2
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0.8
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    eventOver2:
+      m_PersistentCalls:
+        m_Calls: []
+    isQuickTime: 0
+    isChoice: 0
+    isPaywall: 1
+    isSpawnedThing: 0
+    hasHappened: 0
+    spawnedPrefab: {fileID: 0}
+    cost: 300
+    goodResult:
+      m_PersistentCalls:
+        m_Calls: []
+    badResult:
+      m_PersistentCalls:
+        m_Calls: []
+  - eventDescription: {fileID: 1364556953}
+    eventAction:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1905135055}
+          m_TargetAssemblyTypeName: Events, Assembly-CSharp
+          m_MethodName: SetText
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Shoot a giant shelf fell and blocked off our access
+              to our storage. I gotta pay to get that fixed.
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 4189746916387430352}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: A customer complains about their favorite mask not
+              being sold here.  Do you buy it for them?
+            m_BoolArgument: 0
+          m_CallState: 2
+    eventOver:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 4189746916387430352}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+    eventOver2:
+      m_PersistentCalls:
+        m_Calls: []
+    isQuickTime: 0
+    isChoice: 0
+    isPaywall: 1
+    isSpawnedThing: 0
+    hasHappened: 0
+    spawnedPrefab: {fileID: 0}
+    cost: 150
+    goodResult:
+      m_PersistentCalls:
+        m_Calls: []
+    badResult:
+      m_PersistentCalls:
+        m_Calls: []
+  - eventDescription: {fileID: 1364556953}
+    eventAction:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1905135055}
+          m_TargetAssemblyTypeName: Events, Assembly-CSharp
+          m_MethodName: SetText
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Dang I forgot to pay my subscription for Furniture
+              Weekly and can't buy anything. I should pay for it!!
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 5393445760254239649}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: A customer complains about their favorite mask not
+              being sold here.  Do you buy it for them?
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 616710996}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: A customer complains about their favorite mask not
+              being sold here.  Do you buy it for them?
+            m_BoolArgument: 1
+          m_CallState: 2
+    eventOver:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 5393445760254239649}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 616710996}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    eventOver2:
+      m_PersistentCalls:
+        m_Calls: []
+    isQuickTime: 0
+    isChoice: 0
+    isPaywall: 1
+    isSpawnedThing: 0
+    hasHappened: 0
+    spawnedPrefab: {fileID: 0}
+    cost: 200
+    goodResult:
+      m_PersistentCalls:
+        m_Calls: []
+    badResult:
+      m_PersistentCalls:
+        m_Calls: []
+  - eventDescription: {fileID: 1364556953}
+    eventAction:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1905135055}
+          m_TargetAssemblyTypeName: Events, Assembly-CSharp
+          m_MethodName: SetText
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: I misplaced my check book to buy more licenses. I should
+              really buy a new one.
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 7112419524340486837}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: A customer complains about their favorite mask not
+              being sold here.  Do you buy it for them?
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 616710996}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: A customer complains about their favorite mask not
+              being sold here.  Do you buy it for them?
+            m_BoolArgument: 1
+          m_CallState: 2
+    eventOver:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7112419524340486837}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
         - m_Target: {fileID: 616710996}
           m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_MethodName: SetActive
@@ -27261,6 +28780,1314 @@ MonoBehaviour:
     hasHappened: 0
     spawnedPrefab: {fileID: 0}
     cost: 300
+    goodResult:
+      m_PersistentCalls:
+        m_Calls: []
+    badResult:
+      m_PersistentCalls:
+        m_Calls: []
+  - eventDescription: {fileID: 1364556953}
+    eventAction:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1905135055}
+          m_TargetAssemblyTypeName: Events, Assembly-CSharp
+          m_MethodName: SetText
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Oh man those sick beats I was listening to turned off.
+              I should pay to bring them back
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 332336209}
+          m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+          m_MethodName: Pause
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: A customer complains about their favorite mask not
+              being sold here.  Do you buy it for them?
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 616710996}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: A customer complains about their favorite mask not
+              being sold here.  Do you buy it for them?
+            m_BoolArgument: 1
+          m_CallState: 2
+    eventOver:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 332336209}
+          m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+          m_MethodName: UnPause
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 616710996}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    eventOver2:
+      m_PersistentCalls:
+        m_Calls: []
+    isQuickTime: 0
+    isChoice: 0
+    isPaywall: 1
+    isSpawnedThing: 0
+    hasHappened: 0
+    spawnedPrefab: {fileID: 0}
+    cost: 50
+    goodResult:
+      m_PersistentCalls:
+        m_Calls: []
+    badResult:
+      m_PersistentCalls:
+        m_Calls: []
+  - eventDescription: {fileID: 1364556953}
+    eventAction:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1905135055}
+          m_TargetAssemblyTypeName: Events, Assembly-CSharp
+          m_MethodName: SetText
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Someone slipped me a note saying that if I pay 300
+              dollars I'll get a burst of customers. I should do it!!
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 616710996}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Someone slipped me a note saying that if I pay 300
+              dollars I'll get a burst of customers. I should do it!!
+            m_BoolArgument: 1
+          m_CallState: 2
+    eventOver:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 699475191039376244}
+          m_TargetAssemblyTypeName: NPCSpawner, Assembly-CSharp
+          m_MethodName: SpawnCustomer
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 699475191039376244}
+          m_TargetAssemblyTypeName: NPCSpawner, Assembly-CSharp
+          m_MethodName: SpawnCustomer
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 699475191039376244}
+          m_TargetAssemblyTypeName: NPCSpawner, Assembly-CSharp
+          m_MethodName: SpawnCustomer
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 699475191039376244}
+          m_TargetAssemblyTypeName: NPCSpawner, Assembly-CSharp
+          m_MethodName: SpawnCustomer
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 616710996}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    eventOver2:
+      m_PersistentCalls:
+        m_Calls: []
+    isQuickTime: 0
+    isChoice: 0
+    isPaywall: 1
+    isSpawnedThing: 0
+    hasHappened: 0
+    spawnedPrefab: {fileID: 0}
+    cost: 300
+    goodResult:
+      m_PersistentCalls:
+        m_Calls: []
+    badResult:
+      m_PersistentCalls:
+        m_Calls: []
+  - eventDescription: {fileID: 1573809830}
+    eventAction:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1905135055}
+          m_TargetAssemblyTypeName: Events, Assembly-CSharp
+          m_MethodName: SetText
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1905135055}
+          m_TargetAssemblyTypeName: Events, Assembly-CSharp
+          m_MethodName: MakeUnhappy
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: I accidentally messed up some customer orders. But
+              if I pay to give them stuff for free maybe it'll make them happier!!
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1905135055}
+          m_TargetAssemblyTypeName: Events, Assembly-CSharp
+          m_MethodName: MakeUnhappy
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: I accidentally messed up some customer orders. But
+              if I pay to give them stuff for free maybe it'll make them happier!!
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1905135055}
+          m_TargetAssemblyTypeName: Events, Assembly-CSharp
+          m_MethodName: MakeUnhappy
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: I accidentally messed up some customer orders. But
+              if I pay to give them stuff for free maybe it'll make them happier!!
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1905135055}
+          m_TargetAssemblyTypeName: Events, Assembly-CSharp
+          m_MethodName: MakeUnhappy
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: I accidentally messed up some customer orders. But
+              if I pay to give them stuff for free maybe it'll make them happier!!
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1905135055}
+          m_TargetAssemblyTypeName: Events, Assembly-CSharp
+          m_MethodName: MakeUnhappy
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: I accidentally messed up some customer orders. But
+              if I pay to give them stuff for free maybe it'll make them happier!!
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 616710996}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: I accidentally messed up some customer orders. But
+              if I pay to give them stuff for free maybe it'll make them happier!!
+            m_BoolArgument: 1
+          m_CallState: 2
+    eventOver:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1905135055}
+          m_TargetAssemblyTypeName: Events, Assembly-CSharp
+          m_MethodName: AffectApprovalPositive
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 15
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 616710996}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 15
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    eventOver2:
+      m_PersistentCalls:
+        m_Calls: []
+    isQuickTime: 0
+    isChoice: 0
+    isPaywall: 1
+    isSpawnedThing: 0
+    hasHappened: 0
+    spawnedPrefab: {fileID: 0}
+    cost: 500
+    goodResult:
+      m_PersistentCalls:
+        m_Calls: []
+    badResult:
+      m_PersistentCalls:
+        m_Calls: []
+  - eventDescription: {fileID: 1573809830}
+    eventAction:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1905135055}
+          m_TargetAssemblyTypeName: Events, Assembly-CSharp
+          m_MethodName: SetText
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: I accidentally messed up some customer orders. But
+              if I pay to give them stuff for free maybe it'll make them happier!!
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1905135055}
+          m_TargetAssemblyTypeName: Events, Assembly-CSharp
+          m_MethodName: MakeUnhappy
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: I accidentally messed up some customer orders. But
+              if I pay to give them stuff for free maybe it'll make them happier!!
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1905135055}
+          m_TargetAssemblyTypeName: Events, Assembly-CSharp
+          m_MethodName: MakeUnhappy
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: I accidentally messed up some customer orders. But
+              if I pay to give them stuff for free maybe it'll make them happier!!
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1905135055}
+          m_TargetAssemblyTypeName: Events, Assembly-CSharp
+          m_MethodName: MakeUnhappy
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: I accidentally messed up some customer orders. But
+              if I pay to give them stuff for free maybe it'll make them happier!!
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1905135055}
+          m_TargetAssemblyTypeName: Events, Assembly-CSharp
+          m_MethodName: MakeUnhappy
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: I accidentally messed up some customer orders. But
+              if I pay to give them stuff for free maybe it'll make them happier!!
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1905135055}
+          m_TargetAssemblyTypeName: Events, Assembly-CSharp
+          m_MethodName: MakeUnhappy
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: I accidentally messed up some customer orders. But
+              if I pay to give them stuff for free maybe it'll make them happier!!
+            m_BoolArgument: 0
+          m_CallState: 2
+    eventOver:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1905135055}
+          m_TargetAssemblyTypeName: Events, Assembly-CSharp
+          m_MethodName: AffectApprovalPositive
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 15
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    eventOver2:
+      m_PersistentCalls:
+        m_Calls: []
+    isQuickTime: 0
+    isChoice: 0
+    isPaywall: 1
+    isSpawnedThing: 0
+    hasHappened: 0
+    spawnedPrefab: {fileID: 0}
+    cost: 500
+    goodResult:
+      m_PersistentCalls:
+        m_Calls: []
+    badResult:
+      m_PersistentCalls:
+        m_Calls: []
+  - eventDescription: {fileID: 429131712}
+    eventAction:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1905135055}
+          m_TargetAssemblyTypeName: Events, Assembly-CSharp
+          m_MethodName: SetText
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: QUICK CLICK THESE BUTTONS TO AVOID BAD RATINGS!!!
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1862236565}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: QUICK CLICK THESE BUTTONS TO GAIN RATINGS!!!
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 1905135054}
+          m_TargetAssemblyTypeName: QuickTimeEvent, Assembly-CSharp
+          m_MethodName: SetupQuickTime
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: QUICK CLICK THESE BUTTONS TO GAIN RATINGS!!!
+            m_BoolArgument: 1
+          m_CallState: 2
+    eventOver:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1862236565}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    eventOver2:
+      m_PersistentCalls:
+        m_Calls: []
+    isQuickTime: 1
+    isChoice: 0
+    isPaywall: 0
+    isSpawnedThing: 0
+    hasHappened: 0
+    spawnedPrefab: {fileID: 0}
+    cost: 500
+    goodResult:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1905135055}
+          m_TargetAssemblyTypeName: Events, Assembly-CSharp
+          m_MethodName: AffectApprovalNegative
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    badResult:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1905135055}
+          m_TargetAssemblyTypeName: Events, Assembly-CSharp
+          m_MethodName: AffectApprovalNegative
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 5
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventDescription: {fileID: 429131712}
+    eventAction:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1905135055}
+          m_TargetAssemblyTypeName: Events, Assembly-CSharp
+          m_MethodName: SetText
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: QUICK CLICK THESE BUTTONS TO GAIN RATINGS!!!
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1862236565}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: QUICK CLICK THESE BUTTONS TO GAIN RATINGS!!!
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 1905135054}
+          m_TargetAssemblyTypeName: QuickTimeEvent, Assembly-CSharp
+          m_MethodName: SetupQuickTime
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: QUICK CLICK THESE BUTTONS TO GAIN RATINGS!!!
+            m_BoolArgument: 1
+          m_CallState: 2
+    eventOver:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1862236565}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    eventOver2:
+      m_PersistentCalls:
+        m_Calls: []
+    isQuickTime: 1
+    isChoice: 0
+    isPaywall: 0
+    isSpawnedThing: 0
+    hasHappened: 0
+    spawnedPrefab: {fileID: 0}
+    cost: 500
+    goodResult:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1905135055}
+          m_TargetAssemblyTypeName: Events, Assembly-CSharp
+          m_MethodName: AffectApprovalPositive
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 5
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    badResult:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1905135055}
+          m_TargetAssemblyTypeName: Events, Assembly-CSharp
+          m_MethodName: AffectApprovalPositive
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventDescription: {fileID: 429131712}
+    eventAction:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1905135055}
+          m_TargetAssemblyTypeName: Events, Assembly-CSharp
+          m_MethodName: SetText
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: QUICK CLICK THESE BUTTONS TO GAIN MONEY!!!
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1862236565}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: QUICK CLICK THESE BUTTONS TO GAIN RATINGS!!!
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 1905135054}
+          m_TargetAssemblyTypeName: QuickTimeEvent, Assembly-CSharp
+          m_MethodName: SetupQuickTime
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: QUICK CLICK THESE BUTTONS TO GAIN RATINGS!!!
+            m_BoolArgument: 1
+          m_CallState: 2
+    eventOver:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1862236565}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    eventOver2:
+      m_PersistentCalls:
+        m_Calls: []
+    isQuickTime: 1
+    isChoice: 0
+    isPaywall: 0
+    isSpawnedThing: 0
+    hasHappened: 0
+    spawnedPrefab: {fileID: 0}
+    cost: 500
+    goodResult:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1905135055}
+          m_TargetAssemblyTypeName: Events, Assembly-CSharp
+          m_MethodName: AffectMoneyPositive
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 300
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    badResult:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1905135055}
+          m_TargetAssemblyTypeName: Events, Assembly-CSharp
+          m_MethodName: AffectApprovalPositive
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventDescription: {fileID: 429131712}
+    eventAction:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1905135055}
+          m_TargetAssemblyTypeName: Events, Assembly-CSharp
+          m_MethodName: SetText
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: QUICK CLICK THESE BUTTONS TO AVOID LOSING MONEY!!!
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1862236565}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: QUICK CLICK THESE BUTTONS TO GAIN RATINGS!!!
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 1905135054}
+          m_TargetAssemblyTypeName: QuickTimeEvent, Assembly-CSharp
+          m_MethodName: SetupQuickTime
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: QUICK CLICK THESE BUTTONS TO GAIN RATINGS!!!
+            m_BoolArgument: 1
+          m_CallState: 2
+    eventOver:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1862236565}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    eventOver2:
+      m_PersistentCalls:
+        m_Calls: []
+    isQuickTime: 1
+    isChoice: 0
+    isPaywall: 0
+    isSpawnedThing: 0
+    hasHappened: 0
+    spawnedPrefab: {fileID: 0}
+    cost: 500
+    goodResult:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1905135055}
+          m_TargetAssemblyTypeName: Events, Assembly-CSharp
+          m_MethodName: AffectMoneyPositive
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    badResult:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1905135055}
+          m_TargetAssemblyTypeName: Events, Assembly-CSharp
+          m_MethodName: AffectMoneyNegative
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 300
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventDescription: {fileID: 429131712}
+    eventAction:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1905135055}
+          m_TargetAssemblyTypeName: Events, Assembly-CSharp
+          m_MethodName: SetText
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: QUICK CLICK THESE BUTTONS TO GAIN CUSTOMERS!!!
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1862236565}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: QUICK CLICK THESE BUTTONS TO GAIN RATINGS!!!
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 1905135054}
+          m_TargetAssemblyTypeName: QuickTimeEvent, Assembly-CSharp
+          m_MethodName: SetupQuickTime
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: QUICK CLICK THESE BUTTONS TO GAIN RATINGS!!!
+            m_BoolArgument: 1
+          m_CallState: 2
+    eventOver:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1862236565}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    eventOver2:
+      m_PersistentCalls:
+        m_Calls: []
+    isQuickTime: 1
+    isChoice: 0
+    isPaywall: 0
+    isSpawnedThing: 0
+    hasHappened: 0
+    spawnedPrefab: {fileID: 0}
+    cost: 500
+    goodResult:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 699475191039376244}
+          m_TargetAssemblyTypeName: NPCSpawner, Assembly-CSharp
+          m_MethodName: SpawnCustomer
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 699475191039376244}
+          m_TargetAssemblyTypeName: NPCSpawner, Assembly-CSharp
+          m_MethodName: SpawnCustomer
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    badResult:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1905135055}
+          m_TargetAssemblyTypeName: Events, Assembly-CSharp
+          m_MethodName: AffectMoneyNegative
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventDescription: {fileID: 429131712}
+    eventAction:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1905135055}
+          m_TargetAssemblyTypeName: Events, Assembly-CSharp
+          m_MethodName: SetText
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: QUICK CLICK THESE BUTTONS TO KEEP CUSTOMER APPROVAL!!!
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1862236565}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: QUICK CLICK THESE BUTTONS TO GAIN RATINGS!!!
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 1905135054}
+          m_TargetAssemblyTypeName: QuickTimeEvent, Assembly-CSharp
+          m_MethodName: SetupQuickTime
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: QUICK CLICK THESE BUTTONS TO GAIN RATINGS!!!
+            m_BoolArgument: 1
+          m_CallState: 2
+    eventOver:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1862236565}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    eventOver2:
+      m_PersistentCalls:
+        m_Calls: []
+    isQuickTime: 1
+    isChoice: 0
+    isPaywall: 0
+    isSpawnedThing: 0
+    hasHappened: 0
+    spawnedPrefab: {fileID: 0}
+    cost: 500
+    goodResult:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1905135055}
+          m_TargetAssemblyTypeName: Events, Assembly-CSharp
+          m_MethodName: AffectApprovalPositive
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 5
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    badResult:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1905135055}
+          m_TargetAssemblyTypeName: Events, Assembly-CSharp
+          m_MethodName: MakeUnhappy
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 1
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventDescription: {fileID: 429131712}
+    eventAction:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1905135055}
+          m_TargetAssemblyTypeName: Events, Assembly-CSharp
+          m_MethodName: SetText
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: SHOPLIFTER CLICK THESE BUTTONS TO AVOID LOSING STOCK!!!
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1862236565}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: QUICK CLICK THESE BUTTONS TO GAIN RATINGS!!!
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 1905135054}
+          m_TargetAssemblyTypeName: QuickTimeEvent, Assembly-CSharp
+          m_MethodName: SetupQuickTime
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: QUICK CLICK THESE BUTTONS TO GAIN RATINGS!!!
+            m_BoolArgument: 1
+          m_CallState: 2
+    eventOver:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1862236565}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    eventOver2:
+      m_PersistentCalls:
+        m_Calls: []
+    isQuickTime: 1
+    isChoice: 0
+    isPaywall: 0
+    isSpawnedThing: 0
+    hasHappened: 0
+    spawnedPrefab: {fileID: 0}
+    cost: 500
+    goodResult:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1905135055}
+          m_TargetAssemblyTypeName: Events, Assembly-CSharp
+          m_MethodName: AffectMoneyPositive
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 50
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    badResult:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1905135055}
+          m_TargetAssemblyTypeName: Events, Assembly-CSharp
+          m_MethodName: LoseStock
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 1
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventDescription: {fileID: 429131712}
+    eventAction:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1905135055}
+          m_TargetAssemblyTypeName: Events, Assembly-CSharp
+          m_MethodName: SetText
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: MULTIPLE SHOPLIFTERS CLICK THESE BUTTONS TO AVOID LOSING
+              ALL STOCK!!!
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1862236565}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: QUICK CLICK THESE BUTTONS TO GAIN RATINGS!!!
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 1905135054}
+          m_TargetAssemblyTypeName: QuickTimeEvent, Assembly-CSharp
+          m_MethodName: SetupQuickTime
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: QUICK CLICK THESE BUTTONS TO GAIN RATINGS!!!
+            m_BoolArgument: 1
+          m_CallState: 2
+    eventOver:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1862236565}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    eventOver2:
+      m_PersistentCalls:
+        m_Calls: []
+    isQuickTime: 1
+    isChoice: 0
+    isPaywall: 0
+    isSpawnedThing: 0
+    hasHappened: 0
+    spawnedPrefab: {fileID: 0}
+    cost: 500
+    goodResult:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1905135055}
+          m_TargetAssemblyTypeName: Events, Assembly-CSharp
+          m_MethodName: AffectMoneyPositive
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 2000
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    badResult:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1905135055}
+          m_TargetAssemblyTypeName: Events, Assembly-CSharp
+          m_MethodName: LoseStock
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 1
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1905135055}
+          m_TargetAssemblyTypeName: Events, Assembly-CSharp
+          m_MethodName: LoseStock
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 1
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1905135055}
+          m_TargetAssemblyTypeName: Events, Assembly-CSharp
+          m_MethodName: LoseStock
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 1
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1905135055}
+          m_TargetAssemblyTypeName: Events, Assembly-CSharp
+          m_MethodName: LoseStock
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 1
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1905135055}
+          m_TargetAssemblyTypeName: Events, Assembly-CSharp
+          m_MethodName: LoseStock
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 1
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1905135055}
+          m_TargetAssemblyTypeName: Events, Assembly-CSharp
+          m_MethodName: LoseStock
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 1
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1905135055}
+          m_TargetAssemblyTypeName: Events, Assembly-CSharp
+          m_MethodName: LoseStock
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 1
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1905135055}
+          m_TargetAssemblyTypeName: Events, Assembly-CSharp
+          m_MethodName: LoseStock
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 1
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   currentEvent:
     eventDescription: {fileID: 0}
     eventAction:
@@ -27279,6 +30106,12 @@ MonoBehaviour:
     hasHappened: 0
     spawnedPrefab: {fileID: 0}
     cost: 0
+    goodResult:
+      m_PersistentCalls:
+        m_Calls: []
+    badResult:
+      m_PersistentCalls:
+        m_Calls: []
   open: {fileID: 6650982396844727396}
   timeOfDay: {fileID: 7546991465511830662}
   timeToEvent: 0
@@ -27290,6 +30123,7 @@ MonoBehaviour:
   button2: {fileID: 800031911}
   moneyButton: {fileID: 896111500}
   moneyText: {fileID: 1371811362}
+  lightAffected: 0
 --- !u!1 &1909154114
 GameObject:
   m_ObjectHideFlags: 0
@@ -42909,6 +45743,7 @@ RectTransform:
   - {fileID: 982868450}
   - {fileID: 1777810664}
   - {fileID: 616710997}
+  - {fileID: 1862236566}
   - {fileID: 4167341833554843338}
   m_Father: {fileID: 2193887504327376787}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -45662,7 +48497,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &5468187642921133941
 RectTransform:
   m_ObjectHideFlags: 0
@@ -51843,6 +54678,7 @@ MonoBehaviour:
   loseScreen: {fileID: 1915782298}
   isntLost: 0
   changedOnce: 0
+  mainLight: {fileID: 1112331950}
   eventSystem: {fileID: 1905135055}
 --- !u!114 &7546991465511830663
 MonoBehaviour:
@@ -57449,3 +60285,5 @@ SceneRoots:
   - {fileID: 1423149814985634806}
   - {fileID: 2193887504327376787}
   - {fileID: 429939579}
+  - {fileID: 1754402862}
+  - {fileID: 1112331951}

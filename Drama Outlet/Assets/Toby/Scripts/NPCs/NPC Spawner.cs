@@ -24,11 +24,11 @@ public class NPCSpawner : MonoBehaviour
         spawnTimer -= Time.deltaTime;
         if (spawnTimer <= 0)
         {
-            if (Statics.timeOfDay == Statics.Time.Afternoon)
+            if (SaveDataController.Instance.CurrentData.timeOfDay == SaveData.Time.Afternoon)
             {
                 spawnStop = 8f;
             }
-            else if (Statics.timeOfDay == Statics.Time.Evening)
+            else if (SaveDataController.Instance.CurrentData.timeOfDay == SaveData.Time.Evening)
             {
                 spawnStop = 10f;
             }
@@ -37,28 +37,28 @@ public class NPCSpawner : MonoBehaviour
                 spawnStop = 15f;
             }
                 int result = Statics.RollADice(4);
-            if (Statics.approvalValue >= 40)
+            if (SaveDataController.Instance.CurrentData.approvalValue >= 40)
             {
                 if (result >= 12)
                 {
                     SpawnCustomer();
                 }
             }
-            else if (Statics.approvalValue >= 80)
+            else if (SaveDataController.Instance.CurrentData.approvalValue >= 80)
             {
                 if (result >= 8)
                 {
                     SpawnCustomer();
                 }
             }
-            else if (Statics.approvalValue >= 100)
+            else if (SaveDataController.Instance.CurrentData.approvalValue >= 100)
             {
                 if (result >= 5)
                 {
                     SpawnCustomer();
                 }
             }
-            else if (Statics.approvalValue < 40)
+            else if (SaveDataController.Instance.CurrentData.approvalValue < 40)
             {
                 if (result >= 15)
                 {
@@ -70,11 +70,11 @@ public class NPCSpawner : MonoBehaviour
     }
     public void SpawnCustomer()
     {
-        if (Statics.approvalValue < 80)
+        if (SaveDataController.Instance.CurrentData.approvalValue < 80)
         {
             amountToSpawn = Statics.RollADice(0);
         }
-        else if (Statics.approvalValue >= 80)
+        else if (SaveDataController.Instance.CurrentData.approvalValue >= 80)
         {
             amountToSpawn = Statics.RollADice(1);
         }

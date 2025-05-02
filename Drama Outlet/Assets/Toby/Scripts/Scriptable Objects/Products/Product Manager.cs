@@ -73,21 +73,21 @@ public class ProductManager : MonoBehaviour
 
     public void Restock()
     {
-        if (Statics.money < costToRestock)
+        if (SaveDataController.Instance.CurrentData.money < costToRestock)
         {
             Statics.ReadStatement("Sorry we can't Restock that.");
             Invoke("CloseAnimator", 3);
         }
         else
         {
-            Statics.money -= costToRestock;
+            SaveDataController.Instance.CurrentData.money -= costToRestock;
             stock = thisProduct.maxStock;
         }
     }
 
     public void Sell()
     {
-        Statics.money += thisProduct.objectSellPrice;
+        SaveDataController.Instance.CurrentData.money += thisProduct.objectSellPrice;
         Destroy(this.gameObject);
     }
     public void CloseAnimator()

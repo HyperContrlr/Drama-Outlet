@@ -36,7 +36,7 @@ public class BuildingManager : MonoBehaviour
     {
         if (thisBuilding.isSecurity == true)
         {
-            Statics.securityValue -= thisBuilding.securityBonus;
+            SaveDataController.Instance.CurrentData.securityValue -= thisBuilding.securityBonus;
         }
     }
     private void Awake()
@@ -76,7 +76,7 @@ public class BuildingManager : MonoBehaviour
             this.gameObject.GetComponentInChildren<SpriteRenderer>().material = defaultPlaceMat;
             if (thisBuilding.isSecurity == true)
             {
-                Statics.securityValue += thisBuilding.securityBonus;
+                SaveDataController.Instance.CurrentData.securityValue += thisBuilding.securityBonus;
             }
         }
         else if (mode == PlacementMode.Valid)

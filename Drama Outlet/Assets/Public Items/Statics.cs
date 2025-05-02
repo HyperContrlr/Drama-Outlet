@@ -4,21 +4,6 @@ using UnityEngine;
 public class Statics : MonoBehaviour
 {
     public static System.Random randyTheRandom = new();
-    public enum Time { EarlyMorning, Morning, Afternoon, Evening, Night, Midnight}
-    
-    public static Time timeOfDay;
-
-    public static float money = 500;
-
-    public static float day;
-
-    public static bool isNewGame = true;
-
-    public static float starsGained;
-
-    public static float approvalValue;
-
-    public static float securityValue;
     
     public static string rejectionText1 = "Oh Jimminy Crickets I don't have enough money for that Item.";
     

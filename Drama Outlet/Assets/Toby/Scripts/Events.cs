@@ -22,6 +22,8 @@ public class Events : MonoBehaviour
         public bool hasHappened;
         public GameObject spawnedPrefab;
         public float cost;
+        public UnityEvent goodResult;
+        public UnityEvent badResult;
     }
 
     public List<EventPeice> allEvents;
@@ -52,8 +54,15 @@ public class Events : MonoBehaviour
     public Button moneyButton;
 
     public TextMeshProUGUI moneyText;
-    void Start()
+
+    public bool lightAffected;
+    public void Bool1()
     {
+        lightAffected = true;
+    }
+    public void Bool2()
+    {
+        lightAffected = false;
     }
 
     // Update is called once per frame
@@ -115,17 +124,17 @@ public class Events : MonoBehaviour
     public void SetEvents()
     {
         offset = 0;
-        if (Statics.day <= 5)
+        if (SaveDataController.Instance.CurrentData.day <= 5)
         {
             timeBetweenEvents = 30f;
             eventsInTheDay = Statics.randyTheRandom.Next(2, 5);
         }
-        else if (Statics.day > 5 && Statics.day < 11)
+        else if (SaveDataController.Instance.CurrentData.day > 5 && SaveDataController.Instance.CurrentData.day < 11)
         {
             timeBetweenEvents = 20f;
             eventsInTheDay = Statics.randyTheRandom.Next(2, 7);
         }
-        else if (Statics.day >= 20)
+        else if (SaveDataController.Instance.CurrentData.day >= 20)
         {
             timeBetweenEvents = 10f;
             eventsInTheDay = Statics.randyTheRandom.Next(3, 9);
@@ -185,9 +194,9 @@ public class Events : MonoBehaviour
     }
     public void MoneyButton(float cost)
     {
-        if (Statics.money >= cost)
+        if (SaveDataController.Instance.CurrentData.money >= cost)
         {
-            Statics.money -= cost;
+            SaveDataController.Instance.CurrentData.money -= cost;
             UnityEventOver();
         }
         else
@@ -197,26 +206,26 @@ public class Events : MonoBehaviour
     }
     public void AffectMoneyNegative(float amount)
     {
-        if (Statics.money < amount)
+        if (SaveDataController.Instance.CurrentData.money < amount)
         {
-            Statics.money = 0;
+            SaveDataController.Instance.CurrentData.money = 0;
         }
         else
         {
-            Statics.money -= amount;
+            SaveDataController.Instance.CurrentData.money -= amount;
         }
     }
     public void AffectMoneyPositive(float amount)
     {
-        Statics.money += amount;
+        SaveDataController.Instance.CurrentData.money += amount;
     }
     public void AffectApprovalNegative(float amount)
     {
-        Statics.approvalValue -= amount;
+        SaveDataController.Instance.CurrentData.approvalValue -= amount;
     }
     public void AffectApprovalPositive(float amount)
     {
-        Statics.approvalValue += amount;
+        SaveDataController.Instance.CurrentData.approvalValue += amount;
     }
     public void LoseStock()
     {

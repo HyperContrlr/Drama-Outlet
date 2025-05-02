@@ -5,6 +5,7 @@ using System.Linq;
 using UnityEditor.Analytics;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.Rendering.Universal;
 public class TimeOfDay : MonoBehaviour
 {
     [SerializeField] public float timer;
@@ -25,11 +26,12 @@ public class TimeOfDay : MonoBehaviour
     [SerializeField] private GameObject loseScreen;
     [SerializeField] private bool isntLost;
     [SerializeField] private bool changedOnce;
+    public Light2D mainLight;
 
     public Events eventSystem;
     void Start()
     {
-        Statics.timeOfDay = Statics.Time.EarlyMorning;
+        SaveDataController.Instance.CurrentData.timeOfDay = SaveData.Time.EarlyMorning;
     }
 
     public void CloseAnimator()
@@ -38,12 +40,13 @@ public class TimeOfDay : MonoBehaviour
     }
     void Update()
     {
-        Debug.Log(Statics.timeOfDay);
+        Debug.Log(SaveDataController.Instance.CurrentData.timeOfDay);
         checkOut = IsCheckOut();
-        if (Statics.timeOfDay == Statics.Time.EarlyMorning)
+        if (SaveDataController.Instance.CurrentData.timeOfDay == SaveData.Time.EarlyMorning)
         {
             spaceBarMorning.gameObject.SetActive(true);
             spaceBarNight.gameObject.SetActive(false);
+            mainLight.intensity = 0.5f;
         }
         
         if (Input.GetKey(KeyCode.Space) == true && startedDay == true)
@@ -51,7 +54,7 @@ public class TimeOfDay : MonoBehaviour
             pressedDown = true;
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) == true && Statics.timeOfDay == Statics.Time.EarlyMorning && checkOut == true)
+        if (Input.GetKeyDown(KeyCode.Space) == true && SaveDataController.Instance.CurrentData.timeOfDay == SaveData.Time.EarlyMorning && checkOut == true)
         {
             eventSystem.SetEvents();
             isntLost = false;
@@ -61,18 +64,18 @@ public class TimeOfDay : MonoBehaviour
             npcSpawner.SpawnCustomer();
         }
 
-        else if (checkOut == false && Statics.timeOfDay == Statics.Time.EarlyMorning && Input.GetKeyDown(KeyCode.Space))
+        else if (checkOut == false && SaveDataController.Instance.CurrentData.timeOfDay == SaveData.Time.EarlyMorning && Input.GetKeyDown(KeyCode.Space))
         {
             Statics.ReadStatement("You need a checkout to open the store!! Use the one in your inventory");
             Invoke("CloseAnimator", 3); 
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) == true && Statics.timeOfDay == Statics.Time.Night)
+        if (Input.GetKeyDown(KeyCode.Space) == true && SaveDataController.Instance.CurrentData.timeOfDay == SaveData.Time.Night)
         {
             closeUpShop = true;
             spaceBarNight.gameObject.SetActive(false);
             midnight.gameObject.SetActive(true);
-            Statics.timeOfDay = Statics.Time.Midnight;
+            SaveDataController.Instance.CurrentData.timeOfDay = SaveData.Time.Midnight;
         }
 
         if (Input.GetKeyUp(KeyCode.Space) == true)
@@ -105,42 +108,49 @@ public class TimeOfDay : MonoBehaviour
        
         if (timer <= morningWindow && startedDay == true)
         {
-            Statics.timeOfDay = Statics.Time.Morning;
+            SaveDataController.Instance.CurrentData.timeOfDay = SaveData.Time.Morning;
+            if (eventSystem.lightAffected == false)
+            mainLight.intensity = 0.6f;
         }
         
         else if (timer <= afternoonWindow && timer > morningWindow)
         {
-            Statics.timeOfDay = Statics.Time.Afternoon;
+            SaveDataController.Instance.CurrentData.timeOfDay = SaveData.Time.Afternoon;
+            if (eventSystem.lightAffected == false)
+                mainLight.intensity = 0.8f;
         }
        
         else if (timer <= eveningWindow && timer > afternoonWindow)
         {
-            Statics.timeOfDay = Statics.Time.Evening;
+            SaveDataController.Instance.CurrentData.timeOfDay = SaveData.Time.Evening;
+            if (eventSystem.lightAffected == false)
+                mainLight.intensity = 0.6f;
         }
         
         else if (timer > eveningWindow)
         {
             spaceBarNight.gameObject.SetActive(true);
             npcSpawner.enabled = false;
-            Statics.timeOfDay = Statics.Time.Night;
+            SaveDataController.Instance.CurrentData.timeOfDay = SaveData.Time.Night;
+            mainLight.intensity = 0.4f;
             if (startedDay == true)
             {
                 buildingsPlaced.Clear();
                 buildingsPlaced = FindObjectsByType<BuildingManager>(FindObjectsSortMode.None).ToList();
                 foreach (var build in buildingsPlaced)
                 {
-                    Statics.approvalValue += build.thisBuilding.ratingBonus;
+                    SaveDataController.Instance.CurrentData.approvalValue += build.thisBuilding.ratingBonus;
                 }
                 List<NPCAI> npcs = FindObjectsByType<NPCAI>(FindObjectsSortMode.None).ToList();
                 foreach (var npc in npcs)
                 {
-                    Statics.money += npc.thisNPC.money;
+                    SaveDataController.Instance.CurrentData.money += npc.thisNPC.money;
                     npc.state = NPCAI.States.Leaving;
                     npc.target = npc.leave;
                 }
             }
             startedDay = false;
-            if (Statics.approvalValue <= -50 && Statics.money == 0)
+            if (SaveDataController.Instance.CurrentData.approvalValue <= -50 && SaveDataController.Instance.CurrentData.money == 0)
             {
                 List<ProductManager> products = FindObjectsByType<ProductManager>(FindObjectsSortMode.None).ToList();
                 foreach (var product in products)

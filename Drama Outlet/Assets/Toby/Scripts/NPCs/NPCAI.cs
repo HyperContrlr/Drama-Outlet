@@ -127,7 +127,7 @@ public partial class NPCAI : MonoBehaviour
             if (thisNPC.personality == NPC.Personality.Window_Shopper)
             {
                 waitTimeBase = 5;
-                if (Statics.approvalValue >= 20)
+                if (SaveDataController.Instance.CurrentData.approvalValue >= 20)
                 {
                     int chance = Statics.RollADice(1);
                     if (chance == 6)
@@ -136,7 +136,7 @@ public partial class NPCAI : MonoBehaviour
                     }
                 }
 
-                if (Statics.approvalValue >= 40)
+                if (SaveDataController.Instance.CurrentData.approvalValue >= 40)
                 {
                     int chance = Statics.RollADice(1);
                     if (chance >= 5)
@@ -145,7 +145,7 @@ public partial class NPCAI : MonoBehaviour
                     }
                 }
 
-                if (Statics.approvalValue >= 60)
+                if (SaveDataController.Instance.CurrentData.approvalValue >= 60)
                 {
                     int chance = Statics.RollADice(1);
                     if (chance >= 4)
@@ -154,7 +154,7 @@ public partial class NPCAI : MonoBehaviour
                     }
                 }
 
-                if (Statics.approvalValue >= 80)
+                if (SaveDataController.Instance.CurrentData.approvalValue >= 80)
                 {
                     int chance = Statics.RollADice(1);
                     if (chance >= 3)
@@ -163,7 +163,7 @@ public partial class NPCAI : MonoBehaviour
                     }
                 }
 
-                if (Statics.approvalValue >= 100)
+                if (SaveDataController.Instance.CurrentData.approvalValue >= 100)
                 {
                     int chance = Statics.RollADice(1);
                     if (chance >= 2)
@@ -176,7 +176,7 @@ public partial class NPCAI : MonoBehaviour
             if (thisNPC.personality == NPC.Personality.Average_Shopper)
             {
                 waitTimeBase = 8;
-                if (Statics.approvalValue >= 50)
+                if (SaveDataController.Instance.CurrentData.approvalValue >= 50)
                 {
                     int chance = Statics.RollADice(1);
                     if (chance >= 5)
@@ -185,7 +185,7 @@ public partial class NPCAI : MonoBehaviour
                     }
                 }
 
-                if (Statics.approvalValue > 0)
+                if (SaveDataController.Instance.CurrentData.approvalValue > 0)
                 {
                     int chance = Statics.RollADice(1);
                     if (chance >= 4)
@@ -194,7 +194,7 @@ public partial class NPCAI : MonoBehaviour
                     }
                 }
 
-                if (Statics.approvalValue <= -20)
+                if (SaveDataController.Instance.CurrentData.approvalValue <= -20)
                 {
                     int chance = Statics.RollADice(1);
                     if (chance >= 5)
@@ -207,7 +207,7 @@ public partial class NPCAI : MonoBehaviour
             if (thisNPC.personality == NPC.Personality.Big_Spender)
             {
                 waitTimeBase = 8;
-                if (Statics.approvalValue > 0)
+                if (SaveDataController.Instance.CurrentData.approvalValue > 0)
                 {
                     int chance = Statics.RollADice(1);
                     if (chance >= 4)
@@ -216,7 +216,7 @@ public partial class NPCAI : MonoBehaviour
                     }
                 }
 
-                if (Statics.approvalValue <= -20)
+                if (SaveDataController.Instance.CurrentData.approvalValue <= -20)
                 {
                     int chance = Statics.RollADice(1);
                     if (chance >= 5)
@@ -270,7 +270,7 @@ public partial class NPCAI : MonoBehaviour
         if (target.GetComponent<ProductManager>().stock < thisNPC.amountToBuy)
         {
             //Play an angry graphic
-            Statics.approvalValue -= 5;
+            SaveDataController.Instance.CurrentData.approvalValue -= 5;
             thisNPC.unhappy = true;
         }
         if (thisNPC.personality == NPC.Personality.Thief)
@@ -385,7 +385,7 @@ public partial class NPCAI : MonoBehaviour
             waitTime -= Time.deltaTime;
             if (waitTime <= 0)
             {
-                Statics.money += thisNPC.money;
+                SaveDataController.Instance.CurrentData.money += thisNPC.money;
                 target = leave;
                 state = States.Leaving;
                 //Maybe play a nice gaining money animation
@@ -612,7 +612,7 @@ public partial class NPCAI : MonoBehaviour
             {
                 if (thisNPC.personality == NPC.Personality.Thief)
                 {
-                    Statics.money -= thisNPC.money;
+                    SaveDataController.Instance.CurrentData.money -= thisNPC.money;
                     Statics.ReadStatement("WE DON GOT ROBBED!!!");
                     Invoke("CloseAnimator", 3);
                 }
@@ -621,19 +621,19 @@ public partial class NPCAI : MonoBehaviour
                     int chance = Statics.RollADice(4);
                     if (chance == 20)
                     {
-                        Statics.approvalValue += 5;
+                        SaveDataController.Instance.CurrentData.approvalValue += 5;
                     }
                     else if (chance <= 19 && chance > 10)
                     {
-                        Statics.approvalValue += 2;
+                        SaveDataController.Instance.CurrentData.approvalValue += 2;
                     }
                     else
                     {
-                        Statics.approvalValue += 0.5f;
+                        SaveDataController.Instance.CurrentData.approvalValue += 0.5f;
                     }
                     if (noProduct == false)
                     {
-                        Statics.approvalValue -= 5;
+                        SaveDataController.Instance.CurrentData.approvalValue -= 5;
                     }
                 }
                 npcSpawner.spawnedNPCs.Remove(this);

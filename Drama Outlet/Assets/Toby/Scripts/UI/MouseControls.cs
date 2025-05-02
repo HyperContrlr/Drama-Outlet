@@ -90,7 +90,7 @@ public class MouseControls : MonoBehaviour
         }
         else
         {
-            Statics.money += this.gameObject.GetComponent<BuildingManager>().thisBuilding.objectSellPrice;
+            SaveDataController.Instance.CurrentData.money += this.gameObject.GetComponent<BuildingManager>().thisBuilding.objectSellPrice;
             Destroy(this.gameObject);
         }
     }

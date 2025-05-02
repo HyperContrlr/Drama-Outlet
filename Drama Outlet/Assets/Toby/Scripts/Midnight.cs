@@ -27,21 +27,21 @@ public class Midnight : MonoBehaviour
     public TimeOfDay day;
     public void OnEnable()
     {
-        if (Statics.approvalValue <= 60 && hasStartedStealing == false)
+        if (SaveDataController.Instance.CurrentData.approvalValue <= 60 && hasStartedStealing == false)
         {
             List<string> shuffledNotes = possibleWarningNotes.Shuffle().ToList();
             GenericDisplayText<string>.DisplayText(noteText, shuffledNotes[0]);
             List<string> shuffledWarnings = warningTexts.Shuffle().ToList();
             GenericDisplayText<string>.DisplayText(warningText, shuffledWarnings[0]);
         }
-        if (Statics.approvalValue > 60)
+        if (SaveDataController.Instance.CurrentData.approvalValue > 60)
         {
             hasStartedStealing = true;
             warningText.gameObject.SetActive(false);
             List<string> shuffledNotes = possibleStolenNotes.Shuffle().ToList();
             GenericDisplayText<string>.DisplayText(noteText, shuffledNotes[1]);
             int chance = Statics.RollADice(4);
-            for (float i = Statics.securityValue; i <= 0; i = i - 10)
+            for (float i = SaveDataController.Instance.CurrentData.securityValue; i <= 0; i = i - 10)
             {
                 chance += (int)0.5;
             }
@@ -67,7 +67,7 @@ public class Midnight : MonoBehaviour
                 moneyLossText.SetActive(false);
                 productLostText.SetActive(false);
                 safeText.SetActive(false);
-                Statics.approvalValue -= 10;
+                SaveDataController.Instance.CurrentData.approvalValue -= 10;
             }
             //Money Loss
             else if (chance <= 10 && chance > 5)
@@ -79,23 +79,23 @@ public class Midnight : MonoBehaviour
                 int chance2 = Statics.RollADice(0);
                 if (chance2 == 1)
                 {
-                    moneyLost = Statics.money * 0.25f;
-                    Statics.money -= moneyLost;
+                    moneyLost = SaveDataController.Instance.CurrentData.money * 0.25f;
+                    SaveDataController.Instance.CurrentData.money -= moneyLost;
                 }
                 else if (chance2 == 2)
                 {
-                    moneyLost = Statics.money * 0.25f;
-                    Statics.money -= moneyLost;
+                    moneyLost = SaveDataController.Instance.CurrentData.money * 0.25f;
+                    SaveDataController.Instance.CurrentData.money -= moneyLost;
                 }
                 else if (chance2 == 3)
                 {
-                    moneyLost = Statics.money * 0.5f;
-                    Statics.money -= moneyLost;
+                    moneyLost = SaveDataController.Instance.CurrentData.money * 0.5f;
+                    SaveDataController.Instance.CurrentData.money -= moneyLost;
                 }
                 else if (chance2 == 4)
                 {
-                    moneyLost = Statics.money * 0.75f;
-                    Statics.money -= moneyLost;
+                    moneyLost = SaveDataController.Instance.CurrentData.money * 0.75f;
+                    SaveDataController.Instance.CurrentData.money -= moneyLost;
                 }
             }
             //Product Loss
@@ -120,7 +120,7 @@ public class Midnight : MonoBehaviour
                 }
             }
         }
-        if (Statics.approvalValue >= 100 && hasStartedStealing == true)
+        if (SaveDataController.Instance.CurrentData.approvalValue >= 100 && hasStartedStealing == true)
         {
             hasStartedStealing = false;
             happyText.SetActive(true);
@@ -138,8 +138,8 @@ public class Midnight : MonoBehaviour
 
     public void Next()
     {
-        Statics.day += 1;
-        Statics.timeOfDay = Statics.Time.EarlyMorning;
+        SaveDataController.Instance.CurrentData.day += 1;
+        SaveDataController.Instance.CurrentData.timeOfDay = SaveData.Time.EarlyMorning;
         day.closeUpShop = false;
         day.timer = 0;
         day.rotation = 90;

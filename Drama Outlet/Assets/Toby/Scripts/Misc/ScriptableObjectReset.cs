@@ -9,7 +9,7 @@ public class ScriptableObjectReset : MonoBehaviour
     [SerializeField] private List<License> allLicenses;
     public void OnDestroy()
     {
-        if (Statics.isNewGame == true)
+        if (SaveDataController.Instance.CurrentData.isNewGame == true)
         {
             foreach (var product in allProducts)
             {

@@ -75,7 +75,7 @@ public class PopUpManager : MonoBehaviour
     {
         foreach (License license in starLockedLicense)
         {
-            if (Statics.starsGained >= license.StarsForUnlock)
+            if (SaveDataController.Instance.CurrentData.starsGained >= license.StarsForUnlock)
             {
                 license.starLock = false;
             }
@@ -95,24 +95,24 @@ public class PopUpManager : MonoBehaviour
     public void MaskAndStarCheck()
     {
         //Approval 
-        if (Statics.approvalValue <= 0)
+        if (SaveDataController.Instance.CurrentData.approvalValue <= 0)
         {
             //Big Sad
-            if (Statics.approvalValue <= -20)
+            if (SaveDataController.Instance.CurrentData.approvalValue <= -20)
             {
-                Statics.starsGained = 0;
+                SaveDataController.Instance.CurrentData.starsGained = 0;
                 approvalMask.sprite = approvalMaskSprites[0];
             }
             //Worried
-            if (Statics.approvalValue > -20 && Statics.approvalValue < 0)
+            if (SaveDataController.Instance.CurrentData.approvalValue > -20 && SaveDataController.Instance.CurrentData.approvalValue < 0)
             {
-                Statics.starsGained = 0;
+                SaveDataController.Instance.CurrentData.starsGained = 0;
                 approvalMask.sprite = approvalMaskSprites[1];
             }
             //Neutral
-            if (Statics.approvalValue == 0)
+            if (SaveDataController.Instance.CurrentData.approvalValue == 0)
             {
-                Statics.starsGained = 0;
+                SaveDataController.Instance.CurrentData.starsGained = 0;
                 approvalMask.sprite = approvalMaskSprites[2];
                 stars[0].GetComponent<Image>().sprite = defaultStar;
                 stars[0].GetComponent<Image>().color = defaultColor;
@@ -123,14 +123,14 @@ public class PopUpManager : MonoBehaviour
                 star.GetComponent<Image>().color = defaultColor;
             }
         }
-        else if (Statics.approvalValue > 0)
+        else if (SaveDataController.Instance.CurrentData.approvalValue > 0)
         {
             {
                 int i = 0;
                 //Small Smirk
-                if (Statics.approvalValue >= 20 && Statics.approvalValue < 40)
+                if (SaveDataController.Instance.CurrentData.approvalValue >= 20 && SaveDataController.Instance.CurrentData.approvalValue < 40)
                 {
-                    Statics.starsGained = 1;
+                    SaveDataController.Instance.CurrentData.starsGained = 1;
                     UnlockLicense();
                     i = 0;
                     foreach (GameObject star in stars)
@@ -150,9 +150,9 @@ public class PopUpManager : MonoBehaviour
                     approvalMask.sprite = approvalMaskSprites[3];
                 }
                 //Grin
-                if (Statics.approvalValue >= 40 && Statics.approvalValue < 60)
+                if (SaveDataController.Instance.CurrentData.approvalValue >= 40 && SaveDataController.Instance.CurrentData.approvalValue < 60)
                 {
-                    Statics.starsGained = 2;
+                    SaveDataController.Instance.CurrentData.starsGained = 2;
                     UnlockLicense();
                     i = 0;
                     foreach (GameObject star in stars)
@@ -172,9 +172,9 @@ public class PopUpManager : MonoBehaviour
                     approvalMask.sprite = approvalMaskSprites[4];
                 }
                 //Smile
-                if (Statics.approvalValue >= 60 && Statics.approvalValue < 80)
+                if (SaveDataController.Instance.CurrentData.approvalValue >= 60 && SaveDataController.Instance.CurrentData.approvalValue < 80)
                 {
-                    Statics.starsGained = 3;
+                    SaveDataController.Instance.CurrentData.starsGained = 3;
                     UnlockLicense();
                     i = 0;
                     foreach (GameObject star in stars)
@@ -195,9 +195,9 @@ public class PopUpManager : MonoBehaviour
                     approvalMask.sprite = approvalMaskSprites[5];
                 }
                 //Smile w/ Teeth
-                if (Statics.approvalValue >= 80 && Statics.approvalValue < 100)
+                if (SaveDataController.Instance.CurrentData.approvalValue >= 80 && SaveDataController.Instance.CurrentData.approvalValue < 100)
                 {
-                    Statics.starsGained = 4;
+                    SaveDataController.Instance.CurrentData.starsGained = 4;
                     UnlockLicense();
                     i = 0;
                     foreach (GameObject star in stars)
@@ -217,9 +217,9 @@ public class PopUpManager : MonoBehaviour
                     approvalMask.sprite = approvalMaskSprites[6];
                 }
                 //Extreme Happy Face
-                if (Statics.approvalValue >= 100)
+                if (SaveDataController.Instance.CurrentData.approvalValue >= 100)
                 {
-                    Statics.starsGained = 5;
+                    SaveDataController.Instance.CurrentData.starsGained = 5;
                     UnlockLicense();
                     stars[4].GetComponent<Image>().sprite = gainedStar;
                     stars[4].GetComponent<Image>().color = gainedColor;
@@ -228,20 +228,20 @@ public class PopUpManager : MonoBehaviour
             }
         }
         //Security
-        if (Statics.securityValue <= 0)
+        if (SaveDataController.Instance.CurrentData.securityValue <= 0)
         {
             //Big Sad
-            if (Statics.securityValue < -50)
+            if (SaveDataController.Instance.CurrentData.securityValue < -50)
             {
                 securityMask.sprite = securityMaskSprites[0];
             }
             //Worried
-            if (Statics.securityValue > -20 && Statics.securityValue < 0)
+            if (SaveDataController.Instance.CurrentData.securityValue > -20 && SaveDataController.Instance.CurrentData.securityValue < 0)
             {
                 securityMask.sprite = securityMaskSprites[1];
             }
             //Neutral
-            if (Statics.securityValue == 0)
+            if (SaveDataController.Instance.CurrentData.securityValue == 0)
             {
                 securityMask.sprite = securityMaskSprites[2];
             }
@@ -250,31 +250,31 @@ public class PopUpManager : MonoBehaviour
                 star.GetComponent<Image>().sprite = defaultStar;
             }
         }
-        else if (Statics.securityValue > 0)
+        else if (SaveDataController.Instance.CurrentData.securityValue > 0)
         {
             {
                 //Small Smirk
-                if (Statics.securityValue >= 20)
+                if (SaveDataController.Instance.CurrentData.securityValue >= 20)
                 {
                     securityMask.sprite = securityMaskSprites[3];
                 }
                 //Grin
-                if (Statics.securityValue >= 40)
+                if (SaveDataController.Instance.CurrentData.securityValue >= 40)
                 {
                     securityMask.sprite = securityMaskSprites[4];
                 }
                 //Smile
-                if (Statics.securityValue >= 60)
+                if (SaveDataController.Instance.CurrentData.securityValue >= 60)
                 {
                     securityMask.sprite = securityMaskSprites[5];
                 }
                 //Smile w/ Teeth
-                if (Statics.securityValue >= 80)
+                if (SaveDataController.Instance.CurrentData.securityValue >= 80)
                 {
                     securityMask.sprite = securityMaskSprites[6];
                 }
                 //Extreme Happy Face
-                if (Statics.securityValue >= 100)
+                if (SaveDataController.Instance.CurrentData.securityValue >= 100)
                 {
                     securityMask.sprite = securityMaskSprites[7];
                 }
@@ -283,8 +283,8 @@ public class PopUpManager : MonoBehaviour
     }
     public void Update()
     {
-        GenericDisplayText<float>.DisplayTextWithExtra(moneyText, Statics.money, 0);
-        GenericDisplayText<float>.DisplayTextWithExtra(dayText, Statics.day, 1);
+        GenericDisplayText<float>.DisplayTextWithExtra(moneyText, SaveDataController.Instance.CurrentData.money, 0);
+        GenericDisplayText<float>.DisplayTextWithExtra(dayText, SaveDataController.Instance.CurrentData.day, 1);
         MaskAndStarCheck();
         UnlockLicense();
     }
@@ -292,14 +292,14 @@ public class PopUpManager : MonoBehaviour
     [ContextMenu("Change Approval")]
     public void ChangeApproval()
     {
-        Statics.approvalValue += 20;
-        Debug.Log(Statics.approvalValue);
+        SaveDataController.Instance.CurrentData.approvalValue += 20;
+        Debug.Log(SaveDataController.Instance.CurrentData.approvalValue);
     }
 
     [ContextMenu("Change Approval Negative")]
     public void ChangeApprovalNegative()
     {
-        Statics.approvalValue -= 10;
-        Debug.Log(Statics.approvalValue);
+        SaveDataController.Instance.CurrentData.approvalValue -= 10;
+        Debug.Log(SaveDataController.Instance.CurrentData.approvalValue);
     }
 }

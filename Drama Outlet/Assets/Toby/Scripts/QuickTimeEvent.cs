@@ -3,6 +3,7 @@ using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class QuickTimeEvent : MonoBehaviour
 {
@@ -12,13 +13,11 @@ public class QuickTimeEvent : MonoBehaviour
     public bool isCountingDown;
     public float countdownTime;
     public float maxCountdownTime;
-    public UnityEvent badResult;
-    public UnityEvent goodResult;
     public bool firstButton;
     public bool secondButton;
     public bool thirdButton;
     public bool fourthButton;
-
+    public Slider slider;
     public void SetupQuickTime()
     {
         keyList = keyList.Shuffle().ToList();
@@ -27,6 +26,7 @@ public class QuickTimeEvent : MonoBehaviour
             textList[i].text = keyList[i].ToString();
         }
         isCountingDown = true;
+        slider.value = 10;
     }
     void Start()
     {
@@ -39,11 +39,12 @@ public class QuickTimeEvent : MonoBehaviour
         if (isCountingDown == true)
         {
             countdownTime -= Time.deltaTime;
+            slider.value -= Time.deltaTime;
             if (countdownTime <= 0)
             {
                 isCountingDown = false;
                 countdownTime = maxCountdownTime;
-                badResult.Invoke();
+                eventSystem.currentEvent.badResult.Invoke();
                 eventSystem.currentEvent.eventOver.Invoke();
             }
             else if (Input.GetKeyDown(keyList[0]) && firstButton == false)
@@ -66,7 +67,7 @@ public class QuickTimeEvent : MonoBehaviour
             {
                 isCountingDown = false;
                 countdownTime = maxCountdownTime;
-                goodResult.Invoke();
+                eventSystem.currentEvent.goodResult.Invoke();
                 eventSystem.currentEvent.eventOver.Invoke();
             }
             else

@@ -55,12 +55,12 @@ public class RSIButtons : MonoBehaviour
     }
     public void RestockAll()
     {
-        if (restockPrices > Statics.money && button.timer < 3)
+        if (restockPrices > SaveDataController.Instance.CurrentData.money && button.timer < 3)
         {
             Statics.ReadStatement("Sorry we can't Restock All now.");
             Invoke("CloseAnimator", 6);
         }
-        else if (restockPrices <= Statics.money && button.timer >= 3)
+        else if (restockPrices <= SaveDataController.Instance.CurrentData.money && button.timer >= 3)
         {
             foreach (var mang in managers)
             {
