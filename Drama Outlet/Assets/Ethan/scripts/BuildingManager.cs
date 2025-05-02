@@ -81,13 +81,15 @@ public class BuildingManager : MonoBehaviour
         }
         else if (mode == PlacementMode.Valid)
         {
-            hasValidPlacement = true;
+            Debug.Log("Valid Placement");
             this.gameObject.GetComponentInChildren<SpriteRenderer>().material = validPlaceMat;
+            hasValidPlacement = true;
         }
         else if (mode == PlacementMode.Invalid)
         {
-            hasValidPlacement = false;
+            Debug.Log("Invalid Placement");
             this.gameObject.GetComponentInChildren<SpriteRenderer>().material = invalidPlaceMat;
+            hasValidPlacement = false;
         }
         SetMaterial(mode);
     }

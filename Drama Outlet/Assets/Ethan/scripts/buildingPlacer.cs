@@ -76,19 +76,11 @@ public class buildingPlacer : MonoBehaviour
             {
                  if (!toBuild.activeSelf) toBuild.SetActive(true);
             }
-            RaycastHit2D furnHit = Physics2D.BoxCast(Camera.main.ScreenToWorldPoint(Input.mousePosition), actualBoxThang, 45f, Vector2.zero, 100f, furnLayerMask);
-            //RaycastHit2D floorHit = Physics2D.BoxCast(Camera.main.ScreenToWorldPoint(Input.mousePosition), actualBoxThang, 45f, Vector2.zero, 100f, floorLayerMask);
             BuildingManager m = toBuild.GetComponent<BuildingManager>();
-            if (furnHit.collider != null)
-            {
-                m.SetPlacementMode(PlacementMode.Invalid);
-            }
-            else 
-            {
-                m.SetPlacementMode(PlacementMode.Valid);
-            }
+            RaycastHit2D furnHit = Physics2D.BoxCast(Camera.main.ScreenToWorldPoint(Input.mousePosition), actualBoxThang, 45f, Vector2.zero, 100f, furnLayerMask);
             RaycastHit2D oobHit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, 100f, oobLayerMask);
-            if (oobHit.collider != null)
+            //RaycastHit2D floorHit = Physics2D.BoxCast(Camera.main.ScreenToWorldPoint(Input.mousePosition), actualBoxThang, 45f, Vector2.zero, 100f, floorLayerMask);
+            if (furnHit.collider != null || oobHit.collider != null)
             {
                 m.SetPlacementMode(PlacementMode.Invalid);
             }
