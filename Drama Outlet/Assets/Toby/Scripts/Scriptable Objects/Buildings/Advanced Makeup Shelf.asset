@@ -10,15 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 345bb5161ab389045bfc375658cc75b2, type: 3}
-  m_Name: Prop-Bin
+  m_Name: Advanced Makeup Shelf
   m_EditorClassIdentifier: 
-  name: Prop-Bin
-  description: Swords!! Umbrellas!! Scythes!! OH MY!!!
-  cost: 250
-  objectSellPrice: 0
+  name: SFX Shelf
+  description: These shelves has state of the art SFX makeup. Time to make people
+    look spooky!!
+  cost: 500
+  objectSellPrice: 250
   isLocked: 1
   hasProduct: 1
-  soldProduct: {fileID: 11400000, guid: d7bca251925d96347b83127d68b86305, type: 2}
+  soldProduct: {fileID: 11400000, guid: 1a134c6b9a42d5b44905a4a60c1d8ff0, type: 2}
   ratingBonus: 0
   ratingUnlock: 0
   objectPrefab: {fileID: 0}

@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 345bb5161ab389045bfc375658cc75b2, type: 3}
   m_Name: Advanced Mask Stand
   m_EditorClassIdentifier: 
-  name: Advanced Mask Stand
+  name: Golden Mask Stand
   description: This stand sells premium masks. Oui Oui!!
-  cost: 50
-  objectSellPrice: 50
+  cost: 1200
+  objectSellPrice: 600
   isLocked: 1
-  hasProduct: 0
-  soldProduct: {fileID: 11400000, guid: 84118fd9120504e43af7e4355eaa380e, type: 2}
+  hasProduct: 1
+  soldProduct: {fileID: 11400000, guid: c05642d718cf2404d9bf1bc74376b12c, type: 2}
   ratingBonus: 0
   ratingUnlock: 0
   objectPrefab: {fileID: 0}

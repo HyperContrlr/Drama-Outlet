@@ -59,7 +59,7 @@ public class MouseControls : MonoBehaviour
         if (isProduct == true)
         {
             restockPrice = this.gameObject.GetComponent<ProductManager>().costToRestock;
-            sellPrice = this.gameObject.GetComponent<ProductManager>().thisProduct.objectSellPrice;
+            sellPrice = this.gameObject.GetComponent<BuildingManager>().thisBuilding.objectSellPrice;
         }
         else
         {
@@ -83,16 +83,15 @@ public class MouseControls : MonoBehaviour
 
     public void Sell()
     {
-        if (isProduct == true)
-        {
-            this.gameObject.GetComponent<ProductManager>().Sell();
-            Destroy(this.gameObject);
-        }
-        else
-        {
-            SaveDataController.Instance.CurrentData.money += this.gameObject.GetComponent<BuildingManager>().thisBuilding.objectSellPrice;
-            Destroy(this.gameObject);
-        }
+            if (identifier == "Check-Out")
+            {
+                Store();
+            }
+            else
+            {
+                SaveDataController.Instance.CurrentData.money += this.gameObject.GetComponent<BuildingManager>().thisBuilding.objectSellPrice;
+                Destroy(this.gameObject);
+            }
     }
 
     public void Restock()
@@ -110,10 +109,7 @@ public class MouseControls : MonoBehaviour
 
     public void Store()
     {
-        if (isCheckOut == false)
-        {
-            item.AddToStock();
-        }
+        item.AddToStock();
         Destroy(this.gameObject);
     }
 

@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class Midnight : MonoBehaviour
 {
-
+    public License tragedyLicense;
     public float moneyLost;
     public bool hasStartedStealing;
     public GameObject stolenNote;
@@ -27,14 +27,14 @@ public class Midnight : MonoBehaviour
     public TimeOfDay day;
     public void OnEnable()
     {
-        if (SaveDataController.Instance.CurrentData.approvalValue <= 60 && hasStartedStealing == false)
+        if (SaveDataController.Instance.CurrentData.approvalValue < 60 && hasStartedStealing == false)
         {
             List<string> shuffledNotes = possibleWarningNotes.Shuffle().ToList();
             GenericDisplayText<string>.DisplayText(noteText, shuffledNotes[0]);
             List<string> shuffledWarnings = warningTexts.Shuffle().ToList();
             GenericDisplayText<string>.DisplayText(warningText, shuffledWarnings[0]);
         }
-        if (SaveDataController.Instance.CurrentData.approvalValue > 60)
+        if (SaveDataController.Instance.CurrentData.approvalValue >= 60)
         {
             hasStartedStealing = true;
             warningText.gameObject.SetActive(false);
@@ -128,6 +128,10 @@ public class Midnight : MonoBehaviour
             moneyLossText.SetActive(false);
             productLostText.SetActive(false);
             safeText.SetActive(false);
+            if (tragedyLicense.isBought == true)
+            {
+                SaveDataController.Instance.CurrentData.money += 4000;
+            }
         }
     }
     // Update is called once per frame

@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 345bb5161ab389045bfc375658cc75b2, type: 3}
-  m_Name: Prop-Bin
+  m_Name: Advanced Prop Rack
   m_EditorClassIdentifier: 
-  name: Prop-Bin
-  description: Swords!! Umbrellas!! Scythes!! OH MY!!!
-  cost: 250
-  objectSellPrice: 0
+  name: Prop Rack
+  description: With this prop rack we can sell more, higher quality props!! EN GARDE!!
+  cost: 2000
+  objectSellPrice: 1000
   isLocked: 1
   hasProduct: 1
-  soldProduct: {fileID: 11400000, guid: d7bca251925d96347b83127d68b86305, type: 2}
+  soldProduct: {fileID: 11400000, guid: c37d440641cfd2a408cf245810cb360e, type: 2}
   ratingBonus: 0
   ratingUnlock: 0
   objectPrefab: {fileID: 0}

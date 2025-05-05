@@ -10013,7 +10013,7 @@ MonoBehaviour:
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1920, y: 1080}
-  m_ScreenMatchMode: 0
+  m_ScreenMatchMode: 1
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
@@ -10742,7 +10742,7 @@ MonoBehaviour:
   description: 
   timer: 0
   isOver: 0
-  cursorSet: {fileID: 0}
+  cursorSet: {fileID: 1905135051}
 --- !u!114 &716970909
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10770,7 +10770,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stock: 1
   stockText: {fileID: 287473176}
-  identifier: 
+  identifier: Check-Out
   mysteriousDescription: The checkout for our shop. I wonder how it does that on
     it's own...?
 --- !u!1 &725868659
@@ -26121,6 +26121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f9140e05cb25b644aeeba5571cd36ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tragedyLicense: {fileID: 11400000, guid: 967dda33c46bf43469a96fa895770694, type: 2}
   moneyLost: 0
   hasStartedStealing: 0
   stolenNote: {fileID: 982868449}
@@ -26130,7 +26131,7 @@ MonoBehaviour:
   approvalLostText: {fileID: 1198120356}
   safeText: {fileID: 1368814871}
   warningText: {fileID: 1715218738}
-  happyText: {fileID: 0}
+  happyText: {fileID: 320570148}
   warningTexts:
   - I'm gonna need to keep an eye out for him.
   - I'm so sorry Tragedy.
@@ -40660,7 +40661,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 5852135935505538600, guid: 4b510a548f1269c4f9cd29fc903c6e5b, type: 3}
+  m_Sprite: {fileID: 739905185230883310, guid: afd0e484183121c45a6f896e2e3860cf, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -56122,7 +56123,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 739905185230883310, guid: afd0e484183121c45a6f896e2e3860cf, type: 3}
+  m_Sprite: {fileID: 5852135935505538600, guid: 4b510a548f1269c4f9cd29fc903c6e5b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
