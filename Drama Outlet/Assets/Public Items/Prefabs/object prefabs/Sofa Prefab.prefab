@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6523651817134319893}
   - component: {fileID: 7938967337812894326}
   - component: {fileID: 3027906311257283371}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: green_tile_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4990,7 +4990,7 @@ GameObject:
   - component: {fileID: 6418410909431095021}
   - component: {fileID: -9193291775350053124}
   - component: {fileID: 5665187274512098532}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Sofa Prefab
   m_TagString: furniture
   m_Icon: {fileID: 0}

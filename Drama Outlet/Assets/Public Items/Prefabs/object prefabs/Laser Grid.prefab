@@ -4852,7 +4852,7 @@ GameObject:
   - component: {fileID: -9193291775350053124}
   - component: {fileID: 4717508610931596946}
   - component: {fileID: 3132489700239615905}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Laser Grid
   m_TagString: furniture
   m_Icon: {fileID: 0}
@@ -5232,7 +5232,7 @@ GameObject:
   - component: {fileID: 1167554901280085920}
   - component: {fileID: 5645464195425381433}
   - component: {fileID: 6332052084491163486}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: green_tile_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}

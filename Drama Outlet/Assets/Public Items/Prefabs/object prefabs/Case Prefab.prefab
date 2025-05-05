@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7114774623480130053}
   - component: {fileID: 6331579714561919142}
   - component: {fileID: 5602102029056057005}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4991,7 +4991,7 @@ GameObject:
   - component: {fileID: 514212650071716743}
   - component: {fileID: 8365356483261554789}
   - component: {fileID: 4739973988143224106}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Case Prefab
   m_TagString: furniture
   m_Icon: {fileID: 0}

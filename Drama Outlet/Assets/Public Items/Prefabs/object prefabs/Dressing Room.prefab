@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 733632578394583816}
   - component: {fileID: 7114214482321724410}
   - component: {fileID: 8933172121613695090}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: green_tile_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4990,7 +4990,7 @@ GameObject:
   - component: {fileID: 6418410909431095021}
   - component: {fileID: -9193291775350053124}
   - component: {fileID: 2206908608031500274}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Dressing Room
   m_TagString: furniture
   m_Icon: {fileID: 0}

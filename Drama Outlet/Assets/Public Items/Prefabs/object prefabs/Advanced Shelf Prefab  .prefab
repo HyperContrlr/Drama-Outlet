@@ -150,7 +150,7 @@ GameObject:
   - component: {fileID: 1357816628001550876}
   - component: {fileID: 778642029101774597}
   - component: {fileID: 7083764382336511531}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4991,7 +4991,7 @@ GameObject:
   - component: {fileID: 3261159966993522951}
   - component: {fileID: 3665306650127980269}
   - component: {fileID: 2924071872925210221}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: 'Advanced Shelf Prefab  '
   m_TagString: furniture
   m_Icon: {fileID: 0}

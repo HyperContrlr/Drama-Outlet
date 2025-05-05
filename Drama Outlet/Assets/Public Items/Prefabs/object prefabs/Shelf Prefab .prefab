@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8207190408895457350}
   - component: {fileID: 1421800702579594436}
   - component: {fileID: 7346360435607347652}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: green_tile_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4991,7 +4991,7 @@ GameObject:
   - component: {fileID: 3261159966993522951}
   - component: {fileID: 3665306650127980269}
   - component: {fileID: 2924071872925210221}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: 'Shelf Prefab '
   m_TagString: furniture
   m_Icon: {fileID: 0}

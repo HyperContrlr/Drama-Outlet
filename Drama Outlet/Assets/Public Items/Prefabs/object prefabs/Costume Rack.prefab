@@ -4844,7 +4844,7 @@ GameObject:
   - component: {fileID: 9178235446541279727}
   - component: {fileID: 1665127552786250543}
   - component: {fileID: 7166326690907524912}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: green_tile_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4991,7 +4991,7 @@ GameObject:
   - component: {fileID: 3261159966993522951}
   - component: {fileID: 3665306650127980269}
   - component: {fileID: 5436927347930696117}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Costume Rack
   m_TagString: furniture
   m_Icon: {fileID: 0}

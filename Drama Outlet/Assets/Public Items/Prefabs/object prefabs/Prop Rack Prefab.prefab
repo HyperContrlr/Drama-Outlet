@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7504161955517412853}
   - component: {fileID: 7999685721686970866}
   - component: {fileID: 5952572841419078861}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: green_tile_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4991,7 +4991,7 @@ GameObject:
   - component: {fileID: 514212650071716743}
   - component: {fileID: 8365356483261554789}
   - component: {fileID: 4739973988143224106}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Prop Rack Prefab
   m_TagString: furniture
   m_Icon: {fileID: 0}
