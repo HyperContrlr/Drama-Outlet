@@ -24,6 +24,7 @@ public class BuildingManager : MonoBehaviour
 
     public Vector2 boxThang;
     public GameObject parteecles;
+    public GameObject hitbox;
 
     private int nObstacles;
 
@@ -101,6 +102,7 @@ public class BuildingManager : MonoBehaviour
                 r.sharedMaterials = initialMaterials[r].ToArray();
             this.gameObject.GetComponent<PolygonCollider2D>().enabled = true;
             parteecles.SetActive(true);
+            hitbox.SetActive(true);
             this.gameObject.GetComponent<AudioSource>().Play();
         }
         else
