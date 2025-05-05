@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Advanced Costume Rack
   m_EditorClassIdentifier: 
   name: Fancy Costume Rack
-  description: These shelves are stocked with state of the art practical effect makeup.
-    This is so cool!!
+  description: On this rack we have fancy suits and dresses. Getting ready for the
+    local sock hop perhaps?
   cost: 2000
   objectSellPrice: 1000
   isLocked: 1
@@ -22,6 +22,6 @@ MonoBehaviour:
   soldProduct: {fileID: 11400000, guid: c37d440641cfd2a408cf245810cb360e, type: 2}
   ratingBonus: 0
   ratingUnlock: 0
-  objectPrefab: {fileID: 0}
+  objectPrefab: {fileID: 8951788326916691666, guid: 21f26e72ce0e8224fa8ada8b81e9e8f3, type: 3}
   isSecurity: 0
   securityBonus: 0

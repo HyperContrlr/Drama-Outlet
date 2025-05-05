@@ -21,6 +21,6 @@ MonoBehaviour:
   soldProduct: {fileID: 0}
   ratingBonus: 3
   ratingUnlock: 20
-  objectPrefab: {fileID: 0}
+  objectPrefab: {fileID: 8951788326916691666, guid: 81dada34e1fea174babf9f18b34c31db, type: 3}
   isSecurity: 0
   securityBonus: 0

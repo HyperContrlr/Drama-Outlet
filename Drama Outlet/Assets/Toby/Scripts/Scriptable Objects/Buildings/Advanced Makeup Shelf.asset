@@ -22,6 +22,6 @@ MonoBehaviour:
   soldProduct: {fileID: 11400000, guid: 1a134c6b9a42d5b44905a4a60c1d8ff0, type: 2}
   ratingBonus: 0
   ratingUnlock: 0
-  objectPrefab: {fileID: 0}
+  objectPrefab: {fileID: 8951788326916691666, guid: 1b279dc3fcd523b43a0f7b3b6986de15, type: 3}
   isSecurity: 0
   securityBonus: 0

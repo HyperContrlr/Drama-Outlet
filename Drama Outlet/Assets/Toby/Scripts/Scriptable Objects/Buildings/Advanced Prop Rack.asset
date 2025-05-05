@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Prop Rack
   description: With this prop rack we can sell more, higher quality props!! EN GARDE!!
-  cost: 2000
-  objectSellPrice: 1000
+  cost: 5000
+  objectSellPrice: 2500
   isLocked: 1
   hasProduct: 1
-  soldProduct: {fileID: 11400000, guid: c37d440641cfd2a408cf245810cb360e, type: 2}
+  soldProduct: {fileID: 11400000, guid: df6967487aad6a34abf2b7ec567f127c, type: 2}
   ratingBonus: 0
   ratingUnlock: 0
-  objectPrefab: {fileID: 0}
+  objectPrefab: {fileID: 8951788326916691666, guid: 5e4415251d9dc6b428a61df5844686c0, type: 3}
   isSecurity: 0
   securityBonus: 0

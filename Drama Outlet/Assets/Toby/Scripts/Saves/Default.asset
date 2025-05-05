@@ -20,3 +20,4 @@ MonoBehaviour:
     starsGained: 0
     approvalValue: 0
     securityValue: 0
+    furniturePositions: []

@@ -5027,7 +5027,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8c647a1872adc547a92c4273aded72b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thisBuilding: {fileID: 11400000, guid: f6ffd9c9a6616da49b65df6893ab3598, type: 2}
+  thisBuilding: {fileID: 11400000, guid: 72aaf20265558fa4996e49f184c79a03, type: 2}
   validPlaceMat: {fileID: 2100000, guid: f541ade369807cf46912b4e9d9d715b2, type: 2}
   invalidPlaceMat: {fileID: 2100000, guid: b8c97d3de85ae6c4884d5afcccc4dcf7, type: 2}
   defaultPlaceMat: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
@@ -5234,7 +5234,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: {fileID: 0}
   items: []
-  identifier: Costume Hanger
+  identifier: Advanced Costume Hanger
   buttons: {fileID: 0}
   isSelected: 0
   objectsInScene: []

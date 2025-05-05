@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using UnityEngine;
-
 [System.Serializable]
 public struct SaveData
 {
@@ -20,5 +19,5 @@ public struct SaveData
 
     public float securityValue;
 
-    public List<Vector2> furniturePositions;
+    public List<FurnitureData> furniturePositions;
 }

@@ -31,6 +31,17 @@ public class buildingPlacer : MonoBehaviour
 
     public bool flipped;
     [HideInInspector] private bool devTools = false;
+
+    public void Start()
+    {
+        foreach (var item in SaveDataController.Instance.CurrentData.furniturePositions)
+        {
+            Vector2 position = item.position;
+            GameObject prefab = item.thisBuilding.objectPrefab;
+            GameObject current = Instantiate(prefab, position, Quaternion.identity);
+            current.gameObject.GetComponent<PolygonCollider2D>().enabled = true;
+        }
+    }
     private void Awake()
     {
         instance = this;

@@ -120,6 +120,12 @@ public class MouseControls : MonoBehaviour
 
     public void OnDisable()
     {
+        FurnitureData data = new()
+        {
+            position = this.transform.position,
+            thisBuilding = this.gameObject.GetComponent<BuildingManager>().thisBuilding,
+        };
+        SaveDataController.Instance.CurrentData.furniturePositions.Remove(data);
         Statics.UpdateGraph(this.gameObject);
     }
 }

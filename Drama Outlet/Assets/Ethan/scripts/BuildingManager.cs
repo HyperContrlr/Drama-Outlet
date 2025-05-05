@@ -104,6 +104,13 @@ public class BuildingManager : MonoBehaviour
             parteecles.SetActive(true);
             hitbox.SetActive(true);
             this.gameObject.GetComponent<AudioSource>().Play();
+            
+            FurnitureData data = new()
+            {
+                position = this.transform.position,
+                thisBuilding = thisBuilding,
+            };
+            SaveDataController.Instance.CurrentData.furniturePositions.Add(data);
         }
         else
         {
