@@ -15,7 +15,7 @@ MonoBehaviour:
   name: Changing Room
   description: This will boost ratings by allowing people to try on costumes!!
   cost: 500
-  objectSellPrice: 500
+  objectSellPrice: 250
   isLocked: 1
   hasProduct: 0
   soldProduct: {fileID: 0}

@@ -15,7 +15,7 @@ MonoBehaviour:
   name: Costume Hanger
   description: This object allows you to sell Costumes.
   cost: 200
-  objectSellPrice: 200
+  objectSellPrice: 150
   isLocked: 1
   hasProduct: 1
   soldProduct: {fileID: 11400000, guid: 360e762e90b4c2c44a926cafcf65a83f, type: 2}

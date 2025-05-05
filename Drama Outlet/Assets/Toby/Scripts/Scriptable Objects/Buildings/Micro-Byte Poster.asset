@@ -15,7 +15,7 @@ MonoBehaviour:
   name: Micro-Byte Poster
   description: A poster promoting the hit game Micro-Byte
   cost: 200
-  objectSellPrice: 200
+  objectSellPrice: 100
   isLocked: 1
   hasProduct: 0
   soldProduct: {fileID: 0}

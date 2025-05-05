@@ -15,7 +15,7 @@ MonoBehaviour:
   name: '"Place-Holder Couch"'
   description: Wait how did this get here.. were the game designers just lazy!?
   cost: 399.99
-  objectSellPrice: 400
+  objectSellPrice: 200
   isLocked: 1
   hasProduct: 0
   soldProduct: {fileID: 0}
