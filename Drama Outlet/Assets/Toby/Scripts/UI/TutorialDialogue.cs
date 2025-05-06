@@ -22,6 +22,18 @@ public class TutorialDialogue : MonoBehaviour
         
     }
 
+    public void OnEnable()
+    {
+        if (SaveDataController.Instance.CurrentData.isNewGame == true)
+        {
+            this.gameObject.SetActive(true);
+        }
+        else
+        {
+            NoTutorial();
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -36,6 +48,7 @@ public class TutorialDialogue : MonoBehaviour
 
     public void StartDialogue()
     {
+        SaveDataController.Instance.CurrentData.isNewGame = false;
         time.enabled = false;
         textMeshProUGUI.fontSize = 30;
         startedDialogue = true;
@@ -59,7 +72,12 @@ public class TutorialDialogue : MonoBehaviour
         {
             Destroy(go);
         }
-        Destroy(this.gameObject);
+        foreach (GameObject go in gameObjectsToDeactivate)
+        {
+            go.SetActive(true);
+        }
+        SaveDataController.Instance.CurrentData.isNewGame = false;
+        this.gameObject.SetActive(false);
     }
 
     public void Next()
