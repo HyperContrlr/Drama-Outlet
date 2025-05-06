@@ -6,6 +6,8 @@ using UnityEditor.Analytics;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.Rendering;
+using System.Collections;
 public class TimeOfDay : MonoBehaviour
 {
     [SerializeField] public float timer;
@@ -27,8 +29,10 @@ public class TimeOfDay : MonoBehaviour
     [SerializeField] private bool isntLost;
     [SerializeField] private bool changedOnce;
     public Light2D mainLight;
-
+    public float bloomIncrease;
+    public Volume volume;
     public Events eventSystem;
+    public List<Color> timeColors;
     void Start()
     {
         SaveDataController.Instance.CurrentData.timeOfDay = SaveData.Time.EarlyMorning;
@@ -44,9 +48,11 @@ public class TimeOfDay : MonoBehaviour
         checkOut = IsCheckOut();
         if (SaveDataController.Instance.CurrentData.timeOfDay == SaveData.Time.EarlyMorning)
         {
+            mainLight.color = timeColors[0];
             spaceBarMorning.gameObject.SetActive(true);
             spaceBarNight.gameObject.SetActive(false);
             mainLight.intensity = 0.5f;
+            bloomIncrease = 0.0001f;
         }
         
         if (Input.GetKey(KeyCode.Space) == true && startedDay == true)
@@ -109,12 +115,15 @@ public class TimeOfDay : MonoBehaviour
         if (timer <= morningWindow && startedDay == true)
         {
             SaveDataController.Instance.CurrentData.timeOfDay = SaveData.Time.Morning;
+            mainLight.color = timeColors[1];
             if (eventSystem.lightAffected == false)
             mainLight.intensity = 0.6f;
         }
         
         else if (timer <= afternoonWindow && timer > morningWindow)
         {
+            mainLight.color = timeColors[2];
+            bloomIncrease = 0.0002f;
             SaveDataController.Instance.CurrentData.timeOfDay = SaveData.Time.Afternoon;
             if (eventSystem.lightAffected == false)
                 mainLight.intensity = 0.8f;
@@ -122,6 +131,8 @@ public class TimeOfDay : MonoBehaviour
        
         else if (timer <= eveningWindow && timer > afternoonWindow)
         {
+            mainLight.color = timeColors[3];
+            bloomIncrease = -0.0001f;
             SaveDataController.Instance.CurrentData.timeOfDay = SaveData.Time.Evening;
             if (eventSystem.lightAffected == false)
                 mainLight.intensity = 0.6f;
@@ -129,6 +140,7 @@ public class TimeOfDay : MonoBehaviour
         
         else if (timer > eveningWindow)
         {
+            mainLight.color = timeColors[4];
             spaceBarNight.gameObject.SetActive(true);
             npcSpawner.enabled = false;
             SaveDataController.Instance.CurrentData.timeOfDay = SaveData.Time.Night;
@@ -174,6 +186,10 @@ public class TimeOfDay : MonoBehaviour
     }
     public void SpeedUp()
     {
+        if (volume.profile.TryGet(out Bloom bloom))
+        {
+            StartCoroutine(LightIn(bloom));
+        }
         timer += Time.deltaTime * 2;
         rotation -= Time.deltaTime * 2;
         foreach (var npc in npcSpawner.spawnedNPCs)
@@ -186,6 +202,10 @@ public class TimeOfDay : MonoBehaviour
 
     public void SpeedDown()
     {
+        if (volume.profile.TryGet(out Bloom bloom))
+        {
+            StartCoroutine(LightIn(bloom));
+        }
         timer += Time.deltaTime;
         rotation -= Time.deltaTime;
         foreach (var npc in npcSpawner.spawnedNPCs)
@@ -205,6 +225,12 @@ public class TimeOfDay : MonoBehaviour
         {
             return false;
         }
+    }
+
+    private IEnumerator LightIn(Bloom bloom)
+    {
+        bloom.intensity.value += bloomIncrease;
+        yield return new WaitForSeconds(3f); 
     }
 }
 

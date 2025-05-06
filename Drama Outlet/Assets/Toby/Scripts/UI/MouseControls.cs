@@ -35,15 +35,12 @@ public class MouseControls : MonoBehaviour
     }
     void Start()
     {
-        if (isCheckOut == false)
+        items = FindObjectsByType<InventoryItem>(FindObjectsSortMode.None).ToList();
+        foreach (var item in items)
         {
-            items = FindObjectsByType<InventoryItem>(FindObjectsSortMode.None).ToList();
-            foreach (var item in items)
+            if (item.identifier == identifier)
             {
-                if (item.identifier == identifier)
-                {
-                    this.item = item;
-                }
+                this.item = item;
             }
         }
         objectsInScene = FindObjectsByType<MouseControls>(FindObjectsSortMode.None).ToList();
@@ -90,6 +87,7 @@ public class MouseControls : MonoBehaviour
             else
             {
                 SaveDataController.Instance.CurrentData.money += this.gameObject.GetComponent<BuildingManager>().thisBuilding.objectSellPrice;
+                DataSet();
                 Destroy(this.gameObject);
             }
     }
@@ -109,6 +107,7 @@ public class MouseControls : MonoBehaviour
 
     public void Store()
     {
+        DataSet();
         item.AddToStock();
         Destroy(this.gameObject);
     }
@@ -118,7 +117,7 @@ public class MouseControls : MonoBehaviour
         FindFirstObjectByType<ComedyDialogue>().EndDialogue();
     }
 
-    public void OnDisable()
+    public void DataSet()
     {
         FurnitureData data = new()
         {
@@ -126,6 +125,10 @@ public class MouseControls : MonoBehaviour
             thisBuilding = this.gameObject.GetComponent<BuildingManager>().thisBuilding,
         };
         SaveDataController.Instance.CurrentData.furniturePositions.Remove(data);
+    }
+
+    public void OnDisable()
+    {
         Statics.UpdateGraph(this.gameObject);
     }
 }

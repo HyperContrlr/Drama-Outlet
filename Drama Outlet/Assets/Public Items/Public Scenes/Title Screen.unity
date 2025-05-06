@@ -281,6 +281,86 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!1 &202460307
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 202460309}
+  - component: {fileID: 202460308}
+  m_Layer: 0
+  m_Name: Save Data Controller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &202460308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 202460307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f923e89ef262fe04faef2c0d799108f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fileName: DaveSata.json
+  defaultData: {fileID: 11400000, guid: 820eb6eeb6cd3aa4ca132d8a760c8cb2, type: 2}
+  allProducts:
+  - {fileID: 11400000, guid: d7bca251925d96347b83127d68b86305, type: 2}
+  - {fileID: 11400000, guid: 1e121216e5da89d468a98c13a0d59287, type: 2}
+  - {fileID: 11400000, guid: 360e762e90b4c2c44a926cafcf65a83f, type: 2}
+  - {fileID: 11400000, guid: 84118fd9120504e43af7e4355eaa380e, type: 2}
+  - {fileID: 11400000, guid: df6967487aad6a34abf2b7ec567f127c, type: 2}
+  - {fileID: 11400000, guid: c05642d718cf2404d9bf1bc74376b12c, type: 2}
+  - {fileID: 11400000, guid: 1a134c6b9a42d5b44905a4a60c1d8ff0, type: 2}
+  - {fileID: 11400000, guid: c37d440641cfd2a408cf245810cb360e, type: 2}
+  allBuildings:
+  - {fileID: 11400000, guid: ab2d86fa3c2ac1c439a256d516379ae1, type: 2}
+  - {fileID: 11400000, guid: eff602d0e816c2d4180fa5e840800ece, type: 2}
+  - {fileID: 11400000, guid: f6ffd9c9a6616da49b65df6893ab3598, type: 2}
+  - {fileID: 11400000, guid: f37e17bf219c6794c93c4586a77d92d7, type: 2}
+  - {fileID: 11400000, guid: fa344ad4b5e1e7f4ebb5bcc316fc077e, type: 2}
+  - {fileID: 11400000, guid: 7428f7fe30801f343bd5e3d4e52aab54, type: 2}
+  - {fileID: 11400000, guid: b99a35ffa618fb547aade37fb2f3c549, type: 2}
+  - {fileID: 11400000, guid: 81c118cf167ed1742bfef1e7107f5e8d, type: 2}
+  - {fileID: 11400000, guid: fbd48ef8d0b27f741adf0f4a01b40250, type: 2}
+  - {fileID: 11400000, guid: 3637f082093e3104884e7428622d10e1, type: 2}
+  - {fileID: 11400000, guid: 981c488bbb2cb444db22ac8005122ec6, type: 2}
+  - {fileID: 11400000, guid: 0e33b2aa3ebf66042b11f65bba0df45d, type: 2}
+  - {fileID: 11400000, guid: 72aaf20265558fa4996e49f184c79a03, type: 2}
+  allLicenses:
+  - {fileID: 11400000, guid: 05f4a92f04ef8eb4a971aebe8777327b, type: 2}
+  - {fileID: 11400000, guid: 2e639ded0d9720744a7134d6449d3010, type: 2}
+  - {fileID: 11400000, guid: 99ac849b0146038458b1570314720162, type: 2}
+  - {fileID: 11400000, guid: 967dda33c46bf43469a96fa895770694, type: 2}
+  - {fileID: 11400000, guid: 857867ef36342524c9572215b06a9689, type: 2}
+  - {fileID: 11400000, guid: 85950ab130fdd894eb6c68aee6ba6ce4, type: 2}
+  - {fileID: 11400000, guid: 0316156260dce074c836ae75a68a33a5, type: 2}
+  - {fileID: 11400000, guid: 343617f07dc7cbd48a0af9d6b7423e25, type: 2}
+  - {fileID: 11400000, guid: 021bd206b3cfc8d419e6c816143e3cfc, type: 2}
+  tutorial: {fileID: 0}
+--- !u!4 &202460309
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 202460307}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 695.0326, y: 715.24805, z: -10.645789}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &336931836
 GameObject:
   m_ObjectHideFlags: 0
@@ -1863,6 +1943,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   continueButton: {fileID: 1228684968}
+  defaultData: {fileID: 11400000, guid: 820eb6eeb6cd3aa4ca132d8a760c8cb2, type: 2}
 --- !u!1 &1626644702
 GameObject:
   m_ObjectHideFlags: 0
@@ -2571,3 +2652,4 @@ SceneRoots:
   - {fileID: 877457410}
   - {fileID: 359793909}
   - {fileID: 1633141111}
+  - {fileID: 202460309}
