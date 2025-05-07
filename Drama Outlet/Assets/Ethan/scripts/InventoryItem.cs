@@ -9,6 +9,14 @@ public class InventoryItem : MonoBehaviour
     public TextMeshProUGUI stockText;
     public string identifier;
     public string mysteriousDescription = "I don't know anything about this item yet.";
+
+    public void Start()
+    {
+        if (identifier == "Check-Out" && SaveDataController.Instance.CurrentData.isNewGame == false)
+        {
+            stock = 0;
+        }
+    }
     private void Update()
     {
         GenericDisplayText<int>.DisplayText(stockText, stock);

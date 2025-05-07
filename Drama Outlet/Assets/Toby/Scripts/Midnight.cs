@@ -27,6 +27,11 @@ public class Midnight : MonoBehaviour
     public TimeOfDay day;
     public void OnEnable()
     {
+        List<NPCAI> npcs = FindObjectsByType<NPCAI>(FindObjectsSortMode.None).ToList();
+        foreach (var npc in npcs)
+        {
+            Destroy(npc.gameObject);
+        }
         if (SaveDataController.Instance.CurrentData.approvalValue < 60 && hasStartedStealing == false)
         {
             List<string> shuffledNotes = possibleWarningNotes.Shuffle().ToList();

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Fish Poster
   description: We are gonna need a bigger store...
-  cost: 200
+  cost: 250
   objectSellPrice: 100
   isLocked: 1
   hasProduct: 0

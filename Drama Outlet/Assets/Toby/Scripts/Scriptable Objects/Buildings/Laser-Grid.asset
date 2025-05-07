@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Laser-Grid
   m_EditorClassIdentifier: 
   name: Laser-Grid
-  description: For this build just click buy to add to your security
+  description: Whenever you buy this laser-grid it'll increase your security!!
   cost: 300
   objectSellPrice: 150
   isLocked: 1

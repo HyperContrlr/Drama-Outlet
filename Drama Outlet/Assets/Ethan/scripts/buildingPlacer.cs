@@ -37,8 +37,9 @@ public class buildingPlacer : MonoBehaviour
         foreach (var item in SaveDataController.Instance.CurrentData.furniturePositions)
         {
             Vector2 position = item.position;
+            Quaternion rotation = item.rotation;
             GameObject prefab = item.thisBuilding.objectPrefab;
-            GameObject current = Instantiate(prefab, position, Quaternion.identity);
+            GameObject current = Instantiate(prefab, position, rotation);
             current.gameObject.GetComponent<PolygonCollider2D>().enabled = true;
         }
     }

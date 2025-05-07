@@ -10,17 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 345bb5161ab389045bfc375658cc75b2, type: 3}
-  m_Name: Micro-Byte Poster
+  m_Name: Camera
   m_EditorClassIdentifier: 
-  name: Micro-Byte Poster
-  description: A poster promoting the hit game Micro-Byte
-  cost: 400
-  objectSellPrice: 100
+  name: Camera
+  description: Buying this camera will increase your security!! No need to place
+    it down.
+  cost: 250
+  objectSellPrice: 125
   isLocked: 1
   hasProduct: 0
   soldProduct: {fileID: 0}
-  ratingBonus: 4
-  ratingUnlock: 25
-  objectPrefab: {fileID: 0}
-  isSecurity: 0
-  securityBonus: 0
+  ratingBonus: 0
+  ratingUnlock: 60
+  objectPrefab: {fileID: 8951788326916691666, guid: bc8324d71f709a0408309ce15343eb39, type: 3}
+  isSecurity: 1
+  securityBonus: 2

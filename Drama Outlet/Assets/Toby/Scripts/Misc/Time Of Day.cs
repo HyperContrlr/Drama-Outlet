@@ -289,9 +289,9 @@ public class TimeOfDay : MonoBehaviour
     private IEnumerator LightIn(Bloom bloom)
     {
         bloom.intensity.value += bloomIncrease;
-        if (bloom.intensity.value > 2) 
+        if (bloom.intensity.value > 1.5) 
         {
-            bloom.intensity.value = 2;
+            bloom.intensity.value = 1.5f;
         }
         yield return new WaitForSeconds(3f); 
     }

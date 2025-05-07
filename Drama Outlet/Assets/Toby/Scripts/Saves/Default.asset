@@ -18,6 +18,6 @@ MonoBehaviour:
     day: 0
     isNewGame: 1
     starsGained: 0
-    approvalValue: 0
+    approvalValue: 20
     securityValue: 0
     furniturePositions: []

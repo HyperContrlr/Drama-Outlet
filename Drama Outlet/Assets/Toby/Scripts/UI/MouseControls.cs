@@ -122,6 +122,7 @@ public class MouseControls : MonoBehaviour
         FurnitureData data = new()
         {
             position = this.transform.position,
+            rotation = this.transform.rotation,
             thisBuilding = this.gameObject.GetComponent<BuildingManager>().thisBuilding,
         };
         SaveDataController.Instance.CurrentData.furniturePositions.Remove(data);

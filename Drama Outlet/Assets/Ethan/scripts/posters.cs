@@ -33,4 +33,20 @@ public class posters : MonoBehaviour
         }
     }
         
+    public void PosterOne()
+    {
+        poster1 = true;
+    }
+    public void PosterTwo()
+    {
+        poster2 = true;
+    }
+    public void PosterThree()
+    {
+        poster3 = true;
+    }
+    public void SecurityCam()
+    {
+        securityCamera = true;
+    }
 }

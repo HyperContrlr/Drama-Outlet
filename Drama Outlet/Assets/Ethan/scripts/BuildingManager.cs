@@ -108,6 +108,7 @@ public class BuildingManager : MonoBehaviour
             FurnitureData data = new()
             {
                 position = this.transform.position,
+                rotation = this.transform.rotation,
                 thisBuilding = thisBuilding,
             };
             SaveDataController.Instance.CurrentData.furniturePositions.Add(data);
