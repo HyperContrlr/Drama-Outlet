@@ -5,10 +5,12 @@ public class posters : MonoBehaviour
     public bool poster1 = false;
     public bool poster2 = false;
     public bool poster3 = false;
+    public bool securityCamera = false;
 
     public GameObject Poster1;
     public GameObject Poster2;
     public GameObject Poster3;
+    public GameObject SecurityCamera;
 
     void Update()
     {
@@ -23,6 +25,11 @@ public class posters : MonoBehaviour
         else if (poster3)
         {
             Poster3.SetActive(true);
+        }
+
+        if (securityCamera)
+        {
+            SecurityCamera.SetActive(true);
         }
     }
         
