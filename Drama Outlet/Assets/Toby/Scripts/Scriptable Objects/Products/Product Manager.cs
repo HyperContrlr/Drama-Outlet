@@ -14,6 +14,7 @@ public class ProductManager : MonoBehaviour
     [SerializeField] private List<Sprite> stockSprites;
     [SerializeField] private SpriteRenderer currentSprite;
     public float stock;
+    public GameObject exclamationPoint;
     public void Start()
     {
         stock = thisProduct.maxStock;
@@ -26,6 +27,7 @@ public class ProductManager : MonoBehaviour
         float oneFourth = thisProduct.maxStock * 0.25f;
         if (stock <= thisProduct.maxStock && stock > threeFourths)
         {
+            exclamationPoint.SetActive(false);
             currentSprite.sprite = stockSprites[0];
         }
         else if (stock <= threeFourths && stock > oneHalf)
@@ -43,6 +45,7 @@ public class ProductManager : MonoBehaviour
         else if (stock <= 0)
         {
             currentSprite.sprite = stockSprites[4];
+            exclamationPoint.SetActive(true);
         }
     }
     public void Update()
@@ -80,6 +83,7 @@ public class ProductManager : MonoBehaviour
         }
         else
         {
+            exclamationPoint.SetActive(false);
             SaveDataController.Instance.CurrentData.money -= costToRestock;
             stock = thisProduct.maxStock;
         }
