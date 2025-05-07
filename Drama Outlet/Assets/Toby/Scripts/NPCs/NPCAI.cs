@@ -68,6 +68,8 @@ public partial class NPCAI : MonoBehaviour
     public bool justLooked;
 
     public bool stole;
+
+    public AudioSource audioSource;
     //public void OnDrawGizmos()
     //{
     //    Gizmos.DrawWireSphere(customerPath.vectorPath[currentWaypoint + 1], 1);
@@ -401,7 +403,7 @@ public partial class NPCAI : MonoBehaviour
                 SaveDataController.Instance.CurrentData.money += thisNPC.money;
                 target = leave;
                 state = States.Leaving;
-                //Maybe play a nice gaining money animation
+                audioSource.Play();
             }
         }
     }

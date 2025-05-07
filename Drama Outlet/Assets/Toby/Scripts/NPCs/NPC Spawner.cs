@@ -12,6 +12,7 @@ public class NPCSpawner : MonoBehaviour
     [SerializeField] public float spawnStop;
     [SerializeField] public List<NPCAI> spawnedNPCs;
     [SerializeField] public GameObject spawnedNPC;
+    public AudioSource spawnSound;
     void Start()
     {
         NPCsToSpawn = NPCsToSpawn.Shuffle().ToList();
@@ -70,6 +71,7 @@ public class NPCSpawner : MonoBehaviour
     }
     public void SpawnCustomer()
     {
+        
         if (SaveDataController.Instance.CurrentData.approvalValue < 80)
         {
             amountToSpawn = Statics.RollADice(0);
@@ -85,6 +87,7 @@ public class NPCSpawner : MonoBehaviour
             spawnedNPC = Instantiate(selectedNPC, spawner.transform);
             spawnedNPCs.Add(spawnedNPC.GetComponent<NPCAI>());
         }
+        spawnSound.Play();
     }
 
 }
