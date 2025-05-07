@@ -148,6 +148,7 @@ MonoBehaviour:
   previousState: 0
   justLooked: 0
   stole: 0
+  audioSource: {fileID: 4815599923311233512}
 --- !u!50 &7316396876127119662
 Rigidbody2D:
   serializedVersion: 5

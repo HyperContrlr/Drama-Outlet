@@ -120,7 +120,8 @@ public partial class NPCAI : MonoBehaviour
             if (isTheif == true)
             {
                 thisNPC.personality = NPC.Personality.Thief;
-                waitTimeBase = 6;
+                waitTimeBase = 2;
+                thisNPC.speed = 3;
             }
             else if (isCelebrity == true)
             {
