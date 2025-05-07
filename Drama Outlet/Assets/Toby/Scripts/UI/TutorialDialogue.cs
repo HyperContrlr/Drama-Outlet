@@ -8,6 +8,7 @@ public class TutorialDialogue : MonoBehaviour
 {
     [TextArea(3, 10)]
     public List<string> tutorialDialogues;
+    public GameObject uiStuff;
     public List<GameObject> gameObjectsToDeactivate;
     public List<GameObject> arrows;
     public List<Hover> hovers;
@@ -16,6 +17,7 @@ public class TutorialDialogue : MonoBehaviour
     public bool startedDialogue;
     public TextMeshProUGUI textMeshProUGUI;
     public GameObject currentArrow;
+    public GameObject continueText;
     public TimeOfDay time;
     void Start()
     {
@@ -50,6 +52,7 @@ public class TutorialDialogue : MonoBehaviour
     {
         SaveDataController.Instance.CurrentData.isNewGame = false;
         time.enabled = false;
+        continueText.SetActive(true);
         textMeshProUGUI.fontSize = 30;
         startedDialogue = true;
         tutorialImage.enabled = false;
@@ -58,6 +61,7 @@ public class TutorialDialogue : MonoBehaviour
         {
             go.SetActive(false);
         }
+        uiStuff.SetActive(true);
         foreach (var hov in hovers)
         {
             hov.enabled = false;
@@ -68,6 +72,7 @@ public class TutorialDialogue : MonoBehaviour
 
     public void NoTutorial()
     {
+        continueText.SetActive(false);
         foreach (GameObject go in arrows)
         {
             Destroy(go);

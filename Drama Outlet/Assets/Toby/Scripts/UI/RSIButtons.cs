@@ -11,7 +11,7 @@ public class RSIButtons : MonoBehaviour
     [SerializeField] private TextMeshProUGUI restockPrice;
     [SerializeField] private TextMeshProUGUI sellPrice;
     [SerializeField] private List<MouseControls> managers;
-    [SerializeField] private float restockPrices;
+    [SerializeField] public float restockPrices;
     [SerializeField] private float sellPrices;
     [SerializeField] private ButtonedPressed button;
     private float timer;
@@ -93,9 +93,9 @@ public class RSIButtons : MonoBehaviour
             currentSelectedObject.Restock();
             managerSelected = false;
         }
-        else
+        else if (managerSelected == false)
         {
-            return;
+            RestockAll();
         }
     }
     public void Sell()

@@ -21,7 +21,7 @@ MonoBehaviour:
   collectedSprite: {fileID: 0}
   productsUnlocked:
   - {fileID: 11400000, guid: 84118fd9120504e43af7e4355eaa380e, type: 2}
-  isBought: 0
+  isBought: 1
   isLocked: 0
   starLock: 0
   hasStarLock: 0
@@ -31,3 +31,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 857867ef36342524c9572215b06a9689, type: 2}
   - {fileID: 11400000, guid: 05f4a92f04ef8eb4a971aebe8777327b, type: 2}
   - {fileID: 11400000, guid: 0316156260dce074c836ae75a68a33a5, type: 2}
+  mask: 1

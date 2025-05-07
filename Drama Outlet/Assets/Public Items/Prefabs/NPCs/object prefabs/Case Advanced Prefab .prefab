@@ -4833,7 +4833,7 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
---- !u!1 &8498099562232819340
+--- !u!1 &3584465877138602134
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4841,23 +4841,23 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3423515755290868737}
-  - component: {fileID: 5941563222563964617}
-  - component: {fileID: 5936772981640132971}
-  m_Layer: 0
+  - component: {fileID: 5709369384884215615}
+  - component: {fileID: 8673316515774207679}
+  - component: {fileID: 7666070506377337494}
+  m_Layer: 6
   m_Name: green_tile_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!4 &3423515755290868737
+--- !u!4 &5709369384884215615
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8498099562232819340}
+  m_GameObject: {fileID: 3584465877138602134}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.001, y: -0.138, z: 0}
@@ -4866,13 +4866,13 @@ Transform:
   m_Children: []
   m_Father: {fileID: 8259442862381164206}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &5941563222563964617
+--- !u!212 &8673316515774207679
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8498099562232819340}
+  m_GameObject: {fileID: 3584465877138602134}
   m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -4921,13 +4921,13 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!60 &5936772981640132971
+--- !u!60 &7666070506377337494
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8498099562232819340}
+  m_GameObject: {fileID: 3584465877138602134}
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
@@ -4991,8 +4991,8 @@ GameObject:
   - component: {fileID: 514212650071716743}
   - component: {fileID: 8365356483261554789}
   - component: {fileID: 4739973988143224106}
-  m_Layer: 0
-  m_Name: Case Prefab
+  m_Layer: 6
+  m_Name: 'Case Advanced Prefab '
   m_TagString: furniture
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5011,7 +5011,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 3423515755290868737}
+  - {fileID: 5709369384884215615}
   - {fileID: 7114774623480130053}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5027,7 +5027,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8c647a1872adc547a92c4273aded72b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thisBuilding: {fileID: 11400000, guid: b99a35ffa618fb547aade37fb2f3c549, type: 2}
+  thisBuilding: {fileID: 11400000, guid: 981c488bbb2cb444db22ac8005122ec6, type: 2}
   validPlaceMat: {fileID: 2100000, guid: f541ade369807cf46912b4e9d9d715b2, type: 2}
   invalidPlaceMat: {fileID: 2100000, guid: b8c97d3de85ae6c4884d5afcccc4dcf7, type: 2}
   defaultPlaceMat: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
@@ -5036,7 +5036,7 @@ MonoBehaviour:
   isFixed: 0
   boxThang: {x: 0.2, y: 0.2}
   parteecles: {fileID: 2778472484587772089}
-  hitbox: {fileID: 8498099562232819340}
+  hitbox: {fileID: 3584465877138602134}
 --- !u!114 &8560378119238136880
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5107,11 +5107,11 @@ MonoBehaviour:
   isSelected: 0
   productManagers: []
   stockSprites:
-  - {fileID: 1469652794484300988, guid: d3bf1785e71204c41bbff6a1c88413b8, type: 3}
-  - {fileID: -4415707848639753045, guid: 23b9883ad00cff148acdfd1b44175ec7, type: 3}
-  - {fileID: 7601469918288276021, guid: 703463e47a42ff444b83447ff6195cd9, type: 3}
-  - {fileID: -8837016876076145117, guid: 11fb3e2470ccf2042b775f3e1b4d8954, type: 3}
-  - {fileID: 6316134243942825693, guid: 7fea60ccaec00d9428f5f1fdd7aa8d43, type: 3}
+  - {fileID: 21300000, guid: 3ed1ccd61c02c4a4fac5a0342aceb93f, type: 3}
+  - {fileID: 21300000, guid: 498dc18d067ee2e4b892a599accc3e83, type: 3}
+  - {fileID: 21300000, guid: 133a11dedfe0da6498a52f7c68148d0e, type: 3}
+  - {fileID: 21300000, guid: c4a9f5df1d3ab3042a2857489b0e4c6a, type: 3}
+  - {fileID: 21300000, guid: c0b43a1576dfbf44a9f4dfdca52b3b78, type: 3}
   currentSprite: {fileID: -2821023031677429245}
   stock: 0
 --- !u!212 &-2821023031677429245
@@ -5158,7 +5158,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1469652794484300988, guid: d3bf1785e71204c41bbff6a1c88413b8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3ed1ccd61c02c4a4fac5a0342aceb93f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5234,7 +5234,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: {fileID: 0}
   items: []
-  identifier: Mask Case
+  identifier: Advanced Mask Case
   buttons: {fileID: 0}
   isSelected: 0
   objectsInScene: []

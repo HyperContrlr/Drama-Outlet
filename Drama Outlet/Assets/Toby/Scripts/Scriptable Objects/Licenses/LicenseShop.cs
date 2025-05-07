@@ -31,23 +31,13 @@ public class LicenseShop : MonoBehaviour
 
     [SerializeField] private GameObject lockedOverlay;
 
+    [SerializeField] private GameObject boughtOverlay;
+
     [SerializeField] private GameObject buyButton;
 
     [SerializeField] private GameObject dialogueBox;
 
     [SerializeField] private bool numeroUno;
-
-    public void SpriteCheck()
-    {
-        if (thisLicense.isBought == true)
-        {
-            thisImage.sprite = thisLicense.collectedSprite;
-        }
-        else
-        {
-            thisImage.sprite = thisLicense.defaultSprite;
-        }
-    }
 
     public void LicenseUnlock()
     {
@@ -60,6 +50,14 @@ public class LicenseShop : MonoBehaviour
         {
             lockedOverlay.SetActive(false);
             buyButton.SetActive(true);
+        }
+        if (thisLicense.isBought == true)
+        {
+            boughtOverlay.SetActive(true);
+        }
+        else
+        {
+            boughtOverlay.SetActive(false);
         }
     }
     public void SetValues()
@@ -85,7 +83,6 @@ public class LicenseShop : MonoBehaviour
         name = thisLicense.name;
         cost = thisLicense.cost;
         thisLicense.thisImage = thisImage;
-        SpriteCheck();
     }
     void Start()
     {
@@ -96,7 +93,7 @@ public class LicenseShop : MonoBehaviour
     {
         LicenseUnlock();
         GenericDisplayText<string>.DisplayText(nameText, name);
-        GenericDisplayText<float>.DisplayTextWithExtra(moneyText, cost, 0);
+        GenericDisplayText<float>.DisplayText(moneyText, cost);
     }
 
     public void Next()

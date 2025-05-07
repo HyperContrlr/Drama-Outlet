@@ -66,6 +66,8 @@ public partial class NPCAI : MonoBehaviour
     public States previousState;
 
     public bool justLooked;
+
+    public bool stole;
     //public void OnDrawGizmos()
     //{
     //    Gizmos.DrawWireSphere(customerPath.vectorPath[currentWaypoint + 1], 1);
@@ -85,6 +87,7 @@ public partial class NPCAI : MonoBehaviour
             currentWaypoint = 0;
         }
     }
+
     public void ResetWaitTime()
     {
         if (thisNPC.personality == NPCAI.NPC.Personality.Average_Shopper)
@@ -100,6 +103,7 @@ public partial class NPCAI : MonoBehaviour
             waitTimeBase = 8;
         }
     }
+
     public void RandomizeNPCValues()
     {
         thisNPC.speed = Statics.randyTheRandom.Next((int)thisNPC.speedMin, (int)thisNPC.speedMax);
@@ -114,7 +118,7 @@ public partial class NPCAI : MonoBehaviour
             if (isTheif == true)
             {
                 thisNPC.personality = NPC.Personality.Thief;
-                waitTimeBase = 10;
+                waitTimeBase = 6;
             }
             else if (isCelebrity == true)
             {
@@ -229,6 +233,7 @@ public partial class NPCAI : MonoBehaviour
                 }
             }
         }
+
     public void FindProductSpots()
     {
         List<ProductManager> products = FindObjectsByType<ProductManager>(FindObjectsSortMode.None).ToList();
@@ -244,20 +249,17 @@ public partial class NPCAI : MonoBehaviour
         {
             thisNPC.personality = NPC.Personality.Window_Shopper;
         }
-        if (thisNPC.personality == NPC.Personality.Window_Shopper)
+        if (thisNPC.personality == NPC.Personality.Window_Shopper || thisNPC.personality == NPC.Personality.Thief)
         {
             productSpots.Clear();
             foreach (var product in products)
             {
                 productSpots.Add(product.gameObject);
             }
-            if (isTheif == true)
-            {
-                thisNPC.personality = NPC.Personality.Thief;
-            }
         }
         productSpots = productSpots.Shuffle().ToList();
     }
+
     public void Buy()
     {
         thisNPC.amountToBuy = Statics.randyTheRandom.Next((int)thisNPC.minAmountToBuy, (int)thisNPC.maxAmountToBuy);
@@ -283,6 +285,7 @@ public partial class NPCAI : MonoBehaviour
         else
             thisNPC.hasBoughtSomething = true;
     }
+
     public void SetTarget()
     {
         waitTime = waitTimeBase;
@@ -305,6 +308,7 @@ public partial class NPCAI : MonoBehaviour
             productSpots.Remove(target);
         }
     }
+
     void Start()
     {
         npcSpawner = FindFirstObjectByType<NPCSpawner>();
@@ -315,6 +319,7 @@ public partial class NPCAI : MonoBehaviour
         SetTarget();
         state = States.Moving;
     }
+
     public void Moving()
     {
         if (rb.linearVelocity == Vector2.zero && justLooked == false)
@@ -362,6 +367,7 @@ public partial class NPCAI : MonoBehaviour
             state = States.Looking;
         }
     }    
+
     public void Buying()
     {
         if (customerPath == null)
@@ -399,6 +405,7 @@ public partial class NPCAI : MonoBehaviour
             }
         }
     }
+
     public void Leaving()
     {
         if (customerPath == null)
@@ -432,6 +439,7 @@ public partial class NPCAI : MonoBehaviour
             state = previousState;
         }
     }
+
     public void WindowShopper()
     {
         if (state == States.Moving)
@@ -467,6 +475,7 @@ public partial class NPCAI : MonoBehaviour
             Leaving();
         }
     }
+
     public void AverageShopper()
     {
         if (state == States.Moving)
@@ -506,6 +515,7 @@ public partial class NPCAI : MonoBehaviour
             Leaving();
         }
     }
+
     public void BigSpender()
     {
         if (state == States.Moving)
@@ -537,8 +547,8 @@ public partial class NPCAI : MonoBehaviour
             Leaving();
         }
     }
-    // Update is called once per frame
-    public void Theif()
+
+    public void Thief()
     {
         if (state == States.Moving)
         {
@@ -553,7 +563,7 @@ public partial class NPCAI : MonoBehaviour
             if (waitTime <= 0)
             {
                 Buy();
-                target.GetComponent<ProductManager>().thisProduct.stockBought = 0;
+                stole = true;
                 SetTarget();
             }
         }
@@ -563,6 +573,7 @@ public partial class NPCAI : MonoBehaviour
             Leaving();
         }
     }
+
     void Update()
     {
         //path.Scan();
@@ -586,6 +597,10 @@ public partial class NPCAI : MonoBehaviour
         else if (thisNPC.personality == NPC.Personality.Big_Spender)
         {
             BigSpender();   
+        }
+        else if (thisNPC.personality == NPC.Personality.Thief)
+        {
+            Thief();
         }
         if (state == States.Stopped)
         {
@@ -620,10 +635,15 @@ public partial class NPCAI : MonoBehaviour
         if (collision.gameObject.CompareTag("Exit") && state == States.Leaving)
         {
             {
-                if (thisNPC.personality == NPC.Personality.Thief)
+                if (thisNPC.personality == NPC.Personality.Thief && stole == true)
                 {
-                    SaveDataController.Instance.CurrentData.money -= thisNPC.money;
+                    SaveDataController.Instance.CurrentData.money -= thisNPC.money / 2;
                     Statics.ReadStatement("WE DON GOT ROBBED!!!");
+                    Invoke("CloseAnimator", 3);
+                }
+                else if (thisNPC.personality == NPC.Personality.Thief && stole == false)
+                {
+                    Statics.ReadStatement("WE CAUGHT THE ROBBER!!!");
                     Invoke("CloseAnimator", 3);
                 }
                 if (thisNPC.unhappy == false)

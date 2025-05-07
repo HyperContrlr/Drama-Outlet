@@ -24,13 +24,12 @@ public class Events : MonoBehaviour
         public float cost;
         public UnityEvent goodResult;
         public UnityEvent badResult;
+        public GameObject spawnSpot;
     }
 
     public List<EventPeice> allEvents;
 
     public EventPeice currentEvent;
-
-    public GameObject open;
 
     public TimeOfDay timeOfDay;
 
@@ -196,7 +195,7 @@ public class Events : MonoBehaviour
             }
             else if (currentEvent.isSpawnedThing == true)
             {
-                Instantiate(currentEvent.spawnedPrefab, open.transform);
+                Instantiate(currentEvent.spawnedPrefab, currentEvent.spawnSpot.transform);
                 currentEvent.eventOver.Invoke();
             }
         }
@@ -247,12 +246,20 @@ public class Events : MonoBehaviour
         if (choice == 0)
         {
             List<NPCAI> npcs = FindObjectsByType<NPCAI>(FindObjectsSortMode.None).ToList();
+            if (npcs.Count == 0)
+            {
+                return;
+            }
             npcs = npcs.Shuffle().ToList();
             npcs[0].thisNPC.unhappy = true;
         }
         else if (choice == 1)
         {
             List<NPCAI> npcs = FindObjectsByType<NPCAI>(FindObjectsSortMode.None).ToList();
+            if (npcs.Count == 0)
+            {
+                return;
+            }
             foreach (var npc in npcs)
             {
                 int option = Statics.FlipACoin();
@@ -269,6 +276,10 @@ public class Events : MonoBehaviour
         else if (choice == 2)
         {
             List<NPCAI> npcs = FindObjectsByType<NPCAI>(FindObjectsSortMode.None).ToList();
+            if (npcs.Count == 0)
+            {
+                return;
+            }
             foreach (var npc in npcs)
             {
                 npc.thisNPC.unhappy = true;
@@ -297,4 +308,12 @@ public class Events : MonoBehaviour
             }
         }
     }
+
+    [ContextMenu("Spawn Event")]
+    public void SpawnEvent()
+    {
+        currentEvent = allEvents[25];
+        EventHappens();
+    }
+
 }

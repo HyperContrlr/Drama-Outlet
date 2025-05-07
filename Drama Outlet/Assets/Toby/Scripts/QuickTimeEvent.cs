@@ -22,7 +22,7 @@ public class QuickTimeEvent : MonoBehaviour
     {
         countdownTime = maxCountdownTime;
         keyList = keyList.Shuffle().ToList();
-        for (int i = 0; i > 3; ++i)
+        for (int i = 0; i < 4; ++i)
         {
             textList[i].text = keyList[i].ToString();
         }
@@ -71,13 +71,6 @@ public class QuickTimeEvent : MonoBehaviour
                 countdownTime = maxCountdownTime;
                 eventSystem.currentEvent.goodResult.Invoke();
                 eventSystem.currentEvent.eventOver.Invoke();
-            }
-            else
-            {
-                firstButton = false;
-                secondButton = false;
-                thirdButton = false;
-                fourthButton = false;
             }
         }
     }

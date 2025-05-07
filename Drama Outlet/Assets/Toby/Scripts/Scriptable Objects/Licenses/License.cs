@@ -17,10 +17,6 @@ public class License : ScriptableObject
 
     [SerializeField] public Image thisImage;
 
-    [SerializeField] public Sprite defaultSprite;
-
-    [SerializeField] public Sprite collectedSprite;
-
     [SerializeField] public List<products> productsUnlocked;
 
     [SerializeField] public bool isBought;
@@ -34,9 +30,10 @@ public class License : ScriptableObject
     [SerializeField] public float StarsForUnlock;
 
     [SerializeField] public List<License> licensesUnlocked;
+
+    public bool mask;
     public void Unlock()
     {
-        thisImage.sprite = collectedSprite;
         foreach (var product in productsUnlocked)
         {
             product.isLocked = false;
@@ -53,6 +50,12 @@ public class License : ScriptableObject
     public void ResetValues()
     {
         isLocked = true;
+        if (mask == true)
+        {
+            isBought = true;
+            isLocked = false;
+        }
+        else
         isBought = false;
         if (hasStarLock == true)
         {
