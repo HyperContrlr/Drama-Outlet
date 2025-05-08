@@ -57,10 +57,6 @@ public partial class NPCAI : MonoBehaviour
 
     [SerializeField] private AstarPath path;
 
-    [SerializeField] private BoxCollider2D box;
-
-    [SerializeField] private float colliderTimer;
-
     public bool isPaused;
 
     public States previousState;
@@ -326,23 +322,6 @@ public partial class NPCAI : MonoBehaviour
 
     public void Moving()
     {
-        if (rb.linearVelocity == Vector2.zero && justLooked == false)
-        {
-            box.isTrigger = true;
-        }
-        if (rb.linearVelocity != Vector2.zero)
-        {
-            justLooked = false;
-        }
-        if (box.isTrigger == true)
-        {
-            colliderTimer += Time.deltaTime;
-        }
-        if (colliderTimer >= 3)
-        {
-            box.isTrigger = false;
-            colliderTimer = 0;
-        }
         if (customerPath == null)
         {
             return;

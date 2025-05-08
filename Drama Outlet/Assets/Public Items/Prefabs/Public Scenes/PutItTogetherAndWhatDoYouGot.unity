@@ -31478,8 +31478,6 @@ MonoBehaviour:
   waitTime: 0
   npcSpawner: {fileID: 0}
   path: {fileID: 0}
-  box: {fileID: 0}
-  colliderTimer: 0
   isPaused: 0
   previousState: 0
   justLooked: 0
@@ -46606,7 +46604,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
     spawnSpot: {fileID: 0}
-  - eventDescription: {fileID: 1364556953}
+  - eventDescription: {fileID: 1573809830}
     eventAction:
       m_PersistentCalls:
         m_Calls:
@@ -46731,7 +46729,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
     spawnSpot: {fileID: 0}
-  - eventDescription: {fileID: 1364556953}
+  - eventDescription: {fileID: 1573809830}
     eventAction:
       m_PersistentCalls:
         m_Calls:
@@ -46818,7 +46816,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
     spawnSpot: {fileID: 0}
-  - eventDescription: {fileID: 1364556953}
+  - eventDescription: {fileID: 1573809830}
     eventAction:
       m_PersistentCalls:
         m_Calls:
@@ -46905,7 +46903,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
     spawnSpot: {fileID: 0}
-  - eventDescription: {fileID: 1364556953}
+  - eventDescription: {fileID: 1573809830}
     eventAction:
       m_PersistentCalls:
         m_Calls:
@@ -46992,7 +46990,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
     spawnSpot: {fileID: 0}
-  - eventDescription: {fileID: 1364556953}
+  - eventDescription: {fileID: 1573809830}
     eventAction:
       m_PersistentCalls:
         m_Calls:
@@ -47079,7 +47077,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
     spawnSpot: {fileID: 0}
-  - eventDescription: {fileID: 1364556953}
+  - eventDescription: {fileID: 1573809830}
     eventAction:
       m_PersistentCalls:
         m_Calls:
