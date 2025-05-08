@@ -1,16 +1,23 @@
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class posterZoomThang : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public GameObject thisThang;
+    public GameObject uiThang;
+    public void OnMouseOver()
     {
-        
+        if (Input.GetMouseButtonDown(0))
+        {
+            uiThang.SetActive(true);
+        }
     }
-
-    // Update is called once per frame
-    void Update()
+    public void OnMouseExit()
     {
-        
+        if (Input.GetMouseButtonDown(0))
+        {
+            uiThang.SetActive(false);
+        }
     }
 }
+
