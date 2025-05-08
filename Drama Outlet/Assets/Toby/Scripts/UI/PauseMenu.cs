@@ -16,6 +16,8 @@ public class PauseMenu : MonoBehaviour
     public bool turnedOff;
     public Image check;
     public TutorialDialogue tutorial;
+    public AudioSource song;
+    public bool turnedOff2;
     // Update is called once per frame
 
     public void Start()
@@ -65,6 +67,18 @@ public class PauseMenu : MonoBehaviour
         SceneManager.LoadScene("Title Screen");
     }
 
+    public void TurnOffMusic()
+    {
+        if (turnedOff2 == false)
+        {
+            song.Stop();
+            return;
+        }
+        else
+        {
+            song.Play();
+        }
+    }
     public void TurnOffComedy()
     {
         if (turnedOff == false)
