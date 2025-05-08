@@ -10,12 +10,16 @@ public class InventoryItem : MonoBehaviour
     public string identifier;
     public string mysteriousDescription = "I don't know anything about this item yet.";
 
-    public void Start()
+    public void CheckOut()
     {
         if (identifier == "Check-Out" && SaveDataController.Instance.CurrentData.isNewGame == false)
         {
             stock = 0;
         }
+    }
+    public void Start()
+    {
+  
     }
     private void Update()
     {

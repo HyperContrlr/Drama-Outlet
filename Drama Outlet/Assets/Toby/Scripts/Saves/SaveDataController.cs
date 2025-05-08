@@ -55,7 +55,6 @@ public class SaveDataController : MonoBehaviour
             {
                 license.ResetValues();
             }
-            _currentData.isNewGame = false;
         }
     }
 }

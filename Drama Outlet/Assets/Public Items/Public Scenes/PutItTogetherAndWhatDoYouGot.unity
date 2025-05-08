@@ -31216,6 +31216,7 @@ MonoBehaviour:
   justLooked: 0
   stole: 0
   audioSource: {fileID: 0}
+  angy: {fileID: 0}
 --- !u!212 &1366264051
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -33545,6 +33546,7 @@ MonoBehaviour:
   currentArrow: {fileID: 0}
   continueText: {fileID: 1018597639}
   time: {fileID: 7546991465511830662}
+  check: {fileID: 716970910}
 --- !u!114 &1504988305
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69656,7 +69658,7 @@ MonoBehaviour:
   dialogueText: {fileID: 3463155797934149616}
   comedyAnimator: {fileID: 7146960667196785955}
   dialogueBox: {fileID: 9185130547398907028}
-  textSpeed: 0.05
+  textSpeed: 0.01
 --- !u!1 &5812953730429022151
 GameObject:
   m_ObjectHideFlags: 0
@@ -74748,6 +74750,7 @@ MonoBehaviour:
   dialogue: {fileID: 5794950543754818374}
   turnedOff: 0
   check: {fileID: 817887626}
+  tutorial: {fileID: 1504988304}
 --- !u!1 &7552059003745762034
 GameObject:
   m_ObjectHideFlags: 0

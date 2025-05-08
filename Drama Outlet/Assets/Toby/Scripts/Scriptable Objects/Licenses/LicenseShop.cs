@@ -8,7 +8,6 @@ using TMPro;
 
 public class LicenseShop : MonoBehaviour
 {
-
     [SerializeField] private License thisLicense;
 
     [SerializeField] private string name;
@@ -39,6 +38,14 @@ public class LicenseShop : MonoBehaviour
 
     [SerializeField] private bool numeroUno;
 
+
+    public void UnlockMask()
+    {
+        if (thisLicense.mask == true)
+        {
+            thisLicense.Unlock();
+        }
+    }
     public void LicenseUnlock()
     {
         if (thisLicense.isLocked == true || thisLicense.starLock == true)
@@ -86,6 +93,7 @@ public class LicenseShop : MonoBehaviour
     }
     void Start()
     {
+        UnlockMask();
         SetValues();
         LicenseUnlock();
     }

@@ -118,6 +118,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -130,7 +143,7 @@ TextureImporter:
         width: 39
         height: 54
       alignment: 9
-      pivot: {x: 0.4861866, y: 0.3104502}
+      pivot: {x: 0.5038892, y: 0.099494934}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -152,7 +165,7 @@ TextureImporter:
         width: 39
         height: 54
       alignment: 9
-      pivot: {x: 0.48158187, y: 0.29382303}
+      pivot: {x: 0.5125615, y: 0.08286775}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -174,7 +187,7 @@ TextureImporter:
         width: 40
         height: 54
       alignment: 9
-      pivot: {x: 0.5179573, y: 0.29714847}
+      pivot: {x: 0.5352173, y: 0.08619319}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -196,7 +209,7 @@ TextureImporter:
         width: 39
         height: 54
       alignment: 9
-      pivot: {x: 0.48158187, y: 0.29382303}
+      pivot: {x: 0.51698697, y: 0.08926033}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []

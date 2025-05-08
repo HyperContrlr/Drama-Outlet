@@ -13,18 +13,19 @@ MonoBehaviour:
   m_Name: Costume License
   m_EditorClassIdentifier: 
   name: Costume License
-  description: This license will allow me to sell stage costumes. <size=23>Hope I
-    won't need to do a quick change
+  description: 'This license will allow me to sell stage costumes.
+
+    Hope I won''t
+    need to do a quick change'
   cost: 2000
   thisImage: {fileID: 0}
-  defaultSprite: {fileID: 0}
-  collectedSprite: {fileID: 0}
   productsUnlocked:
   - {fileID: 11400000, guid: 360e762e90b4c2c44a926cafcf65a83f, type: 2}
   isBought: 0
-  isLocked: 1
-  starLock: 1
+  isLocked: 0
+  starLock: 0
   hasStarLock: 1
   StarsForUnlock: 1
   licensesUnlocked:
   - {fileID: 11400000, guid: 021bd206b3cfc8d419e6c816143e3cfc, type: 2}
+  mask: 0

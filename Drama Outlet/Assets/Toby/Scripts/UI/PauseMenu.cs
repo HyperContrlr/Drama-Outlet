@@ -15,10 +15,20 @@ public class PauseMenu : MonoBehaviour
     public ComedyDialogue dialogue;
     public bool turnedOff;
     public Image check;
+    public TutorialDialogue tutorial;
     // Update is called once per frame
 
     public void Start()
     {
+        if (SaveDataController.Instance.CurrentData.isNewGame == true)
+        {
+            tutorial.gameObject.SetActive(true);
+        }
+        else
+        {
+            tutorial.gameObject.SetActive(true);
+            tutorial.NoTutorial();
+        }
     }
 
 

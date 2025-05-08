@@ -13,12 +13,10 @@ MonoBehaviour:
   m_Name: Director For Hire
   m_EditorClassIdentifier: 
   name: Director For Hire
-  description: The dynamic duo is back!! All is well with the world and now Tragedy
-    works as a director.
+  description: "The dynamic duo is back!! \nAll is well with the world and now Tragedy
+    works as a director."
   cost: 10000
   thisImage: {fileID: 0}
-  defaultSprite: {fileID: 0}
-  collectedSprite: {fileID: 0}
   productsUnlocked: []
   isBought: 0
   isLocked: 1
@@ -26,3 +24,4 @@ MonoBehaviour:
   hasStarLock: 1
   StarsForUnlock: 5
   licensesUnlocked: []
+  mask: 0

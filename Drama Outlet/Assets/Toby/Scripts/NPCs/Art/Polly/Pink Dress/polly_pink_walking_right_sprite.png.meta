@@ -143,7 +143,7 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 9
-      pivot: {x: 0.43797195, y: 0.3408846}
+      pivot: {x: 0.46226388, y: 0.18850638}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -165,7 +165,7 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 9
-      pivot: {x: 0.44336557, y: 0.34627834}
+      pivot: {x: 0.4677279, y: 0.19333637}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -187,7 +187,7 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 9
-      pivot: {x: 0.502697, y: 0.3408846}
+      pivot: {x: 0.52103114, y: 0.19945112}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -209,7 +209,7 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 9
-      pivot: {x: 0.55124044, y: 0.3408846}
+      pivot: {x: 0.5679004, y: 0.1888635}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []

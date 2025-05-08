@@ -13,18 +13,17 @@ MonoBehaviour:
   m_Name: Prop License
   m_EditorClassIdentifier: 
   name: Prop License
-  description: "This license will allow me to sell basic props. \n<size=20>You know
-    my full name is Stan D. Comedy."
+  description: "This license will allow me to sell basic props. \nYou know my full
+    name is Stan D. Comedy."
   cost: 2500
   thisImage: {fileID: 0}
-  defaultSprite: {fileID: 0}
-  collectedSprite: {fileID: 0}
   productsUnlocked:
   - {fileID: 11400000, guid: d7bca251925d96347b83127d68b86305, type: 2}
   isBought: 0
-  isLocked: 1
+  isLocked: 0
   starLock: 1
   hasStarLock: 1
   StarsForUnlock: 2
   licensesUnlocked:
   - {fileID: 11400000, guid: 85950ab130fdd894eb6c68aee6ba6ce4, type: 2}
+  mask: 0

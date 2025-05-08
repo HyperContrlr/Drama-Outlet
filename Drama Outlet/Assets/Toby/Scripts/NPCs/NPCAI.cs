@@ -70,6 +70,8 @@ public partial class NPCAI : MonoBehaviour
     public bool stole;
 
     public AudioSource audioSource;
+
+    public ParticleSystem angy;
     //public void OnDrawGizmos()
     //{
     //    Gizmos.DrawWireSphere(customerPath.vectorPath[currentWaypoint + 1], 1);
@@ -277,7 +279,6 @@ public partial class NPCAI : MonoBehaviour
         }
         if (target.GetComponent<ProductManager>().stock < thisNPC.amountToBuy)
         {
-            //Play an angry graphic
             SaveDataController.Instance.CurrentData.approvalValue -= 5;
             thisNPC.unhappy = true;
         }
@@ -579,6 +580,15 @@ public partial class NPCAI : MonoBehaviour
 
     void Update()
     {
+        checkOut = GameObject.FindGameObjectWithTag("Check Out");
+        if (thisNPC.unhappy == true)
+        {
+            angy.Play();
+        }
+        else if (thisNPC.unhappy == false)
+        {
+            angy.Stop();
+        }
         //path.Scan();
         noProduct = IsThereProduct();
         if (noProduct == false)

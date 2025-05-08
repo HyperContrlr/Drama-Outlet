@@ -13,12 +13,9 @@ MonoBehaviour:
   m_Name: Mask License
   m_EditorClassIdentifier: 
   name: Mask License
-  description: "This is a basic mask license. \n<size=25>Buying this will get my
-    store started!!"
+  description: "This is a basic mask license. \nI already bought this one!!"
   cost: 0
   thisImage: {fileID: 0}
-  defaultSprite: {fileID: 0}
-  collectedSprite: {fileID: 0}
   productsUnlocked:
   - {fileID: 11400000, guid: 84118fd9120504e43af7e4355eaa380e, type: 2}
   isBought: 1

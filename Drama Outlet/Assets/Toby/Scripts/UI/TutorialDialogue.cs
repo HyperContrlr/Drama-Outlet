@@ -19,21 +19,10 @@ public class TutorialDialogue : MonoBehaviour
     public GameObject currentArrow;
     public GameObject continueText;
     public TimeOfDay time;
+    public InventoryItem check;
     void Start()
     {
         
-    }
-
-    public void OnEnable()
-    {
-        if (SaveDataController.Instance.CurrentData.isNewGame == true)
-        {
-            this.gameObject.SetActive(true);
-        }
-        else
-        {
-            NoTutorial();
-        }
     }
 
     // Update is called once per frame
@@ -72,6 +61,7 @@ public class TutorialDialogue : MonoBehaviour
 
     public void NoTutorial()
     {
+        check.CheckOut();
         continueText.SetActive(false);
         foreach (GameObject go in arrows)
         {

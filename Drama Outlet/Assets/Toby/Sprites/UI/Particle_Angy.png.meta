@@ -1,19 +1,13 @@
 fileFormatVersion: 2
-guid: 2dfe195a0b08ed14cbb4e349b6af11dd
+guid: 7e47e386476fcf343864eb10f73efd4e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8679008137579656943
-    second: Dreads_blue_walking_right_sprite_0
+      213: -854599763598229901
+    second: Particle_Angy_0
   - first:
-      213: 2923921663235439082
-    second: Dreads_blue_walking_right_sprite_1
-  - first:
-      213: 7879835835995181627
-    second: Dreads_blue_walking_right_sprite_2
-  - first:
-      213: 2663277956707834213
-    second: Dreads_blue_walking_right_sprite_3
+      213: 372293387841505016
+    second: Particle_Angy_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -55,12 +49,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 256
+  spritePixelsToUnits: 12
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -135,89 +129,45 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Dreads_blue_walking_right_sprite_0
+      name: Particle_Angy_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37e3899fa0ad324f0800000000000000
+      internalID: -854599763598229901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Particle_Angy_1
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 64
-        height: 64
-      alignment: 9
-      pivot: {x: 0.53236246, y: 0.12243807}
+        width: 11
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fe6f823fae7027870800000000000000
-      internalID: 8679008137579656943
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dreads_blue_walking_right_sprite_1
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 64
-        height: 64
-      alignment: 9
-      pivot: {x: 0.56202793, y: 0.12513494}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ae9b738d24bd39820800000000000000
-      internalID: 2923921663235439082
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dreads_blue_walking_right_sprite_2
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 0
-        width: 64
-        height: 64
-      alignment: 9
-      pivot: {x: 0.47303152, y: 0.12243807}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b32d2e491fcca5d60800000000000000
-      internalID: 7879835835995181627
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dreads_blue_walking_right_sprite_3
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 0
-        width: 64
-        height: 64
-      alignment: 9
-      pivot: {x: 0.5242717, y: 0.12783182}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 569d2b3e03dd5f420800000000000000
-      internalID: 2663277956707834213
+      spriteID: 8f6058e1dd6aa2500800000000000000
+      internalID: 372293387841505016
       vertices: []
       indices: 
       edges: []
@@ -226,7 +176,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 1539a591dfd85604a896b1b5aff1e923
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -236,10 +186,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Dreads_blue_walking_right_sprite_0: 8679008137579656943
-      Dreads_blue_walking_right_sprite_1: 2923921663235439082
-      Dreads_blue_walking_right_sprite_2: 7879835835995181627
-      Dreads_blue_walking_right_sprite_3: 2663277956707834213
+      Particle_Angy_0: -854599763598229901
+      Particle_Angy_1: 372293387841505016
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
