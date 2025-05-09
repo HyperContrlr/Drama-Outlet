@@ -24,7 +24,7 @@ public class TimeOfDay : MonoBehaviour
     [SerializeField] public Image spaceBarMorning;
     [SerializeField] private Image spaceBarNight;
     [SerializeField] private bool checkOut;
-    [SerializeField] private Image midnight;
+    [SerializeField] private GameObject midnight;
     [SerializeField] private GameObject loseScreen;
     [SerializeField] private bool isntLost;
     [SerializeField] private bool changedOnce;
@@ -46,7 +46,7 @@ public class TimeOfDay : MonoBehaviour
             {
                 spaceBarMorning.gameObject.SetActive(true);
                 spaceBarNight.gameObject.SetActive(false);
-                midnight.gameObject.SetActive(false);
+                midnight.SetActive(false);
                 startedDay = false;
                 npcSpawner.enabled = false;
             }
@@ -55,7 +55,7 @@ public class TimeOfDay : MonoBehaviour
                 timer = 0;
                 spaceBarMorning.gameObject.SetActive(false);
                 spaceBarNight.gameObject.SetActive(false);
-                midnight.gameObject.SetActive(false);
+                midnight.SetActive(false);
                 startedDay = true;
                 npcSpawner.enabled = true;
                 npcSpawner.SpawnCustomer();
@@ -65,7 +65,7 @@ public class TimeOfDay : MonoBehaviour
                 timer = morningWindow + 1;
                 spaceBarMorning.gameObject.SetActive(false);
                 spaceBarNight.gameObject.SetActive(false);
-                midnight.gameObject.SetActive(false);
+                midnight.SetActive(false);
                 startedDay = true;
                 npcSpawner.enabled = true;
                 npcSpawner.SpawnCustomer();
@@ -75,7 +75,7 @@ public class TimeOfDay : MonoBehaviour
                 timer = afternoonWindow + 1;
                 spaceBarMorning.gameObject.SetActive(false);
                 spaceBarNight.gameObject.SetActive(true);
-                midnight.gameObject.SetActive(false);
+                midnight.SetActive(false);
                 startedDay = false;
                 npcSpawner.enabled = false;
             }
@@ -83,13 +83,13 @@ public class TimeOfDay : MonoBehaviour
             {
                 spaceBarMorning.gameObject.SetActive(false);
                 spaceBarNight.gameObject.SetActive(true);
-                midnight.gameObject.SetActive(false);
+                midnight.SetActive(false);
                 startedDay = false;
                 npcSpawner.enabled = false;
             }
             else if (SaveDataController.Instance.CurrentData.timeOfDay == SaveData.Time.Midnight)
             {
-                midnight.gameObject.SetActive(true);
+                midnight.SetActive(true);
                 spaceBarMorning.gameObject.SetActive(false);
                 spaceBarNight.gameObject.SetActive(false);
                 startedDay = false;
@@ -136,7 +136,7 @@ public class TimeOfDay : MonoBehaviour
         {
             //SaveDataController.Instance.CurrentData.timeOfDay = SaveData.Time.Midnight;
             //spaceBarNight.gameObject.SetActive(false);
-            midnight.gameObject.SetActive(true);
+            midnight.SetActive(true);
         }
         else if (checkOut == false && SaveDataController.Instance.CurrentData.timeOfDay == SaveData.Time.EarlyMorning && Input.GetKeyDown(KeyCode.Space))
         {

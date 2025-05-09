@@ -160,6 +160,5 @@ public class Midnight : MonoBehaviour
         day.timer = 0;
         day.rotation = 90;
         stolenNote.SetActive(true);
-        this.gameObject.SetActive(false);
     }
 }
