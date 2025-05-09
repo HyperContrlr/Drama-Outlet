@@ -33,6 +33,7 @@ public class TimeOfDay : MonoBehaviour
     public Volume volume;
     public Events eventSystem;
     public List<Color> timeColors;
+    public SaveDataController save;
     void Start()
     {
         if (SaveDataController.Instance.CurrentData.isNewGame == true)
@@ -243,6 +244,7 @@ public class TimeOfDay : MonoBehaviour
                     Invoke("CloseAnimator", 3);
                 }
             }
+            save.Save();
         }
     }
     public void SpeedUp()
