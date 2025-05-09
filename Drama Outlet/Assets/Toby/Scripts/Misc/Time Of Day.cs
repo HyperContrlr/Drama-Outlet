@@ -35,7 +35,67 @@ public class TimeOfDay : MonoBehaviour
     public List<Color> timeColors;
     void Start()
     {
-        SaveDataController.Instance.CurrentData.timeOfDay = SaveData.Time.EarlyMorning;
+        if (SaveDataController.Instance.CurrentData.isNewGame == true)
+        {
+            SaveDataController.Instance.CurrentData.timeOfDay = SaveData.Time.EarlyMorning;
+        }
+        if (SaveDataController.Instance.CurrentData.isNewGame == false)
+        {
+            if (SaveDataController.Instance.CurrentData.timeOfDay == SaveData.Time.EarlyMorning)
+            {
+                spaceBarMorning.gameObject.SetActive(true);
+                spaceBarNight.gameObject.SetActive(false);
+                midnight.gameObject.SetActive(false);
+                startedDay = false;
+                npcSpawner.enabled = false;
+            }
+            else if (SaveDataController.Instance.CurrentData.timeOfDay == SaveData.Time.Morning)
+            {
+                timer = 0;
+                spaceBarMorning.gameObject.SetActive(false);
+                spaceBarNight.gameObject.SetActive(false);
+                midnight.gameObject.SetActive(false);
+                startedDay = true;
+                npcSpawner.enabled = true;
+                npcSpawner.SpawnCustomer();
+            }
+            else if (SaveDataController.Instance.CurrentData.timeOfDay == SaveData.Time.Afternoon)
+            {
+                timer = morningWindow + 1;
+                spaceBarMorning.gameObject.SetActive(false);
+                spaceBarNight.gameObject.SetActive(false);
+                midnight.gameObject.SetActive(false);
+                startedDay = true;
+                npcSpawner.enabled = true;
+                npcSpawner.SpawnCustomer();
+            }
+            else if (SaveDataController.Instance.CurrentData.timeOfDay == SaveData.Time.Evening)
+            {
+                timer = afternoonWindow + 1;
+                spaceBarMorning.gameObject.SetActive(false);
+                spaceBarNight.gameObject.SetActive(true);
+                midnight.gameObject.SetActive(false);
+                startedDay = false;
+                npcSpawner.enabled = false;
+            }
+            else if (SaveDataController.Instance.CurrentData.timeOfDay == SaveData.Time.Night)
+            {
+                spaceBarMorning.gameObject.SetActive(false);
+                spaceBarNight.gameObject.SetActive(true);
+                midnight.gameObject.SetActive(false);
+                startedDay = false;
+                npcSpawner.enabled = false;
+            }
+            else if (SaveDataController.Instance.CurrentData.timeOfDay == SaveData.Time.Midnight)
+            {
+                midnight.gameObject.SetActive(true);
+                spaceBarMorning.gameObject.SetActive(false);
+                spaceBarNight.gameObject.SetActive(false);
+                startedDay = false;
+                npcSpawner.enabled = false;
+            }
+            
+        }
     }
 
     public void CloseAnimator()
