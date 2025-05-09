@@ -28,9 +28,16 @@ public class Midnight : MonoBehaviour
     public void OnEnable()
     {
         List<NPCAI> npcs = FindObjectsByType<NPCAI>(FindObjectsSortMode.None).ToList();
-        foreach (var npc in npcs)
+        if (npcs.Count == 0 || npcs == null)
         {
-            Destroy(npc.gameObject);
+            Debug.Log("No NPCs");
+        }
+        else
+        {
+            foreach (var npc in npcs)
+            {
+                Destroy(npc.gameObject);
+            }
         }
         if (SaveDataController.Instance.CurrentData.approvalValue < 60 && hasStartedStealing == false)
         {
@@ -149,10 +156,10 @@ public class Midnight : MonoBehaviour
     {
         SaveDataController.Instance.CurrentData.day += 1;
         SaveDataController.Instance.CurrentData.timeOfDay = SaveData.Time.EarlyMorning;
-        day.closeUpShop = false;
+        day.spaceBarMorning.enabled = true;
         day.timer = 0;
         day.rotation = 90;
-        this.gameObject.SetActive(false);
         stolenNote.SetActive(true);
+        this.gameObject.SetActive(false);
     }
 }

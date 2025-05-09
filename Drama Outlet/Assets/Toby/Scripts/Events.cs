@@ -133,17 +133,17 @@ public class Events : MonoBehaviour
         if (SaveDataController.Instance.CurrentData.day <= 5)
         {
             timeBetweenEvents = 30;
-            eventsInTheDay = Statics.randyTheRandom.Next(2, 5);
+            eventsInTheDay = Statics.randyTheRandom.Next(2, 6);
         }
         else if (SaveDataController.Instance.CurrentData.day > 5 && SaveDataController.Instance.CurrentData.day < 11)
         {
             timeBetweenEvents = 20;
-            eventsInTheDay = Statics.randyTheRandom.Next(2, 7);
+            eventsInTheDay = Statics.randyTheRandom.Next(3, 8);
         }
-        else if (SaveDataController.Instance.CurrentData.day >= 20)
+        else if (SaveDataController.Instance.CurrentData.day >= 11)
         {
             timeBetweenEvents = 10;
-            eventsInTheDay = Statics.randyTheRandom.Next(3, 9);
+            eventsInTheDay = Statics.randyTheRandom.Next(4, 11);
         }
         eventDictionary = new();
         for (int i = timeBetweenEvents; i < timeOfDay.eveningWindow; i += timeBetweenEvents)

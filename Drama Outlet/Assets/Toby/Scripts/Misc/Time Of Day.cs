@@ -21,7 +21,7 @@ public class TimeOfDay : MonoBehaviour
     [SerializeField] public float rotation;
     [SerializeField] private List<BuildingManager> buildingsPlaced;
     [SerializeField] public bool pressedDown;
-    [SerializeField] private Image spaceBarMorning;
+    [SerializeField] public Image spaceBarMorning;
     [SerializeField] private Image spaceBarNight;
     [SerializeField] private bool checkOut;
     [SerializeField] private Image midnight;
@@ -120,27 +120,27 @@ public class TimeOfDay : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) == true && SaveDataController.Instance.CurrentData.timeOfDay == SaveData.Time.EarlyMorning && checkOut == true)
         {
+            npcSpawner.spawnedNPCs.Clear();
+            timer = 0;
+            SaveDataController.Instance.CurrentData.timeOfDay = SaveData.Time.Morning;
             eventSystem.SetEvents();
             isntLost = false;
             spaceBarMorning.gameObject.SetActive(false);
             startedDay = true;
             npcSpawner.enabled = true;
-            SaveDataController.Instance.CurrentData.timeOfDay = SaveData.Time.Morning;
             npcSpawner.SpawnCustomer();
         }
 
+        else if (Input.GetKeyDown(KeyCode.Space) == true && SaveDataController.Instance.CurrentData.timeOfDay == SaveData.Time.Night)
+        {
+            //SaveDataController.Instance.CurrentData.timeOfDay = SaveData.Time.Midnight;
+            //spaceBarNight.gameObject.SetActive(false);
+            midnight.gameObject.SetActive(true);
+        }
         else if (checkOut == false && SaveDataController.Instance.CurrentData.timeOfDay == SaveData.Time.EarlyMorning && Input.GetKeyDown(KeyCode.Space))
         {
             Statics.ReadStatement("You need a checkout to open the store!! Use the one in your inventory");
             Invoke("CloseAnimator", 3); 
-        }
-
-        if (Input.GetKeyDown(KeyCode.Space) == true && SaveDataController.Instance.CurrentData.timeOfDay == SaveData.Time.Night)
-        {
-            SaveDataController.Instance.CurrentData.timeOfDay = SaveData.Time.Midnight;
-            closeUpShop = true;
-            spaceBarNight.gameObject.SetActive(false);
-            midnight.gameObject.SetActive(true);
         }
 
         if (Input.GetKeyUp(KeyCode.Space) == true)
@@ -151,6 +151,7 @@ public class TimeOfDay : MonoBehaviour
 
         if (startedDay == true)
         {
+            spaceBarMorning.gameObject.SetActive(false);
             if (IsCheckOut() == false)
             {
                 Statics.ReadStatement("We don't have a checkout so I must close the store until we get one :(");
@@ -199,10 +200,10 @@ public class TimeOfDay : MonoBehaviour
         
         else if (timer > eveningWindow)
         {
+            SaveDataController.Instance.CurrentData.timeOfDay = SaveData.Time.Night;
             mainLight.color = timeColors[4];
             spaceBarNight.gameObject.SetActive(true);
             npcSpawner.enabled = false;
-            SaveDataController.Instance.CurrentData.timeOfDay = SaveData.Time.Night;
             mainLight.intensity = 0.4f;
             if (startedDay == true)
             {
@@ -301,6 +302,13 @@ public class TimeOfDay : MonoBehaviour
     {
         bloom.intensity.value = 0.5f;
         yield return new WaitForSeconds(0f);
+    }
+
+    [ContextMenu ("EndDay")]
+    public void EndDay()
+    {
+        timer = 241;
+        SaveDataController.Instance.CurrentData.money += 1000;
     }
 }
 

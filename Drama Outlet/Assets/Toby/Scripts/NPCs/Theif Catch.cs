@@ -13,9 +13,6 @@ public class TheifCatch : MonoBehaviour
     public void Start()
     {
         buttons = FindFirstObjectByType<RSIButtons>();  
-        light2D = GameObject.Find("Light 2D").GetComponent<Light2D>();
-        lightColor = light2D.color;
-        light2D.color = alertColor;
     }
 
     public void OnMouseDown()
@@ -25,6 +22,5 @@ public class TheifCatch : MonoBehaviour
         thisThief.stole = false;
         SaveDataController.Instance.CurrentData.money += buttons.restockPrices;
         buttons.RestockAll();
-        light2D.color = lightColor;
     }
 }
