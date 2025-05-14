@@ -4985,7 +4985,7 @@ GameObject:
   - component: {fileID: 9132273374288852000}
   m_Layer: 6
   m_Name: comedy_idle_right_sprite_0
-  m_TagString: Untagged
+  m_TagString: Comedy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

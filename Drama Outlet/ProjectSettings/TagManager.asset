@@ -8,6 +8,7 @@ TagManager:
   - furniture
   - Check Out
   - Exit
+  - Comedy
   layers:
   - Default
   - TransparentFX

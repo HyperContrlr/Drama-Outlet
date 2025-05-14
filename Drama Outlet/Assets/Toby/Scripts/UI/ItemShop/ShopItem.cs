@@ -59,6 +59,18 @@ public class ShopItem : MonoBehaviour
             Statics.ReadRejection1();
         }
     }
+
+    public void MoneyGone()
+    {
+        if (thisItem.isLocked == false && SaveDataController.Instance.CurrentData.money >= cost)
+        {
+            SaveDataController.Instance.CurrentData.money -= cost;
+        }
+        else if (SaveDataController.Instance.CurrentData.money < cost)
+        {
+            Statics.ReadRejection1();
+        }
+    }
     void Start()
     {
         SetValues();

@@ -15,6 +15,7 @@ public class PauseMenu : MonoBehaviour
     public ComedyDialogue dialogue;
     public bool turnedOff;
     public Image check;
+    public Image check2;
     public TutorialDialogue tutorial;
     public AudioSource song;
     public bool turnedOff2;
@@ -72,10 +73,14 @@ public class PauseMenu : MonoBehaviour
         if (turnedOff2 == false)
         {
             song.Stop();
+            turnedOff2 = true;
+            check2.enabled = true;
             return;
         }
         else
         {
+            turnedOff2 = false;
+            check2.enabled = false;
             song.Play();
         }
     }

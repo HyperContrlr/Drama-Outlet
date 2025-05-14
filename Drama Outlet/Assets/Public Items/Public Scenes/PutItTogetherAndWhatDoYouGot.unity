@@ -11563,7 +11563,7 @@ MonoBehaviour:
   m_margin: {x: -7.5238647, y: 0, z: -465.1496, w: -86.61725}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &478609548
@@ -20156,6 +20156,7 @@ MonoBehaviour:
   creditsPanel: {fileID: 702860682}
   creditsPanelObject: {fileID: 1086726697}
   initialPos: {x: 0, y: -1000}
+  isScrolling: 0
 --- !u!1 &704527212
 GameObject:
   m_ObjectHideFlags: 0
@@ -21085,6 +21086,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 349776248}
+        m_TargetAssemblyTypeName: ShopItem, Assembly-CSharp
+        m_MethodName: MoneyGone
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &727131145
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21774,7 +21787,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1784949810}
         m_TargetAssemblyTypeName: ShopItem, Assembly-CSharp
-        m_MethodName: BuyItem
+        m_MethodName: MoneyGone
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -31979,6 +31992,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1708406117}
+        m_TargetAssemblyTypeName: ShopItem, Assembly-CSharp
+        m_MethodName: MoneyGone
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1155915224
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33123,6 +33148,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 628584842}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1201341983
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33604,12 +33641,12 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1905135055}
         m_TargetAssemblyTypeName: Events, Assembly-CSharp
-        m_MethodName: UnityEventOver
-        m_Mode: 1
+        m_MethodName: UnityEventChoice
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -34990,7 +35027,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1279305626
@@ -35662,6 +35699,18 @@ MonoBehaviour:
       - m_Target: {fileID: 2000328412}
         m_TargetAssemblyTypeName: ShopItem, Assembly-CSharp
         m_MethodName: AddToSecurity
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2000328412}
+        m_TargetAssemblyTypeName: ShopItem, Assembly-CSharp
+        m_MethodName: MoneyGone
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -39504,8 +39553,8 @@ MonoBehaviour:
   tutorialDialogues:
   - <size=30>Welcome new employee to Drama Outlet. You are here to help me make a
     five star store!! Right click to continue.
-  - <size=30>Pressing this button or [Enter] will open up your UI Pop up. Hover over
-    objects and I'll tell you what they do!!
+  - <size=30>Pressing this button will open up your UI Pop up. Hover over objects
+    and I'll tell you what they do!!
   - This is our money. Make sure to use it wisely so we can get good business.
   - Lets start by getting our first license. Click this button to open the License
     menu.
@@ -39969,6 +40018,18 @@ MonoBehaviour:
       - m_Target: {fileID: 656544908}
         m_TargetAssemblyTypeName: ShopItem, Assembly-CSharp
         m_MethodName: AddToSecurity
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 656544908}
+        m_TargetAssemblyTypeName: ShopItem, Assembly-CSharp
+        m_MethodName: BuyItem
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -54694,19 +54755,6 @@ MonoBehaviour:
     eventAction:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1905135055}
-          m_TargetAssemblyTypeName: Events, Assembly-CSharp
-          m_MethodName: SetText
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: I accidentally messed up some customer orders. But
-              if I pay to give them stuff for free maybe it'll make them happier!!
-            m_BoolArgument: 0
-          m_CallState: 2
         - m_Target: {fileID: 616710996}
           m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_MethodName: SetActive
@@ -54719,6 +54767,19 @@ MonoBehaviour:
             m_StringArgument: I accidentally messed up some customer orders. But
               if I pay to give them stuff for free maybe it'll make them happier!!
             m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 1905135055}
+          m_TargetAssemblyTypeName: Events, Assembly-CSharp
+          m_MethodName: SetText
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: I accidentally messed up some customer orders. But
+              if I pay to give them stuff for free maybe it'll make them happier!!
+            m_BoolArgument: 0
           m_CallState: 2
         - m_Target: {fileID: 1905135055}
           m_TargetAssemblyTypeName: Events, Assembly-CSharp
@@ -54796,7 +54857,7 @@ MonoBehaviour:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
-            m_FloatArgument: 15
+            m_FloatArgument: 20
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
@@ -56890,6 +56951,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1251633951}
         m_TargetAssemblyTypeName: ShopItem, Assembly-CSharp
         m_MethodName: AddToSecurity
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1251633951}
+        m_TargetAssemblyTypeName: ShopItem, Assembly-CSharp
+        m_MethodName: MoneyGone
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -63337,7 +63410,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &2146109084
@@ -72763,7 +72836,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 6311483106550872628}
         m_TargetAssemblyTypeName: ShopItem, Assembly-CSharp
-        m_MethodName: BuyItem
+        m_MethodName: MoneyGone
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -74616,7 +74689,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2428620082443324144}
         m_TargetAssemblyTypeName: ShopItem, Assembly-CSharp
-        m_MethodName: BuyItem
+        m_MethodName: MoneyGone
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -83225,6 +83298,7 @@ MonoBehaviour:
   dialogue: {fileID: 5794950543754818374}
   turnedOff: 0
   check: {fileID: 817887626}
+  check2: {fileID: 628584844}
   tutorial: {fileID: 1504988304}
   song: {fileID: 332336209}
   turnedOff2: 0

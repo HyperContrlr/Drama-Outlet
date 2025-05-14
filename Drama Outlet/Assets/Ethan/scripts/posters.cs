@@ -18,11 +18,11 @@ public class posters : MonoBehaviour
         {
             Poster1.SetActive(true);
         }
-        else if (poster2)
+        if (poster2)
         {
-            Poster2.SetActive(false);
+            Poster2.SetActive(true);
         }
-        else if (poster3)
+        if (poster3)
         {
             Poster3.SetActive(true);
         }

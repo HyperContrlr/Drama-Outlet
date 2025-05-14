@@ -34,6 +34,7 @@ public class TimeOfDay : MonoBehaviour
     public Events eventSystem;
     public List<Color> timeColors;
     public SaveDataController save;
+    public Animator comedy;
     void Start()
     {
         if (SaveDataController.Instance.CurrentData.isNewGame == true)
@@ -52,13 +53,18 @@ public class TimeOfDay : MonoBehaviour
             }
             else if (SaveDataController.Instance.CurrentData.timeOfDay == SaveData.Time.Morning)
             {
+                npcSpawner.spawnedNPCs.Clear();
                 timer = 0;
+                SaveDataController.Instance.CurrentData.timeOfDay = SaveData.Time.Morning;
+                eventSystem.SetEvents();
+                isntLost = false;
                 spaceBarMorning.gameObject.SetActive(false);
-                spaceBarNight.gameObject.SetActive(false);
-                midnight.SetActive(false);
                 startedDay = true;
                 npcSpawner.enabled = true;
                 npcSpawner.SpawnCustomer();
+                spaceBarMorning.gameObject.SetActive(false);
+                spaceBarNight.gameObject.SetActive(false);
+                midnight.SetActive(false);
             }
             else if (SaveDataController.Instance.CurrentData.timeOfDay == SaveData.Time.Afternoon)
             {
@@ -97,6 +103,7 @@ public class TimeOfDay : MonoBehaviour
     }
     void Update()
     {
+        comedy = GameObject.FindGameObjectWithTag("Comedy").GetComponent<Animator>();
         Debug.Log(SaveDataController.Instance.CurrentData.timeOfDay);
         checkOut = IsCheckOut();
         if (SaveDataController.Instance.CurrentData.timeOfDay == SaveData.Time.EarlyMorning)
@@ -239,6 +246,10 @@ public class TimeOfDay : MonoBehaviour
     }
     public void SpeedUp()
     {
+        if (comedy != null)
+        {
+            comedy.speed = 2f;
+        }
         if (volume.profile.TryGet(out Bloom bloom))
         {
             StartCoroutine(LightIn(bloom));
@@ -255,6 +266,10 @@ public class TimeOfDay : MonoBehaviour
 
     public void SpeedDown()
     {
+        if (comedy != null)
+        {
+            comedy.speed = 1f;
+        }
         if (volume.profile.TryGet(out Bloom bloom))
         {
             StartCoroutine(LightIn(bloom));

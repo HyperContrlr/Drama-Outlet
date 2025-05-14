@@ -126,6 +126,10 @@ public class Events : MonoBehaviour
             currentEvent.eventOver2.Invoke();
             turnOffButtons.Invoke();
         }
+        if (choice == 2)
+        {
+            eventGoingOn = false;
+        }
     }
     public void SetEvents()
     {
@@ -305,6 +309,7 @@ public class Events : MonoBehaviour
             {
                 npc.isPaused = false;
                 npc.state = npc.previousState;
+                npc.SetTarget();
             }
         }
     }
