@@ -46,17 +46,14 @@ public class Midnight : MonoBehaviour
             List<string> shuffledWarnings = warningTexts.Shuffle().ToList();
             GenericDisplayText<string>.DisplayText(warningText, shuffledWarnings[0]);
         }
-        if (SaveDataController.Instance.CurrentData.approvalValue >= 60)
+        else if (SaveDataController.Instance.CurrentData.approvalValue >= 60)
         {
             hasStartedStealing = true;
             warningText.gameObject.SetActive(false);
             List<string> shuffledNotes = possibleStolenNotes.Shuffle().ToList();
             GenericDisplayText<string>.DisplayText(noteText, shuffledNotes[1]);
             int chance = Statics.RollADice(4);
-            for (float i = SaveDataController.Instance.CurrentData.securityValue; i <= 0; i = i - 10)
-            {
-                chance += (int)0.5;
-            }
+            chance += (int)SaveDataController.Instance.CurrentData.securityValue / 2;
             if (chance > 20)
             {
                 approvalLostText.SetActive(false);
@@ -132,7 +129,7 @@ public class Midnight : MonoBehaviour
                 }
             }
         }
-        if (SaveDataController.Instance.CurrentData.approvalValue >= 100 && hasStartedStealing == true)
+        else if (SaveDataController.Instance.CurrentData.approvalValue >= 100 && hasStartedStealing == true)
         {
             hasStartedStealing = false;
             happyText.SetActive(true);
@@ -144,6 +141,10 @@ public class Midnight : MonoBehaviour
             {
                 SaveDataController.Instance.CurrentData.money += 4000;
             }
+        }
+        else
+        {
+            Debug.Log("Something went wrong");
         }
     }
     // Update is called once per frame

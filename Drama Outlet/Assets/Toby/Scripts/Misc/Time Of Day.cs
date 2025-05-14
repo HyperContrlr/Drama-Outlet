@@ -87,14 +87,6 @@ public class TimeOfDay : MonoBehaviour
                 startedDay = false;
                 npcSpawner.enabled = false;
             }
-            else if (SaveDataController.Instance.CurrentData.timeOfDay == SaveData.Time.Midnight)
-            {
-                midnight.SetActive(true);
-                spaceBarMorning.gameObject.SetActive(false);
-                spaceBarNight.gameObject.SetActive(false);
-                startedDay = false;
-                npcSpawner.enabled = false;
-            }
             
         }
     }
@@ -133,7 +125,7 @@ public class TimeOfDay : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.Space) == true && SaveDataController.Instance.CurrentData.timeOfDay == SaveData.Time.Night)
         {
-            //spaceBarNight.gameObject.SetActive(false);
+            spaceBarNight.gameObject.SetActive(false);
             midnight.SetActive(true);
         }
         else if (checkOut == false && SaveDataController.Instance.CurrentData.timeOfDay == SaveData.Time.EarlyMorning && Input.GetKeyDown(KeyCode.Space))

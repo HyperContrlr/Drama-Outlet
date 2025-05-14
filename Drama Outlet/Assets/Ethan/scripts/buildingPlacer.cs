@@ -36,6 +36,10 @@ public class buildingPlacer : MonoBehaviour
     {
         foreach (var item in SaveDataController.Instance.CurrentData.furniturePositions)
         {
+            if (SaveDataController.Instance.CurrentData.furniturePositions.Count == 0)
+            {
+                return;
+            }
             Vector2 position = item.position;
             Quaternion rotation = item.rotation;
             GameObject prefab = item.thisBuilding.objectPrefab;
