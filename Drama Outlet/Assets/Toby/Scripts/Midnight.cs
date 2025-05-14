@@ -28,7 +28,7 @@ public class Midnight : MonoBehaviour
     public void OnEnable()
     {
         List<NPCAI> npcs = FindObjectsByType<NPCAI>(FindObjectsSortMode.None).ToList();
-        if (npcs.Count == 0 || npcs == null)
+        if (npcs == null || npcs.Count == 0)
         {
             Debug.Log("No NPCs");
         }

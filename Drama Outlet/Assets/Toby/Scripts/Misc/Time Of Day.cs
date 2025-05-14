@@ -131,10 +131,8 @@ public class TimeOfDay : MonoBehaviour
             npcSpawner.enabled = true;
             npcSpawner.SpawnCustomer();
         }
-
         else if (Input.GetKeyDown(KeyCode.Space) == true && SaveDataController.Instance.CurrentData.timeOfDay == SaveData.Time.Night)
         {
-            //SaveDataController.Instance.CurrentData.timeOfDay = SaveData.Time.Midnight;
             //spaceBarNight.gameObject.SetActive(false);
             midnight.SetActive(true);
         }
