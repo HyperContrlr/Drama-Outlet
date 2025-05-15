@@ -76,7 +76,7 @@ public class Midnight : MonoBehaviour
                 moneyLossText.SetActive(false);
                 productLostText.SetActive(false);
                 safeText.SetActive(false);
-                SaveDataController.Instance.CurrentData.approvalValue -= 10;
+                SaveDataController.Instance.CurrentData.approvalValue -= 30;
             }
             //Money Loss
             else if (chance <= 10 && chance > 5)

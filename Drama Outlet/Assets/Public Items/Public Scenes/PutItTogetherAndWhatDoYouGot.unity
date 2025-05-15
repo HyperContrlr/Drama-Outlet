@@ -47598,6 +47598,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 343617f07dc7cbd48a0af9d6b7423e25, type: 2}
   - {fileID: 11400000, guid: 021bd206b3cfc8d419e6c816143e3cfc, type: 2}
   tutorial: {fileID: 1504988302}
+  isTitleScreen: 0
 --- !u!4 &1754402862
 Transform:
   m_ObjectHideFlags: 0
@@ -83279,6 +83280,7 @@ MonoBehaviour:
   - {r: 0.8490566, g: 0.84170693, b: 0.7008722, a: 1}
   - {r: 0.5849056, g: 0.58312666, b: 0.54903877, a: 1}
   save: {fileID: 1754402861}
+  comedy: {fileID: 0}
 --- !u!114 &7546991465511830663
 MonoBehaviour:
   m_ObjectHideFlags: 0

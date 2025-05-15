@@ -15,10 +15,8 @@ MonoBehaviour:
   name: Advanced Makeup License
   description: "<size=25>This license will allow me to buy SFX makeup. \n<size=20>Use
     these products to make people look old, dead, or deepfaked... wait"
-  cost: 4000
+  cost: 3000
   thisImage: {fileID: 0}
-  defaultSprite: {fileID: 0}
-  collectedSprite: {fileID: 0}
   productsUnlocked:
   - {fileID: 11400000, guid: 1a134c6b9a42d5b44905a4a60c1d8ff0, type: 2}
   isBought: 0
@@ -27,3 +25,4 @@ MonoBehaviour:
   hasStarLock: 1
   StarsForUnlock: 3
   licensesUnlocked: []
+  mask: 0

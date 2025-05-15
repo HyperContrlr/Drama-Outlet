@@ -17,7 +17,7 @@ MonoBehaviour:
   description: 
   price: 0
   objectSellPrice: 50
-  restockPricePerStockMissing: 15
+  restockPricePerStockMissing: 20
   sellPricePerStock: 50
   stockBought: 0
   maxStock: 100

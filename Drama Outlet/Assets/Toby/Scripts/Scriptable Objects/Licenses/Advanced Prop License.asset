@@ -15,10 +15,8 @@ MonoBehaviour:
   name: Advanced Prop License
   description: "<size=30>With this license I can sell huge set pieces and props.
     \n<size=20>The D. in my name stands for Dup."
-  cost: 7000
+  cost: 4500
   thisImage: {fileID: 0}
-  defaultSprite: {fileID: 0}
-  collectedSprite: {fileID: 0}
   productsUnlocked:
   - {fileID: 11400000, guid: df6967487aad6a34abf2b7ec567f127c, type: 2}
   isBought: 0
@@ -27,3 +25,4 @@ MonoBehaviour:
   hasStarLock: 1
   StarsForUnlock: 4
   licensesUnlocked: []
+  mask: 0

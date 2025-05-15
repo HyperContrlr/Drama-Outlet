@@ -98,13 +98,13 @@ public class PopUpManager : MonoBehaviour
         if (SaveDataController.Instance.CurrentData.approvalValue <= 0)
         {
             //Big Sad
-            if (SaveDataController.Instance.CurrentData.approvalValue <= -20)
+            if (SaveDataController.Instance.CurrentData.approvalValue <= -60)
             {
                 SaveDataController.Instance.CurrentData.starsGained = 0;
                 approvalMask.sprite = approvalMaskSprites[0];
             }
             //Worried
-            if (SaveDataController.Instance.CurrentData.approvalValue > -20 && SaveDataController.Instance.CurrentData.approvalValue < 0)
+            if (SaveDataController.Instance.CurrentData.approvalValue > -30 && SaveDataController.Instance.CurrentData.approvalValue < 0)
             {
                 SaveDataController.Instance.CurrentData.starsGained = 0;
                 approvalMask.sprite = approvalMaskSprites[1];
@@ -128,7 +128,7 @@ public class PopUpManager : MonoBehaviour
             {
                 int i = 0;
                 //Small Smirk
-                if (SaveDataController.Instance.CurrentData.approvalValue >= 20 && SaveDataController.Instance.CurrentData.approvalValue < 40)
+                if (SaveDataController.Instance.CurrentData.approvalValue >= 30 && SaveDataController.Instance.CurrentData.approvalValue < 60)
                 {
                     SaveDataController.Instance.CurrentData.starsGained = 1;
                     UnlockLicense();
@@ -150,7 +150,7 @@ public class PopUpManager : MonoBehaviour
                     approvalMask.sprite = approvalMaskSprites[3];
                 }
                 //Grin
-                if (SaveDataController.Instance.CurrentData.approvalValue >= 40 && SaveDataController.Instance.CurrentData.approvalValue < 60)
+                if (SaveDataController.Instance.CurrentData.approvalValue >= 60 && SaveDataController.Instance.CurrentData.approvalValue < 90)
                 {
                     SaveDataController.Instance.CurrentData.starsGained = 2;
                     UnlockLicense();
@@ -172,7 +172,7 @@ public class PopUpManager : MonoBehaviour
                     approvalMask.sprite = approvalMaskSprites[4];
                 }
                 //Smile
-                if (SaveDataController.Instance.CurrentData.approvalValue >= 60 && SaveDataController.Instance.CurrentData.approvalValue < 80)
+                if (SaveDataController.Instance.CurrentData.approvalValue >= 90 && SaveDataController.Instance.CurrentData.approvalValue < 120)
                 {
                     SaveDataController.Instance.CurrentData.starsGained = 3;
                     UnlockLicense();
@@ -195,7 +195,7 @@ public class PopUpManager : MonoBehaviour
                     approvalMask.sprite = approvalMaskSprites[5];
                 }
                 //Smile w/ Teeth
-                if (SaveDataController.Instance.CurrentData.approvalValue >= 80 && SaveDataController.Instance.CurrentData.approvalValue < 100)
+                if (SaveDataController.Instance.CurrentData.approvalValue >= 120 && SaveDataController.Instance.CurrentData.approvalValue < 150)
                 {
                     SaveDataController.Instance.CurrentData.starsGained = 4;
                     UnlockLicense();
@@ -217,7 +217,7 @@ public class PopUpManager : MonoBehaviour
                     approvalMask.sprite = approvalMaskSprites[6];
                 }
                 //Extreme Happy Face
-                if (SaveDataController.Instance.CurrentData.approvalValue >= 100)
+                if (SaveDataController.Instance.CurrentData.approvalValue >= 150)
                 {
                     SaveDataController.Instance.CurrentData.starsGained = 5;
                     UnlockLicense();

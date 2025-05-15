@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.InputSystem.Processors;
 
 public class MouseControls : MonoBehaviour
 {
@@ -35,7 +36,7 @@ public class MouseControls : MonoBehaviour
     }
     void Start()
     {
-        items = FindObjectsByType<InventoryItem>(FindObjectsSortMode.None).ToList();
+        items = (Resources.FindObjectsOfTypeAll(typeof(InventoryItem)) as InventoryItem[]).ToList();
         foreach (var item in items)
         {
             if (item.identifier == identifier)
@@ -107,8 +108,8 @@ public class MouseControls : MonoBehaviour
 
     public void Store()
     {
-        DataSet();
         item.AddToStock();
+        DataSet();
         Destroy(this.gameObject);
     }
 
@@ -125,7 +126,14 @@ public class MouseControls : MonoBehaviour
             rotation = this.transform.rotation,
             thisBuilding = this.gameObject.GetComponent<BuildingManager>().thisBuilding,
         };
-        SaveDataController.Instance.CurrentData.furniturePositions.Remove(data);
+        foreach (var furn in SaveDataController.Instance.CurrentData.furniturePositions)
+        {
+            if (furn.position == data.position)
+            {
+                SaveDataController.Instance.CurrentData.furniturePositions.Remove(furn);
+                return;
+            }
+        }
     }
 
     public void OnDisable()

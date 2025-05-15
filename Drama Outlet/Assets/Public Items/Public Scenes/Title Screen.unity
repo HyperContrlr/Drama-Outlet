@@ -944,6 +944,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 343617f07dc7cbd48a0af9d6b7423e25, type: 2}
   - {fileID: 11400000, guid: 021bd206b3cfc8d419e6c816143e3cfc, type: 2}
   tutorial: {fileID: 0}
+  isTitleScreen: 1
 --- !u!4 &202460309
 Transform:
   m_ObjectHideFlags: 0

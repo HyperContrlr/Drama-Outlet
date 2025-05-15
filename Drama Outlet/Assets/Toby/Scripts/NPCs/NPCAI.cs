@@ -7,6 +7,7 @@ using System.Collections;
 using Pathfinding;
 using System.Linq;
 using UnityEngine.Events;
+using Unity.VisualScripting;
 
 public partial class NPCAI : MonoBehaviour
 {
@@ -559,6 +560,10 @@ public partial class NPCAI : MonoBehaviour
 
     void Update()
     {
+        if (target == null)
+        {
+            SetTarget();
+        }
         checkOut = GameObject.FindGameObjectWithTag("Check Out");
         if (thisNPC.unhappy == true)
         {

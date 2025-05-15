@@ -15,12 +15,12 @@ MonoBehaviour:
   name: Prop License
   description: "This license will allow me to sell basic props. \nYou know my full
     name is Stan D. Comedy."
-  cost: 2500
+  cost: 2000
   thisImage: {fileID: 0}
   productsUnlocked:
   - {fileID: 11400000, guid: d7bca251925d96347b83127d68b86305, type: 2}
   isBought: 0
-  isLocked: 0
+  isLocked: 1
   starLock: 1
   hasStarLock: 1
   StarsForUnlock: 2

@@ -17,13 +17,13 @@ MonoBehaviour:
 
     Hope I won''t
     need to do a quick change'
-  cost: 2000
+  cost: 1500
   thisImage: {fileID: 0}
   productsUnlocked:
   - {fileID: 11400000, guid: 360e762e90b4c2c44a926cafcf65a83f, type: 2}
   isBought: 0
-  isLocked: 0
-  starLock: 0
+  isLocked: 1
+  starLock: 1
   hasStarLock: 1
   StarsForUnlock: 1
   licensesUnlocked:

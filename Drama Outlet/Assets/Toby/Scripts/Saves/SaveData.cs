@@ -20,4 +20,8 @@ public struct SaveData
     public float securityValue;
 
     public List<FurnitureData> furniturePositions;
+
+    public List<InventoryItem> inventoryItems;
+
+    public List<int> inventoryStocks;
 }

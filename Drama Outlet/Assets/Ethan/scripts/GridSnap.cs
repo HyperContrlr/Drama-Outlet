@@ -2,11 +2,11 @@ using UnityEngine;
 public class GridSnap : MonoBehaviour
 {
     private Grid grid;
-    void Start()
+    public void Start()
     {
         grid = Grid.FindFirstObjectByType<Grid>(); 
     } 
-    void Update() 
+    public void Update() 
     { 
         Vector3Int yurr = grid.LocalToCell(transform.localPosition); 
         transform.localPosition = grid.GetCellCenterLocal(yurr); 

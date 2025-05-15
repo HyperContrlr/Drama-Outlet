@@ -15,10 +15,8 @@ MonoBehaviour:
   name: Advanced Mask License
   description: "<size=30>With this licence I can get better more realstic masks.
     \n<size=20>I can't mask how excited I am to sell these premium masks."
-  cost: 3000
+  cost: 2500
   thisImage: {fileID: 0}
-  defaultSprite: {fileID: 0}
-  collectedSprite: {fileID: 0}
   productsUnlocked:
   - {fileID: 11400000, guid: c05642d718cf2404d9bf1bc74376b12c, type: 2}
   isBought: 0
@@ -27,3 +25,4 @@ MonoBehaviour:
   hasStarLock: 1
   StarsForUnlock: 3
   licensesUnlocked: []
+  mask: 0

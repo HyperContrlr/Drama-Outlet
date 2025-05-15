@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Makeup License
   description: "This license will allow me to sell stage makeup. \nIt's time to slay!!"
-  cost: 1500
+  cost: 1000
   thisImage: {fileID: 0}
   productsUnlocked:
   - {fileID: 11400000, guid: 1e121216e5da89d468a98c13a0d59287, type: 2}
   isBought: 0
-  isLocked: 0
+  isLocked: 1
   starLock: 0
   hasStarLock: 0
   StarsForUnlock: 0

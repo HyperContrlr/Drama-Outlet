@@ -50,11 +50,13 @@ public class TimeOfDay : MonoBehaviour
                 midnight.SetActive(false);
                 startedDay = false;
                 npcSpawner.enabled = false;
+                rotation = 90;
             }
             else if (SaveDataController.Instance.CurrentData.timeOfDay == SaveData.Time.Morning)
             {
                 npcSpawner.spawnedNPCs.Clear();
                 timer = 0;
+                rotation = 90;
                 SaveDataController.Instance.CurrentData.timeOfDay = SaveData.Time.Morning;
                 eventSystem.SetEvents();
                 isntLost = false;
@@ -62,13 +64,13 @@ public class TimeOfDay : MonoBehaviour
                 startedDay = true;
                 npcSpawner.enabled = true;
                 npcSpawner.SpawnCustomer();
-                spaceBarMorning.gameObject.SetActive(false);
                 spaceBarNight.gameObject.SetActive(false);
                 midnight.SetActive(false);
             }
             else if (SaveDataController.Instance.CurrentData.timeOfDay == SaveData.Time.Afternoon)
             {
                 timer = morningWindow + 1;
+                rotation = 30;
                 spaceBarMorning.gameObject.SetActive(false);
                 spaceBarNight.gameObject.SetActive(false);
                 midnight.SetActive(false);
@@ -78,6 +80,7 @@ public class TimeOfDay : MonoBehaviour
             }
             else if (SaveDataController.Instance.CurrentData.timeOfDay == SaveData.Time.Evening)
             {
+                rotation = -30;
                 timer = afternoonWindow + 1;
                 spaceBarMorning.gameObject.SetActive(false);
                 spaceBarNight.gameObject.SetActive(true);
@@ -87,6 +90,7 @@ public class TimeOfDay : MonoBehaviour
             }
             else if (SaveDataController.Instance.CurrentData.timeOfDay == SaveData.Time.Night)
             {
+                rotation = -90;
                 spaceBarMorning.gameObject.SetActive(false);
                 spaceBarNight.gameObject.SetActive(true);
                 midnight.SetActive(false);

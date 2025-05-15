@@ -62,7 +62,6 @@ public class buildingPlacer : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.E))
             {
-                
                 if (item == null)
                 {
                     Destroy(toBuild);
@@ -154,7 +153,6 @@ public class buildingPlacer : MonoBehaviour
                             PrepareBuilding();
                             return;
                         }
-
 
                         buildingPrefab = null;
                         toBuild = null;

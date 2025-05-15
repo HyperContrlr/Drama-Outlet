@@ -17,6 +17,8 @@ public class SaveDataController : MonoBehaviour
     [SerializeField] private List<buildings> allBuildings;
     [SerializeField] private List<License> allLicenses;
     public GameObject tutorial;
+
+    public bool isTitleScreen;
     public void Awake()
     {
         Instance = this;
@@ -25,6 +27,15 @@ public class SaveDataController : MonoBehaviour
 
     public void OnDestroy()
     {
+        if (isTitleScreen == false)
+        {
+            _currentData.inventoryStocks.Clear();
+            foreach (var item in _currentData.inventoryItems)
+            {
+                int stock = item.stock;
+                _currentData.inventoryStocks.Add(stock);
+            }
+        }
         Save();
     }
     public void Save()
@@ -35,6 +46,16 @@ public class SaveDataController : MonoBehaviour
     public void Load()
     {
         _currentData = Serializer.Load($"{Application.persistentDataPath}/SaveData", fileName, defaultData.value);
+        if (isTitleScreen == false)
+        {
+            _currentData.inventoryItems = (Resources.FindObjectsOfTypeAll(typeof(InventoryItem)) as InventoryItem[]).ToList();
+            foreach (var item in _currentData.inventoryStocks)
+            {
+                _currentData.inventoryItems[0].stock = item;
+                _currentData.inventoryItems.Remove(_currentData.inventoryItems[0]);
+            }
+            _currentData.inventoryItems = (Resources.FindObjectsOfTypeAll(typeof(InventoryItem)) as InventoryItem[]).ToList();
+        }
         ResetObjects();
     }
 

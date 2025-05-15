@@ -79,6 +79,7 @@ public class BuildingManager : MonoBehaviour
             {
                 SaveDataController.Instance.CurrentData.securityValue += thisBuilding.securityBonus;
             }
+            Invoke("SaveThang", 1f);
         }
         else if (mode == PlacementMode.Valid)
         {
@@ -104,14 +105,6 @@ public class BuildingManager : MonoBehaviour
             parteecles.SetActive(true);
             hitbox.SetActive(true);
             this.gameObject.GetComponent<AudioSource>().Play();
-            
-            FurnitureData data = new()
-            {
-                position = this.transform.position,
-                rotation = this.transform.rotation,
-                thisBuilding = thisBuilding,
-            };
-            SaveDataController.Instance.CurrentData.furniturePositions.Add(data);
         }
         else
         {
@@ -149,5 +142,15 @@ public class BuildingManager : MonoBehaviour
     private bool IsGround(GameObject o)
     {
         return ((1 << o.layer) & buildingPlacer.instance.floorLayerMask.value) != 0;
+    }
+    public void SaveThang()
+    {
+        FurnitureData data = new()
+        {
+            position = this.transform.position,
+            rotation = this.transform.rotation,
+            thisBuilding = thisBuilding,
+        };
+        SaveDataController.Instance.CurrentData.furniturePositions.Add(data);
     }
 }
