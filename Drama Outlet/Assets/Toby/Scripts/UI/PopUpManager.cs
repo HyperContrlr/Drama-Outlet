@@ -70,7 +70,6 @@ public class PopUpManager : MonoBehaviour
             openButton.sprite = closeSprite;
         }
     }
-
     public void UnlockLicense()
     {
         foreach (License license in starLockedLicense)
@@ -221,8 +220,11 @@ public class PopUpManager : MonoBehaviour
                 {
                     SaveDataController.Instance.CurrentData.starsGained = 5;
                     UnlockLicense();
-                    stars[4].GetComponent<Image>().sprite = gainedStar;
-                    stars[4].GetComponent<Image>().color = gainedColor;
+                    foreach (GameObject star in stars)
+                    {
+                        star.GetComponent<Image>().sprite = gainedStar;
+                        star.GetComponent<Image>().color = gainedColor;
+                    }
                     approvalMask.sprite = approvalMaskSprites[7];
                 }
             }

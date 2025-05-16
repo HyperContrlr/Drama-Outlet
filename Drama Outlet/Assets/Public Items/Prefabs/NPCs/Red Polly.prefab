@@ -141,8 +141,6 @@ MonoBehaviour:
   waitTime: 0
   npcSpawner: {fileID: 0}
   path: {fileID: 0}
-  box: {fileID: 1156648721109931113}
-  colliderTimer: 0
   isPaused: 0
   previousState: 0
   justLooked: 0

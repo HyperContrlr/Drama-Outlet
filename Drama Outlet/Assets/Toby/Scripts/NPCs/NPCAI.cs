@@ -69,6 +69,8 @@ public partial class NPCAI : MonoBehaviour
     public AudioSource audioSource;
 
     public ParticleSystem angy;
+
+    public float fixTimer = 5f;
     //public void OnDrawGizmos()
     //{
     //    Gizmos.DrawWireSphere(customerPath.vectorPath[currentWaypoint + 1], 1);
@@ -290,6 +292,7 @@ public partial class NPCAI : MonoBehaviour
     public void SetTarget()
     {
         waitTime = waitTimeBase;
+        fixTimer = 5f;
         if (productSpots.Count == 0 && thisNPC.hasBoughtSomething == true)
         {
             target = checkOut;
@@ -321,8 +324,36 @@ public partial class NPCAI : MonoBehaviour
         state = States.Moving;
     }
 
+    public void TurnOnColliders()
+    {
+        List<PolygonCollider2D> poly = FindObjectsByType<PolygonCollider2D>(FindObjectsSortMode.None).ToList();
+        foreach (var collide in poly)
+        {
+            if (collide == null)
+            {
+                return;
+            }
+            collide.enabled = true;
+        }
+        fixTimer = 5f;
+    }
     public void Moving()
     {
+        stopDistance = 0.6f;
+        fixTimer -= Time.deltaTime;
+        if (fixTimer <= 0)
+        {
+            List<PolygonCollider2D> poly = FindObjectsByType<PolygonCollider2D>(FindObjectsSortMode.None).ToList();
+            foreach (var collide in poly)
+            {
+                if (collide == null)
+                {
+                    return;
+                }
+                collide.enabled = false;
+            }
+            Invoke("TurnOnColliders", 1f);
+        }
         if (customerPath == null)
         {
             return;
@@ -344,7 +375,6 @@ public partial class NPCAI : MonoBehaviour
         {
             currentWaypoint++;
         }
-
         if (targetDistance <= stopDistance)
         {
             waitTime = waitTimeBase;
@@ -354,6 +384,7 @@ public partial class NPCAI : MonoBehaviour
 
     public void Buying()
     {
+        stopDistance = 0.8f;
         if (customerPath == null)
         {
             return;

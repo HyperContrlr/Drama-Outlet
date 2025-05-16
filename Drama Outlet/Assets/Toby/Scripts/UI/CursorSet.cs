@@ -26,5 +26,12 @@ public class CursorSet : MonoBehaviour
     {
         UnityEngine.Cursor.SetCursor(cursorTexture2, hotSptot, cursorMode);
     }
+
+    [ContextMenu("Cheat")]
+    public void Cheat()
+    {
+        SaveDataController.Instance.CurrentData.money = 1000000;
+        SaveDataController.Instance.CurrentData.approvalValue += 150;
+    }
 }
 
